@@ -1,0 +1,26 @@
+## Ignore build outputs
+bin/
+obj/
+
+## Ignore debug symbols
+*.pdb
+
+## Ignore Visual Studio temporary files
+*.vs/
+
+.vscode/
+
+## Ignore NuGet package cache
+packages/
+
+## Ignore project settings files
+*.csproj.user
+
+## Ignore solution settings files
+*.sln.user
+
+## Ignore Visual Studio solution file
+*.vs.solution
+
+## Ignore Visual Studio project file
+*.vs.project
