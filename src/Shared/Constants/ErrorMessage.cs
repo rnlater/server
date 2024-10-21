@@ -12,6 +12,7 @@ public enum ErrorMessage
     InvalidConfirmationCode,
     ConfirmationCodeExpired,
     EmailAlreadyConfirmed,
+    UserAlreadyLoggedOut,
 
     #endregion
 

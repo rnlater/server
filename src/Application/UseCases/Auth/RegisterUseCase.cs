@@ -35,7 +35,7 @@ public class RegisterUseCase : IUseCase<UserDto, RegisterParams>
                 new BaseSpecification<User>(x => x.Email == parameters.Email)
             );
             if (user != null) return Result<UserDto>.Fail(ErrorMessage.UserAlreadyExistsWithSameEmail);
-            var result = await userRepository.Add(new User
+            var savedUser = await userRepository.Add(new User
             {
                 Email = parameters.Email,
                 UserName = "User-" + Guid.NewGuid().ToString().Substring(0, 8),
@@ -44,13 +44,15 @@ public class RegisterUseCase : IUseCase<UserDto, RegisterParams>
             var userAuthenticationRepository = _unitOfWork.Repository<Authentication>();
             await userAuthenticationRepository.Add(new Authentication
             {
-                UserId = result.Id,
+                UserId = savedUser.Id,
                 HashedPassword = PasswordHasher.HashWithSHA256(parameters.Password),
                 ConfirmationCode = Guid.NewGuid().ToString()[..6],
                 ConfirmationCodeExpiryTime = DateTime.UtcNow.AddMinutes(15),
                 IsEmailConfirmed = false,
                 IsActivated = true,
             });
+
+            var result = await userRepository.Find(new BaseSpecification<User>(x => x.Id == savedUser.Id).AddInclude(x => x.Authentication!));
 
             return Result<UserDto>.Done(_mapper.Map<UserDto>(result));
         }

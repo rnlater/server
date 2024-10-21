@@ -1,5 +1,3 @@
-using System;
-using Domain.Base;
 using Domain.Enums;
 
 namespace Application.DTOs;

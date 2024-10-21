@@ -31,6 +31,11 @@ public class LogoutUseCase : IUseCase<UserDto, NoParam>
             var userAuthenticationRepository = _unitOfWork.Repository<Authentication>();
             var userAuthentication = await userAuthenticationRepository.Find(new BaseSpecification<Authentication>(x => x.UserId == Guid.Parse(userId!)).AddInclude(x => x.User!));
 
+            if (userAuthentication == null)
+                return Result<UserDto>.Fail(ErrorMessage.UserNotFound);
+            else if (userAuthentication.RefreshToken == null || userAuthentication.RefreshTokenExpiryTime == null)
+                return Result<UserDto>.Fail(ErrorMessage.UserAlreadyLoggedOut);
+
             userAuthentication!.RefreshToken = null;
             userAuthentication.RefreshTokenExpiryTime = null;
             await userAuthenticationRepository.Update(userAuthentication);

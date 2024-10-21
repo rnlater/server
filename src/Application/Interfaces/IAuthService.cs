@@ -1,6 +1,5 @@
 using Application.DTOs;
 using Application.UseCases.Auth;
-using Domain.Entities;
 using Shared.Types;
 
 namespace Application.Interfaces;

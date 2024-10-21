@@ -32,14 +32,12 @@ public class ConfirmRegistrationEmailUseCase : IUseCase<UserDto, ConfirmRegistra
             var user = await userRepositoy.Find(new BaseSpecification<User>(x => x.Email == parameters.Email).AddInclude(x => x.Authentication!));
             if (user == null || user.Authentication == null)
                 return Result<UserDto>.Fail(ErrorMessage.UserNotFoundWithEmail);
-            else if (user.Authentication.ConfirmationCode == null || user.Authentication.ConfirmationCodeExpiryTime == null)
+            else if (user.Authentication.ConfirmationCode == null || user.Authentication.IsEmailConfirmed || user.Authentication.ConfirmationCodeExpiryTime == null)
                 return Result<UserDto>.Fail(ErrorMessage.EmailAlreadyConfirmed);
             else if (user.Authentication.ConfirmationCode != parameters.ConfirmationCode)
                 return Result<UserDto>.Fail(ErrorMessage.InvalidConfirmationCode);
             else if (user.Authentication.ConfirmationCodeExpiryTime < DateTime.UtcNow)
                 return Result<UserDto>.Fail(ErrorMessage.ConfirmationCodeExpired);
-            else if (user.Authentication.IsEmailConfirmed)
-                return Result<UserDto>.Fail(ErrorMessage.EmailAlreadyConfirmed);
 
             user.Authentication.IsEmailConfirmed = true;
             user.Authentication.ConfirmationCode = null;

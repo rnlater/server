@@ -1,7 +1,6 @@
 using Domain.Base;
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Vocab.Infrastructure.Data;
 
 namespace Infrastructure.Data
 {
@@ -19,7 +18,7 @@ namespace Infrastructure.Data
             return await _context.Set<T>().ToListAsync();
         }
 
-        public async Task<T?> GetById(int id)
+        public async Task<T?> GetById(Guid id)
         {
             return await _context.Set<T>().FindAsync(id);
         }
@@ -38,7 +37,7 @@ namespace Infrastructure.Data
             return entity;
         }
 
-        public async Task<T?> Delete(int id)
+        public async Task<T?> Delete(Guid id)
         {
             var entity = await _context.Set<T>().FindAsync(id);
             if (entity == null)
