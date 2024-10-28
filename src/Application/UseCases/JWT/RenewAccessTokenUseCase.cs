@@ -22,24 +22,30 @@ public class RenewAccessTokenUseCase : AccessTokenGenerator, IUseCase<string, st
 
     public async Task<Result<string>> Execute(string refreshToken)
     {
-
-        var authentication = await _unitOfWork
-            .Repository<Authentication>()
-            .Find(new BaseSpecification<Authentication>(rt => rt.RefreshToken == refreshToken).AddInclude(rt => rt.User!));
-
-        var user = authentication?.User;
-
-        if (authentication == null || user == null)
+        try
         {
-            return Result<string>.Fail(ErrorMessage.UserNotFound);
+            var authentication = await _unitOfWork
+                .Repository<Authentication>()
+                .Find(new BaseSpecification<Authentication>(rt => rt.RefreshToken == refreshToken).AddInclude(rt => rt.User!));
+
+            var user = authentication?.User;
+
+            if (authentication == null || user == null)
+            {
+                return Result<string>.Fail(ErrorMessage.UserNotFound);
+            }
+            else if (authentication.RefreshTokenExpiryTime < DateTime.UtcNow)
+            {
+                return Result<string>.Fail(ErrorMessage.RefreshTokenIsExpired);
+            }
+
+            string accessToken = AccessToken(mapper.Map<UserDto>(user)!);
+
+            return Result<string>.Done(accessToken);
         }
-        else if (authentication.RefreshTokenExpiryTime < DateTime.UtcNow)
+        catch
         {
-            return Result<string>.Fail(ErrorMessage.RefreshTokenIsExpired);
+            return Result<string>.Fail(ErrorMessage.UnknownError);
         }
-
-        string accessToken = AccessToken(mapper.Map<UserDto>(user)!);
-
-        return Result<string>.Done(accessToken);
     }
 }

@@ -1,5 +1,4 @@
 using Application.Interfaces;
-using Domain.Entities;
 using Shared.Types;
 using Application.UseCases.JWT;
 using Application.DTOs;

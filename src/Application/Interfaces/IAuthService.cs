@@ -1,6 +1,5 @@
 using Application.DTOs;
 using Application.UseCases.Auth;
-using Domain.Entities;
 using Shared.Types;
 
 namespace Application.Interfaces;
@@ -12,6 +11,10 @@ public interface IAuthService
     /// </summary>
     /// <param name="Params"></param>
     /// <returns>return result of the logged in user</returns>
+    /// <exception cref="UserNotFoundWithEmail">Thrown when the user is not found with the email</exception>
+    /// <exception cref="WrongPassword">Thrown when the password is wrong</exception>
+    /// <exception cref="EmailNotConfirmed">Thrown when the email is not confirmed</exception>
+    /// <exception cref="AccountIsLocked">Thrown when the account is locked</exception>
     Task<Result<UserDto>> Login(LoginParams Params);
 
     /// <summary>
@@ -19,12 +22,15 @@ public interface IAuthService
     /// </summary>
     /// <param name="Params"></param>
     /// <returns>return result of the registered user</returns>
+    /// <exception cref="UserAlreadyExistsWithSameEmail">Thrown when the user already exists with the same email</exception>
     Task<Result<UserDto>> Register(RegisterParams Params);
 
     /// <summary>
     /// Logout user
     /// </summary>
     /// <returns>return result of the logged out user</returns>
+    /// <exception cref="UserNotFound">Thrown when the user is not found</exception>
+    /// <exception cref="UserAlreadyLoggedOut">Thrown when the user is already logged out</exception>
     Task<Result<UserDto>> Logout();
 
     /// <summary>
@@ -32,6 +38,10 @@ public interface IAuthService
     /// </summary>
     /// <param name="Params"></param>
     /// <returns>return result of the registered user</returns>
+    /// <exception cref="UserNotFoundWithEmail">Thrown when the user is not found with the email</exception>
+    /// <exception cref="EmailAlreadyConfirmed">Thrown when the email is already confirmed</exception>
+    /// <exception cref="InvalidConfirmationCode">Thrown when the confirmation code is invalid</exception>
+    /// <exception cref="ConfirmationCodeExpired">Thrown when the confirmation code is expired</exception>
     Task<Result<UserDto>> ConfirmRegistrationEmail(ConfirmRegistrationEmailParams Params);
 
     /// <summary>
@@ -39,6 +49,9 @@ public interface IAuthService
     /// </summary>
     /// <param name="Params"></param>
     /// <returns>return result of the user that forgot his/her password</returns>
+    /// <exception cref="UserNotFoundWithEmail">Thrown when the user is not found with the email</exception>
+    /// <exception cref="EmailNotConfirmed">Thrown when the email is not confirmed</exception>
+    /// <exception cref="AccountIsLocked">Thrown when the account is locked</exception>
     Task<Result<UserDto>> ForgotPassword(ForgotPasswordParams Params);
 
     /// <summary>
@@ -46,6 +59,11 @@ public interface IAuthService
     /// </summary>
     /// <param name="Params"></param>
     /// <returns>return result of the user that forgot his/her password</returns>
+    /// <exception cref="UserNotFoundWithEmail">Thrown when the user is not found with the email</exception>
+    /// <exception cref="EmailAlreadyConfirmed">Thrown when the email is already confirmed</exception>
+    /// <exception cref="InvalidConfirmationCode">Thrown when the confirmation code is invalid</exception>
+    /// <exception cref="ConfirmationCodeExpired">Thrown when the confirmation code is expired</exception>
+    /// <exception cref="AccountIsLocked">Thrown when the account is locked</exception>
     Task<Result<UserDto>> ConfirmPasswordResettingEmail(ConfirmPasswordResettingEmailParams Params);
 }
 

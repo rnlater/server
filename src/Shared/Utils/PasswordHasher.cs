@@ -1,5 +1,3 @@
-using System;
-
 namespace Shared.Utils;
 
 public class PasswordHasher
