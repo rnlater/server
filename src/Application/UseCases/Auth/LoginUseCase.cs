@@ -1,8 +1,9 @@
 using Application.DTOs;
 using AutoMapper;
 using Domain.Base;
-using Domain.Entities;
+using Domain.Entities.SingleIdEntities;
 using Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Shared.Constants;
 using Shared.Types;
 
@@ -29,8 +30,11 @@ public class LoginUseCase : IUseCase<UserDto, LoginParams>
     {
         try
         {
-            var userRepositoy = _unitOfWork.Repository<User>();
-            var user = await userRepositoy.Find(new BaseSpecification<User>(x => x.Email == parameters.Email).AddInclude(x => x.Authentication!));
+            var userRepository = _unitOfWork.Repository<User>();
+            var user = await userRepository.Find(
+                new BaseSpecification<User>(u => u.Email == parameters.Email)
+                .AddInclude(query => query.Include(u => u.Authentication!)));
+
             if (user == null)
                 return Result<UserDto>.Fail(ErrorMessage.UserNotFoundWithEmail);
             else if (!user.Authentication!.VerifyPassword(parameters.Password))

@@ -1,8 +1,9 @@
 using Application.DTOs;
 using AutoMapper;
 using Domain.Base;
-using Domain.Entities;
+using Domain.Entities.SingleIdEntities;
 using Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Shared.Config;
 using Shared.Constants;
@@ -25,8 +26,9 @@ public class RenewAccessTokenUseCase : AccessTokenGenerator, IUseCase<string, st
         try
         {
             var authentication = await _unitOfWork
-                .Repository<Authentication>()
-                .Find(new BaseSpecification<Authentication>(rt => rt.RefreshToken == refreshToken).AddInclude(rt => rt.User!));
+                .Repository<Authentication>().Find(
+                    new BaseSpecification<Authentication>(a => a.RefreshToken == refreshToken)
+                    .AddInclude(query => query.Include(a => a.User!)));
 
             var user = authentication?.User;
 

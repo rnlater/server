@@ -1,11 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Domain.Base;
 using Shared.Utils;
 
-namespace Domain.Entities;
+namespace Domain.Entities.SingleIdEntities;
 
-public class Authentication : BaseEntity
+public class Authentication : SingleIdEntity
 {
     public required string HashedPassword { get; set; }
     public string? RefreshToken { get; set; }

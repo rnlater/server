@@ -2,9 +2,10 @@ using System.Security.Claims;
 using Application.DTOs;
 using AutoMapper;
 using Domain.Base;
-using Domain.Entities;
+using Domain.Entities.SingleIdEntities;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Shared.Constants;
 using Shared.Types;
 
@@ -29,7 +30,9 @@ public class LogoutUseCase : IUseCase<UserDto, NoParam>
         {
             var userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var userAuthenticationRepository = _unitOfWork.Repository<Authentication>();
-            var userAuthentication = await userAuthenticationRepository.Find(new BaseSpecification<Authentication>(x => x.UserId == Guid.Parse(userId!)).AddInclude(x => x.User!));
+            var userAuthentication = await userAuthenticationRepository.Find(
+                new BaseSpecification<Authentication>(a => a.UserId == Guid.Parse(userId!))
+                .AddInclude(query => query.Include(a => a.User!)));
 
             if (userAuthentication == null)
                 return Result<UserDto>.Fail(ErrorMessage.UserNotFound);

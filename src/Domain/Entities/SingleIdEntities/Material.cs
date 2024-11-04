@@ -1,12 +1,9 @@
-using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics.CodeAnalysis;
-using Domain.Base;
 using Domain.Enums;
 
-namespace Domain.Entities;
+namespace Domain.Entities.SingleIdEntities;
 
-public class Material : BaseEntity
+public class Material : SingleIdEntity
 {
     public required MaterialType Type { get; set; }
     public required string Content { get; set; }

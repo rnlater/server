@@ -1,11 +1,9 @@
-using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics.CodeAnalysis;
-using Domain.Base;
+using Domain.Entities.PivotEntities;
 
-namespace Domain.Entities;
+namespace Domain.Entities.SingleIdEntities;
 
-public class KnowledgeTopic : BaseEntity
+public class KnowledgeTopic : SingleIdEntity
 {
     public required string Title { get; set; }
 
@@ -19,7 +17,7 @@ public class KnowledgeTopic : BaseEntity
     [InverseProperty("Parent")]
     public ICollection<KnowledgeTopic> Children { get; set; } = [];
 
-    public ICollection<Knowledge> Knowledges { get; set; } = [];
+    public ICollection<KnowledgeTopicKnowledge> KnowledgeTopicKnowledges { get; set; } = [];
 
     public static KnowledgeTopic ForTestPurposeOnly()
     {

@@ -2,7 +2,7 @@ using Application.DTOs;
 using Application.UseCases.JWT;
 using AutoMapper;
 using Domain.Base;
-using Domain.Entities;
+using Domain.Entities.SingleIdEntities;
 using Domain.Enums;
 using Domain.Interfaces;
 using Microsoft.Extensions.Options;

@@ -1,8 +1,9 @@
 using Application.DTOs;
 using AutoMapper;
 using Domain.Base;
-using Domain.Entities;
+using Domain.Entities.SingleIdEntities;
 using Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Shared.Constants;
 using Shared.Types;
 
@@ -28,8 +29,11 @@ public class ConfirmRegistrationEmailUseCase : IUseCase<UserDto, ConfirmRegistra
     {
         try
         {
-            var userRepositoy = _unitOfWork.Repository<User>();
-            var user = await userRepositoy.Find(new BaseSpecification<User>(x => x.Email == parameters.Email).AddInclude(x => x.Authentication!));
+            var userRepository = _unitOfWork.Repository<User>();
+            var user = await userRepository.Find(
+                new BaseSpecification<User>(u => u.Email == parameters.Email)
+                .AddInclude(query => query.Include(u => u.Authentication!)));
+
             if (user == null || user.Authentication == null)
                 return Result<UserDto>.Fail(ErrorMessage.UserNotFoundWithEmail);
             else if (user.Authentication.ConfirmationCode == null || user.Authentication.IsEmailConfirmed || user.Authentication.ConfirmationCodeExpiryTime == null)
@@ -42,7 +46,7 @@ public class ConfirmRegistrationEmailUseCase : IUseCase<UserDto, ConfirmRegistra
             user.Authentication.IsEmailConfirmed = true;
             user.Authentication.ConfirmationCode = null;
             user.Authentication.ConfirmationCodeExpiryTime = null;
-            await userRepositoy.Update(user);
+            await userRepository.Update(user);
 
             return Result<UserDto>.Done(_mapper.Map<UserDto>(user));
         }

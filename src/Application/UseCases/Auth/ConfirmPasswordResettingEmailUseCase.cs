@@ -1,8 +1,9 @@
 using Application.DTOs;
 using AutoMapper;
 using Domain.Base;
-using Domain.Entities;
+using Domain.Entities.SingleIdEntities;
 using Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Shared.Constants;
 using Shared.Types;
 
@@ -30,7 +31,10 @@ public class ConfirmPasswordResettingEmailUseCase : IUseCase<UserDto, ConfirmPas
         try
         {
             var userRepository = _unitOfWork.Repository<User>();
-            var user = await userRepository.Find(new BaseSpecification<User>(x => x.Email == parameters.Email).AddInclude(x => x.Authentication!));
+            var user = await userRepository.Find(
+                new BaseSpecification<User>(u => u.Email == parameters.Email)
+                .AddInclude(query => query.Include(u => u.Authentication!)));
+
             if (user == null || user.Authentication == null)
                 return Result<UserDto>.Fail(ErrorMessage.UserNotFoundWithEmail);
             else if (user.Authentication.ConfirmationCode == null || user.Authentication.ConfirmationCodeExpiryTime == null)

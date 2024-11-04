@@ -2,7 +2,7 @@ using Domain.Enums;
 
 namespace Application.DTOs;
 
-public class UserDto : BaseDto
+public class UserDto : SingleIdEntityDto
 {
     public required string UserName { get; set; }
 

@@ -1,17 +1,14 @@
-using System;
-using Domain.Base;
-
-namespace Domain.Entities;
+namespace Domain.Entities.SingleIdEntities;
 
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+using Domain.Entities.PivotEntities;
 
-public class Track : BaseEntity
+public class Track : SingleIdEntity
 {
     public required string Name { get; set; }
     public required string Description { get; set; }
 
-    public ICollection<Subject> Subjects { get; set; } = [];
+    public ICollection<TrackSubject> TrackSubjects { get; set; } = [];
 
     public static Track ForTestPurposeOnly()
     {

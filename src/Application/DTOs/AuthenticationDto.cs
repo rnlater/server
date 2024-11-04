@@ -1,6 +1,6 @@
 namespace Application.DTOs;
 
-public class AuthenticationDto : BaseDto
+public class AuthenticationDto : SingleIdEntityDto
 {
     public required string HashedPassword { get; set; }
     public string? RefreshToken { get; set; }

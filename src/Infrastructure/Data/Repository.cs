@@ -50,12 +50,19 @@ namespace Infrastructure.Data
             return entity;
         }
 
+        public async Task<T?> Delete(T entity)
+        {
+            _context.Set<T>().Remove(entity);
+            await _context.SaveChangesAsync();
+            return entity;
+        }
+
         public async Task<T?> Find(ISpecification<T> spec)
         {
             return await ApplySpecification(spec).FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<T>> FindAll(ISpecification<T> spec)
+        public async Task<IEnumerable<T>> FindMany(ISpecification<T> spec)
         {
             return await ApplySpecification(spec).ToListAsync();
         }
@@ -111,10 +118,8 @@ namespace Infrastructure.Data
 
             if (specification.Includes != null)
             {
-                query = specification.Includes.Aggregate(query, (current, include) => current.Include(include));
-
+                query = specification.Includes(query);
             }
-
 
             return query;
         }

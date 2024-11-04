@@ -1,10 +1,9 @@
-using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using Domain.Base;
+using Domain.Entities.SingleIdEntities;
 
-namespace Domain.Entities.UnusedPivotEntities;
+namespace Domain.Entities.PivotEntities;
 
-public class TrackSubject : UnusedPivotEntity
+public class TrackSubject : PivotEntity
 {
     public Guid TrackId { get; set; }
     [ForeignKey(nameof(TrackId))]

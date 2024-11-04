@@ -1,10 +1,9 @@
-using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using Domain.Base;
+using Domain.Entities.PivotEntities;
 
-namespace Domain.Entities;
+namespace Domain.Entities.SingleIdEntities;
 
-public class KnowledgeType : BaseEntity
+public class KnowledgeType : SingleIdEntity
 {
     public required string Name { get; set; }
 
@@ -16,7 +15,7 @@ public class KnowledgeType : BaseEntity
     [InverseProperty("Parent")]
     public ICollection<KnowledgeType> Children { get; set; } = [];
 
-    public ICollection<Knowledge> Knowledges { get; set; } = [];
+    public ICollection<KnowledgeTypeKnowledge> KnowledgeTypeKnowledges { get; set; } = [];
 
     public static KnowledgeType ForTestPurposeOnly()
     {

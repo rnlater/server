@@ -4,10 +4,10 @@ using Moq;
 using Application.DTOs;
 using Application.UseCases.Auth;
 using Domain.Base;
-using Domain.Entities;
 using Domain.Interfaces;
 using Shared.Constants;
 using Shared.Utils;
+using Domain.Entities.SingleIdEntities;
 
 namespace UnitTests.Auth
 {

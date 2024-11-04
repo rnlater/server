@@ -1,8 +1,9 @@
 using Application.DTOs;
 using AutoMapper;
 using Domain.Base;
-using Domain.Entities;
+using Domain.Entities.SingleIdEntities;
 using Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Shared.Constants;
 using Shared.Types;
 using Shared.Utils;
@@ -52,7 +53,9 @@ public class RegisterUseCase : IUseCase<UserDto, RegisterParams>
                 IsActivated = true,
             });
 
-            var result = await userRepository.Find(new BaseSpecification<User>(x => x.Id == savedUser.Id).AddInclude(x => x.Authentication!));
+            var result = await userRepository.Find(
+                new BaseSpecification<User>(u => u.Id == savedUser.Id)
+                .AddInclude(query => query.Include(u => u.Authentication!)));
 
             return Result<UserDto>.Done(_mapper.Map<UserDto>(result));
         }

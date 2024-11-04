@@ -1,11 +1,10 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
-using Domain.Base;
 using Domain.Enums;
 
-namespace Domain.Entities
+namespace Domain.Entities.SingleIdEntities
 {
-    public class User : BaseEntity
+    public class User : SingleIdEntity
     {
         public required string UserName { get; set; }
 

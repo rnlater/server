@@ -2,7 +2,7 @@ using Application.DTOs;
 using Application.UseCases.Auth;
 using AutoMapper;
 using Domain.Base;
-using Domain.Entities;
+using Domain.Entities.SingleIdEntities;
 using Domain.Interfaces;
 using Moq;
 using Shared.Constants;

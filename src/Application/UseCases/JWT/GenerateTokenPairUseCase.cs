@@ -1,6 +1,6 @@
 using Application.DTOs;
 using Domain.Base;
-using Domain.Entities;
+using Domain.Entities.SingleIdEntities;
 using Domain.Interfaces;
 using Microsoft.Extensions.Options;
 using Shared.Config;
@@ -36,8 +36,6 @@ public class GenerateTokenPairUseCase : AccessTokenGenerator, IUseCase<(string, 
             userAuthentication.RefreshToken = refreshToken;
             userAuthentication.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
             await tokenRepository.Update(userAuthentication);
-
-            await _unitOfWork.SaveChangesAsync();
 
             string accessToken = AccessToken(parameters);
 

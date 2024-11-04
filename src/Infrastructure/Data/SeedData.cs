@@ -1,5 +1,5 @@
-using System;
-using Domain.Entities;
+using Domain.Entities.PivotEntities;
+using Domain.Entities.SingleIdEntities;
 using Domain.Enums;
 using Shared.Utils;
 
@@ -42,8 +42,8 @@ public static class SeedData
 
     public static Subject[] GetSubjects() => new[]
     {
-        new Subject { Id = Subject1Id, Name = "Mathematics", Description = "Study of numbers, shapes, and patterns." },
-        new Subject { Id = Subject2Id, Name = "Science", Description = "Study of the physical and natural world." }
+        new Subject { Id = Subject1Id, Name = "Mathematics", Description = "Study of numbers, shapes, and patterns.", Photo = "test.png" },
+        new Subject { Id = Subject2Id, Name = "Science", Description = "Study of the physical and natural world.", Photo = "test.png" }
     };
 
     public static Track[] GetTracks() => new[]
@@ -104,28 +104,28 @@ public static class SeedData
         }
     };
 
-    public static object[] GetTrackSubjects() => new[]
+    public static TrackSubject[] GetTrackSubjects() => new[]
     {
-        new { TrackId = Track1Id, SubjectId = Subject1Id },
-        new { TrackId = Track2Id, SubjectId = Subject2Id }
+        new TrackSubject { TrackId = Track1Id, SubjectId = Subject1Id },
+        new TrackSubject { TrackId = Track2Id, SubjectId = Subject2Id }
     };
 
-    public static object[] GetSubjectKnowledges() => new[]
+    public static SubjectKnowledge[] GetSubjectKnowledges() => new[]
     {
-        new { SubjectId = Subject1Id, KnowledgeId = Knowledge1Id },
-        new { SubjectId = Subject2Id, KnowledgeId = Knowledge2Id }
+        new SubjectKnowledge { SubjectId = Subject1Id, KnowledgeId = Knowledge1Id },
+        new SubjectKnowledge { SubjectId = Subject2Id, KnowledgeId = Knowledge2Id }
     };
 
-    public static object[] GetKnowledgeTypeKnowledges() => new[]
+    public static KnowledgeTypeKnowledge[] GetKnowledgeTypeKnowledges() => new[]
     {
-        new { KnowledgeTypeId = KnowledgeType1Id, KnowledgeId = Knowledge1Id },
-        new { KnowledgeTypeId = KnowledgeType2Id, KnowledgeId = Knowledge2Id }
+        new KnowledgeTypeKnowledge { KnowledgeTypeId = KnowledgeType1Id, KnowledgeId = Knowledge1Id },
+        new KnowledgeTypeKnowledge { KnowledgeTypeId = KnowledgeType2Id, KnowledgeId = Knowledge2Id }
     };
 
-    public static object[] GetKnowledgeTopicKnowledges() => new[]
+    public static KnowledgeTopicKnowledge[] GetKnowledgeTopicKnowledges() => new[]
     {
-        new { KnowledgeTopicId = KnowledgeTopic1Id, KnowledgeId = Knowledge1Id },
-        new { KnowledgeTopicId = KnowledgeTopic2Id, KnowledgeId = Knowledge2Id }
+        new KnowledgeTopicKnowledge { KnowledgeTopicId = KnowledgeTopic1Id, KnowledgeId = Knowledge1Id },
+        new KnowledgeTopicKnowledge { KnowledgeTopicId = KnowledgeTopic2Id, KnowledgeId = Knowledge2Id }
     };
 }
 

@@ -1,10 +1,9 @@
-using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using Domain.Base;
+using Domain.Entities.SingleIdEntities;
 
-namespace Domain.Entities.UnusedPivotEntities;
+namespace Domain.Entities.PivotEntities;
 
-public class SubjectKnowledge : UnusedPivotEntity
+public class SubjectKnowledge : PivotEntity
 {
     public Guid SubjectId { get; set; }
     [ForeignKey(nameof(SubjectId))]

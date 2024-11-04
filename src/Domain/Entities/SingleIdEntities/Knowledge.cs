@@ -1,12 +1,10 @@
-using System;
-
-namespace Domain.Entities;
+namespace Domain.Entities.SingleIdEntities;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using Domain.Base;
+using Domain.Entities.PivotEntities;
 using Domain.Enums;
 
-public class Knowledge : BaseEntity
+public class Knowledge : SingleIdEntity
 {
     public required string Title { get; set; }
     public KnowledgeVisibility Visibility { get; set; }
@@ -16,10 +14,10 @@ public class Knowledge : BaseEntity
     [ForeignKey("CreatorId")]
     public User? Creator { get; set; }
 
-    public ICollection<Subject> Subjects { get; set; } = [];
     public ICollection<Material> Materials { get; set; } = [];
-    public ICollection<KnowledgeType> KnowledgeTypes { get; set; } = [];
-    public ICollection<KnowledgeTopic> KnowledgeTopics { get; set; } = [];
+    public ICollection<SubjectKnowledge> SubjectKnowledges { get; set; } = [];
+    public ICollection<KnowledgeTypeKnowledge> KnowledgeTypeKnowledges { get; set; } = [];
+    public ICollection<KnowledgeTopicKnowledge> KnowledgeTopicKnowledges { get; set; } = [];
 
     public static Knowledge ForTestPurposeOnly()
     {

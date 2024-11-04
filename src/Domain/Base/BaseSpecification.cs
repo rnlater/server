@@ -1,19 +1,20 @@
 using System.Linq.Expressions;
 using Domain.Interfaces;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace Domain.Base
 {
     public class BaseSpecification<T> : ISpecification<T>
     {
-        public Expression<Func<T, bool>>? Criteria { get; protected set; }
-        public List<Expression<Func<T, object>>> Includes { get; } = [];
-        public Expression<Func<T, object>>? OrderBy { get; protected set; }
-        public Expression<Func<T, object>>? OrderByDescending { get; protected set; }
-        public int Take { get; protected set; }
-        public int Skip { get; protected set; }
-        public bool IsPagingEnabled { get; protected set; }
-        public bool IsTrackingEnabled { get; protected set; }
-        public Expression<Func<T, object>>? GroupBy { get; protected set; }
+        public Expression<Func<T, bool>>? Criteria { get; private set; }
+        public Func<IQueryable<T>, IIncludableQueryable<T, object>>? Includes { get; private set; }
+        public Expression<Func<T, object>>? OrderBy { get; private set; }
+        public Expression<Func<T, object>>? OrderByDescending { get; private set; }
+        public int Take { get; private set; }
+        public int Skip { get; private set; }
+        public bool IsPagingEnabled { get; private set; }
+        public bool IsTrackingEnabled { get; private set; }
+        public Expression<Func<T, object>>? GroupBy { get; private set; }
 
         public BaseSpecification(Expression<Func<T, bool>> criteria)
         {
@@ -22,25 +23,25 @@ namespace Domain.Base
 
         public BaseSpecification() { }
 
-        public BaseSpecification<T> AddInclude(Expression<Func<T, object>> includeExpression)
+        public ISpecification<T> AddInclude(Func<IQueryable<T>, IIncludableQueryable<T, object>> Includes)
         {
-            Includes.Add(includeExpression);
+            this.Includes = Includes;
             return this;
         }
 
-        public BaseSpecification<T> AddOrderBy(Expression<Func<T, object>> orderByExpression)
+        public ISpecification<T> AddOrderBy(Expression<Func<T, object>> orderByExpression)
         {
             OrderBy = orderByExpression;
             return this;
         }
 
-        public BaseSpecification<T> AddOrderByDescending(Expression<Func<T, object>> orderByDescendingExpression)
+        public ISpecification<T> AddOrderByDescending(Expression<Func<T, object>> orderByDescendingExpression)
         {
             OrderByDescending = orderByDescendingExpression;
             return this;
         }
 
-        public BaseSpecification<T> ApplyPaging(int skip, int take)
+        public ISpecification<T> ApplyPaging(int skip, int take)
         {
             Skip = skip;
             Take = take;
@@ -48,13 +49,13 @@ namespace Domain.Base
             return this;
         }
 
-        public BaseSpecification<T> ApplyTracking(bool isTrackingEnabled)
+        public ISpecification<T> ApplyTracking(bool isTrackingEnabled)
         {
             IsTrackingEnabled = isTrackingEnabled;
             return this;
         }
 
-        public BaseSpecification<T> ApplyGroupBy(Expression<Func<T, object>> groupByExpression)
+        public ISpecification<T> ApplyGroupBy(Expression<Func<T, object>> groupByExpression)
         {
             GroupBy = groupByExpression;
             return this;
