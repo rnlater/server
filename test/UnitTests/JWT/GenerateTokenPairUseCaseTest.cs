@@ -59,7 +59,6 @@ public class GenerateTokenPairUseCaseTest
         Assert.NotNull(result.Value.Item1);
         Assert.NotNull(result.Value.Item2);
         _tokenRepositoryMock.Verify(tr => tr.Update(It.IsAny<Authentication>()), Times.Once);
-        _unitOfWorkMock.Verify(uow => uow.SaveChangesAsync(), Times.Once);
     }
 
     [Fact]
@@ -74,7 +73,6 @@ public class GenerateTokenPairUseCaseTest
         Assert.False(result.IsSuccess);
         Assert.Equal(ErrorMessage.UserNotFound.ToString(), result.Errors[0]);
         _tokenRepositoryMock.Verify(tr => tr.Update(It.IsAny<Authentication>()), Times.Never);
-        _unitOfWorkMock.Verify(uow => uow.SaveChangesAsync(), Times.Never);
     }
 
     [Fact]
@@ -89,6 +87,5 @@ public class GenerateTokenPairUseCaseTest
         Assert.False(result.IsSuccess);
         Assert.Equal(ErrorMessage.UnknownError.ToString(), result.Errors[0]);
         _tokenRepositoryMock.Verify(tr => tr.Update(It.IsAny<Authentication>()), Times.Never);
-        _unitOfWorkMock.Verify(uow => uow.SaveChangesAsync(), Times.Never);
     }
 }

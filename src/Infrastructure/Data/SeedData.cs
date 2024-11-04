@@ -6,17 +6,17 @@ using Shared.Utils;
 namespace Infrastructure.Data;
 public static class SeedData
 {
-    private static readonly Guid UserId = Guid.NewGuid();
-    private static readonly Guid Subject1Id = Guid.NewGuid();
-    private static readonly Guid Subject2Id = Guid.NewGuid();
-    private static readonly Guid Track1Id = Guid.NewGuid();
-    private static readonly Guid Track2Id = Guid.NewGuid();
-    private static readonly Guid KnowledgeType1Id = Guid.NewGuid();
-    private static readonly Guid KnowledgeType2Id = Guid.NewGuid();
-    private static readonly Guid KnowledgeTopic1Id = Guid.NewGuid();
-    private static readonly Guid KnowledgeTopic2Id = Guid.NewGuid();
-    private static readonly Guid Knowledge1Id = Guid.NewGuid();
-    private static readonly Guid Knowledge2Id = Guid.NewGuid();
+    public static readonly Guid UserId = Guid.NewGuid();
+    public static readonly Guid Subject1Id = Guid.NewGuid();
+    public static readonly Guid Subject2Id = Guid.NewGuid();
+    public static readonly Guid Track1Id = Guid.NewGuid();
+    public static readonly Guid Track2Id = Guid.NewGuid();
+    public static readonly Guid KnowledgeType1Id = Guid.NewGuid();
+    public static readonly Guid KnowledgeType2Id = Guid.NewGuid();
+    public static readonly Guid KnowledgeTopic1Id = Guid.NewGuid();
+    public static readonly Guid KnowledgeTopic2Id = Guid.NewGuid();
+    public static readonly Guid Knowledge1Id = Guid.NewGuid();
+    public static readonly Guid Knowledge2Id = Guid.NewGuid();
 
     public static User[] GetUsers() => new[]
     {

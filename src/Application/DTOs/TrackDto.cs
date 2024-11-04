@@ -6,5 +6,5 @@ public class TrackDto : SingleIdEntityDto
 {
     public required string Name { get; set; }
     public required string Description { get; set; }
-    public IEnumerable<TrackSubjectDto> Subjects { get; set; } = [];
+    public IEnumerable<TrackSubjectDto> TrackSubjects { get; set; } = [];
 }

@@ -18,4 +18,16 @@ public class HttpRoute
     public const string Logout = "logout";
 
     #endregion
+
+    #region Track
+
+    public const string GetTracks = "list";
+    public const string GetDetailedTracks = "list-detailed";
+    public const string GetTrackById = "detailed/{id}";
+    public const string CreateTrack = "create";
+    public const string UpdateTrack = "update";
+    public const string DeleteTrack = "delete/{id}";
+    public const string CreateDeleteTrackSubject = "add-remove-subject";
+
+    #endregion
 }

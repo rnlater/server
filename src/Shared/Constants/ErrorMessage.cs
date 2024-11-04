@@ -41,4 +41,19 @@ public enum ErrorMessage
     UserIsNotAdmin,
 
     #endregion
+
+    #region Track
+
+    NoTrackFound,
+    NoTrackFoundWithSearch,
+    NoTrackFoundWithGuid,
+
+    #endregion
+
+    #region Subject
+
+    NoSubjectFound,
+    NoSubjectFoundWithGuid
+
+    #endregion
 }

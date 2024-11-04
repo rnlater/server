@@ -9,6 +9,7 @@ using Application.Interfaces;
 using Application.Services;
 using Application.UseCases.JWT;
 using Application.UseCases.Auth;
+using Application.UseCases.Tracks;
 
 namespace Endpoint.Extensions;
 
@@ -40,6 +41,15 @@ public static class AppServiceCollectionExtensions
         services.AddScoped<ConfirmPasswordResettingEmailUseCase>();
         services.AddScoped<LogoutUseCase>();
         services.AddScoped<IAuthService, AuthService>();
+
+        services.AddScoped<CreateDeleteTrackSubjectUseCase>();
+        services.AddScoped<GetDetailedTracksUseCase>();
+        services.AddScoped<GetTracksUseCase>();
+        services.AddScoped<GetTrackByGuidUseCase>();
+        services.AddScoped<CreateTrackUseCase>();
+        services.AddScoped<UpdateTrackUseCase>();
+        services.AddScoped<DeleteTrackUseCase>();
+        services.AddScoped<ITrackService, TrackService>();
 
         return services;
     }
