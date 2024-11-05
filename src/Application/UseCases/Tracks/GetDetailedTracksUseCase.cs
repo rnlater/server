@@ -1,6 +1,8 @@
 using Application.DTOs;
+using Application.DTOs.PivotEntities;
 using AutoMapper;
 using Domain.Base;
+using Domain.Entities.PivotEntities;
 using Domain.Entities.SingleIdEntities;
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -25,21 +27,34 @@ public class GetDetailedTracksUseCase : IUseCase<IEnumerable<TrackDto>, NoParam>
         try
         {
             var trackRepository = _unitOfWork.Repository<Track>();
+            var subjectKnowledgeRepository = _unitOfWork.Repository<SubjectKnowledge>();
 
             IEnumerable<Track> tracks = await trackRepository.FindMany(
-                    new BaseSpecification<Track>()
-                    .AddInclude(query => query
-                        .Include(t => t.TrackSubjects)
-                        .ThenInclude(ts => ts.Subject!)
-                        .ThenInclude(s => s.SubjectKnowledges)
-                        .ThenInclude(sk => sk.Knowledge!)));
+                new BaseSpecification<Track>()
+                .AddInclude(query => query
+                .Include(t => t.TrackSubjects)
+                .ThenInclude(ts => ts.Subject!)));
 
             if (!tracks.Any())
             {
                 return Result<IEnumerable<TrackDto>>.Fail(ErrorMessage.NoTrackFound);
             }
 
-            var trackDtos = tracks.Select(_mapper.Map<TrackDto>);
+            var trackDtos = tracks.Select(_mapper.Map<TrackDto>).ToList();
+
+            foreach (TrackDto? trackDto in trackDtos)
+            {
+                foreach (TrackSubjectDto trackSubject in trackDto.TrackSubjects)
+                {
+                    var knowledgeCount = await subjectKnowledgeRepository.Count(
+                    new BaseSpecification<SubjectKnowledge>(sk => sk.SubjectId == trackSubject.SubjectId));
+
+                    if (trackSubject.Subject != null)
+                    {
+                        trackSubject.Subject.KnowledgeCount = knowledgeCount;
+                    }
+                }
+            }
 
             return Result<IEnumerable<TrackDto>>.Done(trackDtos);
         }
