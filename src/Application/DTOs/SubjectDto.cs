@@ -9,5 +9,5 @@ public class SubjectDto : SingleIdEntityDto
     public required string Photo { get; set; }
     public IEnumerable<TrackSubjectDto> TrackSubjects { get; set; } = [];
     public IEnumerable<SubjectKnowledgeDto> SubjectKnowledges { get; set; } = [];
-    public int KnowledgeCount => SubjectKnowledges.Count();
+    public int KnowledgeCount { get; set; }
 }

@@ -13,7 +13,9 @@ public class MappingProfile : Profile
         CreateMap<User, UserDto>().ReverseMap();
         CreateMap<Authentication, AuthenticationDto>().ReverseMap();
         CreateMap<Track, TrackDto>().ReverseMap();
-        CreateMap<Subject, SubjectDto>().ReverseMap();
+        CreateMap<Subject, SubjectDto>()
+            .ForMember(dest => dest.KnowledgeCount, opt => opt.MapFrom(src => src.SubjectKnowledges.Count()))
+            .ReverseMap();
         CreateMap<Knowledge, KnowledgeDto>().ReverseMap();
         CreateMap<TrackSubject, TrackSubjectDto>().ReverseMap();
         CreateMap<SubjectKnowledge, SubjectKnowledgeDto>().ReverseMap();

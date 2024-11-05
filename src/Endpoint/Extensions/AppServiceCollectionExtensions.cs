@@ -10,6 +10,7 @@ using Application.Services;
 using Application.UseCases.JWT;
 using Application.UseCases.Auth;
 using Application.UseCases.Tracks;
+using Application.UseCases.Subjects;
 
 namespace Endpoint.Extensions;
 
@@ -27,6 +28,8 @@ public static class AppServiceCollectionExtensions
         services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(redisConfiguration));
 
         services.AddScoped<IRedisCache, RedisCache>();
+
+        services.AddScoped<IFileStorageService, FileStorageService>();
 
         services.AddAutoMapper(typeof(MappingProfile));
 
@@ -50,6 +53,14 @@ public static class AppServiceCollectionExtensions
         services.AddScoped<UpdateTrackUseCase>();
         services.AddScoped<DeleteTrackUseCase>();
         services.AddScoped<ITrackService, TrackService>();
+
+        services.AddScoped<CreateDeleteSubjectKnowledgeUseCase>();
+        services.AddScoped<CreateSubjectUseCase>();
+        services.AddScoped<DeleteSubjectUseCase>();
+        services.AddScoped<GetSubjectByGuidUseCase>();
+        services.AddScoped<GetSubjectsUseCase>();
+        services.AddScoped<UpdateSubjectUseCase>();
+        services.AddScoped<ISubjectService, SubjectService>();
 
         return services;
     }

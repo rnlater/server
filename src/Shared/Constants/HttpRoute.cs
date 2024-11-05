@@ -30,4 +30,15 @@ public class HttpRoute
     public const string CreateDeleteTrackSubject = "add-remove-subject";
 
     #endregion
+
+    #region Subject
+
+    public const string GetSubjects = "list";
+    public const string GetSubjectById = "detailed/{id}";
+    public const string CreateSubject = "create";
+    public const string UpdateSubject = "update";
+    public const string DeleteSubject = "delete/{id}";
+    public const string CreateDeleteSubjectKnowledge = "add-remove-knowledge";
+
+    #endregion
 }

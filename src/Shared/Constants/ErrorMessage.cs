@@ -3,6 +3,15 @@ namespace Shared.Constants;
 public enum ErrorMessage
 {
     UnknownError,
+    NoChangeDetected,
+
+    #region File
+
+    StoreFileError,
+    DeleteFileError,
+
+
+    #endregion
 
     #region Authentication
 
@@ -53,7 +62,14 @@ public enum ErrorMessage
     #region Subject
 
     NoSubjectFound,
-    NoSubjectFoundWithGuid
+    NoSubjectFoundWithGuid,
+
+    #endregion
+
+    #region Knowledge
+
+    NoKnowledgesFound,
+    NoKnowledgeFoundWithGuid,
 
     #endregion
 }
