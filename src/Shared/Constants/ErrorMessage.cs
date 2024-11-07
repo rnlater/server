@@ -71,5 +71,10 @@ public enum ErrorMessage
     NoKnowledgesFound,
     NoKnowledgeFoundWithGuid,
 
+    NoKnowledgeTypesFound,
+    NoKnowledgeTypeFoundWithGuid,
+    KnowledgeTypeAlreadyExists,
+    CannotBeParentOfItself,
+
     #endregion
 }

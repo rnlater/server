@@ -11,6 +11,10 @@ using Application.UseCases.JWT;
 using Application.UseCases.Auth;
 using Application.UseCases.Tracks;
 using Application.UseCases.Subjects;
+using Application.UseCases.Knowledges.KnowledgeTypes;
+using Application.Interfaces.Knowledges;
+using Application.UseCases.KnowledgeTypes;
+using Application.Services.Knowledges;
 
 namespace Endpoint.Extensions;
 
@@ -61,6 +65,14 @@ public static class AppServiceCollectionExtensions
         services.AddScoped<GetSubjectsUseCase>();
         services.AddScoped<UpdateSubjectUseCase>();
         services.AddScoped<ISubjectService, SubjectService>();
+
+        services.AddScoped<CreateKnowledgeTypeUseCase>();
+        services.AddScoped<DeleteKnowledgeTypeUseCase>();
+        services.AddScoped<GetKnowledgeTypeByGuidUseCase>();
+        services.AddScoped<GetKnowledgeTypesUseCase>();
+        services.AddScoped<UpdateKnowledgeTypeUseCase>();
+        services.AddScoped<AttachDetachKnowledgesUseCase>();
+        services.AddScoped<IKnowledgeTypeService, KnowledgeTypeService>();
 
         return services;
     }

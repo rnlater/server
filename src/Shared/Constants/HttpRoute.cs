@@ -41,4 +41,15 @@ public class HttpRoute
     public const string CreateDeleteSubjectKnowledge = "add-remove-knowledge";
 
     #endregion
+
+    #region KnowledgeType
+
+    public const string GetKnowledgeTypes = "list";
+    public const string GetKnowledgeTypeByGuid = "detailed/{id}";
+    public const string CreateKnowledgeType = "create";
+    public const string UpdateKnowledgeType = "update";
+    public const string DeleteKnowledgeType = "delete/{id}";
+    public const string AttachDetachKnowledges = "attach-detach-knowledges";
+
+    #endregion
 }
