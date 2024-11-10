@@ -1,16 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
-using Application.DTOs;
-using Application.UseCases.KnowledgeTypes;
 using AutoMapper;
 using Domain.Entities.SingleIdEntities;
 using Domain.Interfaces;
 using Moq;
 using Shared.Constants;
-using Shared.Types;
 using Application.UseCases.Knowledges.KnowledgeTypes;
 using Application.Mappings;
 using Domain.Base;

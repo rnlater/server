@@ -76,5 +76,9 @@ public enum ErrorMessage
     KnowledgeTypeAlreadyExists,
     CannotBeParentOfItself,
 
+    NoKnowledgeTopicFoundWithGuid,
+    NoKnowledgeTopicsFound,
+    KnowledgeTopicAlreadyExists,
+
     #endregion
 }

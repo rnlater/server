@@ -1,4 +1,3 @@
-using Application.DTOs;
 using Application.Mappings;
 using Application.UseCases.Subjects;
 using AutoMapper;
@@ -9,11 +8,7 @@ using Infrastructure.Data;
 using Microsoft.AspNetCore.Http;
 using Moq;
 using Shared.Constants;
-using Shared.Types;
-using System;
 using System.Security.Claims;
-using System.Threading.Tasks;
-using Xunit;
 
 namespace UnitTests.Subjects
 {

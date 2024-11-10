@@ -1,9 +1,7 @@
 using Application.Interfaces;
 using Application.UseCases.Tracks;
 using AutoMapper;
-using Domain.Enums;
 using Endpoint.ApiRequests.Tracks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Constants;
 

@@ -3,9 +3,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Shared.Constants;
 using Shared.Types;
-using System;
-using System.IO;
-using System.Threading.Tasks;
 
 namespace Application.Services
 {

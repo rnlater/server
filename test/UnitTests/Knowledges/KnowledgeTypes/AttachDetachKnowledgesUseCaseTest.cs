@@ -1,4 +1,4 @@
-using Application.UseCases.KnowledgeTypes;
+using Application.UseCases.Knowledges.KnowledgeTypes;
 using Domain.Base;
 using Domain.Entities.PivotEntities;
 using Domain.Entities.SingleIdEntities;
@@ -6,11 +6,6 @@ using Domain.Interfaces;
 using Infrastructure.Data;
 using Moq;
 using Shared.Constants;
-using Shared.Types;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Xunit;
 
 namespace UnitTests.Knowledges.KnowledgeTypes
 {

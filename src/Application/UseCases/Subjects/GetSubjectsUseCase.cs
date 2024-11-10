@@ -1,6 +1,4 @@
-using System;
 using Application.DTOs;
-using Application.Interfaces;
 using AutoMapper;
 using Domain.Base;
 using Domain.Entities.SingleIdEntities;

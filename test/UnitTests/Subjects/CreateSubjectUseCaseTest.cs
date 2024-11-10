@@ -1,10 +1,8 @@
-using Application.DTOs;
 using Application.Interfaces;
 using Application.Mappings;
 using Application.UseCases.Subjects;
 using AutoMapper;
 using Domain.Base;
-using Domain.Entities.PivotEntities;
 using Domain.Entities.SingleIdEntities;
 using Domain.Interfaces;
 using Infrastructure.Data;
@@ -12,10 +10,6 @@ using Microsoft.AspNetCore.Http;
 using Moq;
 using Shared.Constants;
 using Shared.Types;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Xunit;
 
 namespace UnitTests.Subjects
 {

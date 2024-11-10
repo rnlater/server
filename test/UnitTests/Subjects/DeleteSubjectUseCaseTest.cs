@@ -1,7 +1,3 @@
-using System;
-using System.Threading.Tasks;
-using Xunit;
-using Application.DTOs;
 using Application.UseCases.Subjects;
 using AutoMapper;
 using Domain.Entities.SingleIdEntities;

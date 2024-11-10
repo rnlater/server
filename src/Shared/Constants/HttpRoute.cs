@@ -52,4 +52,14 @@ public class HttpRoute
     public const string AttachDetachKnowledges = "attach-detach-knowledges";
 
     #endregion
+
+    #region KnowledgeTopic
+
+    public const string GetKnowledgeTopics = "list";
+    public const string GetKnowledgeTopicByGuid = "detailed/{id}";
+    public const string CreateKnowledgeTopic = "create";
+    public const string UpdateKnowledgeTopic = "update";
+    public const string DeleteKnowledgeTopic = "delete/{id}";
+
+    #endregion
 }

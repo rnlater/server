@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Application.UseCases.KnowledgeTypes;
 using AutoMapper;
 using Application.Interfaces.Knowledges;
 using Application.UseCases.Knowledges.KnowledgeTypes;

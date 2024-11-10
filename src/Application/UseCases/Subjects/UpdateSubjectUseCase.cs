@@ -1,5 +1,3 @@
-using System;
-using System.Threading.Tasks;
 using Application.DTOs;
 using Application.Interfaces;
 using AutoMapper;

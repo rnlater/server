@@ -13,8 +13,8 @@ using Application.UseCases.Tracks;
 using Application.UseCases.Subjects;
 using Application.UseCases.Knowledges.KnowledgeTypes;
 using Application.Interfaces.Knowledges;
-using Application.UseCases.KnowledgeTypes;
 using Application.Services.Knowledges;
+using Application.UseCases.Knowledges.KnowledgeTopics;
 
 namespace Endpoint.Extensions;
 
@@ -71,8 +71,16 @@ public static class AppServiceCollectionExtensions
         services.AddScoped<GetKnowledgeTypeByGuidUseCase>();
         services.AddScoped<GetKnowledgeTypesUseCase>();
         services.AddScoped<UpdateKnowledgeTypeUseCase>();
-        services.AddScoped<AttachDetachKnowledgesUseCase>();
+        services.AddScoped<Application.UseCases.Knowledges.KnowledgeTypes.AttachDetachKnowledgesUseCase>();
         services.AddScoped<IKnowledgeTypeService, KnowledgeTypeService>();
+
+        services.AddScoped<CreateKnowledgeTopicUseCase>();
+        services.AddScoped<DeleteKnowledgeTopicUseCase>();
+        services.AddScoped<GetKnowledgeTopicByGuidUseCase>();
+        services.AddScoped<GetKnowledgeTopicsUseCase>();
+        services.AddScoped<UpdateKnowledgeTopicUseCase>();
+        services.AddScoped<Application.UseCases.Knowledges.KnowledgeTopics.AttachDetachKnowledgesUseCase>();
+        services.AddScoped<IKnowledgeTopicService, KnowledgeTopicService>();
 
         return services;
     }

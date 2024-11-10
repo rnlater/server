@@ -6,10 +6,6 @@ using Domain.Interfaces;
 using Infrastructure.Data;
 using Moq;
 using Shared.Constants;
-using Shared.Types;
-using System;
-using System.Threading.Tasks;
-using Xunit;
 
 namespace UnitTests.Subjects
 {

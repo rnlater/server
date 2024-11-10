@@ -1,7 +1,5 @@
 using Application.DTOs;
 using Application.UseCases.Knowledges.KnowledgeTypes;
-using Application.UseCases.KnowledgeTypes;
-using Domain.Interfaces;
 using Shared.Types;
 
 namespace Application.Interfaces.Knowledges

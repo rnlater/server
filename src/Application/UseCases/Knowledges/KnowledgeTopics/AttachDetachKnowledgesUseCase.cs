@@ -5,11 +5,11 @@ using Domain.Interfaces;
 using Shared.Constants;
 using Shared.Types;
 
-namespace Application.UseCases.Knowledges.KnowledgeTypes
+namespace Application.UseCases.Knowledges.KnowledgeTopics
 {
     public class AttachDetachKnowledgesParams
     {
-        public Guid KnowledgeTypeId { get; set; }
+        public Guid KnowledgeTopicId { get; set; }
         public List<Guid> KnowledgeIds { get; set; } = new List<Guid>();
     }
 
@@ -26,14 +26,14 @@ namespace Application.UseCases.Knowledges.KnowledgeTypes
         {
             try
             {
-                var knowledgeTypeRepository = _unitOfWork.Repository<KnowledgeType>();
+                var knowledgeTopicRepository = _unitOfWork.Repository<KnowledgeTopic>();
                 var knowledgeRepository = _unitOfWork.Repository<Knowledge>();
-                var knowledgeTypeKnowledgeRepository = _unitOfWork.Repository<KnowledgeTypeKnowledge>();
+                var knowledgeTopicKnowledgeRepository = _unitOfWork.Repository<KnowledgeTopicKnowledge>();
 
-                var knowledgeType = await knowledgeTypeRepository.Find(new BaseSpecification<KnowledgeType>(kt => kt.Id == parameters.KnowledgeTypeId));
-                if (knowledgeType == null)
+                var knowledgeTopic = await knowledgeTopicRepository.Find(new BaseSpecification<KnowledgeTopic>(kt => kt.Id == parameters.KnowledgeTopicId));
+                if (knowledgeTopic == null)
                 {
-                    return Result<bool>.Fail(ErrorMessage.NoKnowledgeTypeFoundWithGuid);
+                    return Result<bool>.Fail(ErrorMessage.NoKnowledgeTopicFoundWithGuid);
                 }
 
                 foreach (var knowledgeId in parameters.KnowledgeIds)
@@ -44,21 +44,21 @@ namespace Application.UseCases.Knowledges.KnowledgeTypes
                         return Result<bool>.Fail(ErrorMessage.NoKnowledgeFoundWithGuid);
                     }
 
-                    var knowledgeTypeKnowledge = await knowledgeTypeKnowledgeRepository.Find(
-                        new BaseSpecification<KnowledgeTypeKnowledge>(ktk =>
-                            ktk.KnowledgeTypeId == parameters.KnowledgeTypeId && ktk.KnowledgeId == knowledgeId));
+                    var knowledgeTopicKnowledge = await knowledgeTopicKnowledgeRepository.Find(
+                        new BaseSpecification<KnowledgeTopicKnowledge>(ktk =>
+                            ktk.KnowledgeTopicId == parameters.KnowledgeTopicId && ktk.KnowledgeId == knowledgeId));
 
-                    if (knowledgeTypeKnowledge == null)
+                    if (knowledgeTopicKnowledge == null)
                     {
-                        await knowledgeTypeKnowledgeRepository.Add(new KnowledgeTypeKnowledge
+                        await knowledgeTopicKnowledgeRepository.Add(new KnowledgeTopicKnowledge
                         {
-                            KnowledgeTypeId = parameters.KnowledgeTypeId,
+                            KnowledgeTopicId = parameters.KnowledgeTopicId,
                             KnowledgeId = knowledgeId
                         });
                     }
                     else
                     {
-                        await knowledgeTypeKnowledgeRepository.Delete(knowledgeTypeKnowledge);
+                        await knowledgeTopicKnowledgeRepository.Delete(knowledgeTopicKnowledge);
                     }
                 }
 
@@ -67,7 +67,7 @@ namespace Application.UseCases.Knowledges.KnowledgeTypes
             catch (Exception)
             {
                 await _unitOfWork.RollBackChangesAsync();
-                throw;
+                return Result<bool>.Fail(ErrorMessage.UnknownError);
             }
 
         }

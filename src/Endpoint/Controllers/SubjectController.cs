@@ -2,14 +2,9 @@ using
  Application.Interfaces;
 using Application.UseCases.Subjects;
 using AutoMapper;
-using Domain.Enums;
 using Endpoint.ApiRequests.Subjects;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Constants;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Endpoint.Controllers
 {

@@ -22,5 +22,7 @@ public class MappingProfile : Profile
         CreateMap<Knowledge, KnowledgeDto>().ReverseMap();
         CreateMap<KnowledgeType, KnowledgeTypeDto>().ReverseMap();
         CreateMap<KnowledgeTypeKnowledge, KnowledgeTypeKnowledgeDto>().ReverseMap();
+        CreateMap<KnowledgeTopic, KnowledgeTopicDto>().ReverseMap();
+        CreateMap<KnowledgeTopicKnowledge, KnowledgeTopicKnowledgeDto>().ReverseMap();
     }
 }

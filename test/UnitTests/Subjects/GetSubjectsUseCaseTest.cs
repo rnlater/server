@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Application.DTOs;
 using Application.Mappings;
 using Application.UseCases.Subjects;
 using AutoMapper;
@@ -12,8 +7,6 @@ using Domain.Interfaces;
 using Infrastructure.Data;
 using Moq;
 using Shared.Constants;
-using Shared.Types;
-using Xunit;
 
 namespace UnitTests.Subjects
 {
