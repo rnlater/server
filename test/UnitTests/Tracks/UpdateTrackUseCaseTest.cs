@@ -32,7 +32,7 @@ namespace UnitTests.Tracks
         public async Task Execute_ShouldReturnFail_WhenTrackNotFound()
         {
             var parameters = new UpdateTrackParams { Id = Guid.NewGuid(), Name = "Updated Track", Description = "Updated Description" };
-            _trackRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Track>>())).ReturnsAsync((Track)null);
+            _trackRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Track>>())).ReturnsAsync((Track?)null);
 
             var result = await _updateTrackUseCase.Execute(parameters);
 

@@ -34,15 +34,12 @@ namespace UnitTests.Knowledges.KnowledgeTopics
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenKnowledgeTopicNotFound()
         {
-            // Arrange
-            var parameters = new AttachDetachKnowledgesParams { KnowledgeTopicId = Guid.NewGuid(), KnowledgeIds = new List<Guid> { Guid.NewGuid() } };
+            var parameters = new AttachDetachKnowledgesParams { KnowledgeTopicId = Guid.NewGuid(), KnowledgeIds = [Guid.NewGuid()] };
 
             _knowledgeTopicRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync((KnowledgeTopic?)null);
 
-            // Act
             var result = await _attachDetachKnowledgesUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeTopicFoundWithGuid, result.Error);
         }
@@ -50,17 +47,14 @@ namespace UnitTests.Knowledges.KnowledgeTopics
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenKnowledgeNotFound()
         {
-            // Arrange
             var knowledgeTopic = SeedData.GetKnowledgeTopics()[0];
-            var parameters = new AttachDetachKnowledgesParams { KnowledgeTopicId = knowledgeTopic.Id, KnowledgeIds = new List<Guid> { Guid.NewGuid() } };
+            var parameters = new AttachDetachKnowledgesParams { KnowledgeTopicId = knowledgeTopic.Id, KnowledgeIds = [Guid.NewGuid()] };
 
             _knowledgeTopicRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync(knowledgeTopic);
             _knowledgeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync((Knowledge?)null);
 
-            // Act
             var result = await _attachDetachKnowledgesUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeFoundWithGuid, result.Error);
         }
@@ -68,19 +62,16 @@ namespace UnitTests.Knowledges.KnowledgeTopics
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgeTopicKnowledgesAreAttached()
         {
-            // Arrange
             var knowledgeTopic = SeedData.GetKnowledgeTopics()[0];
             var knowledge = SeedData.GetKnowledges()[0];
-            var parameters = new AttachDetachKnowledgesParams { KnowledgeTopicId = knowledgeTopic.Id, KnowledgeIds = new List<Guid> { knowledge.Id } };
+            var parameters = new AttachDetachKnowledgesParams { KnowledgeTopicId = knowledgeTopic.Id, KnowledgeIds = [knowledge.Id] };
 
             _knowledgeTopicRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync(knowledgeTopic);
             _knowledgeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledge);
             _knowledgeTopicKnowledgeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeTopicKnowledge>>())).ReturnsAsync((KnowledgeTopicKnowledge?)null);
 
-            // Act
             var result = await _attachDetachKnowledgesUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.True(result.Value);
             _knowledgeTopicKnowledgeRepositoryMock.Verify(r => r.Add(It.IsAny<KnowledgeTopicKnowledge>()), Times.Once);
@@ -89,20 +80,17 @@ namespace UnitTests.Knowledges.KnowledgeTopics
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgeTopicKnowledgesAreDetached()
         {
-            // Arrange
             var knowledgeTopic = SeedData.GetKnowledgeTopics()[0];
             var knowledge = SeedData.GetKnowledges()[0];
             var knowledgeTopicKnowledge = new KnowledgeTopicKnowledge { KnowledgeTopicId = knowledgeTopic.Id, KnowledgeId = knowledge.Id };
-            var parameters = new AttachDetachKnowledgesParams { KnowledgeTopicId = knowledgeTopic.Id, KnowledgeIds = new List<Guid> { knowledge.Id } };
+            var parameters = new AttachDetachKnowledgesParams { KnowledgeTopicId = knowledgeTopic.Id, KnowledgeIds = [knowledge.Id] };
 
             _knowledgeTopicRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync(knowledgeTopic);
             _knowledgeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledge);
             _knowledgeTopicKnowledgeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeTopicKnowledge>>())).ReturnsAsync(knowledgeTopicKnowledge);
 
-            // Act
             var result = await _attachDetachKnowledgesUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.True(result.Value);
             _knowledgeTopicKnowledgeRepositoryMock.Verify(r => r.Delete(It.IsAny<KnowledgeTopicKnowledge>()), Times.Once);

@@ -41,7 +41,7 @@ namespace UnitTests.Tracks
             {
                 Name = "New Track",
                 Description = "Description",
-                SubjectGuids = new List<Guid> { Guid.NewGuid() }
+                SubjectGuids = [Guid.NewGuid()]
             };
 
             _subjectRepositoryMock.Setup(r => r.GetById(It.IsAny<Guid>())).ReturnsAsync((Subject?)null);
@@ -59,7 +59,7 @@ namespace UnitTests.Tracks
             {
                 Name = "New Track",
                 Description = "Description",
-                SubjectGuids = new List<Guid> { SeedData.Subject1Id, SeedData.Subject2Id }
+                SubjectGuids = [SeedData.Subject1Id, SeedData.Subject2Id]
             };
 
             var track = new Track { Id = Guid.NewGuid(), Name = parameters.Name, Description = parameters.Description };
@@ -87,7 +87,7 @@ namespace UnitTests.Tracks
             {
                 Name = "New Track",
                 Description = "Description",
-                SubjectGuids = new List<Guid> { SeedData.Subject1Id, SeedData.Subject2Id }
+                SubjectGuids = [SeedData.Subject1Id, SeedData.Subject2Id]
             };
 
             var track = new Track { Id = Guid.NewGuid(), Name = parameters.Name, Description = parameters.Description };

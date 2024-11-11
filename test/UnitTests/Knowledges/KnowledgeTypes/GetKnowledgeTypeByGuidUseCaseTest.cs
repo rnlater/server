@@ -31,15 +31,12 @@ namespace UnitTests.Knowledges.KnowledgeTypes
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenKnowledgeTypeNotFound()
         {
-            // Arrange
             var knowledgeTypeId = Guid.NewGuid();
 
             _knowledgeTypeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeType>>())).ReturnsAsync((KnowledgeType?)null);
 
-            // Act
             var result = await _getKnowledgeTypeByGuidUseCase.Execute(knowledgeTypeId);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeTypeFoundWithGuid, result.Error);
         }
@@ -47,15 +44,12 @@ namespace UnitTests.Knowledges.KnowledgeTypes
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgeTypeIsFound()
         {
-            // Arrange
             var knowledgeType = SeedData.GetKnowledgeTypes()[0];
 
             _knowledgeTypeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeType>>())).ReturnsAsync(knowledgeType);
 
-            // Act
             var result = await _getKnowledgeTypeByGuidUseCase.Execute(knowledgeType.Id);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Equal(knowledgeType.Id, result.Value.Id);

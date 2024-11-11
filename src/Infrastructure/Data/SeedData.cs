@@ -78,7 +78,7 @@ public static class SeedData
         {
             Id = Knowledge2Id,
             Title = "Introduction to Physics",
-            Level = KnowledgeLevel.Beginner,
+            Level = KnowledgeLevel.Expert,
             Visibility = KnowledgeVisibility.Public,
             CreatorId = UserId
         }

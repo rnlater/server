@@ -66,7 +66,7 @@ public class GenerateTokenPairUseCaseTest
     {
         var userDto = new UserDto { Id = Guid.NewGuid(), UserName = "test_user", Email = "test_user@example.com" };
         _tokenRepositoryMock.Setup(tr => tr.Find(It.IsAny<BaseSpecification<Authentication>>()))
-            .ReturnsAsync((Authentication)null);
+            .ReturnsAsync((Authentication?)null);
 
         var result = await _generateTokenPairUseCase.Execute(userDto);
 

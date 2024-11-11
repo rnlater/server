@@ -37,22 +37,19 @@ namespace UnitTests.Knowledges.KnowledgeTypes
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenKnowledgeTypeAlreadyExists()
         {
-            // Arrange
             var parameters = new CreateKnowledgeTypeParams
             {
                 Name = "Existing KnowledgeType",
                 ParentId = null,
-                KnowledgeIds = new List<Guid> { Guid.NewGuid() }
+                KnowledgeIds = [Guid.NewGuid()]
             };
 
             var existingKnowledgeType = new KnowledgeType { Id = Guid.NewGuid(), Name = parameters.Name };
 
             _knowledgeTypeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeType>>())).ReturnsAsync(existingKnowledgeType);
 
-            // Act
             var result = await _createKnowledgeTypeUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.KnowledgeTypeAlreadyExists, result.Error);
         }
@@ -60,12 +57,11 @@ namespace UnitTests.Knowledges.KnowledgeTypes
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgeTypeIsCreated()
         {
-            // Arrange
             var parameters = new CreateKnowledgeTypeParams
             {
                 Name = "New KnowledgeType",
                 ParentId = null,
-                KnowledgeIds = new List<Guid> { Guid.NewGuid() }
+                KnowledgeIds = [Guid.NewGuid()]
             };
 
             var newKnowledgeType = new KnowledgeType { Id = Guid.NewGuid(), Name = parameters.Name };
@@ -76,10 +72,8 @@ namespace UnitTests.Knowledges.KnowledgeTypes
             _knowledgeRepositoryMock.Setup(r => r.GetById(It.IsAny<Guid>())).ReturnsAsync(new Knowledge { Id = parameters.KnowledgeIds[0], Title = "Knowledge" });
             _knowledgeTypeKnowledgeRepositoryMock.Setup(r => r.Add(It.IsAny<KnowledgeTypeKnowledge>())).ReturnsAsync(new KnowledgeTypeKnowledge());
 
-            // Act
             var result = await _createKnowledgeTypeUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Equal(parameters.Name, result.Value.Name);
@@ -88,21 +82,18 @@ namespace UnitTests.Knowledges.KnowledgeTypes
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenParentKnowledgeTypeNotFoundWithGuid()
         {
-            // Arrange
             var ParentId = Guid.NewGuid();
             var parameters = new CreateKnowledgeTypeParams
             {
                 Name = "New KnowledgeType",
                 ParentId = ParentId,
-                KnowledgeIds = new List<Guid> { Guid.NewGuid() }
+                KnowledgeIds = [Guid.NewGuid()]
             };
 
             _knowledgeTypeRepositoryMock.Setup(r => r.GetById(ParentId)).ReturnsAsync((KnowledgeType?)null);
 
-            // Act
             var result = await _createKnowledgeTypeUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeTypeFoundWithGuid, result.Error);
         }
@@ -110,20 +101,17 @@ namespace UnitTests.Knowledges.KnowledgeTypes
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenNoKnowledgeFoundWithGuid()
         {
-            // Arrange
             var parameters = new CreateKnowledgeTypeParams
             {
                 Name = "New KnowledgeType",
                 ParentId = null,
-                KnowledgeIds = new List<Guid> { Guid.NewGuid() }
+                KnowledgeIds = [Guid.NewGuid()]
             };
 
             _knowledgeRepositoryMock.Setup(r => r.GetById(parameters.KnowledgeIds[0])).ReturnsAsync((Knowledge?)null);
 
-            // Act
             var result = await _createKnowledgeTypeUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeFoundWithGuid, result.Error);
         }

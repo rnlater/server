@@ -31,7 +31,6 @@ namespace UnitTests.Knowledges.KnowledgeTopics
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenKnowledgeTopicNotFound()
         {
-            // Arrange
             var parameters = new UpdateKnowledgeTopicParams
             {
                 Id = Guid.NewGuid(),
@@ -40,10 +39,8 @@ namespace UnitTests.Knowledges.KnowledgeTopics
 
             _knowledgeTopicRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync((KnowledgeTopic?)null);
 
-            // Act
             var result = await _updateKnowledgeTopicUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeTopicFoundWithGuid, result.Error);
         }
@@ -51,7 +48,6 @@ namespace UnitTests.Knowledges.KnowledgeTopics
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenParentCannotBeItself()
         {
-            // Arrange
             var knowledgeTopic = SeedData.GetKnowledgeTopics()[0];
             var parameters = new UpdateKnowledgeTopicParams
             {
@@ -62,10 +58,8 @@ namespace UnitTests.Knowledges.KnowledgeTopics
 
             _knowledgeTopicRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync(knowledgeTopic);
 
-            // Act
             var result = await _updateKnowledgeTopicUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.CannotBeParentOfItself, result.Error);
         }
@@ -73,7 +67,6 @@ namespace UnitTests.Knowledges.KnowledgeTopics
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenParentNotFound()
         {
-            // Arrange
             var knowledgeTopic = SeedData.GetKnowledgeTopics()[0];
             var parameters = new UpdateKnowledgeTopicParams
             {
@@ -85,10 +78,8 @@ namespace UnitTests.Knowledges.KnowledgeTopics
             _knowledgeTopicRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync(knowledgeTopic);
             _knowledgeTopicRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync((KnowledgeTopic?)null);
 
-            // Act
             var result = await _updateKnowledgeTopicUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeTopicFoundWithGuid, result.Error);
         }
@@ -97,7 +88,6 @@ namespace UnitTests.Knowledges.KnowledgeTopics
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgeTopicIsUpdated()
         {
-            // Arrange
             var knowledgeTopic = SeedData.GetKnowledgeTopics()[0];
             var parameters = new UpdateKnowledgeTopicParams
             {
@@ -108,10 +98,8 @@ namespace UnitTests.Knowledges.KnowledgeTopics
             _knowledgeTopicRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync(knowledgeTopic);
             _knowledgeTopicRepositoryMock.Setup(r => r.Update(It.IsAny<KnowledgeTopic>())).ReturnsAsync(knowledgeTopic);
 
-            // Act
             var result = await _updateKnowledgeTopicUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Equal(parameters.Title, result.Value.Title);

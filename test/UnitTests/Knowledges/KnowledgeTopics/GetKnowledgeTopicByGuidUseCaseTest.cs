@@ -31,15 +31,12 @@ namespace UnitTests.Knowledges.KnowledgeTopics
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenKnowledgeTopicNotFound()
         {
-            // Arrange
             var knowledgeTopicId = Guid.NewGuid();
 
             _knowledgeTopicRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync((KnowledgeTopic?)null);
 
-            // Act
             var result = await _getKnowledgeTopicByGuidUseCase.Execute(knowledgeTopicId);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeTopicFoundWithGuid, result.Error);
         }
@@ -47,15 +44,12 @@ namespace UnitTests.Knowledges.KnowledgeTopics
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgeTopicIsFound()
         {
-            // Arrange
             var knowledgeTopic = SeedData.GetKnowledgeTopics()[0];
 
             _knowledgeTopicRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync(knowledgeTopic);
 
-            // Act
             var result = await _getKnowledgeTopicByGuidUseCase.Execute(knowledgeTopic.Id);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Equal(knowledgeTopic.Id, result.Value.Id);

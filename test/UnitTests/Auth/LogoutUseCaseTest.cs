@@ -44,7 +44,7 @@ namespace UnitTests.Auth
             };
             var claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(new Claim[] { new Claim(ClaimTypes.NameIdentifier, userId) }));
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext.User).Returns(claimsPrincipal);
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User).Returns(claimsPrincipal);
             var userAuthenticationRepositoryMock = new Mock<IRepository<Authentication>>();
             userAuthenticationRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Authentication>>())).ReturnsAsync(authentication);
             _unitOfWorkMock.Setup(u => u.Repository<Authentication>()).Returns(userAuthenticationRepositoryMock.Object);
@@ -64,7 +64,7 @@ namespace UnitTests.Auth
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenUserIdIsNull()
         {
-            _httpContextAccessorMock.Setup(h => h.HttpContext.User).Returns(new ClaimsPrincipal());
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User).Returns(new ClaimsPrincipal());
 
             var result = await _logoutUseCase.Execute(new NoParam());
 
@@ -78,9 +78,9 @@ namespace UnitTests.Auth
             var userId = Guid.NewGuid().ToString();
             var claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(new Claim[] { new Claim(ClaimTypes.NameIdentifier, userId) }));
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext.User).Returns(claimsPrincipal);
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User).Returns(claimsPrincipal);
             var userAuthenticationRepositoryMock = new Mock<IRepository<Authentication>>();
-            _ = userAuthenticationRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Authentication>>())).ReturnsAsync((Authentication)null);
+            _ = userAuthenticationRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Authentication>>())).ReturnsAsync((Authentication?)null);
             _unitOfWorkMock.Setup(u => u.Repository<Authentication>()).Returns(userAuthenticationRepositoryMock.Object);
 
             var result = await _logoutUseCase.Execute(new NoParam());
@@ -106,7 +106,7 @@ namespace UnitTests.Auth
             };
             var claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(new Claim[] { new Claim(ClaimTypes.NameIdentifier, userId) }));
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext.User).Returns(claimsPrincipal);
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User).Returns(claimsPrincipal);
             var userAuthenticationRepositoryMock = new Mock<IRepository<Authentication>>();
             userAuthenticationRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Authentication>>())).ReturnsAsync(authentication);
             _unitOfWorkMock.Setup(u => u.Repository<Authentication>()).Returns(userAuthenticationRepositoryMock.Object);
@@ -123,7 +123,7 @@ namespace UnitTests.Auth
             var userId = Guid.NewGuid().ToString();
             var claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(new Claim[] { new Claim(ClaimTypes.NameIdentifier, userId) }));
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext.User).Returns(claimsPrincipal);
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User).Returns(claimsPrincipal);
             var userAuthenticationRepositoryMock = new Mock<IRepository<Authentication>>();
             userAuthenticationRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Authentication>>())).ThrowsAsync(new Exception());
             _unitOfWorkMock.Setup(u => u.Repository<Authentication>()).Returns(userAuthenticationRepositoryMock.Object);

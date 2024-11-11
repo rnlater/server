@@ -10,7 +10,7 @@ namespace Application.UseCases.Knowledges.KnowledgeTopics
     public class AttachDetachKnowledgesParams
     {
         public Guid KnowledgeTopicId { get; set; }
-        public List<Guid> KnowledgeIds { get; set; } = new List<Guid>();
+        public List<Guid> KnowledgeIds { get; set; } = [];
     }
 
     public class AttachDetachKnowledgesUseCase : IUseCase<bool, AttachDetachKnowledgesParams>

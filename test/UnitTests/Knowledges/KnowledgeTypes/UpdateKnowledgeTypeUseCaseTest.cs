@@ -31,7 +31,6 @@ namespace UnitTests.Knowledges.KnowledgeTypes
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenKnowledgeTypeNotFound()
         {
-            // Arrange
             var parameters = new UpdateKnowledgeTypeParams
             {
                 Id = Guid.NewGuid(),
@@ -40,10 +39,8 @@ namespace UnitTests.Knowledges.KnowledgeTypes
 
             _knowledgeTypeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeType>>())).ReturnsAsync((KnowledgeType?)null);
 
-            // Act
             var result = await _updateKnowledgeTypeUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeTypeFoundWithGuid, result.Error);
         }
@@ -51,7 +48,6 @@ namespace UnitTests.Knowledges.KnowledgeTypes
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenParentCannotBeItself()
         {
-            // Arrange
             var knowledgeType = SeedData.GetKnowledgeTypes()[0];
             var parameters = new UpdateKnowledgeTypeParams
             {
@@ -62,10 +58,8 @@ namespace UnitTests.Knowledges.KnowledgeTypes
 
             _knowledgeTypeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeType>>())).ReturnsAsync(knowledgeType);
 
-            // Act
             var result = await _updateKnowledgeTypeUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.CannotBeParentOfItself, result.Error);
         }
@@ -73,7 +67,6 @@ namespace UnitTests.Knowledges.KnowledgeTypes
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenParentNotFound()
         {
-            // Arrange
             var knowledgeType = SeedData.GetKnowledgeTypes()[0];
             var parameters = new UpdateKnowledgeTypeParams
             {
@@ -85,10 +78,8 @@ namespace UnitTests.Knowledges.KnowledgeTypes
             _knowledgeTypeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeType>>())).ReturnsAsync(knowledgeType);
             _knowledgeTypeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeType>>())).ReturnsAsync((KnowledgeType?)null);
 
-            // Act
             var result = await _updateKnowledgeTypeUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeTypeFoundWithGuid, result.Error);
         }
@@ -97,7 +88,6 @@ namespace UnitTests.Knowledges.KnowledgeTypes
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgeTypeIsUpdated()
         {
-            // Arrange
             var knowledgeType = SeedData.GetKnowledgeTypes()[0];
             var parameters = new UpdateKnowledgeTypeParams
             {
@@ -108,10 +98,8 @@ namespace UnitTests.Knowledges.KnowledgeTypes
             _knowledgeTypeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeType>>())).ReturnsAsync(knowledgeType);
             _knowledgeTypeRepositoryMock.Setup(r => r.Update(It.IsAny<KnowledgeType>())).ReturnsAsync(knowledgeType);
 
-            // Act
             var result = await _updateKnowledgeTypeUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Equal(parameters.Name, result.Value.Name);

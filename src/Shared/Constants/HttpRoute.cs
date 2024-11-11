@@ -42,6 +42,14 @@ public class HttpRoute
 
     #endregion
 
+    #region Knowledge
+
+
+    public const string SearchKnowledges = "search";
+    public const string GetDetailedKnowledgeByGuid = "detailed/{id}";
+
+    #endregion
+
     #region KnowledgeType
 
     public const string GetKnowledgeTypes = "list";

@@ -59,7 +59,7 @@ namespace UnitTests.Auth
             var email = "test@example.com";
 
             var userRepositoryMock = new Mock<IRepository<User>>();
-            userRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<User>>())).ReturnsAsync((User)null);
+            userRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<User>>())).ReturnsAsync((User?)null);
             _unitOfWorkMock.Setup(u => u.Repository<User>()).Returns(userRepositoryMock.Object);
 
             var result = await _forgotPasswordUseCase.Execute(new ForgotPasswordParams { Email = email });

@@ -73,7 +73,7 @@ namespace UnitTests.Auth
             };
 
             var userRepositoryMock = new Mock<IRepository<User>>();
-            userRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<User>>())).ReturnsAsync((User)null);
+            userRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<User>>())).ReturnsAsync((User?)null);
             _unitOfWorkMock.Setup(u => u.Repository<User>()).Returns(userRepositoryMock.Object);
 
             var result = await _confirmPasswordResettingEmailUseCase.Execute(parameters);

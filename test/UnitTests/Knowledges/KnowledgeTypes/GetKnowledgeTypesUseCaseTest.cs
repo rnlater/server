@@ -31,13 +31,10 @@ namespace UnitTests.Knowledges.KnowledgeTypes
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenNoKnowledgeTypesFound()
         {
-            // Arrange
             _knowledgeTypeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<KnowledgeType>>())).ReturnsAsync(Enumerable.Empty<KnowledgeType>());
 
-            // Act
             var result = await _getKnowledgeTypesUseCase.Execute(NoParam.Value);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeTypesFound, result.Error);
         }
@@ -45,15 +42,12 @@ namespace UnitTests.Knowledges.KnowledgeTypes
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgeTypesAreFound()
         {
-            // Arrange
             var knowledgeTypes = SeedData.GetKnowledgeTypes();
 
             _knowledgeTypeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<KnowledgeType>>())).ReturnsAsync(knowledgeTypes);
 
-            // Act
             var result = await _getKnowledgeTypesUseCase.Execute(NoParam.Value);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotEmpty(result.Value);
             Assert.Equal(knowledgeTypes.Length, result.Value.Count());

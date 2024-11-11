@@ -21,7 +21,7 @@ namespace Endpoint.SignalRHub
             {
                 return userRooms;
             }
-            return new List<int>();
+            return [];
         }
 
         public IList<int> GetUsersByRoomId(int roomId)
@@ -30,12 +30,12 @@ namespace Endpoint.SignalRHub
             {
                 return roomUsers;
             }
-            return new List<int>();
+            return [];
         }
 
         public void AddUserToRoom(int userId, int roomId)
         {
-            UserToRooms.AddOrUpdate(userId, new List<int> { roomId }, (key, list) =>
+            UserToRooms.AddOrUpdate(userId, [roomId], (key, list) =>
             {
                 if (!list.Contains(roomId))
                 {
@@ -44,7 +44,7 @@ namespace Endpoint.SignalRHub
                 return list;
             });
 
-            RoomToUsers.AddOrUpdate(roomId, new List<int> { userId }, (key, list) =>
+            RoomToUsers.AddOrUpdate(roomId, [userId], (key, list) =>
             {
                 if (!list.Contains(userId))
                 {

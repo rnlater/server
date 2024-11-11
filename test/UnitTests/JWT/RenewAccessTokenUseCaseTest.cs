@@ -63,7 +63,7 @@ namespace UnitTests.JWT
 
             _mapperMock
                 .Setup(m => m.Map<UserDto>(user))
-                .Returns(new UserDto { Id = user.Id, UserName = user.UserName, Email = user.Email, Role = user.Role });
+                .Returns(new UserDto { Id = user.Id, UserName = user.UserName, Email = user.Email, Role = user.Role.ToString() });
 
             var result = await _renewAccessTokenUseCase.Execute(refreshToken);
 
@@ -80,7 +80,7 @@ namespace UnitTests.JWT
 
             _unitOfWorkMock
                 .Setup(uow => uow.Repository<Authentication>().Find(It.IsAny<BaseSpecification<Authentication>>()))
-                .ReturnsAsync((Authentication)null);
+                .ReturnsAsync((Authentication?)null);
 
             var result = await _renewAccessTokenUseCase.Execute(refreshToken);
 

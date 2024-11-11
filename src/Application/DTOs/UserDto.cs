@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Domain.Enums;
 
 namespace Application.DTOs;
@@ -10,7 +11,8 @@ public class UserDto : SingleIdEntityDto
 
     public string? PhotoUrl { get; set; }
 
-    public Role Role { get; set; }
+    [EnumDataType(typeof(Role))]
+    public string Role { get; set; } = Domain.Enums.Role.User.ToString();
 
     public AuthenticationDto? Authentication { get; set; }
 

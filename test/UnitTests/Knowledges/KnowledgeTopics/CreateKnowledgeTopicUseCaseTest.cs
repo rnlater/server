@@ -37,22 +37,19 @@ namespace UnitTests.Knowledges.KnowledgeTopics
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenKnowledgeTopicAlreadyExists()
         {
-            // Arrange
             var parameters = new CreateKnowledgeTopicParams
             {
                 Title = "Existing KnowledgeTopic",
                 ParentId = null,
-                KnowledgeIds = new List<Guid> { Guid.NewGuid() }
+                KnowledgeIds = [Guid.NewGuid()]
             };
 
             var existingKnowledgeTopic = new KnowledgeTopic { Id = Guid.NewGuid(), Title = parameters.Title };
 
             _knowledgeTopicRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync(existingKnowledgeTopic);
 
-            // Act
             var result = await _createKnowledgeTopicUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.KnowledgeTopicAlreadyExists, result.Error);
         }
@@ -60,12 +57,11 @@ namespace UnitTests.Knowledges.KnowledgeTopics
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgeTopicIsCreated()
         {
-            // Arrange
             var parameters = new CreateKnowledgeTopicParams
             {
                 Title = "New KnowledgeTopic",
                 ParentId = null,
-                KnowledgeIds = new List<Guid> { Guid.NewGuid() }
+                KnowledgeIds = [Guid.NewGuid()]
             };
 
             var newKnowledgeTopic = new KnowledgeTopic { Id = Guid.NewGuid(), Title = parameters.Title };
@@ -76,10 +72,8 @@ namespace UnitTests.Knowledges.KnowledgeTopics
             _knowledgeRepositoryMock.Setup(r => r.GetById(It.IsAny<Guid>())).ReturnsAsync(new Knowledge { Id = parameters.KnowledgeIds[0], Title = "Knowledge" });
             _knowledgeTopicKnowledgeRepositoryMock.Setup(r => r.Add(It.IsAny<KnowledgeTopicKnowledge>())).ReturnsAsync(new KnowledgeTopicKnowledge());
 
-            // Act
             var result = await _createKnowledgeTopicUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Equal(parameters.Title, result.Value.Title);
@@ -88,21 +82,18 @@ namespace UnitTests.Knowledges.KnowledgeTopics
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenParentKnowledgeTopicNotFoundWithGuid()
         {
-            // Arrange
             var ParentId = Guid.NewGuid();
             var parameters = new CreateKnowledgeTopicParams
             {
                 Title = "New KnowledgeTopic",
                 ParentId = ParentId,
-                KnowledgeIds = new List<Guid> { Guid.NewGuid() }
+                KnowledgeIds = [Guid.NewGuid()]
             };
 
             _knowledgeTopicRepositoryMock.Setup(r => r.GetById(ParentId)).ReturnsAsync((KnowledgeTopic?)null);
 
-            // Act
             var result = await _createKnowledgeTopicUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeTopicFoundWithGuid, result.Error);
         }
@@ -110,20 +101,17 @@ namespace UnitTests.Knowledges.KnowledgeTopics
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenNoKnowledgeFoundWithGuid()
         {
-            // Arrange
             var parameters = new CreateKnowledgeTopicParams
             {
                 Title = "New KnowledgeTopic",
                 ParentId = null,
-                KnowledgeIds = new List<Guid> { Guid.NewGuid() }
+                KnowledgeIds = [Guid.NewGuid()]
             };
 
             _knowledgeRepositoryMock.Setup(r => r.GetById(parameters.KnowledgeIds[0])).ReturnsAsync((Knowledge?)null);
 
-            // Act
             var result = await _createKnowledgeTopicUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeFoundWithGuid, result.Error);
         }

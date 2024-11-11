@@ -73,10 +73,12 @@ public enum ErrorMessage
 
     NoKnowledgeTypesFound,
     NoKnowledgeTypeFoundWithGuid,
+    SomeKnowledgeTypesNotFound,
     KnowledgeTypeAlreadyExists,
     CannotBeParentOfItself,
 
     NoKnowledgeTopicFoundWithGuid,
+    SomeKnowledgeTopicsNotFound,
     NoKnowledgeTopicsFound,
     KnowledgeTopicAlreadyExists,
 

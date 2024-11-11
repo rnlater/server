@@ -10,19 +10,23 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<User, UserDto>().ReverseMap();
-        CreateMap<Authentication, AuthenticationDto>().ReverseMap();
-        CreateMap<Track, TrackDto>().ReverseMap();
+        CreateMap<User, UserDto>()
+            .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role.ToString()));
+        CreateMap<Authentication, AuthenticationDto>();
+        CreateMap<Track, TrackDto>();
         CreateMap<Subject, SubjectDto>()
             .ForMember(dest => dest.KnowledgeCount, opt => opt.MapFrom(src => src.SubjectKnowledges.Count()))
-            .ReverseMap();
-        CreateMap<Knowledge, KnowledgeDto>().ReverseMap();
-        CreateMap<TrackSubject, TrackSubjectDto>().ReverseMap();
-        CreateMap<SubjectKnowledge, SubjectKnowledgeDto>().ReverseMap();
-        CreateMap<Knowledge, KnowledgeDto>().ReverseMap();
-        CreateMap<KnowledgeType, KnowledgeTypeDto>().ReverseMap();
-        CreateMap<KnowledgeTypeKnowledge, KnowledgeTypeKnowledgeDto>().ReverseMap();
-        CreateMap<KnowledgeTopic, KnowledgeTopicDto>().ReverseMap();
-        CreateMap<KnowledgeTopicKnowledge, KnowledgeTopicKnowledgeDto>().ReverseMap();
+            ;
+        CreateMap<Knowledge, KnowledgeDto>()
+            .ForMember(dest => dest.Level, opt => opt.MapFrom(src => src.Level.ToString()))
+            .ForMember(dest => dest.Visibility, opt => opt.MapFrom(src => src.Visibility.ToString()));
+        CreateMap<TrackSubject, TrackSubjectDto>();
+        CreateMap<SubjectKnowledge, SubjectKnowledgeDto>();
+        CreateMap<KnowledgeType, KnowledgeTypeDto>();
+        CreateMap<KnowledgeTypeKnowledge, KnowledgeTypeKnowledgeDto>();
+        CreateMap<KnowledgeTopic, KnowledgeTopicDto>();
+        CreateMap<KnowledgeTopicKnowledge, KnowledgeTopicKnowledgeDto>();
+        CreateMap<Material, MaterialDto>()
+            .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type.ToString()));
     }
 }
