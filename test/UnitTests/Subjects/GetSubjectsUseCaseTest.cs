@@ -38,7 +38,7 @@ namespace UnitTests.Subjects
             var result = await _getSubjectsUseCase.Execute(parameters);
 
             Assert.False(result.IsSuccess);
-            Assert.Equal(ErrorMessage.NoSubjectFound, result.Error);
+            Assert.Equal(ErrorMessage.NoSubjectsFound, result.Error);
         }
 
         [Fact]

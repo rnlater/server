@@ -34,7 +34,7 @@ public class GetSubjectsUseCase : IUseCase<IEnumerable<SubjectDto>, GetSubjectsP
 
             if (!subjects.Any())
             {
-                return Result<IEnumerable<SubjectDto>>.Fail(ErrorMessage.NoSubjectFound);
+                return Result<IEnumerable<SubjectDto>>.Fail(ErrorMessage.NoSubjectsFound);
             }
 
             return Result<IEnumerable<SubjectDto>>.Done(subjects.Select(_mapper.Map<SubjectDto>));

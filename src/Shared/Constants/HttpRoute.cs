@@ -46,7 +46,14 @@ public class HttpRoute
 
 
     public const string SearchKnowledges = "search";
+    public const string GetKnowledges = "list";
     public const string GetDetailedKnowledgeByGuid = "detailed/{id}";
+    public const string CreateKnowledge = "create";
+    public const string UpdateKnowledge = "update";
+    public const string DeleteKnowledge = "delete/{id}";
+    public const string AttachDeattachKnowledgeType = "attach-detach-knowledge-type";
+    public const string AttachDeattachKnowledgeTopic = "attach-detach-knowledge-topic";
+    public const string PublishKnowledge = "publish/{id}";
 
     #endregion
 

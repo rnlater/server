@@ -53,7 +53,7 @@ public enum ErrorMessage
 
     #region Track
 
-    NoTrackFound,
+    NoTracksFound,
     NoTrackFoundWithSearch,
     NoTrackFoundWithGuid,
 
@@ -61,7 +61,7 @@ public enum ErrorMessage
 
     #region Subject
 
-    NoSubjectFound,
+    NoSubjectsFound,
     NoSubjectFoundWithGuid,
 
     #endregion

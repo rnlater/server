@@ -10,7 +10,7 @@ using Shared.Types;
 
 namespace Application.UseCases.Knowledges
 {
-    public class SearchKnowledgesParameters
+    public class SearchKnowledgesParams
     {
         public string? SearchTerm { get; set; }
         public int Page { get; set; } = 1;
@@ -28,7 +28,7 @@ namespace Application.UseCases.Knowledges
         }
     }
 
-    public class SearchKnowledgesUseCase : IUseCase<IEnumerable<KnowledgeDto>, SearchKnowledgesParameters>
+    public class SearchKnowledgesUseCase : IUseCase<IEnumerable<KnowledgeDto>, SearchKnowledgesParams>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -39,7 +39,7 @@ namespace Application.UseCases.Knowledges
             _mapper = mapper;
         }
 
-        public async Task<Result<IEnumerable<KnowledgeDto>>> Execute(SearchKnowledgesParameters parameters)
+        public async Task<Result<IEnumerable<KnowledgeDto>>> Execute(SearchKnowledgesParams parameters)
         {
             try
             {
@@ -74,7 +74,8 @@ namespace Application.UseCases.Knowledges
                 var knowledgeRepository = _unitOfWork.Repository<Knowledge>();
 
                 ISpecification<Knowledge> specification = new BaseSpecification<Knowledge>(k =>
-                       (string.IsNullOrEmpty(parameters.SearchTerm)
+                    k.Visibility == KnowledgeVisibility.Public
+                    && (string.IsNullOrEmpty(parameters.SearchTerm)
                         || k.Title.Contains(parameters.SearchTerm))
                     && (parameters.KnowledgeTypeIds.Count == 0
                         || k.KnowledgeTypeKnowledges.Any(ktk =>
@@ -97,13 +98,13 @@ namespace Application.UseCases.Knowledges
 
                 switch (parameters.OrderBy)
                 {
-                    case SearchKnowledgesParameters.OrderByType.Date:
+                    case SearchKnowledgesParams.OrderByType.Date:
                         if (parameters.Ascending)
                             specification.AddOrderBy(k => k.CreatedAt);
                         else
                             specification.AddOrderByDescending(k => k.CreatedAt);
                         break;
-                    case SearchKnowledgesParameters.OrderByType.Title:
+                    case SearchKnowledgesParams.OrderByType.Title:
                         if (parameters.Ascending)
                             specification.AddOrderBy(k => k.Title);
                         else

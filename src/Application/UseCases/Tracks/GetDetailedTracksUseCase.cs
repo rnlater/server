@@ -37,7 +37,7 @@ public class GetDetailedTracksUseCase : IUseCase<IEnumerable<TrackDto>, NoParam>
 
             if (!tracks.Any())
             {
-                return Result<IEnumerable<TrackDto>>.Fail(ErrorMessage.NoTrackFound);
+                return Result<IEnumerable<TrackDto>>.Fail(ErrorMessage.NoTracksFound);
             }
 
             var trackDtos = tracks.Select(_mapper.Map<TrackDto>).ToList();

@@ -84,7 +84,14 @@ public static class AppServiceCollectionExtensions
         services.AddScoped<IKnowledgeTopicService, KnowledgeTopicService>();
 
         services.AddScoped<SearchKnowledgesUseCase>();
+        services.AddScoped<GetKnowledgesUseCase>();
         services.AddScoped<GetDetailedKnowledgeByGuidUseCase>();
+        services.AddScoped<CreateKnowledgeUseCase>();
+        services.AddScoped<UpdateKnowledgeUseCase>();
+        services.AddScoped<DeleteKnowledgeUseCase>();
+        services.AddScoped<AttachDeattachKnowledgeTypeUseCase>();
+        services.AddScoped<AttachDeattachKnowledgeTopicUseCase>();
+        services.AddScoped<PublishKnowledgeUseCase>();
         services.AddScoped<IKnowledgeService, KnowledgeService>();
 
         return services;

@@ -35,8 +35,11 @@ namespace Infrastructure.Data
             ConfigureMaterialEntity(modelBuilder);
             ConfigureSubjectEntity(modelBuilder);
             ConfigureTrackEntity(modelBuilder);
-            ConfigureManyToManyRelationships(modelBuilder);
 
+            ConfigureTrackSubjectRelationship(modelBuilder);
+            ConfigureSubjectKnowledgeRelationship(modelBuilder);
+            ConfigureKnowledgeTypeKnowledgeRelationship(modelBuilder);
+            ConfigureKnowledgeTopicKnowledgeRelationship(modelBuilder);
             Seed(modelBuilder);
         }
 
@@ -202,59 +205,68 @@ namespace Infrastructure.Data
             });
         }
 
-        private void ConfigureManyToManyRelationships(ModelBuilder modelBuilder)
+        private void ConfigureTrackSubjectRelationship(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TrackSubject>()
-                .HasKey(ts => new { ts.TrackId, ts.SubjectId });
+            .HasKey(ts => new { ts.TrackId, ts.SubjectId });
             modelBuilder.Entity<TrackSubject>()
-                .HasOne(ts => ts.Track)
-                .WithMany(t => t.TrackSubjects)
-                .HasForeignKey(ts => ts.TrackId)
-                .OnDelete(DeleteBehavior.Cascade);
+            .HasOne(ts => ts.Track)
+            .WithMany(t => t.TrackSubjects)
+            .HasForeignKey(ts => ts.TrackId)
+            .OnDelete(DeleteBehavior.Cascade);
             modelBuilder.Entity<TrackSubject>()
-                .HasOne(ts => ts.Subject)
-                .WithMany(s => s.TrackSubjects)
-                .HasForeignKey(ts => ts.SubjectId)
-                .OnDelete(DeleteBehavior.Cascade);
+            .HasOne(ts => ts.Subject)
+            .WithMany(s => s.TrackSubjects)
+            .HasForeignKey(ts => ts.SubjectId)
+            .OnDelete(DeleteBehavior.Cascade);
+        }
 
+        private void ConfigureSubjectKnowledgeRelationship(ModelBuilder modelBuilder)
+        {
             modelBuilder.Entity<SubjectKnowledge>()
-                .HasKey(sk => new { sk.SubjectId, sk.KnowledgeId });
+            .HasKey(sk => new { sk.SubjectId, sk.KnowledgeId });
             modelBuilder.Entity<SubjectKnowledge>()
-                .HasOne(sk => sk.Subject)
-                .WithMany(s => s.SubjectKnowledges)
-                .HasForeignKey(sk => sk.SubjectId)
-                .OnDelete(DeleteBehavior.Cascade);
+            .HasOne(sk => sk.Subject)
+            .WithMany(s => s.SubjectKnowledges)
+            .HasForeignKey(sk => sk.SubjectId)
+            .OnDelete(DeleteBehavior.Cascade);
             modelBuilder.Entity<SubjectKnowledge>()
-                .HasOne(sk => sk.Knowledge)
-                .WithMany(k => k.SubjectKnowledges)
-                .HasForeignKey(sk => sk.KnowledgeId)
-                .OnDelete(DeleteBehavior.Cascade);
+            .HasOne(sk => sk.Knowledge)
+            .WithMany(k => k.SubjectKnowledges)
+            .HasForeignKey(sk => sk.KnowledgeId)
+            .OnDelete(DeleteBehavior.Cascade);
+        }
 
+        private void ConfigureKnowledgeTypeKnowledgeRelationship(ModelBuilder modelBuilder)
+        {
             modelBuilder.Entity<KnowledgeTypeKnowledge>()
-                .HasKey(ktk => new { ktk.KnowledgeTypeId, ktk.KnowledgeId });
+            .HasKey(ktk => new { ktk.KnowledgeTypeId, ktk.KnowledgeId });
             modelBuilder.Entity<KnowledgeTypeKnowledge>()
-                .HasOne(ktk => ktk.KnowledgeType)
-                .WithMany(kt => kt.KnowledgeTypeKnowledges)
-                .HasForeignKey(ktk => ktk.KnowledgeTypeId)
-                .OnDelete(DeleteBehavior.Cascade);
+            .HasOne(ktk => ktk.KnowledgeType)
+            .WithMany(kt => kt.KnowledgeTypeKnowledges)
+            .HasForeignKey(ktk => ktk.KnowledgeTypeId)
+            .OnDelete(DeleteBehavior.Cascade);
             modelBuilder.Entity<KnowledgeTypeKnowledge>()
-                .HasOne(ktk => ktk.Knowledge)
-                .WithMany(k => k.KnowledgeTypeKnowledges)
-                .HasForeignKey(ktk => ktk.KnowledgeId)
-                .OnDelete(DeleteBehavior.Cascade);
+            .HasOne(ktk => ktk.Knowledge)
+            .WithMany(k => k.KnowledgeTypeKnowledges)
+            .HasForeignKey(ktk => ktk.KnowledgeId)
+            .OnDelete(DeleteBehavior.Cascade);
+        }
 
+        private void ConfigureKnowledgeTopicKnowledgeRelationship(ModelBuilder modelBuilder)
+        {
             modelBuilder.Entity<KnowledgeTopicKnowledge>()
-                .HasKey(ktk => new { ktk.KnowledgeTopicId, ktk.KnowledgeId });
+            .HasKey(ktk => new { ktk.KnowledgeTopicId, ktk.KnowledgeId });
             modelBuilder.Entity<KnowledgeTopicKnowledge>()
-                .HasOne(ktk => ktk.KnowledgeTopic)
-                .WithMany(kt => kt.KnowledgeTopicKnowledges)
-                .HasForeignKey(ktk => ktk.KnowledgeTopicId)
-                .OnDelete(DeleteBehavior.Cascade);
+            .HasOne(ktk => ktk.KnowledgeTopic)
+            .WithMany(kt => kt.KnowledgeTopicKnowledges)
+            .HasForeignKey(ktk => ktk.KnowledgeTopicId)
+            .OnDelete(DeleteBehavior.Cascade);
             modelBuilder.Entity<KnowledgeTopicKnowledge>()
-                .HasOne(ktk => ktk.Knowledge)
-                .WithMany(k => k.KnowledgeTopicKnowledges)
-                .HasForeignKey(ktk => ktk.KnowledgeId)
-                .OnDelete(DeleteBehavior.Cascade);
+            .HasOne(ktk => ktk.Knowledge)
+            .WithMany(k => k.KnowledgeTopicKnowledges)
+            .HasForeignKey(ktk => ktk.KnowledgeId)
+            .OnDelete(DeleteBehavior.Cascade);
         }
 
         private void Seed(ModelBuilder modelBuilder)

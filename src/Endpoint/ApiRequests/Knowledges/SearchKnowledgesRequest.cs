@@ -9,15 +9,15 @@ namespace Endpoint.ApiRequests.Knowledges
         public string? SearchTerm { get; set; }
         public int Page { get; set; } = 1;
         public int PageSize { get; set; } = 10;
-        public List<Guid> KnowledgeTypeIds { get; set; } = new List<Guid>();
-        public List<Guid> KnowledgeTopicIds { get; set; } = new List<Guid>();
+        public List<Guid>? KnowledgeTypeIds { get; set; }
+        public List<Guid>? KnowledgeTopicIds { get; set; }
 
         [EnumDataType(typeof(KnowledgeLevel))]
         public string? Level { get; set; }
 
-        [EnumDataType(typeof(SearchKnowledgesParameters.OrderByType))]
+        [EnumDataType(typeof(SearchKnowledgesParams.OrderByType))]
         public string OrderBy { get; set; } = "Date";
 
-        public bool Ascending { get; set; } = false;
+        public bool? Ascending { get; set; }
     }
 }

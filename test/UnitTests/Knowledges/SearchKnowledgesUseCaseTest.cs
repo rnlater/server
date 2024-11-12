@@ -1,4 +1,3 @@
-using Application.DTOs;
 using Application.UseCases.Knowledges;
 using AutoMapper;
 using Domain.Entities.SingleIdEntities;
@@ -9,12 +8,6 @@ using Moq;
 using Shared.Constants;
 using Application.Mappings;
 using Domain.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
-using Domain.Entities.PivotEntities;
 
 namespace UnitTests.Knowledges
 {
@@ -45,15 +38,15 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenNoKnowledgesFound()
         {
-            var parameters = new SearchKnowledgesParameters
+            var parameters = new SearchKnowledgesParams
             {
                 SearchTerm = "NonExistentKnowledge",
                 Page = 1,
                 PageSize = 10,
-                KnowledgeTypeIds = new List<Guid>(),
-                KnowledgeTopicIds = new List<Guid>(),
+                KnowledgeTypeIds = [],
+                KnowledgeTopicIds = [],
                 Level = null,
-                OrderBy = SearchKnowledgesParameters.OrderByType.Date,
+                OrderBy = SearchKnowledgesParams.OrderByType.Date,
                 Ascending = false
             };
 
@@ -68,15 +61,15 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgesAreFound()
         {
-            var parameters = new SearchKnowledgesParameters
+            var parameters = new SearchKnowledgesParams
             {
                 SearchTerm = "Introduction",
                 Page = 1,
                 PageSize = 10,
-                KnowledgeTypeIds = new List<Guid>(),
-                KnowledgeTopicIds = new List<Guid>(),
+                KnowledgeTypeIds = [],
+                KnowledgeTopicIds = [],
                 Level = null,
-                OrderBy = SearchKnowledgesParameters.OrderByType.Date,
+                OrderBy = SearchKnowledgesParams.OrderByType.Date,
                 Ascending = false
             };
 
@@ -98,26 +91,26 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenFilteredByKnowledgeType()
         {
-            var parameters = new SearchKnowledgesParameters
+            var parameters = new SearchKnowledgesParams
             {
                 SearchTerm = null,
                 Page = 1,
                 PageSize = 10,
-                KnowledgeTypeIds = new List<Guid> { SeedData.KnowledgeType1Id },
-                KnowledgeTopicIds = new List<Guid>(),
+                KnowledgeTypeIds = [SeedData.KnowledgeType1Id],
+                KnowledgeTopicIds = [],
                 Level = null,
-                OrderBy = SearchKnowledgesParameters.OrderByType.Date,
+                OrderBy = SearchKnowledgesParams.OrderByType.Date,
                 Ascending = false
             };
 
             var knowledgeTypes = SeedData.GetKnowledgeTypes();
-            knowledgeTypes[1].Children = new List<KnowledgeType> { knowledgeTypes[0] };
+            knowledgeTypes[1].Children = [knowledgeTypes[0]];
 
             var knowledgeTypeKnowledge = SeedData.GetKnowledgeTypeKnowledges()[1];
             knowledgeTypeKnowledge.KnowledgeType = knowledgeTypes[1];
 
             var knowledges = new List<Knowledge> { SeedData.GetKnowledges()[0] };
-            knowledges[0].KnowledgeTypeKnowledges = new List<KnowledgeTypeKnowledge> { knowledgeTypeKnowledge };
+            knowledges[0].KnowledgeTypeKnowledges = [knowledgeTypeKnowledge];
 
             _knowledgeTypeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<KnowledgeType>>())).ReturnsAsync([knowledgeTypes[1]]);
             _knowledgeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledges);
@@ -136,26 +129,26 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenFilteredByKnowledgeTopic()
         {
-            var parameters = new SearchKnowledgesParameters
+            var parameters = new SearchKnowledgesParams
             {
                 SearchTerm = null,
                 Page = 1,
                 PageSize = 10,
-                KnowledgeTypeIds = new List<Guid>(),
-                KnowledgeTopicIds = new List<Guid> { SeedData.KnowledgeTopic1Id },
+                KnowledgeTypeIds = [],
+                KnowledgeTopicIds = [SeedData.KnowledgeTopic1Id],
                 Level = null,
-                OrderBy = SearchKnowledgesParameters.OrderByType.Date,
+                OrderBy = SearchKnowledgesParams.OrderByType.Date,
                 Ascending = false
             };
 
             var knowledgeTopics = SeedData.GetKnowledgeTopics();
-            knowledgeTopics[1].Children = new List<KnowledgeTopic> { knowledgeTopics[0] };
+            knowledgeTopics[1].Children = [knowledgeTopics[0]];
 
             var knowledgeTopicKnowledge = SeedData.GetKnowledgeTopicKnowledges()[1];
             knowledgeTopicKnowledge.KnowledgeTopic = knowledgeTopics[1];
 
             var knowledges = new List<Knowledge> { SeedData.GetKnowledges()[0] };
-            knowledges[0].KnowledgeTopicKnowledges = new List<KnowledgeTopicKnowledge> { knowledgeTopicKnowledge };
+            knowledges[0].KnowledgeTopicKnowledges = [knowledgeTopicKnowledge];
 
             _knowledgeTopicRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync([knowledgeTopics[1]]);
             _knowledgeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledges);
@@ -174,15 +167,15 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenFilteredByLevel()
         {
-            var parameters = new SearchKnowledgesParameters
+            var parameters = new SearchKnowledgesParams
             {
                 SearchTerm = null,
                 Page = 1,
                 PageSize = 10,
-                KnowledgeTypeIds = new List<Guid>(),
-                KnowledgeTopicIds = new List<Guid>(),
+                KnowledgeTypeIds = [],
+                KnowledgeTopicIds = [],
                 Level = KnowledgeLevel.Beginner,
-                OrderBy = SearchKnowledgesParameters.OrderByType.Date,
+                OrderBy = SearchKnowledgesParams.OrderByType.Date,
                 Ascending = false
             };
 
@@ -204,15 +197,15 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenOrderedByTitle()
         {
-            var parameters = new SearchKnowledgesParameters
+            var parameters = new SearchKnowledgesParams
             {
                 SearchTerm = null,
                 Page = 1,
                 PageSize = 10,
-                KnowledgeTypeIds = new List<Guid>(),
-                KnowledgeTopicIds = new List<Guid>(),
+                KnowledgeTypeIds = [],
+                KnowledgeTopicIds = [],
                 Level = null,
-                OrderBy = SearchKnowledgesParameters.OrderByType.Title,
+                OrderBy = SearchKnowledgesParams.OrderByType.Title,
                 Ascending = true
             };
 
@@ -234,15 +227,15 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenNoKnowledgeTypesFound()
         {
-            var parameters = new SearchKnowledgesParameters
+            var parameters = new SearchKnowledgesParams
             {
                 SearchTerm = null,
                 Page = 1,
                 PageSize = 10,
-                KnowledgeTypeIds = new List<Guid> { Guid.NewGuid() },
-                KnowledgeTopicIds = new List<Guid>(),
+                KnowledgeTypeIds = [Guid.NewGuid()],
+                KnowledgeTopicIds = [],
                 Level = null,
-                OrderBy = SearchKnowledgesParameters.OrderByType.Date,
+                OrderBy = SearchKnowledgesParams.OrderByType.Date,
                 Ascending = false
             };
 
@@ -257,15 +250,15 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenSomeKnowledgeTypesNotFound()
         {
-            var parameters = new SearchKnowledgesParameters
+            var parameters = new SearchKnowledgesParams
             {
                 SearchTerm = null,
                 Page = 1,
                 PageSize = 10,
-                KnowledgeTypeIds = new List<Guid> { Guid.NewGuid(), Guid.NewGuid() },
-                KnowledgeTopicIds = new List<Guid>(),
+                KnowledgeTypeIds = [Guid.NewGuid(), Guid.NewGuid()],
+                KnowledgeTopicIds = [],
                 Level = null,
-                OrderBy = SearchKnowledgesParameters.OrderByType.Date,
+                OrderBy = SearchKnowledgesParams.OrderByType.Date,
                 Ascending = false
             };
 
@@ -285,15 +278,15 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenNoKnowledgeTopicsFound()
         {
-            var parameters = new SearchKnowledgesParameters
+            var parameters = new SearchKnowledgesParams
             {
                 SearchTerm = null,
                 Page = 1,
                 PageSize = 10,
-                KnowledgeTypeIds = new List<Guid>(),
-                KnowledgeTopicIds = new List<Guid> { Guid.NewGuid() },
+                KnowledgeTypeIds = [],
+                KnowledgeTopicIds = [Guid.NewGuid()],
                 Level = null,
-                OrderBy = SearchKnowledgesParameters.OrderByType.Date,
+                OrderBy = SearchKnowledgesParams.OrderByType.Date,
                 Ascending = false
             };
 
@@ -308,15 +301,15 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenSomeKnowledgeTopicsNotFound()
         {
-            var parameters = new SearchKnowledgesParameters
+            var parameters = new SearchKnowledgesParams
             {
                 SearchTerm = null,
                 Page = 1,
                 PageSize = 10,
-                KnowledgeTypeIds = new List<Guid>(),
-                KnowledgeTopicIds = new List<Guid> { Guid.NewGuid(), Guid.NewGuid() },
+                KnowledgeTypeIds = [],
+                KnowledgeTopicIds = [Guid.NewGuid(), Guid.NewGuid()],
                 Level = null,
-                OrderBy = SearchKnowledgesParameters.OrderByType.Date,
+                OrderBy = SearchKnowledgesParams.OrderByType.Date,
                 Ascending = false
             };
 

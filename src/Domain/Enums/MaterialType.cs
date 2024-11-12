@@ -2,8 +2,11 @@ namespace Domain.Enums;
 
 public enum MaterialType
 {
-    Text,
+    TextSmall,
+    TextMedium,
+    TextLarge,
     Image,
     Video,
-    Audio
+    Audio,
+    Unknown
 }

@@ -97,7 +97,7 @@ public static class SeedData
         new Material
         {
             Id = Guid.NewGuid(),
-            Type = MaterialType.Text,
+            Type = MaterialType.TextMedium,
             Content = "Article about Physics.",
             KnowledgeId = Knowledge2Id,
             Order = 2

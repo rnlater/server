@@ -41,10 +41,10 @@ namespace Domain.Base
             return this;
         }
 
-        public ISpecification<T> ApplyPaging(int skip, int take)
+        public ISpecification<T> ApplyPaging(int page, int pageSize)
         {
-            Skip = skip;
-            Take = take;
+            Skip = (page - 1) * pageSize;
+            Take = pageSize;
             IsPagingEnabled = true;
             return this;
         }

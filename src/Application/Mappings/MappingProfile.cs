@@ -15,11 +15,14 @@ public class MappingProfile : Profile
         CreateMap<Authentication, AuthenticationDto>();
         CreateMap<Track, TrackDto>();
         CreateMap<Subject, SubjectDto>()
-            .ForMember(dest => dest.KnowledgeCount, opt => opt.MapFrom(src => src.SubjectKnowledges.Count()))
-            ;
+            .ForMember(dest => dest.KnowledgeCount, opt => opt.MapFrom(src => src.SubjectKnowledges.Count()));
         CreateMap<Knowledge, KnowledgeDto>()
             .ForMember(dest => dest.Level, opt => opt.MapFrom(src => src.Level.ToString()))
             .ForMember(dest => dest.Visibility, opt => opt.MapFrom(src => src.Visibility.ToString()));
+        CreateMap<Knowledge, KnowledgeDto>()
+            .ForMember(dest => dest.Level, opt => opt.MapFrom(src => src.Level.ToString()))
+            .ForMember(dest => dest.Visibility, opt => opt.MapFrom(src => src.Visibility.ToString()))
+            .AfterMap((src, dest) => dest.MergeArrangeMaterials());
         CreateMap<TrackSubject, TrackSubjectDto>();
         CreateMap<SubjectKnowledge, SubjectKnowledgeDto>();
         CreateMap<KnowledgeType, KnowledgeTypeDto>();

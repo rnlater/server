@@ -40,7 +40,7 @@ namespace UnitTests.Tracks
             var result = await _getDetailedTracksUseCase.Execute(new NoParam());
 
             Assert.False(result.IsSuccess);
-            Assert.Equal(ErrorMessage.NoTrackFound.ToString(), result.Errors[0]);
+            Assert.Equal(ErrorMessage.NoTracksFound.ToString(), result.Errors[0]);
         }
 
         [Fact]

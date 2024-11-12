@@ -74,10 +74,10 @@ namespace Domain.Interfaces
         /// <summary>
         /// Applies paging to the specification
         /// </summary>
-        /// <param name="skip">The number of records to skip</param>
-        /// <param name="take">The number of records to take</param>
+        /// <param name="page">The page number</param>
+        /// <param name="pageSize">The number of records per page</param>
         /// <returns>The specification with paging applied</returns>
-        public ISpecification<T> ApplyPaging(int skip, int take);
+        public ISpecification<T> ApplyPaging(int page, int pageSize);
 
         /// <summary>
         /// Applies tracking to the specification

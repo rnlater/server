@@ -27,7 +27,7 @@ public class Material : SingleIdEntity
         return new Material
         {
             Id = Guid.NewGuid(),
-            Type = MaterialType.Text,
+            Type = MaterialType.TextMedium,
             Content = "Test Content",
             KnowledgeId = Guid.NewGuid()
         };
