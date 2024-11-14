@@ -2,6 +2,7 @@ namespace Domain.Entities.SingleIdEntities;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Domain.Entities.PivotEntities;
+using Domain.Entities.SingleIdPivotEntities;
 using Domain.Enums;
 
 public class Knowledge : SingleIdEntity
@@ -18,6 +19,8 @@ public class Knowledge : SingleIdEntity
     public ICollection<SubjectKnowledge> SubjectKnowledges { get; set; } = [];
     public ICollection<KnowledgeTypeKnowledge> KnowledgeTypeKnowledges { get; set; } = [];
     public ICollection<KnowledgeTopicKnowledge> KnowledgeTopicKnowledges { get; set; } = [];
+    public ICollection<Learning> Learnings { get; set; } = [];
+    public ICollection<GameKnowledgeSubscription> GameKnowledgeSubscriptions { get; set; } = [];
 
     public static Knowledge ForTestPurposeOnly()
     {

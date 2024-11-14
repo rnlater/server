@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using Domain.Entities.SingleIdPivotEntities;
 using Domain.Enums;
 
 namespace Domain.Entities.SingleIdEntities
@@ -18,5 +19,7 @@ namespace Domain.Entities.SingleIdEntities
         [NotMapped]
         [InverseProperty("User")]
         public Authentication? Authentication { get; set; }
+
+        public ICollection<Learning> Learnings { get; set; } = [];
     }
 }

@@ -1,27 +1,33 @@
 using Domain.Entities.PivotEntities;
 using Domain.Entities.SingleIdEntities;
+using Domain.Entities.SingleIdPivotEntities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-        {
-        }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<Authentication> Authentications { get; set; }
-        public DbSet<Knowledge> Knowledges { get; set; }
-        public DbSet<KnowledgeTopic> KnowledgeTopics { get; set; }
-        public DbSet<KnowledgeType> KnowledgeTypes { get; set; }
-        public DbSet<Material> Materials { get; set; }
-        public DbSet<Subject> Subjects { get; set; }
-        public DbSet<Track> Tracks { get; set; }
-        public DbSet<TrackSubject> TrackSubjects { get; set; }
-        public DbSet<SubjectKnowledge> SubjectKnowledges { get; set; }
-        public DbSet<KnowledgeTypeKnowledge> KnowledgeTypeKnowledges { get; set; }
-        public DbSet<KnowledgeTopicKnowledge> KnowledgeTopicKnowledges { get; set; }
+        #region Properties
+        public required DbSet<User> Users { get; set; }
+        public required DbSet<Authentication> Authentications { get; set; }
+        public required DbSet<Knowledge> Knowledges { get; set; }
+        public required DbSet<KnowledgeTopic> KnowledgeTopics { get; set; }
+        public required DbSet<KnowledgeType> KnowledgeTypes { get; set; }
+        public required DbSet<Material> Materials { get; set; }
+        public required DbSet<Subject> Subjects { get; set; }
+        public required DbSet<Track> Tracks { get; set; }
+        public required DbSet<TrackSubject> TrackSubjects { get; set; }
+        public required DbSet<SubjectKnowledge> SubjectKnowledges { get; set; }
+        public required DbSet<KnowledgeTypeKnowledge> KnowledgeTypeKnowledges { get; set; }
+        public required DbSet<KnowledgeTopicKnowledge> KnowledgeTopicKnowledges { get; set; }
+        public required DbSet<Learning> Learnings { get; set; }
+        public required DbSet<LearningHistory> LearningHistories { get; set; }
+        public required DbSet<Game> Games { get; set; }
+        public required DbSet<GameOption> GameOptions { get; set; }
+        public required DbSet<GameKnowledgeSubscription> GameKnowledgeSubscriptions { get; set; }
+        #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,14 +41,41 @@ namespace Infrastructure.Data
             ConfigureMaterialEntity(modelBuilder);
             ConfigureSubjectEntity(modelBuilder);
             ConfigureTrackEntity(modelBuilder);
+            ConfigureTrackSubjectEntity(modelBuilder);
+            ConfigureSubjectKnowledgeEntity(modelBuilder);
+            ConfigureKnowledgeTypeKnowledgeEntity(modelBuilder);
+            ConfigureKnowledgeTopicKnowledgeEntity(modelBuilder);
+            ConfigureGameEntity(modelBuilder);
+            ConfigureGameOptionEntity(modelBuilder);
+            ConfigureGameKnowledgeSubscriptionEntity(modelBuilder);
+            ConfigureLearningEntity(modelBuilder);
+            ConfigureLearningHistoryEntity(modelBuilder);
 
-            ConfigureTrackSubjectRelationship(modelBuilder);
-            ConfigureSubjectKnowledgeRelationship(modelBuilder);
-            ConfigureKnowledgeTypeKnowledgeRelationship(modelBuilder);
-            ConfigureKnowledgeTopicKnowledgeRelationship(modelBuilder);
             Seed(modelBuilder);
         }
 
+        private void Seed(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasData(SeedData.GetUsers());
+            modelBuilder.Entity<Authentication>().HasData(SeedData.GetAuthentications());
+            modelBuilder.Entity<Subject>().HasData(SeedData.GetSubjects());
+            modelBuilder.Entity<Track>().HasData(SeedData.GetTracks());
+            modelBuilder.Entity<KnowledgeType>().HasData(SeedData.GetKnowledgeTypes());
+            modelBuilder.Entity<KnowledgeTopic>().HasData(SeedData.GetKnowledgeTopics());
+            modelBuilder.Entity<Knowledge>().HasData(SeedData.GetKnowledges());
+            modelBuilder.Entity<Material>().HasData(SeedData.GetMaterials());
+            modelBuilder.Entity<TrackSubject>().HasData(SeedData.GetTrackSubjects());
+            modelBuilder.Entity<SubjectKnowledge>().HasData(SeedData.GetSubjectKnowledges());
+            modelBuilder.Entity<KnowledgeTypeKnowledge>().HasData(SeedData.GetKnowledgeTypeKnowledges());
+            modelBuilder.Entity<KnowledgeTopicKnowledge>().HasData(SeedData.GetKnowledgeTopicKnowledges());
+            modelBuilder.Entity<Game>().HasData(SeedData.GetGames());
+            modelBuilder.Entity<GameKnowledgeSubscription>().HasData(SeedData.GetGameKnowledgeSubscriptions());
+            modelBuilder.Entity<GameOption>().HasData(SeedData.GetGameOptions());
+            modelBuilder.Entity<Learning>().HasData(SeedData.GetLearnings());
+            modelBuilder.Entity<LearningHistory>().HasData(SeedData.GetLearningHistories());
+        }
+
+        #region ConfigureEntities
         private void ConfigureUserEntity(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>(entity =>
@@ -113,7 +146,7 @@ namespace Infrastructure.Data
                 b.HasOne(kt => kt.Parent)
                     .WithMany(kt => kt.Children)
                     .HasForeignKey(kt => kt.ParentId)
-                    .OnDelete(DeleteBehavior.Restrict);
+                    .OnDelete(DeleteBehavior.Cascade);
 
                 b.ToTable("KnowledgeTopics");
             });
@@ -133,7 +166,7 @@ namespace Infrastructure.Data
                 b.HasOne(kt => kt.Parent)
                     .WithMany(kt => kt.Children)
                     .HasForeignKey(kt => kt.ParentId)
-                    .OnDelete(DeleteBehavior.Restrict);
+                    .OnDelete(DeleteBehavior.Cascade);
 
                 b.ToTable("KnowledgeTypes");
             });
@@ -167,7 +200,7 @@ namespace Infrastructure.Data
                 b.HasOne(m => m.Parent)
                     .WithMany(m => m.Children)
                     .HasForeignKey(m => m.ParentId)
-                    .OnDelete(DeleteBehavior.Restrict);
+                    .OnDelete(DeleteBehavior.Cascade);
 
                 b.ToTable("Materials");
             });
@@ -205,7 +238,76 @@ namespace Infrastructure.Data
             });
         }
 
-        private void ConfigureTrackSubjectRelationship(ModelBuilder modelBuilder)
+        private void ConfigureGameEntity(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Game>(entity =>
+            {
+                entity.HasKey(g => g.Id);
+                entity.Property(g => g.Name).IsRequired();
+                entity.Property(g => g.Description).IsRequired();
+                entity.Property(g => g.ImageUrl).IsRequired();
+            });
+        }
+
+        private void ConfigureGameOptionEntity(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<GameOption>(entity =>
+            {
+                entity.HasKey(go => go.Id);
+                entity.Property(go => go.Type).IsRequired();
+                entity.Property(go => go.Value).IsRequired();
+                entity.HasOne(go => go.GameKnowledgeSubscription)
+                    .WithMany(gks => gks.GameOptions)
+                    .HasForeignKey(go => go.GameKnowledgeSubscriptionId);
+            });
+        }
+
+        private void ConfigureGameKnowledgeSubscriptionEntity(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<GameKnowledgeSubscription>(entity =>
+            {
+                entity.HasKey(gks => gks.Id);
+                entity.HasOne(gks => gks.Game)
+                    .WithMany(g => g.GameKnowledgeSubscriptions)
+                    .HasForeignKey(gks => gks.GameId);
+                entity.HasOne(gks => gks.Knowledge)
+                    .WithMany(k => k.GameKnowledgeSubscriptions)
+                    .HasForeignKey(gks => gks.KnowledgeId);
+            });
+        }
+
+        private void ConfigureLearningEntity(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Learning>(entity =>
+            {
+                entity.HasKey(l => l.Id);
+                entity.HasOne(l => l.Knowledge)
+                    .WithMany(k => k.Learnings)
+                    .HasForeignKey(l => l.KnowledgeId);
+                entity.HasOne(l => l.User)
+                    .WithMany(u => u.Learnings)
+                    .HasForeignKey(l => l.UserId);
+            });
+        }
+
+        private void ConfigureLearningHistoryEntity(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<LearningHistory>(entity =>
+            {
+                entity.HasKey(lh => lh.Id);
+                entity.Property(lh => lh.LearningLevel).IsRequired();
+                entity.Property(lh => lh.IsMemorized).IsRequired();
+                entity.Property(lh => lh.Score).IsRequired();
+                entity.HasOne(lh => lh.Learning)
+                    .WithMany(l => l.LearningHistories)
+                    .HasForeignKey(lh => lh.LearningId);
+                entity.HasOne(lh => lh.PlayedGame)
+                    .WithMany()
+                    .HasForeignKey(lh => lh.PlayedGameId);
+            });
+        }
+
+        private void ConfigureTrackSubjectEntity(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TrackSubject>()
             .HasKey(ts => new { ts.TrackId, ts.SubjectId });
@@ -221,7 +323,7 @@ namespace Infrastructure.Data
             .OnDelete(DeleteBehavior.Cascade);
         }
 
-        private void ConfigureSubjectKnowledgeRelationship(ModelBuilder modelBuilder)
+        private void ConfigureSubjectKnowledgeEntity(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<SubjectKnowledge>()
             .HasKey(sk => new { sk.SubjectId, sk.KnowledgeId });
@@ -237,7 +339,7 @@ namespace Infrastructure.Data
             .OnDelete(DeleteBehavior.Cascade);
         }
 
-        private void ConfigureKnowledgeTypeKnowledgeRelationship(ModelBuilder modelBuilder)
+        private void ConfigureKnowledgeTypeKnowledgeEntity(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<KnowledgeTypeKnowledge>()
             .HasKey(ktk => new { ktk.KnowledgeTypeId, ktk.KnowledgeId });
@@ -253,7 +355,7 @@ namespace Infrastructure.Data
             .OnDelete(DeleteBehavior.Cascade);
         }
 
-        private void ConfigureKnowledgeTopicKnowledgeRelationship(ModelBuilder modelBuilder)
+        private void ConfigureKnowledgeTopicKnowledgeEntity(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<KnowledgeTopicKnowledge>()
             .HasKey(ktk => new { ktk.KnowledgeTopicId, ktk.KnowledgeId });
@@ -269,20 +371,6 @@ namespace Infrastructure.Data
             .OnDelete(DeleteBehavior.Cascade);
         }
 
-        private void Seed(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<User>().HasData(SeedData.GetUsers());
-            modelBuilder.Entity<Authentication>().HasData(SeedData.GetAuthentications());
-            modelBuilder.Entity<Subject>().HasData(SeedData.GetSubjects());
-            modelBuilder.Entity<Track>().HasData(SeedData.GetTracks());
-            modelBuilder.Entity<KnowledgeType>().HasData(SeedData.GetKnowledgeTypes());
-            modelBuilder.Entity<KnowledgeTopic>().HasData(SeedData.GetKnowledgeTopics());
-            modelBuilder.Entity<Knowledge>().HasData(SeedData.GetKnowledges());
-            modelBuilder.Entity<Material>().HasData(SeedData.GetMaterials());
-            modelBuilder.Entity<TrackSubject>().HasData(SeedData.GetTrackSubjects());
-            modelBuilder.Entity<SubjectKnowledge>().HasData(SeedData.GetSubjectKnowledges());
-            modelBuilder.Entity<KnowledgeTypeKnowledge>().HasData(SeedData.GetKnowledgeTypeKnowledges());
-            modelBuilder.Entity<KnowledgeTopicKnowledge>().HasData(SeedData.GetKnowledgeTopicKnowledges());
-        }
+        #endregion
     }
 }
