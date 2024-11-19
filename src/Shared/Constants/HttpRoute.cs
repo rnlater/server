@@ -93,6 +93,16 @@ public class HttpRoute
     public const string CreateGame = "create";
     public const string UpdateGame = "update";
     public const string DeleteGame = "delete/{id}";
+    public const string AttachGameToKnowledge = "attach-to-knowledge";
+
+    #endregion
+
+    #region GameOption
+
+    public const string CreateGameOption = "create";
+    public const string CreateGroupedGameOptions = "create-grouped";
+    public const string UpdateGameOption = "update";
+    public const string DeleteGameOption = "delete/{id}";
 
     #endregion
 }

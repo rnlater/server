@@ -43,7 +43,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenUserNotFound()
         {
-            // Arrange
             var parameters = new GetLearningsToReviewParams
             {
                 KnowledgeIds = [Guid.NewGuid()]
@@ -51,10 +50,8 @@ namespace UnitTests.Knowledges.Learnings
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(ClaimTypes.NameIdentifier)).Returns((Claim?)null);
 
-            // Act
             var result = await _GetLearningsToReviewUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.UserNotFound, result.Error);
         }
@@ -62,7 +59,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenSomeKnowledgesHaveNotBeenLearned()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var parameters = new GetLearningsToReviewParams
             {
@@ -79,10 +75,8 @@ namespace UnitTests.Knowledges.Learnings
 
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learnings);
 
-            // Act
             var result = await _GetLearningsToReviewUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.SomeKnowledgesHaveNotBeenLearned, result.Error);
         }
@@ -90,7 +84,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenSomeKnowledgesAreNotReadyToReview()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var parameters = new GetLearningsToReviewParams
             {
@@ -106,10 +99,8 @@ namespace UnitTests.Knowledges.Learnings
 
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learnings);
 
-            // Act
             var result = await _GetLearningsToReviewUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.SomeKnowledgesAreNotReadyToReview, result.Error);
         }
@@ -117,7 +108,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenKnowledgeRequireAGameToReview()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
             var parameters = new GetLearningsToReviewParams
@@ -151,10 +141,8 @@ namespace UnitTests.Knowledges.Learnings
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learnings);
             _gameKnowledgeSubscriptionRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<GameKnowledgeSubscription>>())).ReturnsAsync([]);
 
-            // Act
             var result = await _GetLearningsToReviewUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.RequireAGameToReview, result.Error);
         }
@@ -162,7 +150,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgesAreFound()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
             var parameters = new GetLearningsToReviewParams
@@ -221,10 +208,8 @@ namespace UnitTests.Knowledges.Learnings
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learnings);
             _gameKnowledgeSubscriptionRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<GameKnowledgeSubscription>>())).ReturnsAsync(learnings.First().Knowledge!.GameKnowledgeSubscriptions);
 
-            // Act
             var result = await _GetLearningsToReviewUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Single(result.Value.First());

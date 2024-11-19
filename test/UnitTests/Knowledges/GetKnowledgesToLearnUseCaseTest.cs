@@ -40,7 +40,6 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenUserNotFound()
         {
-            // Arrange
             var parameters = new GetKnowledgesToLearnParams
             {
                 KnowledgeIds = [Guid.NewGuid()]
@@ -48,10 +47,8 @@ namespace UnitTests.Knowledges
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(ClaimTypes.NameIdentifier)).Returns((Claim?)null);
 
-            // Act
             var result = await _getKnowledgesToLearnUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.UserNotFound, result.Error);
         }
@@ -59,7 +56,6 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenKnowledgeAlreadyLearned()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var parameters = new GetKnowledgesToLearnParams
             {
@@ -71,10 +67,8 @@ namespace UnitTests.Knowledges
 
             _learningRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(1);
 
-            // Act
             var result = await _getKnowledgesToLearnUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.KnowledgeAlreadyLearned, result.Error);
         }
@@ -82,7 +76,6 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenNoKnowledgesFound()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var parameters = new GetKnowledgesToLearnParams
             {
@@ -94,10 +87,8 @@ namespace UnitTests.Knowledges
             _learningRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(0);
             _knowledgeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(Enumerable.Empty<Knowledge>());
 
-            // Act
             var result = await _getKnowledgesToLearnUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgesFound, result.Error);
         }
@@ -105,7 +96,6 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenKnowledgeRequireAGameToReview()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
             var parameters = new GetKnowledgesToLearnParams
@@ -135,10 +125,8 @@ namespace UnitTests.Knowledges
             _learningRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(0);
             _knowledgeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledges);
 
-            // Act
             var result = await _getKnowledgesToLearnUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.RequireAGameToReview, result.Error);
         }
@@ -147,7 +135,6 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgesAreFound()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
             var parameters = new GetKnowledgesToLearnParams
@@ -214,10 +201,8 @@ namespace UnitTests.Knowledges
             _learningRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(0);
             _knowledgeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledges);
 
-            // Act
             var result = await _getKnowledgesToLearnUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Single(result.Value.First());

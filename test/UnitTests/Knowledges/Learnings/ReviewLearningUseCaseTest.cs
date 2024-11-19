@@ -42,7 +42,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenUserNotFound()
         {
-            // Arrange
             var parameters = new List<ReviewLearningParams>
             {
                 new ReviewLearningParams
@@ -57,10 +56,8 @@ namespace UnitTests.Knowledges.Learnings
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(ClaimTypes.NameIdentifier)).Returns((Claim?)null);
 
-            // Act
             var result = await _reviewLearningUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.UserNotFound, result.Error);
         }
@@ -68,7 +65,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenLearningNotFound()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var parameters = new List<ReviewLearningParams>
             {
@@ -86,10 +82,8 @@ namespace UnitTests.Knowledges.Learnings
 
             _learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync((Learning?)null);
 
-            // Act
             var result = await _reviewLearningUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.LearningNotFound, result.Error);
         }
@@ -97,7 +91,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenKnowledgeNotReadyToReview()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
             var parameters = new List<ReviewLearningParams>
@@ -122,10 +115,8 @@ namespace UnitTests.Knowledges.Learnings
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
             _learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learning);
 
-            // Act
             var result = await _reviewLearningUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.KnowledgeNotReadyToReview, result.Error);
         }
@@ -133,7 +124,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenReviewBeforeLearning()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
             var parameters = new List<ReviewLearningParams>
@@ -158,10 +148,8 @@ namespace UnitTests.Knowledges.Learnings
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
             _learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learning);
 
-            // Act
             var result = await _reviewLearningUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.RequireLearningBeforeReview, result.Error);
         }
@@ -169,7 +157,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenInvalidData()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
             var parameters = new List<ReviewLearningParams>
@@ -218,10 +205,8 @@ namespace UnitTests.Knowledges.Learnings
             });
             _gameOptionRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<GameOption>>())).ReturnsAsync(new List<GameOption> { correctGameOption, new GameOption { Value = "" } });
 
-            // Act
             var result = await _reviewLearningUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.InvalidData, result.Error);
         }
@@ -229,7 +214,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenLearningIsReviewed()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
             var parameters = new List<ReviewLearningParams>
@@ -280,10 +264,8 @@ namespace UnitTests.Knowledges.Learnings
 
             _learningHistoryRepositoryMock.Setup(r => r.Add(It.IsAny<LearningHistory>())).ReturnsAsync(new LearningHistory { Id = Guid.NewGuid(), LearningId = Guid.NewGuid(), LearningLevel = LearningLevel.LevelOne });
 
-            // Act
             var result = await _reviewLearningUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Single(result.Value);

@@ -50,7 +50,6 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenNoKnowledgeTypesFound()
         {
-            // Arrange
             var parameters = new CreateKnowledgeParams
             {
                 Title = "Test Knowledge",
@@ -59,10 +58,8 @@ namespace UnitTests.Knowledges
 
             _knowledgeTypeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<KnowledgeType>>())).ReturnsAsync(Enumerable.Empty<KnowledgeType>());
 
-            // Act
             var result = await _createKnowledgeUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeTypesFound, result.Error);
         }
@@ -70,7 +67,6 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenNoKnowledgeTopicsFound()
         {
-            // Arrange
             var parameters = new CreateKnowledgeParams
             {
                 Title = "Test Knowledge",
@@ -79,10 +75,8 @@ namespace UnitTests.Knowledges
 
             _knowledgeTopicRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync(Enumerable.Empty<KnowledgeTopic>());
 
-            // Act
             var result = await _createKnowledgeUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeTopicsFound, result.Error);
         }
@@ -90,7 +84,6 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenNoSubjectsFound()
         {
-            // Arrange
             var parameters = new CreateKnowledgeParams
             {
                 Title = "Test Knowledge",
@@ -99,10 +92,8 @@ namespace UnitTests.Knowledges
 
             _subjectRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Subject>>())).ReturnsAsync(Enumerable.Empty<Subject>());
 
-            // Act
             var result = await _createKnowledgeUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoSubjectsFound, result.Error);
         }
@@ -110,7 +101,6 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgeIsCreated()
         {
-            // Arrange
             var parameters = new CreateKnowledgeParams
             {
                 Title = "Test Knowledge",
@@ -148,10 +138,8 @@ namespace UnitTests.Knowledges
 
             _knowledgeRepositoryMock.Setup(r => r.Add(It.IsAny<Knowledge>())).ReturnsAsync(new Knowledge { Id = Guid.NewGuid(), Title = parameters.Title });
 
-            // Act
             var result = await _createKnowledgeUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Equal(parameters.Title, result.Value.Title);

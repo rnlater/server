@@ -80,7 +80,10 @@ public class LearnKnowledgeUseCase : IUseCase<Dictionary<Guid, int>, List<LearnK
                 || gameOptions.Count() != 2
                 || correctGameOption.GameKnowledgeSubscription!.Knowledge!.Id != param.KnowledgeId
                 || !correctGameOption.GameKnowledgeSubscription!.Knowledge!.Materials.Select(m => m.Content).Contains(param.Interpretation))
+                {
+                    await _unitOfWork.RollBackChangesAsync();
                     return Result<Dictionary<Guid, int>>.Fail(ErrorMessage.InvalidData);
+                }
 
                 if (param.GameOptionAnswerId == param.CorrectGameOptionId)
                     score += 50;

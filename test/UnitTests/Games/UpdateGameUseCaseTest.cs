@@ -35,7 +35,6 @@ namespace UnitTests.Games
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenGameNotFound()
         {
-            // Arrange
             var parameters = new UpdateGameParams
             {
                 Id = Guid.NewGuid(),
@@ -46,10 +45,8 @@ namespace UnitTests.Games
 
             _gameRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Game>>())).ReturnsAsync((Game?)null);
 
-            // Act
             var result = await _updateGameUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoGameFoundWithGuid, result.Error);
         }
@@ -57,7 +54,6 @@ namespace UnitTests.Games
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenGameIsUpdated()
         {
-            // Arrange
             var gameId = Guid.NewGuid();
             var parameters = new UpdateGameParams
             {
@@ -74,10 +70,8 @@ namespace UnitTests.Games
             _fileStorageServiceMock.Setup(f => f.StoreFile(It.IsAny<IFormFile>(), It.IsAny<string>())).ReturnsAsync(Result<string>.Done("new-image-url"));
             _gameRepositoryMock.Setup(r => r.Update(It.IsAny<Game>())).ReturnsAsync(game);
 
-            // Act
             var result = await _updateGameUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Equal(gameId, result.Value.Id);
@@ -87,7 +81,6 @@ namespace UnitTests.Games
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenFileStorageFails()
         {
-            // Arrange
             var gameId = Guid.NewGuid();
             var parameters = new UpdateGameParams
             {
@@ -103,10 +96,8 @@ namespace UnitTests.Games
             _fileStorageServiceMock.Setup(f => f.DeleteFile(It.IsAny<string>())).Returns(Result<string>.Done("old-image-url"));
             _fileStorageServiceMock.Setup(f => f.StoreFile(It.IsAny<IFormFile>(), It.IsAny<string>())).ReturnsAsync(Result<string>.Fail(ErrorMessage.StoreFileError));
 
-            // Act
             var result = await _updateGameUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.StoreFileError, result.Error);
         }
@@ -114,7 +105,6 @@ namespace UnitTests.Games
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenFileDeletionFails()
         {
-            // Arrange
             var gameId = Guid.NewGuid();
             var parameters = new UpdateGameParams
             {
@@ -129,10 +119,8 @@ namespace UnitTests.Games
             _gameRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Game>>())).ReturnsAsync(game);
             _fileStorageServiceMock.Setup(f => f.DeleteFile(It.IsAny<string>())).Returns(Result<string>.Fail(ErrorMessage.DeleteFileError));
 
-            // Act
             var result = await _updateGameUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.DeleteFileError, result.Error);
         }

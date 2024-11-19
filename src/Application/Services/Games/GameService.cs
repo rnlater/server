@@ -1,10 +1,11 @@
 using Application.DTOs;
-using Application.Interfaces;
+using Application.DTOs.SingleIdPivotEntities;
+using Application.Interfaces.Games;
 using Application.UseCases.Games;
 using Domain.Interfaces;
 using Shared.Types;
 
-namespace Application.Services
+namespace Application.Services.Games
 {
     public class GameService : IGameService
     {
@@ -13,19 +14,22 @@ namespace Application.Services
         private readonly DeleteGameUseCase _deleteGameUseCase;
         private readonly GetAllGamesUseCase _getAllGamesUseCase;
         private readonly GetGameByGuidUseCase _getGameByGuidUseCase;
+        private readonly AttachGameToKnowledgeUseCase _attachGameToKnowledgeUseCase;
 
         public GameService(
             CreateGameUseCase createGameUseCase,
             UpdateGameUseCase updateGameUseCase,
             DeleteGameUseCase deleteGameUseCase,
             GetAllGamesUseCase getAllGamesUseCase,
-            GetGameByGuidUseCase getGameByGuidUseCase)
+            GetGameByGuidUseCase getGameByGuidUseCase,
+            AttachGameToKnowledgeUseCase attachGameToKnowledgeUseCase)
         {
             _createGameUseCase = createGameUseCase;
             _updateGameUseCase = updateGameUseCase;
             _deleteGameUseCase = deleteGameUseCase;
             _getAllGamesUseCase = getAllGamesUseCase;
             _getGameByGuidUseCase = getGameByGuidUseCase;
+            _attachGameToKnowledgeUseCase = attachGameToKnowledgeUseCase;
         }
 
         public Task<Result<GameDto>> CreateGame(CreateGameParams parameters)
@@ -51,6 +55,11 @@ namespace Application.Services
         public Task<Result<GameDto>> GetGameByGuid(Guid id)
         {
             return _getGameByGuidUseCase.Execute(id);
+        }
+
+        public Task<Result<GameKnowledgeSubscriptionDto>> AttachGameToKnowledge(AttachGameToKnowledgeParams parameters)
+        {
+            return _attachGameToKnowledgeUseCase.Execute(parameters);
         }
     }
 }

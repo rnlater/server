@@ -1,11 +1,15 @@
-using Application.Interfaces;
+using Application.Interfaces.Games;
 using Application.UseCases.Games;
+using Application.UseCases.Games.GameOptions;
 using AutoMapper;
+using Domain.Enums;
 using Endpoint.ApiRequests.Games;
+using Endpoint.ApiRequests.Games.GameOptions;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Constants;
+using Shared.Utils;
 
-namespace Endpoint.Controllers
+namespace Endpoint.Controllers.Games
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -20,10 +24,13 @@ namespace Endpoint.Controllers
             _gameService = gameService;
             _mapper = mapper;
 
-            var config = new MapperConfiguration(cfg =>
+            var config = new MapperConfiguration(static cfg =>
             {
                 cfg.CreateMap<CreateGameRequest, CreateGameParams>();
                 cfg.CreateMap<UpdateGameRequest, UpdateGameParams>();
+                cfg.CreateMap<GroupedGameOptionRequest, GroupedGameOption>()
+                   .ForMember(dest => dest.Type, opt => opt.MapFrom(src => TypeConverter.StringToEnum<GameOptionType>(src.Type)));
+                cfg.CreateMap<AttachGameToKnowledgeRequest, AttachGameToKnowledgeParams>();
             });
             _mapper = config.CreateMapper();
         }
@@ -62,6 +69,14 @@ namespace Endpoint.Controllers
         public async Task<IActionResult> GetGameById(Guid id)
         {
             var result = await _gameService.GetGameByGuid(id);
+            return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
+        }
+
+        [HttpPost(HttpRoute.AttachGameToKnowledge)]
+        public async Task<IActionResult> AttachGameToKnowledge([FromBody] AttachGameToKnowledgeRequest request)
+        {
+            var parameters = _mapper.Map<AttachGameToKnowledgeParams>(request);
+            var result = await _gameService.AttachGameToKnowledge(parameters);
             return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
         }
     }

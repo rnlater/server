@@ -95,8 +95,16 @@ public enum ErrorMessage
     RequireExactTwoGames,
     RequireAGameToReview,
     GameKnowledgeSubscriptionNotFound,
+    GameKnowledgeSubscriptionAlreadyExists,
     NoGameFoundWithGuid,
     NoGamesFound,
+
+    GameOptionGroupNotFound,
+    GameOptionNotFoundWithGuid,
+    RequireExactOneQuestion,
+    RequireAtLeastTwoAnswers,
+    RequireExactOneCorrectAnswer,
+    CannotDeleteCorrectAnswer,
 
     #endregion
 }

@@ -18,6 +18,10 @@ using Application.UseCases.Knowledges.KnowledgeTopics;
 using Application.UseCases.Knowledges;
 using Application.UseCases.Knowledges.Learnings;
 using Application.UseCases.Games;
+using Application.Interfaces.Games;
+using Application.Services.Games;
+using Application.UseCases.Games.GameOptions;
+using Application.Interfaces.Games.GameOptions;
 
 namespace Endpoint.Extensions;
 
@@ -105,7 +109,14 @@ public static class AppServiceCollectionExtensions
         services.AddScoped<GetGameByGuidUseCase>();
         services.AddScoped<GetAllGamesUseCase>();
         services.AddScoped<UpdateGameUseCase>();
+        services.AddScoped<AttachGameToKnowledgeUseCase>();
         services.AddScoped<IGameService, GameService>();
+
+        services.AddScoped<CreateGameOptionUseCase>();
+        services.AddScoped<DeleteGameOptionUseCase>();
+        services.AddScoped<CreateGroupedGameOptionsUseCase>();
+        services.AddScoped<UpdateGameOptionUseCase>();
+        services.AddScoped<IGameOptionService, GameOptionService>();
 
         return services;
     }

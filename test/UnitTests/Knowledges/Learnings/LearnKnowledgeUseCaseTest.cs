@@ -45,7 +45,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenUserNotFound()
         {
-            // Arrange
             var parameters = new List<LearnKnowledgeParams>
             {
                 new LearnKnowledgeParams
@@ -62,10 +61,8 @@ namespace UnitTests.Knowledges.Learnings
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync([]);
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(ClaimTypes.NameIdentifier)).Returns((Claim?)null);
 
-            // Act
             var result = await _learnKnowledgeUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.UserNotFound, result.Error);
         }
@@ -73,7 +70,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenSomeKnowledgesNotFound()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var parameters = new List<LearnKnowledgeParams>
             {
@@ -92,10 +88,8 @@ namespace UnitTests.Knowledges.Learnings
             _knowledgeRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(parameters.Count - 1);
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync([]);
 
-            // Act
             var result = await _learnKnowledgeUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.SomeKnowledgesNotFound, result.Error);
         }
@@ -103,7 +97,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenSomeKnowledgesAlreadyLearned()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var parameters = new List<LearnKnowledgeParams>
             {
@@ -123,10 +116,8 @@ namespace UnitTests.Knowledges.Learnings
                 new Learning { KnowledgeId = parameters[0].KnowledgeId }
             ]);
 
-            // Act
             var result = await _learnKnowledgeUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.SomeKnowledgesAlreadyLearned, result.Error);
         }
@@ -134,7 +125,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenInvalidData()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
             var parameters = new List<LearnKnowledgeParams>
@@ -177,10 +167,8 @@ namespace UnitTests.Knowledges.Learnings
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(new List<Learning>());
             _gameOptionRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<GameOption>>())).ReturnsAsync(new List<GameOption> { correctGameOption, new GameOption { Value = "" } });
 
-            // Act
             var result = await _learnKnowledgeUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.InvalidData, result.Error);
         }
@@ -188,7 +176,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenLearningIsCreated()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
             var parameters = new List<LearnKnowledgeParams>
@@ -233,10 +220,8 @@ namespace UnitTests.Knowledges.Learnings
             _learningRepositoryMock.Setup(r => r.Add(It.IsAny<Learning>())).ReturnsAsync(new Learning { Id = Guid.NewGuid(), KnowledgeId = knowledgeId, UserId = userId });
             _learningHistoryRepositoryMock.Setup(r => r.Add(It.IsAny<LearningHistory>())).ReturnsAsync(new LearningHistory { Id = Guid.NewGuid(), LearningId = Guid.NewGuid(), LearningLevel = LearningLevel.LevelOne });
 
-            // Act
             var result = await _learnKnowledgeUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Single(result.Value);

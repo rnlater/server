@@ -78,8 +78,10 @@ public class ReviewLearningUseCase : IUseCase<List<LearningDto>, List<ReviewLear
                 || gameOptions.Count() != 2
                 || correctGameOption.GameKnowledgeSubscription!.Knowledge!.Id != param.KnowledgeId
                 || !correctGameOption.GameKnowledgeSubscription!.Knowledge!.Materials.Select(m => m.Content).Contains(param.Interpretation))
+                {
+                    await _unitOfWork.RollBackChangesAsync();
                     return Result<List<LearningDto>>.Fail(ErrorMessage.InvalidData);
-
+                }
                 if (param.GameOptionAnswerId == param.CorrectGameOptionId)
                     score += 50;
 

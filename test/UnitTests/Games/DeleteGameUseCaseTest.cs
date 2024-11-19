@@ -34,15 +34,12 @@ namespace UnitTests.Games
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenGameNotFound()
         {
-            // Arrange
             var gameId = Guid.NewGuid();
 
             _gameRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Game>>())).ReturnsAsync((Game?)null);
 
-            // Act
             var result = await _deleteGameUseCase.Execute(gameId);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoGameFoundWithGuid, result.Error);
         }
@@ -50,7 +47,6 @@ namespace UnitTests.Games
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenGameIsDeleted()
         {
-            // Arrange
             var gameId = Guid.NewGuid();
             var game = new Game { Id = gameId, Name = "Test Game", ImageUrl = "test-image-url", Description = "" };
 
@@ -58,10 +54,8 @@ namespace UnitTests.Games
             _gameRepositoryMock.Setup(r => r.Delete(It.IsAny<Guid>())).ReturnsAsync(game);
             _fileStorageServiceMock.Setup(f => f.DeleteFile(It.IsAny<string>())).Returns(Result<string>.Done("test-image-url"));
 
-            // Act
             var result = await _deleteGameUseCase.Execute(gameId);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Equal(gameId, result.Value.Id);
@@ -71,7 +65,6 @@ namespace UnitTests.Games
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenFileDeletionFails()
         {
-            // Arrange
             var gameId = Guid.NewGuid();
             var game = new Game { Id = gameId, Name = "Test Game", ImageUrl = "test-image-url", Description = "" };
 
@@ -79,10 +72,8 @@ namespace UnitTests.Games
             _gameRepositoryMock.Setup(r => r.Delete(It.IsAny<Guid>())).ReturnsAsync(game);
             _fileStorageServiceMock.Setup(f => f.DeleteFile(It.IsAny<string>())).Returns(Result<string>.Fail(ErrorMessage.DeleteFileError));
 
-            // Act
             var result = await _deleteGameUseCase.Execute(gameId);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.DeleteFileError, result.Error);
         }

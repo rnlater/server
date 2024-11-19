@@ -34,7 +34,6 @@ namespace UnitTests.Games
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenGameIsCreated()
         {
-            // Arrange
             var parameters = new CreateGameParams
             {
                 Name = "Test Game",
@@ -47,10 +46,8 @@ namespace UnitTests.Games
             _fileStorageServiceMock.Setup(f => f.StoreFile(It.IsAny<IFormFile>(), It.IsAny<string>())).ReturnsAsync(Result<string>.Done("test-image-url"));
             _gameRepositoryMock.Setup(r => r.Add(It.IsAny<Game>())).ReturnsAsync(game);
 
-            // Act
             var result = await _createGameUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Equal(game.Id, result.Value.Id);
@@ -60,7 +57,6 @@ namespace UnitTests.Games
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenFileStorageFails()
         {
-            // Arrange
             var parameters = new CreateGameParams
             {
                 Name = "Test Game",
@@ -70,10 +66,8 @@ namespace UnitTests.Games
 
             _fileStorageServiceMock.Setup(f => f.StoreFile(It.IsAny<IFormFile>(), It.IsAny<string>())).ReturnsAsync(Result<string>.Fail(ErrorMessage.StoreFileError));
 
-            // Act
             var result = await _createGameUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.StoreFileError, result.Error);
         }

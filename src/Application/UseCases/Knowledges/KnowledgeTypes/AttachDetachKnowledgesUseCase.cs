@@ -41,6 +41,7 @@ namespace Application.UseCases.Knowledges.KnowledgeTypes
                     var knowledge = await knowledgeRepository.Find(new BaseSpecification<Knowledge>(k => k.Id == knowledgeId));
                     if (knowledge == null)
                     {
+                        await _unitOfWork.RollBackChangesAsync();
                         return Result<bool>.Fail(ErrorMessage.NoKnowledgeFoundWithGuid);
                     }
 
@@ -67,7 +68,7 @@ namespace Application.UseCases.Knowledges.KnowledgeTypes
             catch (Exception)
             {
                 await _unitOfWork.RollBackChangesAsync();
-                throw;
+                return Result<bool>.Fail(ErrorMessage.UnknownError);
             }
 
         }

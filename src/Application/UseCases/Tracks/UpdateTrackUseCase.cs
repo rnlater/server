@@ -48,7 +48,6 @@ public class UpdateTrackUseCase : IUseCase<TrackDto, UpdateTrackParams>
         }
         catch (Exception)
         {
-            await _unitOfWork.RollBackChangesAsync();
             return Result<TrackDto>.Fail(ErrorMessage.UnknownError);
         }
 

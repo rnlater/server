@@ -30,15 +30,12 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenKnowledgeNotFound()
         {
-            // Arrange
             var knowledgeId = Guid.NewGuid();
 
             _knowledgeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync((Knowledge?)null);
 
-            // Act
             var result = await _publishKnowledgeUseCase.Execute(knowledgeId);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeFoundWithGuid, result.Error);
         }
@@ -46,17 +43,14 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgeIsPublished()
         {
-            // Arrange
             var knowledgeId = Guid.NewGuid();
             var knowledge = new Knowledge { Id = knowledgeId, Title = "Test Knowledge", Visibility = Domain.Enums.KnowledgeVisibility.Private };
 
             _knowledgeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledge);
             _knowledgeRepositoryMock.Setup(r => r.Update(It.IsAny<Knowledge>())).ReturnsAsync(knowledge);
 
-            // Act
             var result = await _publishKnowledgeUseCase.Execute(knowledgeId);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Equal(knowledgeId, result.Value.Id);

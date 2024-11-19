@@ -30,15 +30,12 @@ namespace UnitTests.Games
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenGameNotFound()
         {
-            // Arrange
             var gameId = Guid.NewGuid();
 
             _gameRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Game>>())).ReturnsAsync((Game?)null);
 
-            // Act
             var result = await _getGameByGuidUseCase.Execute(gameId);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoGameFoundWithGuid, result.Error);
         }
@@ -46,16 +43,13 @@ namespace UnitTests.Games
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenGameIsFound()
         {
-            // Arrange
             var gameId = Guid.NewGuid();
             var game = new Game { Id = gameId, Name = "Test Game", Description = "Test Description", ImageUrl = "test-image-url" };
 
             _gameRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Game>>())).ReturnsAsync(game);
 
-            // Act
             var result = await _getGameByGuidUseCase.Execute(gameId);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Equal(gameId, result.Value.Id);

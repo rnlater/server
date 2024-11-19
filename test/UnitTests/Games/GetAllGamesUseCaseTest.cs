@@ -30,7 +30,6 @@ namespace UnitTests.Games
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenGamesAreFound()
         {
-            // Arrange
             var games = new List<Game>
             {
                 new Game { Id = Guid.NewGuid(), Name = "Game 1", Description = "Description 1", ImageUrl = "image-url-1" },
@@ -39,10 +38,8 @@ namespace UnitTests.Games
 
             _gameRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Game>>())).ReturnsAsync(games);
 
-            // Act
             var result = await _getAllGamesUseCase.Execute(new NoParam());
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Equal(games.Count, result.Value.Count());
@@ -53,13 +50,10 @@ namespace UnitTests.Games
         {
             var games = new List<Game> { };
 
-            // Arrange
             _gameRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Game>>())).ReturnsAsync(games);
 
-            // Act
             var result = await _getAllGamesUseCase.Execute(new NoParam());
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoGamesFound, result.Error);
         }
