@@ -51,9 +51,9 @@ public class HttpRoute
     public const string CreateKnowledge = "create";
     public const string UpdateKnowledge = "update";
     public const string DeleteKnowledge = "delete/{id}";
-    public const string AttachDeattachKnowledgeType = "attach-detach-knowledge-type";
-    public const string AttachDeattachKnowledgeTopic = "attach-detach-knowledge-topic";
     public const string PublishKnowledge = "publish/{id}";
+
+    public const string GetKnowledgesToLearn = "to-learn";
 
     #endregion
 
@@ -75,6 +75,16 @@ public class HttpRoute
     public const string CreateKnowledgeTopic = "create";
     public const string UpdateKnowledgeTopic = "update";
     public const string DeleteKnowledgeTopic = "delete/{id}";
+
+    #endregion
+
+    #region Learning
+
+    public const string LearnKnowledge = "learn";
+
+    public const string GetLearningsToReview = "to-review";
+
+    public const string ReviewLearning = "review";
 
     #endregion
 }

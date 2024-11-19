@@ -32,8 +32,7 @@ namespace Endpoint.Controllers.Knowledges
                     .ForMember(dest => dest.Level, opt => opt.MapFrom(src => TypeConverter.StringToEnum<KnowledgeLevel>(src.Level)));
                 cfg.CreateMap<UpdateKnowledgeRequest, UpdateKnowledgeParams>()
                     .ForMember(dest => dest.Level, opt => opt.MapFrom(src => TypeConverter.StringToEnum<KnowledgeLevel>(src.Level)));
-                cfg.CreateMap<AttachDeattachKnowledgeTypeRequest, AttachDeattachKnowledgeTypeParams>();
-                cfg.CreateMap<AttachDeattachKnowledgeTopicRequest, AttachDeattachKnowledgeTopicParams>();
+                cfg.CreateMap<GetKnowledgesToLearnRequest, GetKnowledgesToLearnParams>();
             });
             _mapper = config.CreateMapper();
         }
@@ -91,29 +90,20 @@ namespace Endpoint.Controllers.Knowledges
             return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
         }
 
-        [HttpPost(HttpRoute.AttachDeattachKnowledgeType)]
-        // [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> AttachDetachKnowledgeType([FromBody] AttachDeattachKnowledgeTypeRequest request)
-        {
-            var parameters = _mapper.Map<AttachDeattachKnowledgeTypeParams>(request);
-            var result = await _knowledgeService.AttachDeattachKnowledgeType(parameters);
-            return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
-        }
-
-        [HttpPost(HttpRoute.AttachDeattachKnowledgeTopic)]
-        // [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> AttachDetachKnowledgeTopic([FromBody] AttachDeattachKnowledgeTopicRequest request)
-        {
-            var parameters = _mapper.Map<AttachDeattachKnowledgeTopicParams>(request);
-            var result = await _knowledgeService.AttachDeattachKnowledgeTopic(parameters);
-            return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
-        }
-
         [HttpPost(HttpRoute.PublishKnowledge)]
         // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> PublishKnowledge(Guid id)
         {
             var result = await _knowledgeService.PublishKnowledge(id);
+            return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
+        }
+
+        [HttpPost(HttpRoute.GetKnowledgesToLearn)]
+        // [Authorize]
+        public async Task<IActionResult> GetKnowledgesToLearn([FromBody] GetKnowledgesToLearnRequest request)
+        {
+            var parameters = _mapper.Map<GetKnowledgesToLearnParams>(request);
+            var result = await _knowledgeService.GetKnowledgesToLearn(parameters);
             return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
         }
     }

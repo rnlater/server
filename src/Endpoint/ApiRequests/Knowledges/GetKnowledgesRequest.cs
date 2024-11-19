@@ -1,5 +1,3 @@
-using System;
-
 namespace Endpoint.ApiRequests.Knowledges;
 
 public class GetKnowledgesRequest

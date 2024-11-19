@@ -7,6 +7,11 @@ namespace Domain.Entities.SingleIdEntities;
 public class LearningHistory : SingleIdEntity
 {
     public LearningHistory() : base() { }
+    public LearningHistory(bool IsMemorized, LearningLevel learningLevel) : base()
+    {
+        this.IsMemorized = IsMemorized;
+        this.LearningLevel = learningLevel;
+    }
 
     public Guid LearningId { get; set; }
     [ForeignKey(nameof(LearningId))]

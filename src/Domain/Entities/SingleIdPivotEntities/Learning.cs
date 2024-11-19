@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Domain.Entities.SingleIdEntities;
+using Domain.Enums;
 
 namespace Domain.Entities.SingleIdPivotEntities;
 
@@ -18,5 +19,7 @@ public class Learning : SingleIdPivotEntity
     public DateTime NextReviewDate { get; set; }
 
     public ICollection<LearningHistory> LearningHistories { get; set; } = [];
+
+    public LearningHistory LatestLearningHistory => LearningHistories.OrderByDescending(lh => lh.LearningLevel).FirstOrDefault() ?? new LearningHistory(false, LearningLevel.LevelZero);
 
 }

@@ -4,6 +4,7 @@ public enum ErrorMessage
 {
     UnknownError,
     NoChangeDetected,
+    InvalidData,
 
     #region File
 
@@ -70,6 +71,7 @@ public enum ErrorMessage
 
     NoKnowledgesFound,
     NoKnowledgeFoundWithGuid,
+    SomeKnowledgesNotFound,
 
     NoKnowledgeTypesFound,
     NoKnowledgeTypeFoundWithGuid,
@@ -81,6 +83,19 @@ public enum ErrorMessage
     SomeKnowledgeTopicsNotFound,
     NoKnowledgeTopicsFound,
     KnowledgeTopicAlreadyExists,
+
+    KnowledgeAlreadyLearned,
+    SomeKnowledgesAlreadyLearned,
+    SomeKnowledgesHaveNotBeenLearned,
+    SomeKnowledgesAreNotReadyToReview,
+    KnowledgeNotReadyToReview,
+    LearningNotFound,
+    RequireLearningBeforeReview,
+
+    RequireExactTwoGames,
+    RequireAGameToReview,
+    GameKnowledgeSubscriptionNotFound,
+
 
     #endregion
 }

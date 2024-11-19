@@ -54,7 +54,7 @@ namespace UnitTests.Knowledges
             var parameters = new CreateKnowledgeParams
             {
                 Title = "Test Knowledge",
-                KnowledgeTypeIds = new List<Guid> { Guid.NewGuid() }
+                KnowledgeTypeIds = [Guid.NewGuid()]
             };
 
             _knowledgeTypeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<KnowledgeType>>())).ReturnsAsync(Enumerable.Empty<KnowledgeType>());
@@ -74,7 +74,7 @@ namespace UnitTests.Knowledges
             var parameters = new CreateKnowledgeParams
             {
                 Title = "Test Knowledge",
-                KnowledgeTopicIds = new List<Guid> { Guid.NewGuid() }
+                KnowledgeTopicIds = [Guid.NewGuid()]
             };
 
             _knowledgeTopicRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync(Enumerable.Empty<KnowledgeTopic>());
@@ -94,7 +94,7 @@ namespace UnitTests.Knowledges
             var parameters = new CreateKnowledgeParams
             {
                 Title = "Test Knowledge",
-                SubjectIds = new List<Guid> { Guid.NewGuid() }
+                SubjectIds = [Guid.NewGuid()]
             };
 
             _subjectRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Subject>>())).ReturnsAsync(Enumerable.Empty<Subject>());
@@ -115,27 +115,27 @@ namespace UnitTests.Knowledges
             {
                 Title = "Test Knowledge",
                 Level = KnowledgeLevel.Beginner,
-                KnowledgeTypeIds = new List<Guid> { Guid.NewGuid() },
-                KnowledgeTopicIds = new List<Guid> { Guid.NewGuid() },
-                SubjectIds = new List<Guid> { Guid.NewGuid() },
-                Materials = new List<CreateMaterialParams>
-                {
+                KnowledgeTypeIds = [Guid.NewGuid()],
+                KnowledgeTopicIds = [Guid.NewGuid()],
+                SubjectIds = [Guid.NewGuid()],
+                Materials =
+                [
                     new CreateMaterialParams
                     {
                         Type = MaterialType.TextSmall,
                         Content = "Content",
                         Order = 1,
-                        Children = new List<CreateMaterialParams>
-                        {
+                        Children =
+                        [
                             new CreateMaterialParams
                             {
                                 Type = MaterialType.TextSmall,
                                 Content = "Child Content",
                                 Order = 1
                             }
-                        }
+                        ]
                     }
-                }
+                ]
             };
 
             var knowledgeTypes = new List<KnowledgeType> { new KnowledgeType { Id = parameters.KnowledgeTypeIds[0], Name = "Type 1" } };

@@ -23,7 +23,7 @@ namespace Endpoint.Controllers.Knowledges
             {
                 cfg.CreateMap<CreateKnowledgeTopicRequest, CreateKnowledgeTopicParams>();
                 cfg.CreateMap<UpdateKnowledgeTopicRequest, UpdateKnowledgeTopicParams>();
-                cfg.CreateMap<AttachDetachKnowledgesRequestTopic, AttachDetachKnowledgesParams>();
+                cfg.CreateMap<AttachDetachKnowledgesTopicRequest, AttachDetachKnowledgesParams>();
             });
             _mapper = config.CreateMapper();
         }
@@ -72,7 +72,7 @@ namespace Endpoint.Controllers.Knowledges
 
         [HttpPost(HttpRoute.AttachDetachKnowledges)]
         // [Authorize(Roles = nameof(Role.Admin))]
-        public async Task<IActionResult> AttachDetachKnowledges([FromBody] AttachDetachKnowledgesRequestTopic request)
+        public async Task<IActionResult> AttachDetachKnowledges([FromBody] AttachDetachKnowledgesTopicRequest request)
         {
             var Params = _mapper.Map<AttachDetachKnowledgesParams>(request);
             var result = await _knowledgeTopicService.AttachDetachKnowledges(Params);

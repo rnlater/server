@@ -47,8 +47,8 @@ namespace UnitTests.Subjects
                 Name = "New Subject",
                 Description = "Description",
                 Photo = new Mock<IFormFile>().Object,
-                TrackUids = new List<Guid> { Guid.NewGuid() },
-                KnowledgeUids = new List<Guid> { SeedData.Knowledge1Id }
+                TrackUids = [Guid.NewGuid()],
+                KnowledgeUids = [SeedData.Knowledge1Id]
             };
 
             _trackRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Track>>())).ReturnsAsync((Track?)null);
@@ -67,8 +67,8 @@ namespace UnitTests.Subjects
                 Name = "New Subject",
                 Description = "Description",
                 Photo = new Mock<IFormFile>().Object,
-                TrackUids = new List<Guid> { SeedData.Track1Id },
-                KnowledgeUids = new List<Guid> { Guid.NewGuid() }
+                TrackUids = [SeedData.Track1Id],
+                KnowledgeUids = [Guid.NewGuid()]
             };
 
             _trackRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Track>>())).ReturnsAsync(SeedData.GetTracks()[0]);
@@ -88,8 +88,8 @@ namespace UnitTests.Subjects
                 Name = "New Subject",
                 Description = "Description",
                 Photo = new Mock<IFormFile>().Object,
-                TrackUids = new List<Guid> { SeedData.Track1Id },
-                KnowledgeUids = new List<Guid> { SeedData.Knowledge1Id }
+                TrackUids = [SeedData.Track1Id],
+                KnowledgeUids = [SeedData.Knowledge1Id]
             };
 
             _trackRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Track>>())).ReturnsAsync(SeedData.GetTracks()[0]);
@@ -110,8 +110,8 @@ namespace UnitTests.Subjects
                 Name = "New Subject",
                 Description = "Description",
                 Photo = new Mock<IFormFile>().Object,
-                TrackUids = new List<Guid> { SeedData.Track1Id },
-                KnowledgeUids = new List<Guid> { SeedData.Knowledge1Id }
+                TrackUids = [SeedData.Track1Id],
+                KnowledgeUids = [SeedData.Knowledge1Id]
             };
 
             var track = SeedData.GetTracks()[0];

@@ -1,7 +1,6 @@
 using Application.DTOs;
 using Application.Interfaces.Knowledges;
 using Application.UseCases.Knowledges;
-using Domain.Interfaces;
 using Shared.Types;
 
 namespace Application.Services.Knowledges
@@ -14,9 +13,8 @@ namespace Application.Services.Knowledges
         private readonly CreateKnowledgeUseCase _createKnowledgeUseCase;
         private readonly UpdateKnowledgeUseCase _updateKnowledgeUseCase;
         private readonly DeleteKnowledgeUseCase _deleteKnowledgeUseCase;
-        private readonly AttachDeattachKnowledgeTypeUseCase _attachDeattachKnowledgeTypeUseCase;
-        private readonly AttachDeattachKnowledgeTopicUseCase _attachDeattachKnowledgeTopicUseCase;
         private readonly PublishKnowledgeUseCase _publishKnowledgeUseCase;
+        private readonly GetKnowledgesToLearnUseCase _getKnowledgesToLearnUseCase;
 
         public KnowledgeService(
             GetDetailedKnowledgeByGuidUseCase getDetailedKnowledgeByGuidUseCase,
@@ -25,9 +23,8 @@ namespace Application.Services.Knowledges
             CreateKnowledgeUseCase createKnowledgeUseCase,
             UpdateKnowledgeUseCase updateKnowledgeUseCase,
             DeleteKnowledgeUseCase deleteKnowledgeUseCase,
-            AttachDeattachKnowledgeTypeUseCase attachDeattachKnowledgeTypeUseCase,
-            AttachDeattachKnowledgeTopicUseCase attachDeattachKnowledgeTopicUseCase,
-            PublishKnowledgeUseCase publishKnowledgeUseCase
+            PublishKnowledgeUseCase publishKnowledgeUseCase,
+            GetKnowledgesToLearnUseCase getKnowledgesToLearnUseCase
         )
         {
             _getDetailedKnowledgeByGuidUseCase = getDetailedKnowledgeByGuidUseCase;
@@ -36,19 +33,8 @@ namespace Application.Services.Knowledges
             _createKnowledgeUseCase = createKnowledgeUseCase;
             _updateKnowledgeUseCase = updateKnowledgeUseCase;
             _deleteKnowledgeUseCase = deleteKnowledgeUseCase;
-            _attachDeattachKnowledgeTypeUseCase = attachDeattachKnowledgeTypeUseCase;
-            _attachDeattachKnowledgeTopicUseCase = attachDeattachKnowledgeTopicUseCase;
             _publishKnowledgeUseCase = publishKnowledgeUseCase;
-        }
-
-        public Task<Result<PivotSuccessModificationType>> AttachDeattachKnowledgeTopic(AttachDeattachKnowledgeTopicParams Params)
-        {
-            return _attachDeattachKnowledgeTopicUseCase.Execute(Params);
-        }
-
-        public Task<Result<PivotSuccessModificationType>> AttachDeattachKnowledgeType(AttachDeattachKnowledgeTypeParams Params)
-        {
-            return _attachDeattachKnowledgeTypeUseCase.Execute(Params);
+            _getKnowledgesToLearnUseCase = getKnowledgesToLearnUseCase;
         }
 
         public Task<Result<KnowledgeDto>> CreateKnowledge(CreateKnowledgeParams Params)
@@ -84,6 +70,11 @@ namespace Application.Services.Knowledges
         public Task<Result<IEnumerable<KnowledgeDto>>> GetKnowledges(GetKnowledgesParams Params)
         {
             return _getKnowledgesUseCase.Execute(Params);
+        }
+
+        public Task<Result<List<Dictionary<Guid, KnowledgeDataToLearn>>>> GetKnowledgesToLearn(GetKnowledgesToLearnParams Params)
+        {
+            return _getKnowledgesToLearnUseCase.Execute(Params);
         }
     }
 }

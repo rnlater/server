@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using Application.DTOs.PivotEntities;
+using Application.DTOs.SingleIdPivotEntities;
 using Domain.Enums;
 
 namespace Application.DTOs;
@@ -17,6 +18,9 @@ public class KnowledgeDto : SingleIdEntityDto
     public ICollection<SubjectKnowledgeDto> SubjectKnowledges { get; set; } = [];
     public ICollection<KnowledgeTypeKnowledgeDto> KnowledgeTypeKnowledges { get; set; } = [];
     public ICollection<KnowledgeTopicKnowledgeDto> KnowledgeTopicKnowledges { get; set; } = [];
+    public ICollection<LearningDto> Learnings { get; set; } = [];
+    public ICollection<GameKnowledgeSubscriptionDto> GameKnowledgeSubscriptions { get; set; } = [];
+    public GameKnowledgeSubscriptionDto? GameToReview { get; set; }
 
     public void MergeArrangeMaterials()
     {

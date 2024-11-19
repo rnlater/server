@@ -1,6 +1,6 @@
 namespace Endpoint.ApiRequests.Knowledges.KnowledgeTopics;
 
-public class AttachDetachKnowledgesRequestTopic
+public class AttachDetachKnowledgesTopicRequest
 {
     public Guid KnowledgeTopicId { get; set; }
     public List<Guid> KnowledgeIds { get; set; } = [];

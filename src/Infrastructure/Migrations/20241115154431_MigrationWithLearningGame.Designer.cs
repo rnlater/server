@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241114064927_MigrationWithLearningGame")]
+    [Migration("20241115154431_MigrationWithLearningGame")]
     partial class MigrationWithLearningGame
     {
         /// <inheritdoc />
@@ -45,15 +45,15 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            KnowledgeTopicId = new Guid("5e7aa25a-3b50-449a-a9da-443d8174e1aa"),
-                            KnowledgeId = new Guid("2ec6e41b-faba-4ed1-bc29-f7f8ea5340d6"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5160)
+                            KnowledgeTopicId = new Guid("c6a8a743-a025-4eee-ba7e-2571f023f62a"),
+                            KnowledgeId = new Guid("5b9fe9f4-8553-4f91-a806-8e19a2dae9b6"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5330)
                         },
                         new
                         {
-                            KnowledgeTopicId = new Guid("9c4c2c9c-4c2e-433f-8cb5-2ba74dcdf7b7"),
-                            KnowledgeId = new Guid("60f522b1-69a5-46c2-9487-098d79e60741"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5170)
+                            KnowledgeTopicId = new Guid("e8a35c41-da54-4148-81ec-a18da0797111"),
+                            KnowledgeId = new Guid("6b7012bd-6663-428a-b187-73b15ac9e8cc"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5330)
                         });
                 });
 
@@ -77,15 +77,15 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            KnowledgeTypeId = new Guid("1ef91520-f995-4871-8d61-11386ae17d5f"),
-                            KnowledgeId = new Guid("2ec6e41b-faba-4ed1-bc29-f7f8ea5340d6"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5120)
+                            KnowledgeTypeId = new Guid("f3d76cab-223d-49c3-b51b-e1ff2a57314c"),
+                            KnowledgeId = new Guid("5b9fe9f4-8553-4f91-a806-8e19a2dae9b6"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5300)
                         },
                         new
                         {
-                            KnowledgeTypeId = new Guid("ae87764f-e6c7-44d5-ad32-2fb91fc8ce32"),
-                            KnowledgeId = new Guid("60f522b1-69a5-46c2-9487-098d79e60741"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5130)
+                            KnowledgeTypeId = new Guid("a4440e11-3bc7-425d-ac21-264b1906346a"),
+                            KnowledgeId = new Guid("6b7012bd-6663-428a-b187-73b15ac9e8cc"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5300)
                         });
                 });
 
@@ -109,15 +109,15 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            SubjectId = new Guid("ec8f31c6-e6b9-41ee-b5a8-1eee3970898e"),
-                            KnowledgeId = new Guid("2ec6e41b-faba-4ed1-bc29-f7f8ea5340d6"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5000)
+                            SubjectId = new Guid("e2076035-11cb-473e-8c0c-9c68bc711da7"),
+                            KnowledgeId = new Guid("5b9fe9f4-8553-4f91-a806-8e19a2dae9b6"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5280)
                         },
                         new
                         {
-                            SubjectId = new Guid("3a0dcf72-d5c6-4550-bfea-e15f392e243e"),
-                            KnowledgeId = new Guid("60f522b1-69a5-46c2-9487-098d79e60741"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5010)
+                            SubjectId = new Guid("e9e4cdbe-ae71-4def-9f21-3dc8bb5035ae"),
+                            KnowledgeId = new Guid("6b7012bd-6663-428a-b187-73b15ac9e8cc"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5280)
                         });
                 });
 
@@ -141,15 +141,15 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            TrackId = new Guid("4b8864c1-8755-4d73-8b7b-00cdce57a74a"),
-                            SubjectId = new Guid("ec8f31c6-e6b9-41ee-b5a8-1eee3970898e"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(4850)
+                            TrackId = new Guid("d69d0960-ddf0-4f34-a636-bd8feeccc0b2"),
+                            SubjectId = new Guid("e2076035-11cb-473e-8c0c-9c68bc711da7"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5250)
                         },
                         new
                         {
-                            TrackId = new Guid("a2c7d934-b843-49b8-9d0f-3daa10c98697"),
-                            SubjectId = new Guid("3a0dcf72-d5c6-4550-bfea-e15f392e243e"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(4850)
+                            TrackId = new Guid("1842dda3-63e2-419b-891c-844306444001"),
+                            SubjectId = new Guid("e9e4cdbe-ae71-4def-9f21-3dc8bb5035ae"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5250)
                         });
                 });
 
@@ -198,12 +198,12 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("73634806-5e73-411c-afcc-361bd3fd972e"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(4010),
+                            Id = new Guid("bf9fa3fd-e85f-4466-933b-326ff5ab53e7"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(4560),
                             HashedPassword = "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg=",
                             IsActivated = true,
                             IsEmailConfirmed = true,
-                            UserId = new Guid("70bfb17c-d2cc-48f0-a071-4aa35c746d56")
+                            UserId = new Guid("a9b57b10-671f-49bd-86a9-ac07ba03fc58")
                         });
                 });
 
@@ -235,16 +235,16 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("0a14ada4-c9a8-47ce-bd74-9e889e773804"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5200),
+                            Id = new Guid("6035bee5-cd3b-4608-a6a0-78eccfbb9ec9"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5360),
                             Description = "Description 1",
                             ImageUrl = "image1.jpg",
                             Name = "Game 1"
                         },
                         new
                         {
-                            Id = new Guid("595dcfd0-d177-4ff4-ab53-fbe378d32468"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5240),
+                            Id = new Guid("c87995de-de81-4d48-ba8e-d574f55cc44b"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5370),
                             Description = "Description 2",
                             ImageUrl = "image2.jpg",
                             Name = "Game 2"
@@ -288,18 +288,18 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("410a3ef3-91d3-4790-94c7-2c34599cc36b"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5330),
-                            GameKnowledgeSubscriptionId = new Guid("1dcf2b12-8b2c-4d8e-b992-261fdf07e5c9"),
+                            Id = new Guid("7b8b9ebd-a93b-4193-b3c2-ce1ecb6b7870"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5430),
+                            GameKnowledgeSubscriptionId = new Guid("922c99ea-f068-4309-a359-ed3726321bef"),
                             Group = 1,
                             Type = 0,
                             Value = "What is Value 1?"
                         },
                         new
                         {
-                            Id = new Guid("00b4f54f-ea0b-4a42-8b35-562ab18fc60f"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5330),
-                            GameKnowledgeSubscriptionId = new Guid("1dcf2b12-8b2c-4d8e-b992-261fdf07e5c9"),
+                            Id = new Guid("3278d6d8-f3cf-4f6d-b059-847d2b4a32b4"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5440),
+                            GameKnowledgeSubscriptionId = new Guid("922c99ea-f068-4309-a359-ed3726321bef"),
                             Group = 1,
                             IsCorrect = true,
                             Type = 1,
@@ -307,27 +307,27 @@ namespace Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("38465583-45fb-4e13-bc31-261fbee57e75"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5340),
-                            GameKnowledgeSubscriptionId = new Guid("1dcf2b12-8b2c-4d8e-b992-261fdf07e5c9"),
+                            Id = new Guid("49632a6c-4151-4766-8b8f-9193bfb9dc69"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5440),
+                            GameKnowledgeSubscriptionId = new Guid("922c99ea-f068-4309-a359-ed3726321bef"),
                             Group = 1,
                             Type = 1,
                             Value = "Wrong Value"
                         },
                         new
                         {
-                            Id = new Guid("77ab178b-132d-4b58-b46f-8fada61cd3c0"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5350),
-                            GameKnowledgeSubscriptionId = new Guid("b7811e7a-6df6-4d7d-a81f-f873168f0f9b"),
+                            Id = new Guid("eecae7e3-d51c-43c0-9256-425d20dad231"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5450),
+                            GameKnowledgeSubscriptionId = new Guid("724e0ace-3973-49b2-962f-8dedb00ebd79"),
                             Group = 2,
                             Type = 0,
                             Value = "What is Value 2?"
                         },
                         new
                         {
-                            Id = new Guid("bfa7c1d4-b42b-4cce-9729-8b1b7f315bb6"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5350),
-                            GameKnowledgeSubscriptionId = new Guid("b7811e7a-6df6-4d7d-a81f-f873168f0f9b"),
+                            Id = new Guid("39034003-e9d9-4f23-946e-441eb92886d7"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5560),
+                            GameKnowledgeSubscriptionId = new Guid("724e0ace-3973-49b2-962f-8dedb00ebd79"),
                             Group = 2,
                             IsCorrect = true,
                             Type = 1,
@@ -335,9 +335,9 @@ namespace Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("802cd8b9-4e45-47b1-a462-6f21d7cb69ee"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5360),
-                            GameKnowledgeSubscriptionId = new Guid("b7811e7a-6df6-4d7d-a81f-f873168f0f9b"),
+                            Id = new Guid("9a8bab58-1e73-44c6-ad67-0bbdd77dea4c"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5560),
+                            GameKnowledgeSubscriptionId = new Guid("724e0ace-3973-49b2-962f-8dedb00ebd79"),
                             Group = 2,
                             Type = 1,
                             Value = "Value 2"
@@ -375,18 +375,18 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("2ec6e41b-faba-4ed1-bc29-f7f8ea5340d6"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(4730),
-                            CreatorId = new Guid("70bfb17c-d2cc-48f0-a071-4aa35c746d56"),
+                            Id = new Guid("5b9fe9f4-8553-4f91-a806-8e19a2dae9b6"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5170),
+                            CreatorId = new Guid("a9b57b10-671f-49bd-86a9-ac07ba03fc58"),
                             Level = 0,
                             Title = "Introduction to Algebra",
                             Visibility = 0
                         },
                         new
                         {
-                            Id = new Guid("60f522b1-69a5-46c2-9487-098d79e60741"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(4740),
-                            CreatorId = new Guid("70bfb17c-d2cc-48f0-a071-4aa35c746d56"),
+                            Id = new Guid("6b7012bd-6663-428a-b187-73b15ac9e8cc"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5180),
+                            CreatorId = new Guid("a9b57b10-671f-49bd-86a9-ac07ba03fc58"),
                             Level = 2,
                             Title = "Introduction to Physics",
                             Visibility = 0
@@ -421,15 +421,15 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5e7aa25a-3b50-449a-a9da-443d8174e1aa"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(4680),
+                            Id = new Guid("c6a8a743-a025-4eee-ba7e-2571f023f62a"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5050),
                             Order = 1,
                             Title = "Algebra"
                         },
                         new
                         {
-                            Id = new Guid("9c4c2c9c-4c2e-433f-8cb5-2ba74dcdf7b7"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(4690),
+                            Id = new Guid("e8a35c41-da54-4148-81ec-a18da0797111"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5130),
                             Order = 2,
                             Title = "Physics"
                         });
@@ -460,14 +460,14 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1ef91520-f995-4871-8d61-11386ae17d5f"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(4640),
+                            Id = new Guid("f3d76cab-223d-49c3-b51b-e1ff2a57314c"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5010),
                             Name = "Theory"
                         },
                         new
                         {
-                            Id = new Guid("ae87764f-e6c7-44d5-ad32-2fb91fc8ce32"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(4650),
+                            Id = new Guid("a4440e11-3bc7-425d-ac21-264b1906346a"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5010),
                             Name = "Practical"
                         });
                 });
@@ -507,22 +507,22 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("e8983958-c302-4907-b6ba-4cd3d6428b1d"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5450),
+                            Id = new Guid("ce793616-33aa-4b0b-9de9-447caef86a4c"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5640),
                             IsMemorized = true,
-                            LearningId = new Guid("3a95146b-6106-4fe6-998f-98a59791dd5f"),
+                            LearningId = new Guid("120e4c04-fe9b-484a-b03a-189d83612813"),
                             LearningLevel = 0,
-                            PlayedGameId = new Guid("0a14ada4-c9a8-47ce-bd74-9e889e773804"),
+                            PlayedGameId = new Guid("6035bee5-cd3b-4608-a6a0-78eccfbb9ec9"),
                             Score = 100
                         },
                         new
                         {
-                            Id = new Guid("1737db4c-21f0-44d3-bdbc-9b2c4541a310"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5540),
+                            Id = new Guid("a2e9c292-2b38-460f-99e5-62d27a48ebdd"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5640),
                             IsMemorized = false,
-                            LearningId = new Guid("735f8cd5-0bde-4275-b0d5-3733362eca09"),
+                            LearningId = new Guid("dff36469-2a2c-4c7f-a462-4871e550b83d"),
                             LearningLevel = 1,
-                            PlayedGameId = new Guid("595dcfd0-d177-4ff4-ab53-fbe378d32468"),
+                            PlayedGameId = new Guid("c87995de-de81-4d48-ba8e-d574f55cc44b"),
                             Score = 80
                         });
                 });
@@ -563,21 +563,21 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b5ce233f-83a6-4424-8301-81f852ae0b69"),
+                            Id = new Guid("fda84451-1fca-429b-baea-401c798dea4a"),
                             Content = "Video content about Algebra.",
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(4800),
-                            KnowledgeId = new Guid("2ec6e41b-faba-4ed1-bc29-f7f8ea5340d6"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5210),
+                            KnowledgeId = new Guid("5b9fe9f4-8553-4f91-a806-8e19a2dae9b6"),
                             Order = 1,
-                            Type = 4
+                            Type = 5
                         },
                         new
                         {
-                            Id = new Guid("d6d7f7c7-a66f-4281-942d-a1c8793449f0"),
+                            Id = new Guid("d6da04a3-ead1-4083-9f03-395019d452c0"),
                             Content = "Article about Physics.",
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(4810),
-                            KnowledgeId = new Guid("60f522b1-69a5-46c2-9487-098d79e60741"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5220),
+                            KnowledgeId = new Guid("6b7012bd-6663-428a-b187-73b15ac9e8cc"),
                             Order = 2,
-                            Type = 1
+                            Type = 2
                         });
                 });
 
@@ -609,16 +609,16 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ec8f31c6-e6b9-41ee-b5a8-1eee3970898e"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(4440),
+                            Id = new Guid("e2076035-11cb-473e-8c0c-9c68bc711da7"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(4920),
                             Description = "Study of numbers, shapes, and patterns.",
                             Name = "Mathematics",
                             Photo = "test.png"
                         },
                         new
                         {
-                            Id = new Guid("3a0dcf72-d5c6-4550-bfea-e15f392e243e"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(4450),
+                            Id = new Guid("e9e4cdbe-ae71-4def-9f21-3dc8bb5035ae"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(4930),
                             Description = "Study of the physical and natural world.",
                             Name = "Science",
                             Photo = "test.png"
@@ -649,15 +649,15 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4b8864c1-8755-4d73-8b7b-00cdce57a74a"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(4490),
+                            Id = new Guid("d69d0960-ddf0-4f34-a636-bd8feeccc0b2"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(4960),
                             Description = "A track focused on Mathematics.",
                             Name = "Mathematics Track"
                         },
                         new
                         {
-                            Id = new Guid("a2c7d934-b843-49b8-9d0f-3daa10c98697"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(4590),
+                            Id = new Guid("1842dda3-63e2-419b-891c-844306444001"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(4970),
                             Description = "A track focused on Science.",
                             Name = "Science Track"
                         });
@@ -696,8 +696,8 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("70bfb17c-d2cc-48f0-a071-4aa35c746d56"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(3710),
+                            Id = new Guid("a9b57b10-671f-49bd-86a9-ac07ba03fc58"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(4330),
                             Email = "testuser@example.com",
                             Role = 1,
                             UserName = "testuser"
@@ -719,6 +719,9 @@ namespace Infrastructure.Migrations
                     b.Property<Guid>("KnowledgeId")
                         .HasColumnType("char(36)");
 
+                    b.Property<Guid?>("KnowledgeId1")
+                        .HasColumnType("char(36)");
+
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime(6)");
 
@@ -731,22 +734,25 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("KnowledgeId");
 
+                    b.HasIndex("KnowledgeId1")
+                        .IsUnique();
+
                     b.ToTable("GameKnowledgeSubscriptions");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1dcf2b12-8b2c-4d8e-b992-261fdf07e5c9"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5280),
-                            GameId = new Guid("0a14ada4-c9a8-47ce-bd74-9e889e773804"),
-                            KnowledgeId = new Guid("2ec6e41b-faba-4ed1-bc29-f7f8ea5340d6")
+                            Id = new Guid("922c99ea-f068-4309-a359-ed3726321bef"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5400),
+                            GameId = new Guid("6035bee5-cd3b-4608-a6a0-78eccfbb9ec9"),
+                            KnowledgeId = new Guid("5b9fe9f4-8553-4f91-a806-8e19a2dae9b6")
                         },
                         new
                         {
-                            Id = new Guid("b7811e7a-6df6-4d7d-a81f-f873168f0f9b"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5290),
-                            GameId = new Guid("595dcfd0-d177-4ff4-ab53-fbe378d32468"),
-                            KnowledgeId = new Guid("60f522b1-69a5-46c2-9487-098d79e60741")
+                            Id = new Guid("724e0ace-3973-49b2-962f-8dedb00ebd79"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5400),
+                            GameId = new Guid("c87995de-de81-4d48-ba8e-d574f55cc44b"),
+                            KnowledgeId = new Guid("6b7012bd-6663-428a-b187-73b15ac9e8cc")
                         });
                 });
 
@@ -785,19 +791,19 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("3a95146b-6106-4fe6-998f-98a59791dd5f"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5400),
-                            KnowledgeId = new Guid("2ec6e41b-faba-4ed1-bc29-f7f8ea5340d6"),
+                            Id = new Guid("120e4c04-fe9b-484a-b03a-189d83612813"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5600),
+                            KnowledgeId = new Guid("5b9fe9f4-8553-4f91-a806-8e19a2dae9b6"),
                             NextReviewDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = new Guid("70bfb17c-d2cc-48f0-a071-4aa35c746d56")
+                            UserId = new Guid("a9b57b10-671f-49bd-86a9-ac07ba03fc58")
                         },
                         new
                         {
-                            Id = new Guid("735f8cd5-0bde-4275-b0d5-3733362eca09"),
-                            CreatedAt = new DateTime(2024, 11, 14, 6, 49, 26, 941, DateTimeKind.Utc).AddTicks(5410),
-                            KnowledgeId = new Guid("60f522b1-69a5-46c2-9487-098d79e60741"),
+                            Id = new Guid("dff36469-2a2c-4c7f-a462-4871e550b83d"),
+                            CreatedAt = new DateTime(2024, 11, 15, 15, 44, 30, 583, DateTimeKind.Utc).AddTicks(5610),
+                            KnowledgeId = new Guid("6b7012bd-6663-428a-b187-73b15ac9e8cc"),
                             NextReviewDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = new Guid("70bfb17c-d2cc-48f0-a071-4aa35c746d56")
+                            UserId = new Guid("a9b57b10-671f-49bd-86a9-ac07ba03fc58")
                         });
                 });
 
@@ -981,6 +987,10 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Domain.Entities.SingleIdEntities.Knowledge", null)
+                        .WithOne("GameToReview")
+                        .HasForeignKey("Domain.Entities.SingleIdPivotEntities.GameKnowledgeSubscription", "KnowledgeId1");
+
                     b.Navigation("Game");
 
                     b.Navigation("Knowledge");
@@ -1013,6 +1023,8 @@ namespace Infrastructure.Migrations
             modelBuilder.Entity("Domain.Entities.SingleIdEntities.Knowledge", b =>
                 {
                     b.Navigation("GameKnowledgeSubscriptions");
+
+                    b.Navigation("GameToReview");
 
                     b.Navigation("KnowledgeTopicKnowledges");
 

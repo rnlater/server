@@ -1,4 +1,3 @@
-using System;
 using Domain.Entities.SingleIdPivotEntities;
 
 namespace Domain.Entities.SingleIdEntities;
