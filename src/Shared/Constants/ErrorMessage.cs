@@ -95,7 +95,8 @@ public enum ErrorMessage
     RequireExactTwoGames,
     RequireAGameToReview,
     GameKnowledgeSubscriptionNotFound,
-
+    NoGameFoundWithGuid,
+    NoGamesFound,
 
     #endregion
 }

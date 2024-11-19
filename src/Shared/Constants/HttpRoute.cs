@@ -81,10 +81,18 @@ public class HttpRoute
     #region Learning
 
     public const string LearnKnowledge = "learn";
-
     public const string GetLearningsToReview = "to-review";
-
     public const string ReviewLearning = "review";
+
+    #endregion
+
+    #region Game
+
+    public const string GetGames = "list";
+    public const string GetGameByGuid = "detailed/{id}";
+    public const string CreateGame = "create";
+    public const string UpdateGame = "update";
+    public const string DeleteGame = "delete/{id}";
 
     #endregion
 }
