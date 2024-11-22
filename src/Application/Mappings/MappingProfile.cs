@@ -35,5 +35,7 @@ public class MappingProfile : Profile
         CreateMap<GameKnowledgeSubscription, GameKnowledgeSubscriptionDto>();
         CreateMap<Game, GameDto>();
         CreateMap<GameOption, GameOptionDto>();
+        CreateMap<LearningList, LearningListDto>();
+        CreateMap<LearningListKnowledge, LearningListKnowledgeDto>();
     }
 }

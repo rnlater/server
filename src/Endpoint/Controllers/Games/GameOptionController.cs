@@ -1,4 +1,3 @@
-using Application.DTOs;
 using Application.Interfaces.Games.GameOptions;
 using Application.UseCases.Games.GameOptions;
 using AutoMapper;
@@ -7,9 +6,6 @@ using Endpoint.ApiRequests.Games.GameOptions;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Constants;
 using Shared.Utils;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Endpoint.Controllers.Games
 {

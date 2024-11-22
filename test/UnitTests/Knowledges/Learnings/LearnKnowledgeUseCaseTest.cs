@@ -112,9 +112,7 @@ namespace UnitTests.Knowledges.Learnings
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
             _knowledgeRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(parameters.Count);
-            _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync([
-                new Learning { KnowledgeId = parameters[0].KnowledgeId }
-            ]);
+            _learningRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(parameters.Count);
 
             var result = await _learnKnowledgeUseCase.Execute(parameters);
 

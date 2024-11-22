@@ -43,6 +43,7 @@ public enum ErrorMessage
     UserAlreadyExists,
     UserAlreadyExistsWithSameEmail,
     UserIsNotActive,
+    UserNotAuthorized,
 
     #endregion
 
@@ -105,6 +106,9 @@ public enum ErrorMessage
     RequireAtLeastTwoAnswers,
     RequireExactOneCorrectAnswer,
     CannotDeleteCorrectAnswer,
+
+    LearningListTitleExisted,
+    NoLearningListFoundWithGuid
 
     #endregion
 }

@@ -193,4 +193,24 @@ public static class SeedData
                 new LearningHistory { Id = LearningHistory2Id, LearningId = Learning2Id, LearningLevel = LearningLevel.LevelOne, IsMemorized = false, Score = 80, PlayedGameId = Game2Id }
             };
     }
+
+    public static readonly Guid LearningList1Id = Guid.NewGuid();
+    public static readonly Guid LearningList2Id = Guid.NewGuid();
+    public static LearningList[] GetLearningLists()
+    {
+        return new[]
+        {
+                new LearningList { Id = LearningList1Id, LearnerId = UserId, Title = "Learning List 1" },
+                new LearningList { Id = LearningList2Id, LearnerId = UserId, Title = "Learning List 2" }
+            };
+    }
+
+    public static LearningListKnowledge[] GetLearningListKnowledges()
+    {
+        return new[]
+        {
+                new LearningListKnowledge { LearningListId = LearningList1Id, KnowledgeId = Knowledge1Id },
+                new LearningListKnowledge { LearningListId = LearningList2Id, KnowledgeId = Knowledge2Id }
+            };
+    }
 }

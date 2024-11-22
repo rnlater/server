@@ -105,4 +105,15 @@ public class HttpRoute
     public const string DeleteGameOption = "delete/{id}";
 
     #endregion
+
+    #region LearningList
+
+    public const string CreateLearningList = "create";
+    public const string UpdateLearningList = "update";
+    public const string AddRemoveKnowledgeToLearningList = "add-remove-knowledge";
+    public const string GetAllLearningLists = "list";
+    public const string GetLearningListByGuid = "detailed/{id}";
+    public const string DeleteLearningList = "delete/{id}";
+
+    #endregion
 }

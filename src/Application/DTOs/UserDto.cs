@@ -16,4 +16,6 @@ public class UserDto : SingleIdEntityDto
 
     public AuthenticationDto? Authentication { get; set; }
 
+    public ICollection<LearningListDto> LearningLists { get; set; } = [];
+
 }

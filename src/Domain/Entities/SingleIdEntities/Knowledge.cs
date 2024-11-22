@@ -21,6 +21,7 @@ public class Knowledge : SingleIdEntity
     public ICollection<KnowledgeTopicKnowledge> KnowledgeTopicKnowledges { get; set; } = [];
     public ICollection<Learning> Learnings { get; set; } = [];
     public ICollection<GameKnowledgeSubscription> GameKnowledgeSubscriptions { get; set; } = [];
+    public ICollection<LearningListKnowledge> LearningListKnowledges { get; set; } = [];
 
     public static Knowledge ForTestPurposeOnly()
     {

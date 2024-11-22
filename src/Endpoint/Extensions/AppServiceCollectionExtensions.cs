@@ -22,6 +22,7 @@ using Application.Interfaces.Games;
 using Application.Services.Games;
 using Application.UseCases.Games.GameOptions;
 using Application.Interfaces.Games.GameOptions;
+using Application.UseCases.Knowledges.LearningLists;
 
 namespace Endpoint.Extensions;
 
@@ -117,6 +118,14 @@ public static class AppServiceCollectionExtensions
         services.AddScoped<CreateGroupedGameOptionsUseCase>();
         services.AddScoped<UpdateGameOptionUseCase>();
         services.AddScoped<IGameOptionService, GameOptionService>();
+
+        services.AddScoped<CreateLearningListUseCase>();
+        services.AddScoped<DeleteLearningListUseCase>();
+        services.AddScoped<GetLearningListByGuidUseCase>();
+        services.AddScoped<GetAllLearningListsUseCase>();
+        services.AddScoped<UpdateLearningListUseCase>();
+        services.AddScoped<AddRemoveKnowledgeToLearningListUseCase>();
+        services.AddScoped<ILearningListService, LearningListService>();
 
         return services;
     }

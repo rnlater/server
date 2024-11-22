@@ -1,4 +1,3 @@
-using Application.DTOs;
 using Application.Mappings;
 using Application.UseCases.Games;
 using Application.UseCases.Games.GameOptions;
@@ -9,7 +8,6 @@ using Domain.Enums;
 using Domain.Interfaces;
 using Moq;
 using Shared.Constants;
-using Shared.Types;
 
 namespace UnitTests.Games
 {

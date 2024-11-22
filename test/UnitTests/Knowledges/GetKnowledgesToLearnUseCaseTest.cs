@@ -90,7 +90,7 @@ namespace UnitTests.Knowledges
             var result = await _getKnowledgesToLearnUseCase.Execute(parameters);
 
             Assert.False(result.IsSuccess);
-            Assert.Equal(ErrorMessage.NoKnowledgesFound, result.Error);
+            Assert.Equal(ErrorMessage.SomeKnowledgesNotFound, result.Error);
         }
 
         [Fact]

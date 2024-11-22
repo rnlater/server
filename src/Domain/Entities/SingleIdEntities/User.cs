@@ -11,15 +11,14 @@ namespace Domain.Entities.SingleIdEntities
 
         public required string Email { get; set; }
 
-        [AllowNull]
         public string? PhotoUrl { get; set; }
 
         public Role Role { get; set; } = Role.User;
 
-        [NotMapped]
-        [InverseProperty("User")]
         public Authentication? Authentication { get; set; }
 
         public ICollection<Learning> Learnings { get; set; } = [];
+
+        public ICollection<LearningList> LearningLists { get; set; } = [];
     }
 }

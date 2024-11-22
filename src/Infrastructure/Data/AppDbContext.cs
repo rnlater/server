@@ -10,6 +10,7 @@ namespace Infrastructure.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         #region Properties
+
         public required DbSet<User> Users { get; set; }
         public required DbSet<Authentication> Authentications { get; set; }
         public required DbSet<Knowledge> Knowledges { get; set; }
@@ -27,6 +28,9 @@ namespace Infrastructure.Data
         public required DbSet<Game> Games { get; set; }
         public required DbSet<GameOption> GameOptions { get; set; }
         public required DbSet<GameKnowledgeSubscription> GameKnowledgeSubscriptions { get; set; }
+        public required DbSet<LearningList> LearningLists { get; set; }
+        public required DbSet<LearningListKnowledge> LearningListKnowledges { get; set; }
+
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -50,6 +54,8 @@ namespace Infrastructure.Data
             ConfigureGameKnowledgeSubscriptionEntity(modelBuilder);
             ConfigureLearningEntity(modelBuilder);
             ConfigureLearningHistoryEntity(modelBuilder);
+            ConfigureLearningListEntity(modelBuilder);
+            ConfigureLearningListKnowledgeEntity(modelBuilder);
 
             Seed(modelBuilder);
         }
@@ -73,6 +79,8 @@ namespace Infrastructure.Data
             modelBuilder.Entity<GameOption>().HasData(SeedData.GetGameOptions());
             modelBuilder.Entity<Learning>().HasData(SeedData.GetLearnings());
             modelBuilder.Entity<LearningHistory>().HasData(SeedData.GetLearningHistories());
+            modelBuilder.Entity<LearningList>().HasData(SeedData.GetLearningLists());
+            modelBuilder.Entity<LearningListKnowledge>().HasData(SeedData.GetLearningListKnowledges());
         }
 
         #region ConfigureEntities
@@ -371,6 +379,36 @@ namespace Infrastructure.Data
             .OnDelete(DeleteBehavior.Cascade);
         }
 
+        private void ConfigureLearningListEntity(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<LearningList>(entity =>
+            {
+                entity.HasKey(ll => ll.Id);
+                entity.Property(ll => ll.Title).IsRequired();
+                entity.HasOne(ll => ll.User)
+                    .WithMany(u => u.LearningLists)
+                    .HasForeignKey(ll => ll.LearnerId)
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
+        }
+
+        private void ConfigureLearningListKnowledgeEntity(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<LearningListKnowledge>(entity =>
+            {
+                entity.HasKey(llk => new { llk.LearningListId, llk.KnowledgeId });
+
+                entity.HasOne(llk => llk.LearningList)
+                    .WithMany(ll => ll.LearningListKnowledges)
+                    .HasForeignKey(llk => llk.LearningListId)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasOne(llk => llk.Knowledge)
+                    .WithMany(k => k.LearningListKnowledges)
+                    .HasForeignKey(llk => llk.KnowledgeId)
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
+        }
         #endregion
     }
 }
