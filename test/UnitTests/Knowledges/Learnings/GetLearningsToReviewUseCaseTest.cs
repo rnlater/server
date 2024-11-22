@@ -17,6 +17,7 @@ namespace UnitTests.Knowledges.Learnings
     {
         private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<IRepository<Knowledge>> _knowledgeRepositoryMock;
+        private readonly Mock<IRepository<User>> _userRepositoryMock;
         private readonly Mock<IRepository<Learning>> _learningRepositoryMock;
         private readonly Mock<IRepository<GameKnowledgeSubscription>> _gameKnowledgeSubscriptionRepositoryMock;
         private readonly Mock<IHttpContextAccessor> _httpContextAccessorMock;
@@ -29,12 +30,14 @@ namespace UnitTests.Knowledges.Learnings
             _unitOfWorkMock = new Mock<IUnitOfWork>();
             _knowledgeRepositoryMock = new Mock<IRepository<Knowledge>>();
             _learningRepositoryMock = new Mock<IRepository<Learning>>();
+            _userRepositoryMock = new Mock<IRepository<User>>();
             _gameKnowledgeSubscriptionRepositoryMock = new Mock<IRepository<GameKnowledgeSubscription>>();
             _httpContextAccessorMock = new Mock<IHttpContextAccessor>();
             _mapper = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>()).CreateMapper();
 
             _unitOfWorkMock.Setup(u => u.Repository<Knowledge>()).Returns(_knowledgeRepositoryMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<Learning>()).Returns(_learningRepositoryMock.Object);
+            _unitOfWorkMock.Setup(u => u.Repository<User>()).Returns(_userRepositoryMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<GameKnowledgeSubscription>()).Returns(_gameKnowledgeSubscriptionRepositoryMock.Object);
 
             _GetLearningsToReviewUseCase = new GetLearningsToReviewUseCase(_unitOfWorkMock.Object, _mapper, _httpContextAccessorMock.Object);
@@ -72,6 +75,7 @@ namespace UnitTests.Knowledges.Learnings
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
 
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learnings);
 

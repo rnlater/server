@@ -23,6 +23,7 @@ using Application.Services.Games;
 using Application.UseCases.Games.GameOptions;
 using Application.Interfaces.Games.GameOptions;
 using Application.UseCases.Knowledges.LearningLists;
+using Application.UseCases.Knowledges.PublicationRequests;
 
 namespace Endpoint.Extensions;
 
@@ -96,7 +97,6 @@ public static class AppServiceCollectionExtensions
         services.AddScoped<CreateKnowledgeUseCase>();
         services.AddScoped<UpdateKnowledgeUseCase>();
         services.AddScoped<DeleteKnowledgeUseCase>();
-        services.AddScoped<PublishKnowledgeUseCase>();
         services.AddScoped<GetKnowledgesToLearnUseCase>();
         services.AddScoped<IKnowledgeService, KnowledgeService>();
 
@@ -126,6 +126,13 @@ public static class AppServiceCollectionExtensions
         services.AddScoped<UpdateLearningListUseCase>();
         services.AddScoped<AddRemoveKnowledgeToLearningListUseCase>();
         services.AddScoped<ILearningListService, LearningListService>();
+
+        services.AddScoped<RequestPublishKnowledgeUseCase>();
+        services.AddScoped<DeletePublicationRequestUseCase>();
+        services.AddScoped<GetPublicationRequestsUseCase>();
+        services.AddScoped<ApproveRejectPublicationRequestUseCase>();
+        services.AddScoped<UpdateKnowledgeVisibilityUseCase>();
+        services.AddScoped<IPublicationRequestService, PublicationRequestService>();
 
         return services;
     }

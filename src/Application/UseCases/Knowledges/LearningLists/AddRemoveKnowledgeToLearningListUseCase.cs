@@ -46,6 +46,7 @@ namespace Application.UseCases.Knowledges.LearningLists
                         .ThenInclude(ll => ll.User!)));
 
                 var userId = UserExtractor.GetUserId(_httpContextAccessor);
+                var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
                 if (userId == null)
                     return Result<LearningListKnowledgeDto>.Fail(ErrorMessage.UserNotFound);
 

@@ -108,7 +108,13 @@ public enum ErrorMessage
     CannotDeleteCorrectAnswer,
 
     LearningListTitleExisted,
-    NoLearningListFoundWithGuid
+    NoLearningListFoundWithGuid,
+
+    NoPublicationRequestFoundWithGuid,
+    KnowledgeAlreadyRequestedForPublication,
+    PublicationRequestAlreadyApproved,
+    PublicationRequestAlreadyApprovedOrRejected,
+    NoPublicationRequestsFound,
 
     #endregion
 }

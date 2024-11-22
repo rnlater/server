@@ -83,10 +83,19 @@ public static class SeedData
     public static readonly Guid KnowledgeType1Id = Guid.NewGuid();
     public static readonly Guid KnowledgeType2Id = Guid.NewGuid();
     public static KnowledgeType[] GetKnowledgeTypes() => new[]
-{
+    {
         new KnowledgeType { Id = KnowledgeType1Id, Name = "Theory" },
         new KnowledgeType { Id = KnowledgeType2Id, Name = "Practical" }
     };
+
+    public static readonly Guid PublicationRequest1Id = Guid.NewGuid();
+    public static readonly Guid PublicationRequest2Id = Guid.NewGuid();
+    public static PublicationRequest[] GetPublicationRequests() => new[]
+    {
+        new PublicationRequest { Id = PublicationRequest1Id, KnowledgeId = Knowledge1Id, Status = PublicationRequestStatus.Pending },
+        new PublicationRequest { Id = PublicationRequest2Id, KnowledgeId = Knowledge2Id, Status = PublicationRequestStatus.Approved }
+    };
+
     public static KnowledgeTypeKnowledge[] GetKnowledgeTypeKnowledges() => new[]
     {
         new KnowledgeTypeKnowledge { KnowledgeTypeId = KnowledgeType1Id, KnowledgeId = Knowledge1Id },

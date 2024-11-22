@@ -17,6 +17,7 @@ namespace UnitTests.Knowledges.Learnings
     {
         private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<IRepository<Knowledge>> _knowledgeRepositoryMock;
+        private readonly Mock<IRepository<User>> _userRepositoryMock;
         private readonly Mock<IRepository<GameOption>> _gameOptionRepositoryMock;
         private readonly Mock<IRepository<Learning>> _learningRepositoryMock;
         private readonly Mock<IRepository<LearningHistory>> _learningHistoryRepositoryMock;
@@ -30,6 +31,7 @@ namespace UnitTests.Knowledges.Learnings
             _knowledgeRepositoryMock = new Mock<IRepository<Knowledge>>();
             _gameOptionRepositoryMock = new Mock<IRepository<GameOption>>();
             _learningRepositoryMock = new Mock<IRepository<Learning>>();
+            _userRepositoryMock = new Mock<IRepository<User>>();
             _learningHistoryRepositoryMock = new Mock<IRepository<LearningHistory>>();
             _httpContextAccessorMock = new Mock<IHttpContextAccessor>();
             _mapper = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>()).CreateMapper();
@@ -38,6 +40,7 @@ namespace UnitTests.Knowledges.Learnings
             _unitOfWorkMock.Setup(u => u.Repository<GameOption>()).Returns(_gameOptionRepositoryMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<Learning>()).Returns(_learningRepositoryMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<LearningHistory>()).Returns(_learningHistoryRepositoryMock.Object);
+            _unitOfWorkMock.Setup(u => u.Repository<User>()).Returns(_userRepositoryMock.Object);
 
             _learnKnowledgeUseCase = new LearnKnowledgeUseCase(_unitOfWorkMock.Object, _mapper, _httpContextAccessorMock.Object);
         }
@@ -110,7 +113,8 @@ namespace UnitTests.Knowledges.Learnings
                 }
             };
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
             _knowledgeRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(parameters.Count);
             _learningRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(parameters.Count);
 

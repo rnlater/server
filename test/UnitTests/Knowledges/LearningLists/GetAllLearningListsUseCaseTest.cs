@@ -15,6 +15,7 @@ namespace UnitTests.Knowledges.LearningLists
     {
         private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<IRepository<LearningList>> _learningListRepositoryMock;
+        private readonly Mock<IRepository<User>> _userRepositoryMock;
         private readonly Mock<IHttpContextAccessor> _httpContextAccessorMock;
         private readonly IMapper _mapper;
         private readonly GetAllLearningListsUseCase _getAllLearningListsUseCase;
@@ -24,9 +25,11 @@ namespace UnitTests.Knowledges.LearningLists
             _unitOfWorkMock = new Mock<IUnitOfWork>();
             _learningListRepositoryMock = new Mock<IRepository<LearningList>>();
             _httpContextAccessorMock = new Mock<IHttpContextAccessor>();
+            _userRepositoryMock = new Mock<IRepository<User>>();
             _mapper = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>()).CreateMapper();
 
             _unitOfWorkMock.Setup(u => u.Repository<LearningList>()).Returns(_learningListRepositoryMock.Object);
+            _unitOfWorkMock.Setup(u => u.Repository<User>()).Returns(_userRepositoryMock.Object);
 
             _getAllLearningListsUseCase = new GetAllLearningListsUseCase(_unitOfWorkMock.Object, _mapper, _httpContextAccessorMock.Object);
         }
@@ -56,7 +59,8 @@ namespace UnitTests.Knowledges.LearningLists
                 new LearningList { Id = Guid.NewGuid(), Title = "Learning List 2", LearnerId = userId }
             };
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
             _learningListRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<LearningList>>())).ReturnsAsync(learningLists);
 
             // Act

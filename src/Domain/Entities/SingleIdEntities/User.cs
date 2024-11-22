@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics.CodeAnalysis;
 using Domain.Entities.SingleIdPivotEntities;
 using Domain.Enums;
 
@@ -20,5 +18,7 @@ namespace Domain.Entities.SingleIdEntities
         public ICollection<Learning> Learnings { get; set; } = [];
 
         public ICollection<LearningList> LearningLists { get; set; } = [];
+
+        public bool IsAdmin => Role == Role.Admin;
     }
 }

@@ -43,7 +43,8 @@ public class ReviewLearningUseCase : IUseCase<List<LearningDto>, List<ReviewLear
             var learningRepository = _unitOfWork.Repository<Learning>();
             var learningHistoryRepository = _unitOfWork.Repository<LearningHistory>();
 
-            Guid? userId = UserExtractor.GetUserId(_httpContextAccessor);
+            var userId = UserExtractor.GetUserId(_httpContextAccessor);
+            var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
             if (userId == null)
                 return Result<List<LearningDto>>.Fail(ErrorMessage.UserNotFound);
 

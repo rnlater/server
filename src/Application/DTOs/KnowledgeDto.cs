@@ -14,6 +14,7 @@ public class KnowledgeDto : SingleIdEntityDto
     public required string Level { get; set; }
     public Guid CreatorId { get; set; }
     public UserDto? Creator { get; set; }
+    public PublicationRequestDto? PublicationRequest { get; set; }
     public ICollection<MaterialDto> Materials { get; set; } = [];
     public ICollection<SubjectKnowledgeDto> SubjectKnowledges { get; set; } = [];
     public ICollection<KnowledgeTypeKnowledgeDto> KnowledgeTypeKnowledges { get; set; } = [];

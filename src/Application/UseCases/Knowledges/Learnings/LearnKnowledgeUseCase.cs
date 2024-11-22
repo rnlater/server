@@ -49,7 +49,8 @@ public class LearnKnowledgeUseCase : IUseCase<Dictionary<Guid, int>, List<LearnK
             if (knowledges != parameters.Count)
                 return Result<Dictionary<Guid, int>>.Fail(ErrorMessage.SomeKnowledgesNotFound);
 
-            Guid? userId = UserExtractor.GetUserId(_httpContextAccessor);
+            var userId = UserExtractor.GetUserId(_httpContextAccessor);
+            var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
             if (userId == null)
                 return Result<Dictionary<Guid, int>>.Fail(ErrorMessage.UserNotFound);
 

@@ -18,6 +18,7 @@ namespace UnitTests.Knowledges.Learnings
         private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<IRepository<GameOption>> _gameOptionRepositoryMock;
         private readonly Mock<IRepository<Learning>> _learningRepositoryMock;
+        private readonly Mock<IRepository<User>> _userRepositoryMock;
         private readonly Mock<IRepository<LearningHistory>> _learningHistoryRepositoryMock;
         private readonly Mock<IHttpContextAccessor> _httpContextAccessorMock;
         private readonly IMapper _mapper;
@@ -28,6 +29,7 @@ namespace UnitTests.Knowledges.Learnings
             _unitOfWorkMock = new Mock<IUnitOfWork>();
             _gameOptionRepositoryMock = new Mock<IRepository<GameOption>>();
             _learningRepositoryMock = new Mock<IRepository<Learning>>();
+            _userRepositoryMock = new Mock<IRepository<User>>();
             _learningHistoryRepositoryMock = new Mock<IRepository<LearningHistory>>();
             _httpContextAccessorMock = new Mock<IHttpContextAccessor>();
             _mapper = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>()).CreateMapper();
@@ -35,6 +37,7 @@ namespace UnitTests.Knowledges.Learnings
             _unitOfWorkMock.Setup(u => u.Repository<GameOption>()).Returns(_gameOptionRepositoryMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<Learning>()).Returns(_learningRepositoryMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<LearningHistory>()).Returns(_learningHistoryRepositoryMock.Object);
+            _unitOfWorkMock.Setup(u => u.Repository<User>()).Returns(_userRepositoryMock.Object);
 
             _reviewLearningUseCase = new ReviewLearningUseCase(_unitOfWorkMock.Object, _mapper, _httpContextAccessorMock.Object);
         }
@@ -78,7 +81,8 @@ namespace UnitTests.Knowledges.Learnings
                 }
             };
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
 
             _learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync((Learning?)null);
 
@@ -112,7 +116,8 @@ namespace UnitTests.Knowledges.Learnings
                 LearningHistories = new List<LearningHistory>()
             };
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
             _learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learning);
 
             var result = await _reviewLearningUseCase.Execute(parameters);
@@ -145,7 +150,8 @@ namespace UnitTests.Knowledges.Learnings
                 LearningHistories = new List<LearningHistory>()
             };
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
             _learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learning);
 
             var result = await _reviewLearningUseCase.Execute(parameters);
@@ -193,7 +199,8 @@ namespace UnitTests.Knowledges.Learnings
                 }
             };
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
 
             _learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(new Learning
             {
@@ -257,7 +264,8 @@ namespace UnitTests.Knowledges.Learnings
                 }
             };
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
 
             _learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learning);
             _gameOptionRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<GameOption>>())).ReturnsAsync(new List<GameOption> { correctGameOption, new GameOption { Value = "" } });

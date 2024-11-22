@@ -13,7 +13,6 @@ namespace Application.Services.Knowledges
         private readonly CreateKnowledgeUseCase _createKnowledgeUseCase;
         private readonly UpdateKnowledgeUseCase _updateKnowledgeUseCase;
         private readonly DeleteKnowledgeUseCase _deleteKnowledgeUseCase;
-        private readonly PublishKnowledgeUseCase _publishKnowledgeUseCase;
         private readonly GetKnowledgesToLearnUseCase _getKnowledgesToLearnUseCase;
 
         public KnowledgeService(
@@ -23,7 +22,6 @@ namespace Application.Services.Knowledges
             CreateKnowledgeUseCase createKnowledgeUseCase,
             UpdateKnowledgeUseCase updateKnowledgeUseCase,
             DeleteKnowledgeUseCase deleteKnowledgeUseCase,
-            PublishKnowledgeUseCase publishKnowledgeUseCase,
             GetKnowledgesToLearnUseCase getKnowledgesToLearnUseCase
         )
         {
@@ -33,7 +31,6 @@ namespace Application.Services.Knowledges
             _createKnowledgeUseCase = createKnowledgeUseCase;
             _updateKnowledgeUseCase = updateKnowledgeUseCase;
             _deleteKnowledgeUseCase = deleteKnowledgeUseCase;
-            _publishKnowledgeUseCase = publishKnowledgeUseCase;
             _getKnowledgesToLearnUseCase = getKnowledgesToLearnUseCase;
         }
 
@@ -50,11 +47,6 @@ namespace Application.Services.Knowledges
         public Task<Result<KnowledgeDto>> GetDetailedKnowledgeByGuid(Guid guid)
         {
             return _getDetailedKnowledgeByGuidUseCase.Execute(guid);
-        }
-
-        public Task<Result<KnowledgeDto>> PublishKnowledge(Guid guid)
-        {
-            return _publishKnowledgeUseCase.Execute(guid);
         }
 
         public Task<Result<KnowledgeDto>> UpdateKnowledge(UpdateKnowledgeParams Params)

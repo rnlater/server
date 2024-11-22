@@ -14,6 +14,7 @@ namespace Infrastructure.Data
         public required DbSet<User> Users { get; set; }
         public required DbSet<Authentication> Authentications { get; set; }
         public required DbSet<Knowledge> Knowledges { get; set; }
+        public required DbSet<PublicationRequest> PublicationRequests { get; set; }
         public required DbSet<KnowledgeTopic> KnowledgeTopics { get; set; }
         public required DbSet<KnowledgeType> KnowledgeTypes { get; set; }
         public required DbSet<Material> Materials { get; set; }
@@ -40,6 +41,7 @@ namespace Infrastructure.Data
             ConfigureUserEntity(modelBuilder);
             ConfigureAuthenticationEntity(modelBuilder);
             ConfigureKnowledgeEntity(modelBuilder);
+            ConfigurePublicationRequestEntity(modelBuilder);
             ConfigureKnowledgeTopicEntity(modelBuilder);
             ConfigureKnowledgeTypeEntity(modelBuilder);
             ConfigureMaterialEntity(modelBuilder);
@@ -69,6 +71,7 @@ namespace Infrastructure.Data
             modelBuilder.Entity<KnowledgeType>().HasData(SeedData.GetKnowledgeTypes());
             modelBuilder.Entity<KnowledgeTopic>().HasData(SeedData.GetKnowledgeTopics());
             modelBuilder.Entity<Knowledge>().HasData(SeedData.GetKnowledges());
+            modelBuilder.Entity<PublicationRequest>().HasData(SeedData.GetPublicationRequests());
             modelBuilder.Entity<Material>().HasData(SeedData.GetMaterials());
             modelBuilder.Entity<TrackSubject>().HasData(SeedData.GetTrackSubjects());
             modelBuilder.Entity<SubjectKnowledge>().HasData(SeedData.GetSubjectKnowledges());
@@ -134,6 +137,27 @@ namespace Infrastructure.Data
                     .OnDelete(DeleteBehavior.Cascade);
 
                 b.ToTable("Knowledges");
+            });
+        }
+
+        private void ConfigurePublicationRequestEntity(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<PublicationRequest>(b =>
+            {
+                b.HasKey(pr => pr.Id);
+                b.Property(pr => pr.Status)
+                    .IsRequired()
+                    .HasColumnType("int");
+                b.Property(pr => pr.KnowledgeId)
+                    .IsRequired()
+                    .HasColumnType("char(36)");
+
+                b.HasOne(pr => pr.Knowledge)
+                    .WithOne(k => k.PublicationRequest)
+                    .HasForeignKey<PublicationRequest>(a => a.KnowledgeId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                b.ToTable("PublicationRequests");
             });
         }
 

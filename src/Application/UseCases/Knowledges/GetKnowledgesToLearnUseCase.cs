@@ -42,6 +42,7 @@ public class GetKnowledgesToLearnUseCase : IUseCase<List<Dictionary<Guid, Knowle
         try
         {
             var userId = UserExtractor.GetUserId(_httpContextAccessor);
+            var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
             if (userId == null)
                 return Result<List<Dictionary<Guid, KnowledgeDataToLearn>>>.Fail(ErrorMessage.UserNotFound);
 

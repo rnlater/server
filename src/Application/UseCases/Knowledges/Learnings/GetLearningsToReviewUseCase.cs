@@ -1,6 +1,7 @@
 using Application.DTOs.SingleIdPivotEntities;
 using AutoMapper;
 using Domain.Base;
+using Domain.Entities.SingleIdEntities;
 using Domain.Entities.SingleIdPivotEntities;
 using Domain.Enums;
 using Domain.Interfaces;
@@ -43,7 +44,8 @@ public class GetLearningsToReviewUseCase : IUseCase<List<Dictionary<Guid, Learni
     {
         try
         {
-            Guid? userId = UserExtractor.GetUserId(_httpContextAccessor);
+            var userId = UserExtractor.GetUserId(_httpContextAccessor);
+            var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
             if (userId == null)
                 return Result<List<Dictionary<Guid, LearningDataToReview>>>.Fail(ErrorMessage.UserNotFound);
 

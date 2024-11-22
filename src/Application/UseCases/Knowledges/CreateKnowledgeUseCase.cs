@@ -7,6 +7,8 @@ using Domain.Enums;
 using Shared.Constants;
 using Domain.Entities.PivotEntities;
 using Domain.Base;
+using Shared.Utils;
+using Microsoft.AspNetCore.Http;
 
 namespace Application.UseCases.Knowledges
 {
@@ -55,11 +57,13 @@ namespace Application.UseCases.Knowledges
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public CreateKnowledgeUseCase(IUnitOfWork unitOfWork, IMapper mapper)
+        public CreateKnowledgeUseCase(IUnitOfWork unitOfWork, IMapper mapper, IHttpContextAccessor httpContextAccessor)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<Result<KnowledgeDto>> Execute(CreateKnowledgeParams parameters)
@@ -82,13 +86,23 @@ namespace Application.UseCases.Knowledges
                 var subjects = await subjectRepository.FindMany(new BaseSpecification<Subject>(s => parameters.SubjectIds.Contains(s.Id)));
                 if (subjects.Count() != parameters.SubjectIds.Count) return Result<KnowledgeDto>.Fail(ErrorMessage.NoSubjectsFound);
 
+                var userId = UserExtractor.GetUserId(_httpContextAccessor);
+                var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
+                if (user == null)
+                    return Result<KnowledgeDto>.Fail(ErrorMessage.UserNotFound);
+
                 var knowledge = await knowledgeRepository.Add(new Knowledge
                 {
                     Id = Guid.NewGuid(),
                     Title = parameters.Title,
                     Level = parameters.Level,
-                    Visibility = KnowledgeVisibility.Private
+                    Visibility = KnowledgeVisibility.Private,
                 });
+
+                if (user.IsAdmin)
+                    knowledge.CreatorId = GuidConstants.Admin;
+                else
+                    knowledge.CreatorId = user.Id;
 
                 foreach (var knowledgeType in knowledgeTypes)
                 {
@@ -134,6 +148,5 @@ namespace Application.UseCases.Knowledges
         }
 
     }
-
 
 }

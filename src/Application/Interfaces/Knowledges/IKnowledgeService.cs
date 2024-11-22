@@ -70,12 +70,4 @@ public interface IKnowledgeService
     /// <returns>return result of deleted knowledge</returns>
     /// <exception cref="ErrorMessage.NoKnowledgeFoundWithGuid">No knowledge found with guid</exception>
     Task<Result<KnowledgeDto>> DeleteKnowledge(Guid guid);
-
-    /// <summary>
-    /// Publish knowledge
-    /// </summary>
-    /// <param name="guid"></param>
-    /// <returns>return result of published knowledge</returns>
-    /// <exception cref="ErrorMessage.NoKnowledgeFoundWithGuid">No knowledge found with guid</exception>
-    Task<Result<KnowledgeDto>> PublishKnowledge(Guid guid);
 }

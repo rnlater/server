@@ -116,4 +116,14 @@ public class HttpRoute
     public const string DeleteLearningList = "delete/{id}";
 
     #endregion
+
+    #region PublicationRequest
+
+    public const string RequestPublishKnowledge = "request-publish";
+    public const string DeletePublicationRequest = "delete-request";
+    public const string GetPublicationRequests = "get-requests";
+    public const string ApproveRejectPublicationRequest = "approve-reject";
+    public const string UpdateKnowledgeVisibility = "update-visibility";
+
+    #endregion
 }

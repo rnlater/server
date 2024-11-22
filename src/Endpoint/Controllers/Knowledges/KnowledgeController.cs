@@ -90,14 +90,6 @@ namespace Endpoint.Controllers.Knowledges
             return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
         }
 
-        [HttpPost(HttpRoute.PublishKnowledge)]
-        // [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> PublishKnowledge(Guid id)
-        {
-            var result = await _knowledgeService.PublishKnowledge(id);
-            return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
-        }
-
         [HttpPost(HttpRoute.GetKnowledgesToLearn)]
         // [Authorize]
         public async Task<IActionResult> GetKnowledgesToLearn([FromBody] GetKnowledgesToLearnRequest request)
