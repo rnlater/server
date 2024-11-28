@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Shared.Constants;
 using Shared.Utils;
 
-namespace Endpoint.Controllers.PublicationRequests
+namespace Endpoint.Controllers.Knowledges
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -34,7 +34,7 @@ namespace Endpoint.Controllers.PublicationRequests
         }
 
         [HttpPost(HttpRoute.RequestPublishKnowledge)]
-        // [Authorize]
+        // [Authorize(Roles = "User")]
         public async Task<IActionResult> RequestPublishKnowledge([FromBody] RequestPublishKnowledgeRequest request)
         {
             var parameters = _mapper.Map<RequestPublishKnowledgeParams>(request);
@@ -43,7 +43,7 @@ namespace Endpoint.Controllers.PublicationRequests
         }
 
         [HttpDelete(HttpRoute.DeletePublicationRequest)]
-        // [Authorize]
+        // [Authorize(Roles = "User")]
         public async Task<IActionResult> DeletePublicationRequest(Guid id)
         {
             var result = await _publicationRequestService.DeletePublicationRequest(id);
@@ -51,7 +51,7 @@ namespace Endpoint.Controllers.PublicationRequests
         }
 
         [HttpGet(HttpRoute.GetPublicationRequests)]
-        // [Authorize]
+        // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetPublicationRequests([FromQuery] GetPublicationRequestsRequest request)
         {
             var parameters = _mapper.Map<GetPublicationRequestsParams>(request);
@@ -60,7 +60,7 @@ namespace Endpoint.Controllers.PublicationRequests
         }
 
         [HttpPost(HttpRoute.ApproveRejectPublicationRequest)]
-        // [Authorize]
+        // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> ApproveRejectPublicationRequest([FromBody] ApproveRejectPublicationRequestRequest request)
         {
             var parameters = _mapper.Map<ApproveRejectPublicationRequestParams>(request);
@@ -69,6 +69,7 @@ namespace Endpoint.Controllers.PublicationRequests
         }
 
         [HttpPost(HttpRoute.UpdateKnowledgeVisibility)]
+        // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateKnowledgeVisibility([FromBody] UpdateKnowledgeVisibilityRequest request)
         {
             var parameters = _mapper.Map<UpdateKnowledgeVisibilityParams>(request);

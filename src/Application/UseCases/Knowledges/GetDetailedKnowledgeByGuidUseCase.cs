@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Shared.Constants;
 using Shared.Types;
+using Shared.Utils;
 
 namespace Application.UseCases.Knowledges
 {
@@ -42,15 +43,13 @@ namespace Application.UseCases.Knowledges
                         .Include(k => k.Materials)
                 ));
 
-                var user = _httpContextAccessor.HttpContext.User;
-                if (knowledge == null)
-                {
+                var userId = UserExtractor.GetUserId(_httpContextAccessor);
+                var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
+                if (user == null)
+                    return Result<KnowledgeDto>.Fail(ErrorMessage.UserNotFound);
+
+                if (knowledge == null || (!user.IsAdmin && knowledge.CreatorId != userId && knowledge.Visibility == KnowledgeVisibility.Private))
                     return Result<KnowledgeDto>.Fail(ErrorMessage.NoKnowledgeFoundWithGuid);
-                }
-                else if (knowledge.Visibility == KnowledgeVisibility.Private && (!user.IsInRole(Role.Admin.ToString()) || user == null))
-                {
-                    return Result<KnowledgeDto>.Fail(ErrorMessage.NoKnowledgeFoundWithGuid);
-                }
 
                 return Result<KnowledgeDto>.Done(_mapper.Map<KnowledgeDto>(knowledge));
             }

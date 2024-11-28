@@ -37,20 +37,29 @@ namespace Endpoint.Controllers.Knowledges
             _mapper = config.CreateMapper();
         }
 
+        [HttpPost(HttpRoute.SearchKnowledges)]
+        // [Authorize(Roles = "User")]
+        public async Task<IActionResult> SearchKnowledges([FromBody] SearchKnowledgesRequest request)
+        {
+            var parameters = _mapper.Map<SearchKnowledgesParams>(request);
+            var result = await _knowledgeService.SearchKnowledges(parameters);
+            return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
+        }
+
+        [HttpPost(HttpRoute.GetKnowledgesToLearn)]
+        // [Authorize(Roles = "User")]
+        public async Task<IActionResult> GetKnowledgesToLearn([FromBody] GetKnowledgesToLearnRequest request)
+        {
+            var parameters = _mapper.Map<GetKnowledgesToLearnParams>(request);
+            var result = await _knowledgeService.GetKnowledgesToLearn(parameters);
+            return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
+        }
+
         [HttpGet(HttpRoute.GetDetailedKnowledgeByGuid)]
         // [Authorize]
         public async Task<IActionResult> GetDetailedKnowledgeByGuid(Guid id)
         {
             var result = await _knowledgeService.GetDetailedKnowledgeByGuid(id);
-            return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
-        }
-
-        [HttpPost(HttpRoute.SearchKnowledges)]
-        // [Authorize]
-        public async Task<IActionResult> SearchKnowledges([FromBody] SearchKnowledgesRequest request)
-        {
-            var parameters = _mapper.Map<SearchKnowledgesParams>(request);
-            var result = await _knowledgeService.SearchKnowledges(parameters);
             return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
         }
 
@@ -87,15 +96,6 @@ namespace Endpoint.Controllers.Knowledges
         public async Task<IActionResult> DeleteKnowledge(Guid id)
         {
             var result = await _knowledgeService.DeleteKnowledge(id);
-            return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
-        }
-
-        [HttpPost(HttpRoute.GetKnowledgesToLearn)]
-        // [Authorize]
-        public async Task<IActionResult> GetKnowledgesToLearn([FromBody] GetKnowledgesToLearnRequest request)
-        {
-            var parameters = _mapper.Map<GetKnowledgesToLearnParams>(request);
-            var result = await _knowledgeService.GetKnowledgesToLearn(parameters);
             return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
         }
     }

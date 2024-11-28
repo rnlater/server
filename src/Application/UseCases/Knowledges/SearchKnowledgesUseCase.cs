@@ -4,9 +4,11 @@ using Domain.Base;
 using Domain.Entities.SingleIdEntities;
 using Domain.Enums;
 using Domain.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Shared.Constants;
 using Shared.Types;
+using Shared.Utils;
 
 namespace Application.UseCases.Knowledges
 {
@@ -32,11 +34,13 @@ namespace Application.UseCases.Knowledges
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public SearchKnowledgesUseCase(IUnitOfWork unitOfWork, IMapper mapper)
+        public SearchKnowledgesUseCase(IUnitOfWork unitOfWork, IMapper mapper, IHttpContextAccessor httpContextAccessor)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<Result<IEnumerable<KnowledgeDto>>> Execute(SearchKnowledgesParams parameters)
@@ -73,8 +77,13 @@ namespace Application.UseCases.Knowledges
 
                 var knowledgeRepository = _unitOfWork.Repository<Knowledge>();
 
+                var userId = UserExtractor.GetUserId(_httpContextAccessor);
+                var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
+                if (user == null)
+                    return Result<IEnumerable<KnowledgeDto>>.Fail(ErrorMessage.UserNotFound);
+
                 ISpecification<Knowledge> specification = new BaseSpecification<Knowledge>(k =>
-                    k.Visibility == KnowledgeVisibility.Public
+                    (k.Visibility == KnowledgeVisibility.Public || (k.Visibility == KnowledgeVisibility.Private && k.CreatorId == userId))
                     && (string.IsNullOrEmpty(parameters.SearchTerm)
                         || k.Title.Contains(parameters.SearchTerm))
                     && (parameters.KnowledgeTypeIds.Count == 0

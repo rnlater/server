@@ -57,6 +57,8 @@ public class GetLearningsToReviewUseCase : IUseCase<List<Dictionary<Guid, Learni
                     .Include(l => l.Knowledge!)
                     .ThenInclude(k => k.Materials)
             ));
+            learnings = learnings.Where(l => l.Knowledge!.Visibility == KnowledgeVisibility.Public || (l.Knowledge!.Visibility == KnowledgeVisibility.Private && l.Knowledge.CreatorId == userId));
+
             if (learnings.Count() != parameters.KnowledgeIds.Count)
                 return Result<List<Dictionary<Guid, LearningDataToReview>>>.Fail(ErrorMessage.SomeKnowledgesHaveNotBeenLearned);
             else if (learnings.Any(l => l.NextReviewDate > DateTime.Now))

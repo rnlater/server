@@ -55,14 +55,27 @@ public class ReviewLearningUseCase : IUseCase<List<LearningDto>, List<ReviewLear
                 var score = 0;
 
                 var learning = await learningRepository.Find(
-                    new BaseSpecification<Learning>(l => l.UserId == userId && param.KnowledgeId == l.KnowledgeId)
+                    new BaseSpecification<Learning>(l =>
+                    l.UserId == userId
+                    && param.KnowledgeId == l.KnowledgeId
+                    && (l.Knowledge!.Visibility == KnowledgeVisibility.Public
+                            || (l.Knowledge.Visibility == KnowledgeVisibility.Private && l.Knowledge.CreatorId == userId)))
                     .AddInclude(query => query.Include(l => l.LearningHistories)));
                 if (learning == null)
+                {
+                    await _unitOfWork.RollBackChangesAsync();
                     return Result<List<LearningDto>>.Fail(ErrorMessage.LearningNotFound);
+                }
                 else if (learning.NextReviewDate > DateTime.Now)
+                {
+                    await _unitOfWork.RollBackChangesAsync();
                     return Result<List<LearningDto>>.Fail(ErrorMessage.KnowledgeNotReadyToReview);
+                }
                 else if (learning.LearningHistories.Count == 0)
+                {
+                    await _unitOfWork.RollBackChangesAsync();
                     return Result<List<LearningDto>>.Fail(ErrorMessage.RequireLearningBeforeReview);
+                }
 
                 var gameOptions = await gameOptionRepository.FindMany(
                     new BaseSpecification<GameOption>(go =>

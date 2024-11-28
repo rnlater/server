@@ -51,10 +51,10 @@ namespace Application.UseCases.Knowledges.LearningLists
                 if (learningList.LearnerId != userId.Value)
                     return Result<LearningListDto>.Fail(ErrorMessage.UserNotAuthorized);
 
-                var learningListKnowledges = learningList.LearningListKnowledges
+                var learningListKnowledgesToRemove = learningList.LearningListKnowledges
                     .Where(llk => llk.Knowledge!.Visibility == KnowledgeVisibility.Private && llk.Knowledge.CreatorId != userId.Value)
                     .ToList();
-                foreach (var llk in learningListKnowledges)
+                foreach (var llk in learningListKnowledgesToRemove)
                 {
                     await _unitOfWork.Repository<LearningListKnowledge>().Delete(llk);
                     learningList.LearningListKnowledges.Remove(llk);

@@ -54,7 +54,7 @@ public class GetKnowledgesToLearnUseCase : IUseCase<List<Dictionary<Guid, Knowle
 
             var knowledges = await _unitOfWork.Repository<Knowledge>().FindMany(
                 new BaseSpecification<Knowledge>(
-                    k => parameters.KnowledgeIds.Contains(k.Id)
+                    k => parameters.KnowledgeIds.Contains(k.Id) && (k.Visibility == KnowledgeVisibility.Public || (k.Visibility == KnowledgeVisibility.Private && k.CreatorId == userId))
                 ).AddInclude(query => query
                     .Include(k => k.Materials)
                     .Include(k => k.GameKnowledgeSubscriptions)

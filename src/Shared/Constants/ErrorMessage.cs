@@ -73,6 +73,7 @@ public enum ErrorMessage
     NoKnowledgesFound,
     NoKnowledgeFoundWithGuid,
     SomeKnowledgesNotFound,
+    KnowledgeIsPrivate,
 
     NoKnowledgeTypesFound,
     NoKnowledgeTypeFoundWithGuid,

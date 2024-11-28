@@ -30,7 +30,7 @@ namespace Endpoint.Controllers.Knowledges
         }
 
         [HttpPost(HttpRoute.LearnKnowledge)]
-        // [Authorize]
+        // [Authorize(Roles = "User")]
         public async Task<IActionResult> LearnKnowledge([FromBody][MaxLength(10)] List<LearnKnowledgeRequest> request)
         {
             var parameters = _mapper.Map<List<LearnKnowledgeParams>>(request);
@@ -39,7 +39,7 @@ namespace Endpoint.Controllers.Knowledges
         }
 
         [HttpPost(HttpRoute.GetLearningsToReview)]
-        // [Authorize]
+        // [Authorize(Roles = "User")]
         public async Task<IActionResult> GetLearningsToReview([FromBody] GetLearningsToReviewRequest request)
         {
             var parameters = _mapper.Map<GetLearningsToReviewParams>(request);
@@ -48,7 +48,7 @@ namespace Endpoint.Controllers.Knowledges
         }
 
         [HttpPost(HttpRoute.ReviewLearning)]
-        // [Authorize]
+        // [Authorize(Roles = "User")]
         public async Task<IActionResult> ReviewLearning([FromBody][MaxLength(10)] List<ReviewLearningRequest> request)
         {
             var parameters = _mapper.Map<List<ReviewLearningParams>>(request);

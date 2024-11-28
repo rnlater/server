@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Shared.Constants;
 using Shared.Types;
+using Shared.Utils;
 using System.Security.Claims;
 
 namespace Application.UseCases.Subjects;
@@ -43,20 +44,21 @@ public class GetSubjectByGuidUseCase : IUseCase<SubjectDto, Guid>
                 return Result<SubjectDto>.Fail(ErrorMessage.NoSubjectFoundWithGuid);
             }
 
-            var subjectDto = _mapper.Map<SubjectDto>(subject);
+            var userId = UserExtractor.GetUserId(_httpContextAccessor);
+            var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
+            if (userId == null)
+                return Result<SubjectDto>.Fail(ErrorMessage.UserNotFound);
 
-            var user = _httpContextAccessor.HttpContext.User;
-            if (user.IsInRole(Role.User.ToString()))
+            if (!user!.IsAdmin)
             {
-                var userIdClaim = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                if (userIdClaim == null)
-                {
-                    return Result<SubjectDto>.Fail(ErrorMessage.UserNotFound);
-                }
-                var userId = Guid.Parse(userIdClaim);
+                subject.SubjectKnowledges = subject.SubjectKnowledges
+                    .Where(sk => sk.Knowledge?.Visibility == KnowledgeVisibility.Public)
+                    .ToList();
 
                 // TODO
             }
+
+            var subjectDto = _mapper.Map<SubjectDto>(subject);
 
             return Result<SubjectDto>.Done(subjectDto);
         }

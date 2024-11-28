@@ -41,15 +41,15 @@ public class LearnKnowledgeUseCase : IUseCase<Dictionary<Guid, int>, List<LearnK
             var gameOptionRepository = _unitOfWork.Repository<GameOption>();
             var learningRepository = _unitOfWork.Repository<Learning>();
             var learningHistoryRepository = _unitOfWork.Repository<LearningHistory>();
+            var userId = UserExtractor.GetUserId(_httpContextAccessor);
 
-            var knowledges = await knowledgeRepository.Count(
-                new BaseSpecification<Knowledge>(k => parameters.Select(p => p.KnowledgeId).Contains(k.Id))
+            var knowledgesCount = await knowledgeRepository.Count(
+                new BaseSpecification<Knowledge>(k => parameters.Select(p => p.KnowledgeId).Contains(k.Id) && (k.Visibility == KnowledgeVisibility.Public || (k.Visibility == KnowledgeVisibility.Private && k.CreatorId == userId)))
             );
 
-            if (knowledges != parameters.Count)
+            if (knowledgesCount != parameters.Count)
                 return Result<Dictionary<Guid, int>>.Fail(ErrorMessage.SomeKnowledgesNotFound);
 
-            var userId = UserExtractor.GetUserId(_httpContextAccessor);
             var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
             if (userId == null)
                 return Result<Dictionary<Guid, int>>.Fail(ErrorMessage.UserNotFound);

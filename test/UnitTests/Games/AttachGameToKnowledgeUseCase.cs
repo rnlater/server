@@ -6,6 +6,7 @@ using Domain.Base;
 using Domain.Entities.SingleIdPivotEntities;
 using Domain.Enums;
 using Domain.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Moq;
 using Shared.Constants;
 
@@ -15,7 +16,7 @@ namespace UnitTests.Games
     {
         private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<IRepository<GameKnowledgeSubscription>> _gameKnowledgeSubscriptionRepositoryMock;
-        private readonly Mock<CreateGroupedGameOptionsUseCase> _createGroupedGameOptionsUseCaseMock;
+        private readonly CreateGroupedGameOptionsUseCase _createGroupedGameOptionsUseCase;
         private readonly IMapper _mapper;
         private readonly AttachGameToKnowledgeUseCase _attachGameToKnowledgeUseCase;
 
@@ -25,11 +26,11 @@ namespace UnitTests.Games
 
             _unitOfWorkMock = new Mock<IUnitOfWork>();
             _gameKnowledgeSubscriptionRepositoryMock = new Mock<IRepository<GameKnowledgeSubscription>>();
-            _createGroupedGameOptionsUseCaseMock = new Mock<CreateGroupedGameOptionsUseCase>(_unitOfWorkMock.Object, _mapper);
+            _createGroupedGameOptionsUseCase = new CreateGroupedGameOptionsUseCase(_unitOfWorkMock.Object, _mapper, new HttpContextAccessor());
 
             _unitOfWorkMock.Setup(u => u.Repository<GameKnowledgeSubscription>()).Returns(_gameKnowledgeSubscriptionRepositoryMock.Object);
 
-            _attachGameToKnowledgeUseCase = new AttachGameToKnowledgeUseCase(_unitOfWorkMock.Object, _mapper, _createGroupedGameOptionsUseCaseMock.Object);
+            _attachGameToKnowledgeUseCase = new AttachGameToKnowledgeUseCase(_unitOfWorkMock.Object, _mapper, _createGroupedGameOptionsUseCase);
         }
 
         [Fact]

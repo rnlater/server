@@ -70,8 +70,8 @@ namespace UnitTests.Knowledges.Learnings
 
             var learnings = new List<Learning>
             {
-                new Learning { UserId = userId, KnowledgeId = parameters.KnowledgeIds.First() },
-                new Learning { UserId = userId, KnowledgeId = Guid.NewGuid() }
+                new Learning { UserId = userId, KnowledgeId = parameters.KnowledgeIds.First(), Knowledge = new Knowledge { Id = Guid.NewGuid(), Title = "Knowledge 1", Visibility = KnowledgeVisibility.Public } },
+                new Learning { UserId = userId, KnowledgeId = Guid.NewGuid(), Knowledge = new Knowledge { Id = Guid.NewGuid(), Title = "Knowledge 1", Visibility = KnowledgeVisibility.Public } },
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
@@ -96,10 +96,15 @@ namespace UnitTests.Knowledges.Learnings
 
             var learnings = new List<Learning>
             {
-                new Learning { UserId = userId, KnowledgeId = parameters.KnowledgeIds.First(), NextReviewDate = DateTime.Now.AddDays(1) },
+                new Learning {
+                    UserId = userId,
+                    KnowledgeId = parameters.KnowledgeIds.First(),
+                    NextReviewDate = DateTime.Now.AddDays(1),
+                    Knowledge = new Knowledge { Id = Guid.NewGuid(), Title = "Knowledge 1", Visibility = KnowledgeVisibility.Public }},
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
 
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learnings);
 
@@ -125,18 +130,18 @@ namespace UnitTests.Knowledges.Learnings
                      UserId = userId,
                      KnowledgeId = knowledgeId,
                      Knowledge = new Knowledge
-                {
-                    Id = knowledgeId,
-                    Title = "Knowledge 1",
-                    GameKnowledgeSubscriptions =
-                    [],
-                    Materials =
-                    [
-                        new Material { Type = MaterialType.Interpretation, Content = "Interpretation 1" },
-                        new Material { Type = MaterialType.Interpretation, Content = "Interpretation 2" },
-                        new Material { Type = MaterialType.TextMedium, Content = "Medium Text 3" }
-                    ]
-                }
+                    {
+                        Id = knowledgeId,
+                        Title = "Knowledge 1",
+                        GameKnowledgeSubscriptions =
+                        [],
+                        Materials =
+                        [
+                            new Material { Type = MaterialType.Interpretation, Content = "Interpretation 1" },
+                            new Material { Type = MaterialType.Interpretation, Content = "Interpretation 2" },
+                            new Material { Type = MaterialType.TextMedium, Content = "Medium Text 3" }
+                        ]
+                    }
                 }
             };
 

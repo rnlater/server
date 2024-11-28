@@ -29,24 +29,24 @@ namespace Endpoint.Controllers
             _mapper = config.CreateMapper();
         }
 
-        [HttpPost(HttpRoute.GetTracks)]
-        // [Authorize]
-        public async Task<IActionResult> GetTracks([FromBody] GetTracksRequest @params)
+        [HttpGet(HttpRoute.GetDetailedTracks)]
+        // [Authorize(Roles = nameof(Role.User))]
+        public async Task<IActionResult> GetDetailedTracks()
         {
-            var Params = _mapper.Map<GetTracksParams>(@params);
-
-            var result = await _trackService.GetTracks(Params);
+            var result = await _trackService.GetDetailedTracks();
 
             return result.IsSuccess
                 ? Ok(result.Value)
                 : BadRequest(result.Errors);
         }
 
-        [HttpGet(HttpRoute.GetDetailedTracks)]
-        // [Authorize(Roles = nameof(Role.User))]
-        public async Task<IActionResult> GetDetailedTracks()
+        [HttpPost(HttpRoute.GetTracks)]
+        // [Authorize(Roles = nameof(Role.Admin))]
+        public async Task<IActionResult> GetTracks([FromBody] GetTracksRequest @params)
         {
-            var result = await _trackService.GetDetailedTracks();
+            var Params = _mapper.Map<GetTracksParams>(@params);
+
+            var result = await _trackService.GetTracks(Params);
 
             return result.IsSuccess
                 ? Ok(result.Value)
