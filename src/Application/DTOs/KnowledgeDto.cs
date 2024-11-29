@@ -23,6 +23,7 @@ public class KnowledgeDto : SingleIdEntityDto
     public ICollection<GameKnowledgeSubscriptionDto> GameKnowledgeSubscriptions { get; set; } = [];
     public GameKnowledgeSubscriptionDto? GameToReview { get; set; }
     public ICollection<LearningListKnowledgeDto> LearningListKnowledges { get; set; } = [];
+    public LearningDto? CurrentUserLearning { get; set; }
 
     public void MergeArrangeMaterials()
     {

@@ -83,6 +83,7 @@ public class HttpRoute
     public const string LearnKnowledge = "learn";
     public const string GetLearningsToReview = "to-review";
     public const string ReviewLearning = "review";
+    public const string GetCurrentUserLearnings = "get-learnings";
 
     #endregion
 

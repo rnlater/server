@@ -5,6 +5,7 @@ public enum ErrorMessage
     UnknownError,
     NoChangeDetected,
     InvalidData,
+    NoData,
 
     #region File
 

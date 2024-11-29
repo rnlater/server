@@ -3,6 +3,7 @@ using Application.Mappings;
 using Application.UseCases.Knowledges.Learnings;
 using AutoMapper;
 using Domain.Base;
+using Domain.Entities.PivotEntities;
 using Domain.Entities.SingleIdEntities;
 using Domain.Entities.SingleIdPivotEntities;
 using Domain.Enums;
@@ -21,6 +22,7 @@ namespace UnitTests.Knowledges.Learnings
         private readonly Mock<IRepository<GameOption>> _gameOptionRepositoryMock;
         private readonly Mock<IRepository<Learning>> _learningRepositoryMock;
         private readonly Mock<IRepository<LearningHistory>> _learningHistoryRepositoryMock;
+        private readonly Mock<IRepository<LearningListKnowledge>> _learningListKnowledgeRepositoryMock;
         private readonly Mock<IHttpContextAccessor> _httpContextAccessorMock;
         private readonly IMapper _mapper;
         private readonly LearnKnowledgeUseCase _learnKnowledgeUseCase;
@@ -33,6 +35,7 @@ namespace UnitTests.Knowledges.Learnings
             _learningRepositoryMock = new Mock<IRepository<Learning>>();
             _userRepositoryMock = new Mock<IRepository<User>>();
             _learningHistoryRepositoryMock = new Mock<IRepository<LearningHistory>>();
+            _learningListKnowledgeRepositoryMock = new Mock<IRepository<LearningListKnowledge>>();
             _httpContextAccessorMock = new Mock<IHttpContextAccessor>();
             _mapper = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>()).CreateMapper();
 
@@ -41,6 +44,7 @@ namespace UnitTests.Knowledges.Learnings
             _unitOfWorkMock.Setup(u => u.Repository<Learning>()).Returns(_learningRepositoryMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<LearningHistory>()).Returns(_learningHistoryRepositoryMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<User>()).Returns(_userRepositoryMock.Object);
+            _unitOfWorkMock.Setup(u => u.Repository<LearningListKnowledge>()).Returns(_learningListKnowledgeRepositoryMock.Object);
 
             _learnKnowledgeUseCase = new LearnKnowledgeUseCase(_unitOfWorkMock.Object, _mapper, _httpContextAccessorMock.Object);
         }
@@ -214,6 +218,7 @@ namespace UnitTests.Knowledges.Learnings
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = userId, Email = "Email", UserName = "UserName" });
 
             _knowledgeRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(parameters.Count);
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync([]);
@@ -228,7 +233,6 @@ namespace UnitTests.Knowledges.Learnings
             Assert.NotNull(result.Value);
             Assert.Single(result.Value);
             Assert.Equal(result.Value.ToList().First().Key, knowledgeId);
-            Assert.Equal(0, result.Value.ToList().First().Value);
         }
 
     }

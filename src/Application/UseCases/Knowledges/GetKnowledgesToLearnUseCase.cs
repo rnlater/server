@@ -1,6 +1,7 @@
 using Application.DTOs;
 using AutoMapper;
 using Domain.Base;
+using Domain.Entities.PivotEntities;
 using Domain.Entities.SingleIdEntities;
 using Domain.Entities.SingleIdPivotEntities;
 using Domain.Enums;
@@ -16,6 +17,7 @@ namespace Application.UseCases.Knowledges;
 public class GetKnowledgesToLearnParams
 {
     public List<Guid> KnowledgeIds { get; set; } = [];
+    public string? NewLearningListTitle { get; set; }
 }
 
 public class KnowledgeDataToLearn
@@ -65,15 +67,14 @@ public class GetKnowledgesToLearnUseCase : IUseCase<List<Dictionary<Guid, Knowle
             if (knowledges.Count() != parameters.KnowledgeIds.Count)
                 return Result<List<Dictionary<Guid, KnowledgeDataToLearn>>>.Fail(ErrorMessage.SomeKnowledgesNotFound);
 
-            List<List<Knowledge>> knowledgeGroups = Randomer.GetRandomGroups(knowledges.ToList());
-
             List<Dictionary<Guid, KnowledgeDataToLearn>> knowledgeDataToLearnResponses = [];
 
+            List<List<Knowledge>> knowledgeGroups = Randomer.GetRandomGroups(knowledges.ToList());
             for (int i = 0; i < knowledgeGroups.Count; i++)
             {
-                var _knowledgeDtos = _mapper.Map<List<KnowledgeDto>>(knowledgeGroups[i]);
                 Dictionary<Guid, KnowledgeDataToLearn> knowledgeDataToLearn = [];
 
+                var _knowledgeDtos = _mapper.Map<List<KnowledgeDto>>(knowledgeGroups[i]);
                 foreach (KnowledgeDto? knowledge in _knowledgeDtos)
                 {
                     string DistinctInterpretationMaterial = knowledge.Materials
@@ -101,6 +102,31 @@ public class GetKnowledgesToLearnUseCase : IUseCase<List<Dictionary<Guid, Knowle
                 }
 
                 knowledgeDataToLearnResponses.Add(knowledgeDataToLearn);
+            }
+
+            if (parameters.NewLearningListTitle != null)
+            {
+                var learningList = await _unitOfWork.Repository<LearningList>().Find(new BaseSpecification<LearningList>(
+                    ll => ll.Title == parameters.NewLearningListTitle && ll.LearnerId == userId
+                ));
+                learningList ??= await _unitOfWork.Repository<LearningList>().Add(new LearningList
+                {
+                    Title = parameters.NewLearningListTitle,
+                    LearnerId = userId.Value
+                });
+
+                foreach (var knowledge in knowledges)
+                {
+                    if (await _unitOfWork.Repository<LearningListKnowledge>().Find(
+                        new BaseSpecification<LearningListKnowledge>(
+                            llk => llk.LearningListId == learningList.Id && llk.KnowledgeId == knowledge.Id
+                        )) != null) continue;
+                    await _unitOfWork.Repository<LearningListKnowledge>().Add(new LearningListKnowledge
+                    {
+                        KnowledgeId = knowledge.Id,
+                        LearningListId = learningList.Id
+                    });
+                }
             }
 
             return Result<List<Dictionary<Guid, KnowledgeDataToLearn>>>.Done(knowledgeDataToLearnResponses);

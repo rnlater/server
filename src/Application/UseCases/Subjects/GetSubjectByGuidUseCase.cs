@@ -1,7 +1,9 @@
 using Application.DTOs;
+using Application.DTOs.SingleIdPivotEntities;
 using AutoMapper;
 using Domain.Base;
 using Domain.Entities.SingleIdEntities;
+using Domain.Entities.SingleIdPivotEntities;
 using Domain.Enums;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
@@ -9,7 +11,6 @@ using Microsoft.EntityFrameworkCore;
 using Shared.Constants;
 using Shared.Types;
 using Shared.Utils;
-using System.Security.Claims;
 
 namespace Application.UseCases.Subjects;
 
@@ -49,16 +50,17 @@ public class GetSubjectByGuidUseCase : IUseCase<SubjectDto, Guid>
             if (userId == null)
                 return Result<SubjectDto>.Fail(ErrorMessage.UserNotFound);
 
-            if (!user!.IsAdmin)
-            {
-                subject.SubjectKnowledges = subject.SubjectKnowledges
-                    .Where(sk => sk.Knowledge?.Visibility == KnowledgeVisibility.Public)
-                    .ToList();
-
-                // TODO
-            }
+            if (!user!.IsAdmin) subject.SubjectKnowledges = subject.SubjectKnowledges
+                                    .Where(sk => sk.Knowledge?.Visibility == KnowledgeVisibility.Public).ToList();
 
             var subjectDto = _mapper.Map<SubjectDto>(subject);
+            subjectDto.SubjectKnowledges.ToList().ForEach(async sk =>
+            {
+                var userLearning = await _unitOfWork.Repository<Learning>().Find(
+                        new BaseSpecification<Learning>(ul => ul.UserId == userId && ul.KnowledgeId == sk.Knowledge!.Id)
+                    );
+                sk.Knowledge!.CurrentUserLearning = userLearning == null ? null : _mapper.Map<LearningDto>(userLearning);
+            });
 
             return Result<SubjectDto>.Done(subjectDto);
         }

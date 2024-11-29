@@ -8,5 +8,7 @@ namespace Application.DTOs.SingleIdPivotEntities
         public UserDto? User { get; set; }
         public DateTime NextReviewDate { get; set; }
         public ICollection<LearningHistoryDto> LearningHistories { get; set; } = [];
+
+        public LearningHistoryDto? LatestLearningHistory { get; set; }
     }
 }

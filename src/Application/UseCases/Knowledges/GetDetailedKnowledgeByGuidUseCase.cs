@@ -1,7 +1,9 @@
 using Application.DTOs;
+using Application.DTOs.SingleIdPivotEntities;
 using AutoMapper;
 using Domain.Base;
 using Domain.Entities.SingleIdEntities;
+using Domain.Entities.SingleIdPivotEntities;
 using Domain.Enums;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
@@ -51,7 +53,17 @@ namespace Application.UseCases.Knowledges
                 if (knowledge == null || (!user.IsAdmin && knowledge.CreatorId != userId && knowledge.Visibility == KnowledgeVisibility.Private))
                     return Result<KnowledgeDto>.Fail(ErrorMessage.NoKnowledgeFoundWithGuid);
 
-                return Result<KnowledgeDto>.Done(_mapper.Map<KnowledgeDto>(knowledge));
+                var KnowledgeDto = _mapper.Map<KnowledgeDto>(knowledge);
+
+                if (!user.IsAdmin)
+                {
+                    var userLearning = await _unitOfWork.Repository<Learning>().Find(
+                        new BaseSpecification<Learning>(ul => ul.UserId == userId && ul.KnowledgeId == id)
+                    );
+                    KnowledgeDto.CurrentUserLearning = userLearning == null ? null : _mapper.Map<LearningDto>(userLearning);
+                }
+
+                return Result<KnowledgeDto>.Done(KnowledgeDto);
             }
             catch (Exception)
             {

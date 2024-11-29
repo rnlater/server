@@ -103,6 +103,7 @@ public static class AppServiceCollectionExtensions
         services.AddScoped<LearnKnowledgeUseCase>();
         services.AddScoped<GetLearningsToReviewUseCase>();
         services.AddScoped<ReviewLearningUseCase>();
+        services.AddScoped<GetCurrentUserLearningsUseCase>();
         services.AddScoped<ILearningService, LearningService>();
 
         services.AddScoped<CreateGameUseCase>();

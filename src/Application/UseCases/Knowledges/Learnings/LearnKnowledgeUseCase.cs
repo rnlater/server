@@ -9,6 +9,9 @@ using Shared.Constants;
 using Shared.Types;
 using Shared.Utils;
 using Domain.Enums;
+using Domain.Entities.PivotEntities;
+using Application.DTOs.SingleIdPivotEntities;
+using Application.DTOs;
 
 namespace Application.UseCases.Knowledges.Learnings;
 
@@ -20,8 +23,13 @@ public class LearnKnowledgeParams
     public required string Interpretation;
     public required string WordMatchAnswer;
 }
+public class LearntKnowledgeData
+{
+    public required LearningDto Learning { get; set; }
+    public List<LearningListKnowledgeDto>? LearningListKnowledges { get; set; }
+}
 
-public class LearnKnowledgeUseCase : IUseCase<Dictionary<Guid, int>, List<LearnKnowledgeParams>>
+public class LearnKnowledgeUseCase : IUseCase<Dictionary<Guid, LearntKnowledgeData>, List<LearnKnowledgeParams>>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
@@ -33,7 +41,7 @@ public class LearnKnowledgeUseCase : IUseCase<Dictionary<Guid, int>, List<LearnK
         _mapper = mapper;
         _httpContextAccessor = httpContextAccessor;
     }
-    public async Task<Result<Dictionary<Guid, int>>> Execute(List<LearnKnowledgeParams> parameters)
+    public async Task<Result<Dictionary<Guid, LearntKnowledgeData>>> Execute(List<LearnKnowledgeParams> parameters)
     {
         try
         {
@@ -41,6 +49,8 @@ public class LearnKnowledgeUseCase : IUseCase<Dictionary<Guid, int>, List<LearnK
             var gameOptionRepository = _unitOfWork.Repository<GameOption>();
             var learningRepository = _unitOfWork.Repository<Learning>();
             var learningHistoryRepository = _unitOfWork.Repository<LearningHistory>();
+            var learningListKnowledgeRepository = _unitOfWork.Repository<LearningListKnowledge>();
+
             var userId = UserExtractor.GetUserId(_httpContextAccessor);
 
             var knowledgesCount = await knowledgeRepository.Count(
@@ -48,19 +58,19 @@ public class LearnKnowledgeUseCase : IUseCase<Dictionary<Guid, int>, List<LearnK
             );
 
             if (knowledgesCount != parameters.Count)
-                return Result<Dictionary<Guid, int>>.Fail(ErrorMessage.SomeKnowledgesNotFound);
+                return Result<Dictionary<Guid, LearntKnowledgeData>>.Fail(ErrorMessage.SomeKnowledgesNotFound);
 
             var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
             if (userId == null)
-                return Result<Dictionary<Guid, int>>.Fail(ErrorMessage.UserNotFound);
+                return Result<Dictionary<Guid, LearntKnowledgeData>>.Fail(ErrorMessage.UserNotFound);
 
             var learningsCount = await learningRepository.Count(
                 new BaseSpecification<Learning>(l => l.UserId == userId && parameters.Select(gks => gks.KnowledgeId).Contains(l.KnowledgeId))
             );
             if (learningsCount != 0)
-                return Result<Dictionary<Guid, int>>.Fail(ErrorMessage.SomeKnowledgesAlreadyLearned);
+                return Result<Dictionary<Guid, LearntKnowledgeData>>.Fail(ErrorMessage.SomeKnowledgesAlreadyLearned);
 
-            Dictionary<Guid, int> scores = [];
+            Dictionary<Guid, LearntKnowledgeData> LearntKnowledgeData = [];
 
             foreach (var param in parameters)
             {
@@ -83,7 +93,7 @@ public class LearnKnowledgeUseCase : IUseCase<Dictionary<Guid, int>, List<LearnK
                 || !correctGameOption.GameKnowledgeSubscription!.Knowledge!.Materials.Select(m => m.Content).Contains(param.Interpretation))
                 {
                     await _unitOfWork.RollBackChangesAsync();
-                    return Result<Dictionary<Guid, int>>.Fail(ErrorMessage.InvalidData);
+                    return Result<Dictionary<Guid, LearntKnowledgeData>>.Fail(ErrorMessage.InvalidData);
                 }
 
                 if (param.GameOptionAnswerId == param.CorrectGameOptionId)
@@ -91,7 +101,6 @@ public class LearnKnowledgeUseCase : IUseCase<Dictionary<Guid, int>, List<LearnK
 
                 if (param.WordMatchAnswer == param.Interpretation)
                     score += 50;
-
 
                 var newLearning = new Learning
                 {
@@ -110,15 +119,34 @@ public class LearnKnowledgeUseCase : IUseCase<Dictionary<Guid, int>, List<LearnK
                         Score = score,
                     });
 
-                scores.Add(param.KnowledgeId, score);
+                newLearning = await learningRepository.Find(
+                    new BaseSpecification<Learning>(l => l.Id == newLearning.Id)
+                    .AddInclude(query => query
+                        .Include(l => l.Knowledge!)
+                        .Include(l => l.LearningHistories))
+                );
+
+                var learningListKnowledges = await learningListKnowledgeRepository.FindMany(
+                    new BaseSpecification<LearningListKnowledge>(llk => llk.KnowledgeId == param.KnowledgeId && llk.LearningList!.LearnerId == userId)
+                    .AddInclude(query => query.Include(llk => llk.LearningList!))
+                );
+
+                LearntKnowledgeData.Add(
+                    param.KnowledgeId,
+                    new LearntKnowledgeData
+                    {
+                        Learning = _mapper.Map<LearningDto>(newLearning),
+                        LearningListKnowledges = _mapper.Map<List<LearningListKnowledgeDto>>(learningListKnowledges)
+                    }
+                );
             }
 
-            return Result<Dictionary<Guid, int>>.Done(scores);
+            return Result<Dictionary<Guid, LearntKnowledgeData>>.Done(LearntKnowledgeData);
         }
         catch (Exception)
         {
             await _unitOfWork.RollBackChangesAsync();
-            return Result<Dictionary<Guid, int>>.Fail(ErrorMessage.UnknownError);
+            return Result<Dictionary<Guid, LearntKnowledgeData>>.Fail(ErrorMessage.UnknownError);
         }
     }
 }

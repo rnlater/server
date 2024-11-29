@@ -1,3 +1,5 @@
+using Application.DTOs.SingleIdPivotEntities;
+
 namespace Application.DTOs
 {
     public class LearningListDto
@@ -7,5 +9,7 @@ namespace Application.DTOs
         public Guid LearnerId { get; set; }
         public UserDto? Learner { get; set; }
         public ICollection<LearningListKnowledgeDto> LearningListKnowledges { get; set; } = [];
+        public ICollection<LearningDto> LearntKnowledges { get; set; } = [];
+        public ICollection<KnowledgeDto> NotLearntKnowledges { get; set; } = [];
     }
 }

@@ -55,10 +55,8 @@ namespace UnitTests.Knowledges.LearningLists
             _learningListRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<LearningList>>())).ReturnsAsync(learningList);
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns((Claim?)null);
 
-            // Act
             var result = await _getLearningListByGuidUseCase.Execute(guid);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.UserNotFound, result.Error);
         }
@@ -74,10 +72,8 @@ namespace UnitTests.Knowledges.LearningLists
             _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
             _learningListRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<LearningList>>())).ReturnsAsync((LearningList?)null);
 
-            // Act
             var result = await _getLearningListByGuidUseCase.Execute(guid);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoLearningListFoundWithGuid, result.Error);
         }
@@ -99,10 +95,8 @@ namespace UnitTests.Knowledges.LearningLists
             _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
             _learningListRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<LearningList>>())).ReturnsAsync(learningList);
 
-            // Act
             var result = await _getLearningListByGuidUseCase.Execute(guid);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.UserNotAuthorized, result.Error);
         }
@@ -139,10 +133,8 @@ namespace UnitTests.Knowledges.LearningLists
             _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
             _learningListRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<LearningList>>())).ReturnsAsync(learningList);
 
-            // Act
             var result = await _getLearningListByGuidUseCase.Execute(guid);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Equal(learningList.Id, result.Value.Id);
@@ -160,10 +152,8 @@ namespace UnitTests.Knowledges.LearningLists
             _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
             _learningListRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<LearningList>>())).ThrowsAsync(new Exception());
 
-            // Act
             var result = await _getLearningListByGuidUseCase.Execute(guid);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.UnknownError, result.Error);
         }

@@ -15,7 +15,7 @@ namespace Application.Interfaces.Knowledges
         /// <exception cref="ErrorMessage.UserNotFound">User not found</exception>
         /// <exception cref="ErrorMessage.SomeKnowledgesAlreadyLearned">Some knowledges already learned</exception>
         /// <exception cref="ErrorMessage.InvalidData">Invalid answer request</exception>
-        Task<Result<Dictionary<Guid, int>>> LearnKnowledge(List<LearnKnowledgeParams> Params);
+        Task<Result<Dictionary<Guid, LearntKnowledgeData>>> LearnKnowledge(List<LearnKnowledgeParams> Params);
 
         /// <summary>
         /// Get learnings to review
@@ -39,5 +39,14 @@ namespace Application.Interfaces.Knowledges
         /// <exception cref="ErrorMessage.RequireLearningBeforeReview">Require learning before review</exception>
         /// <exception cref="ErrorMessage.InvalidData">Invalid answer request</exception>
         Task<Result<List<LearningDto>>> ReviewLearning(List<ReviewLearningParams> Params);
+
+        /// <summary>
+        /// Retrieves the current user's learnings, including both learnt and unlisted learnings.
+        /// </summary>
+        /// <param name="parameters">The parameters for retrieving the current user's learnings, including an optional search term.</param>
+        /// <returns>A result containing the current user's learnings, or an error message if the operation fails.</returns>
+        /// <exception cref="ErrorMessage.UserNotFound">User not found</exception>
+        /// <exception cref="ErrorMessage.NoData">No learning found for the specific paramaters</exception>
+        Task<Result<CurrentUserLearnings>> GetCurrentUserLearnings(GetCurrentUserLearningsParams Params); // TODO
     }
 }

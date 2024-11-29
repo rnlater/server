@@ -25,6 +25,7 @@ namespace Endpoint.Controllers.Knowledges
                 cfg.CreateMap<LearnKnowledgeRequest, LearnKnowledgeParams>();
                 cfg.CreateMap<GetLearningsToReviewRequest, GetLearningsToReviewParams>();
                 cfg.CreateMap<ReviewLearningRequest, ReviewLearningParams>();
+                cfg.CreateMap<GetCurrentUserLearningsRequest, GetCurrentUserLearningsParams>();
             });
             _mapper = config.CreateMapper();
         }
@@ -53,6 +54,15 @@ namespace Endpoint.Controllers.Knowledges
         {
             var parameters = _mapper.Map<List<ReviewLearningParams>>(request);
             var result = await _learningService.ReviewLearning(parameters);
+            return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
+        }
+
+        [HttpPost(HttpRoute.GetCurrentUserLearnings)]
+        // [Authorize(Roles = "User")]
+        public async Task<IActionResult> GetCurrentUserLearnings([FromBody] GetCurrentUserLearningsRequest request)
+        {
+            var parameters = _mapper.Map<GetCurrentUserLearningsParams>(request);
+            var result = await _learningService.GetCurrentUserLearnings(parameters);
             return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
         }
     }
