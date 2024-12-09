@@ -1,0 +1,292 @@
+[
+  {
+    "audio": [
+      "mountain climber_772_06_12_2024.mp3",
+      "mountain climber_400_06_12_2024.mp3"
+    ],
+    "categories": [
+      "exercise",
+      "other_sports"
+    ],
+    "level": [
+      "C2",
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who climbs a mountain",
+                "example": "An experienced mountain climber, Kirsty has worked in outdoor pursuits since she was 17."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an exercise in which, supporting your body on your hands and toes, you bring each knee up to your chest and back again one at a time, getting faster and faster",
+                "example": "Mountain climbers are great for building core strength and agility."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈmaʊntən klaɪmə(r)/",
+          "/ˈmaʊntn klaɪmər/"
+        ]
+      }
+    ],
+    "photo": "mountain climber_04122024.jpg",
+    "word": "mountain climber"
+  },
+  {
+    "audio": [
+      "Holy Communion_040_06_12_2024.mp3",
+      "Holy Communion_874_06_12_2024.mp3"
+    ],
+    "categories": [
+      "religious_ceremonies"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a ceremony in the Christian Church during which people eat bread and drink wine in memory of the last meal that Christ had with his  disciples",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌhəʊli kəˈmjuːniən/"
+        ]
+      }
+    ],
+    "photo": "Holy Communion_04122024.jpg",
+    "word": "Holy Communion"
+  },
+  {
+    "audio": [
+      "body search_656_06_12_2024.mp3",
+      "body search_431_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_police"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a search of a person’s body, for example by the police or by a customs official, for drugs, weapons, etc.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbɒdi sɜːtʃ/",
+          "/ˈbɑːdi sɜːrtʃ/"
+        ]
+      }
+    ],
+    "photo": "body search_04122024.jpg",
+    "word": "body search"
+  },
+  {
+    "audio": [
+      "antimicrobial resistance_691_06_12_2024.mp3",
+      "antimicrobial resistance_945_06_12_2024.mp3",
+      "antimicrobial resistance_937_06_12_2024.mp3"
+    ],
+    "categories": [
+      "health_care"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the ability of harmful bacteria, viruses, etc. to be no longer affected by medicines that were previously able to treat them ",
+                "example": "Antimicrobial resistance is a major global health threat."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌæntimaɪˌkrəʊbiəl rɪˈzɪstəns/",
+          "/ˌæntaɪmaɪˌkrəʊbiəl rɪˈzɪstəns/"
+        ]
+      }
+    ],
+    "photo": "antimicrobial resistance_04122024.jpg",
+    "word": "antimicrobial resistance"
+  },
+  {
+    "audio": [
+      "weapon of mass destruction_703_06_12_2024.mp3",
+      "weapon of mass destruction_324_06_12_2024.mp3"
+    ],
+    "categories": [
+      "weapons"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a weapon such as a nuclear weapon, a  chemical weapon  or a  biological weapon  that can destroy large areas and kill many people",
+                "example": "states developing weapons of mass destruction"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌwepən əv ˌmæs dɪˈstrʌkʃn/"
+        ]
+      }
+    ],
+    "photo": "weapon of mass destruction_04122024.jpg",
+    "word": "weapon of mass destruction"
+  },
+  {
+    "audio": [
+      "run play_088_06_12_2024.mp3",
+      "run play_104_06_12_2024.mp3"
+    ],
+    "categories": [
+      "american_football"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a move in which a player carries the ball forward from behind the  line of scrimmage",
+                "example": "It might be a good idea to switch to a run play. "
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈrʌn pleɪ/"
+        ]
+      }
+    ],
+    "photo": "run play_04122024.jpg",
+    "word": "run play"
+  },
+  {
+    "audio": [
+      "air quality_341_06_12_2024.mp3",
+      "air quality_841_06_12_2024.mp3"
+    ],
+    "categories": [
+      "waste_and_pollution"
+    ],
+    "level": [
+      "A2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the degree to which the air is clean and free from pollution",
+                "example": "Planting more trees will improve air quality."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈeə kwɒləti/",
+          "/ˈer kwɑːləti/"
+        ]
+      }
+    ],
+    "photo": "air quality_04122024.jpg",
+    "word": "air quality"
+  },
+  {
+    "audio": [
+      "automatic license plate recognition_732_06_12_2024.mp3",
+      "automatic license plate recognition_164_06_12_2024.mp3"
+    ],
+    "categories": [
+      "controlling_traffic"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a system that reads and checks vehicle  license numbers  in order to identify criminal activity, manage parking and monitor traffic",
+                "example": "Officers have started using an automatic license plate recognition system to flag any known suspicious vehicles."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɔːtəmætɪk ˈlaɪsns pleɪt rekəɡnɪʃn/"
+        ]
+      }
+    ],
+    "photo": "automatic license plate recognition_04122024.jpg",
+    "word": "automatic license plate recognition"
+  }
+]

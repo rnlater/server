@@ -1,0 +1,199 @@
+[
+  {
+    "audio": [
+      "jogging suit_529_06_12_2024.mp3",
+      "jogging suit_376_06_12_2024.mp3"
+    ],
+    "categories": [
+      "items_of_clothing"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a warm loose pair of trousers and matching jacket worn for sports practice or as informal clothes",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈdʒɑːɡɪŋ suːt/",
+          "/ˈdʒɒɡɪŋ suːt/"
+        ]
+      }
+    ],
+    "photo": "jogging suit_05122024.jpg",
+    "word": "jogging suit"
+  },
+  {
+    "audio": [
+      "duty-free shop_593_06_12_2024.mp3",
+      "duty-free shop_442_06_12_2024.mp3"
+    ],
+    "categories": [
+      "airports"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a shop in an airport or on a ship, etc. that sells goods such as cigarettes, alcohol,  perfume , etc. without tax on them",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdjuːti ˈfriː ʃɒp/",
+          "/ˌduːti ˈfriː ʃɑːp/"
+        ]
+      }
+    ],
+    "photo": "duty-free shop_05122024.jpg",
+    "word": "duty-free shop"
+  },
+  {
+    "audio": [
+      "Down syndrome_504_06_12_2024.mp3",
+      "Down syndrome_521_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_disability"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a medical condition that some people are born with, caused by a fault with one  chromosome , which results in  learning disabilities",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈdaʊn sɪndrəʊm/"
+        ]
+      }
+    ],
+    "photo": "Down syndrome_05122024.jpg",
+    "word": "Down syndrome"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "lazy"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to spend time being lazy and doing nothing",
+                "example": null
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "slob out_05122024.jpg",
+    "word": "slob out"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "change"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to decrease rapidly",
+                "example": "Shares in the company continued to spiral downwards."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "spiral down_05122024.jpg",
+    "word": "spiral down"
+  },
+  {
+    "audio": [
+      "autism spectrum disorder_777_06_12_2024.mp3",
+      "autism spectrum disorder_056_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_disability"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a range of conditions affecting brain development that can be severe or mild, or any one of these conditions. People with  autism spectrum disorder  can find it difficult to communicate and form relationships, and may show repeated or limited patterns of thought and behaviour.",
+                "example": "support for families with children who have autism spectrum disorder"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɔːtɪzəm ˈspektrəm dɪsɔːdə(r)/",
+          "/ˌɔːtɪzəm ˈspektrəm dɪsɔːrdər/"
+        ]
+      }
+    ],
+    "photo": "autism spectrum disorder_05122024.jpg",
+    "word": "autism spectrum disorder"
+  }
+]

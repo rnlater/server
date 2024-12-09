@@ -1,0 +1,220 @@
+[
+  {
+    "audio": [],
+    "categories": [
+      "achieving_success"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to measure somebody/something",
+                "example": "We spent the morning measuring up and deciding where the furniture would go."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to be as good, successful, etc. as expected or needed",
+                "example": "Last year's intake just didn't measure up."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to look at somebody carefully in order to assess them",
+                "example": "The two shook hands and silently measured each other up."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "measure up_04122024.jpg",
+    "word": "measure up"
+  },
+  {
+    "audio": [
+      "Lib Dem_455_06_12_2024.mp3",
+      "Lib Dem_032_06_12_2024.mp3"
+    ],
+    "categories": [
+      "political_views_and_systems"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Liberal Democrat",
+                "example": "I voted Lib Dem."
+              }
+            ],
+            "part_of_speech": "abbreviation",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌlɪb ˈdem/"
+        ]
+      }
+    ],
+    "photo": "Lib Dem_04122024.jpg",
+    "word": "Lib Dem"
+  },
+  {
+    "audio": [
+      "Canadian bacon_231_06_12_2024.mp3",
+      "Canadian bacon_185_06_12_2024.mp3"
+    ],
+    "categories": [
+      "meat_fish_and_seafood"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "meat from the back of a pig that has been  cured   (= preserved using salt or smoke)  and has little fat on it, usually served in thin slices",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/kəˌneɪdiən ˈbeɪkən/"
+        ]
+      }
+    ],
+    "photo": "Canadian bacon_04122024.jpg",
+    "word": "Canadian bacon"
+  },
+  {
+    "audio": [
+      "personal protective equipment_114_06_12_2024.mp3",
+      "personal protective equipment_438_06_12_2024.mp3"
+    ],
+    "categories": [
+      "medical_equipment"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "clothing and equipment that is worn or used to protect people against infection or injury",
+                "example": "Medical staff should use personal protective equipment when treating any patient who may be infected with the virus."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌpɜːsənl prəˌtektɪv ɪˈkwɪpmənt/",
+          "/ˌpɜːrsənl prəˌtektɪv ɪˈkwɪpmənt/"
+        ]
+      }
+    ],
+    "photo": "personal protective equipment_04122024.jpg",
+    "word": "personal protective equipment"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "controlling_traffic"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to close a road or part of a road by putting a line of  cones  across it",
+                "example": "Part of the road was coned off after the accident."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "cone off_04122024.jpg",
+    "word": "cone off"
+  },
+  {
+    "audio": [
+      "production number_720_06_12_2024.mp3",
+      "production number_503_06_12_2024.mp3"
+    ],
+    "categories": [
+      "elements_of_a_play_or_film"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a scene in a musical play or a film where a lot of people sing and dance",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/prəˈdʌkʃn nʌmbər/",
+          "/prəˈdʌkʃn nʌmbə(r)/"
+        ]
+      }
+    ],
+    "photo": "production number_04122024.jpg",
+    "word": "production number"
+  }
+]

@@ -1,0 +1,223 @@
+[
+  {
+    "audio": [
+      "cold chain_121_06_12_2024.mp3",
+      "cold chain_751_06_12_2024.mp3"
+    ],
+    "categories": [
+      "running_a_business"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a  supply chain   (= the series of processes involved in the production and supply of goods)  that requires temperature control throughout, in order to preserve and extend the quality and use of products",
+                "example": "Cold chain is critical in the proper handling of vaccines to preserve their efficacy."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkəʊld tʃeɪn/"
+        ]
+      }
+    ],
+    "photo": "cold chain_05122024.jpg",
+    "word": "cold chain"
+  },
+  {
+    "audio": [
+      "money launderer_692_06_12_2024.mp3",
+      "money launderer_891_06_12_2024.mp3"
+    ],
+    "categories": [
+      "criminals"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who commits the crime of  money laundering",
+                "example": "Money launderers hide billions each year."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈmʌni lɔːndərə(r)/",
+          "/ˈmʌni lɔːndərər/"
+        ]
+      }
+    ],
+    "photo": "money launderer_05122024.jpg",
+    "word": "money launderer"
+  },
+  {
+    "audio": [
+      "Yorkshire terrier_507_06_12_2024.mp3",
+      "Yorkshire terrier_978_06_12_2024.mp3"
+    ],
+    "categories": [
+      "dogs"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a very small dog with long brown and grey hair",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌjɔːkʃə ˈteriə(r)/",
+          "/ˌjɔːrkʃər ˈteriər/"
+        ]
+      }
+    ],
+    "photo": "Yorkshire terrier_05122024.jpg",
+    "word": "Yorkshire terrier"
+  },
+  {
+    "audio": [
+      "bouillon cube_494_06_12_2024.mp3",
+      "bouillon cube_881_06_12_2024.mp3",
+      "bouillon cube_059_06_12_2024.mp3"
+    ],
+    "categories": [
+      "preparing_food"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a solid  cube  made from the dried juices of meat or vegetables, sold in packs and used for making soups, sauces, etc.",
+                "example": "Bring the water and bouillon cubes to a boil."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbuːjɑːn kjuːb/",
+          "/ˈbuːjɒ̃ kjuːb/",
+          "/ˈbuːjɒn kjuːb/"
+        ]
+      }
+    ],
+    "photo": "bouillon cube_05122024.jpg",
+    "word": "bouillon cube"
+  },
+  {
+    "audio": [
+      "video assistant referee_430_06_12_2024.mp3",
+      "video assistant referee_066_06_12_2024.mp3"
+    ],
+    "categories": [
+      "football"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an electronic system in which officials watch video recordings of important incidents in a match in order to advise the  referee   (= the official who controls the match)  and correct any mistakes",
+                "example": "The use of video assistant referee technology has always been controversial, but it is increasingly accepted."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the official who is in charge of the electronic system used to check important decisions ",
+                "example": "The goal was originally given, but the video assistant referee stepped in to disallow it."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌvɪdiəʊ əˌsɪstənt ˌrefəˈriː/"
+        ]
+      }
+    ],
+    "photo": "video assistant referee_05122024.jpg",
+    "word": "video assistant referee"
+  },
+  {
+    "audio": [
+      "patrol wagon_896_06_12_2024.mp3",
+      "patrol wagon_831_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_vehicle",
+      "the_police"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a police van for transporting prisoners in",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/pəˈtrəʊl wæɡən/"
+        ]
+      }
+    ],
+    "photo": "patrol wagon_05122024.jpg",
+    "word": "patrol wagon"
+  }
+]

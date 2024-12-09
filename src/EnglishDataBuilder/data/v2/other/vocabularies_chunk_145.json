@@ -1,0 +1,188 @@
+[
+  {
+    "audio": [
+      "Y chromosome_743_06_12_2024.mp3",
+      "Y chromosome_970_06_12_2024.mp3"
+    ],
+    "categories": [
+      "genetics"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a  sex chromosome . In human males each cell has one  X chromosome  and one  Y chromosome . In human females there is never a  Y chromosome .",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈwaɪ krəʊməsəʊm/"
+        ]
+      }
+    ],
+    "photo": "Y chromosome_05122024.jpg",
+    "word": "Y chromosome"
+  },
+  {
+    "audio": [
+      "one-parent family_890_06_12_2024.mp3",
+      "one-parent family_102_06_12_2024.mp3"
+    ],
+    "categories": [
+      "raising_children",
+      "family_background"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a family in which the children live with one parent rather than two",
+                "example": "the difficulties faced by one-parent families"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌwʌn perənt ˈfæməli/",
+          "/ˌwʌn peərənt ˈfæməli/"
+        ]
+      }
+    ],
+    "photo": "one-parent family_05122024.jpg",
+    "word": "one-parent family"
+  },
+  {
+    "audio": [
+      "business person_981_06_12_2024.mp3",
+      "business person_355_06_12_2024.mp3"
+    ],
+    "categories": [
+      "business_people",
+      "jobs_and_professions"
+    ],
+    "level": [
+      "A2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who works in business, especially at a high level",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbɪznəs pɜːsn/",
+          "/ˈbɪznəs pɜːrsn/"
+        ]
+      }
+    ],
+    "photo": "business person_05122024.jpg",
+    "word": "business person"
+  },
+  {
+    "audio": [
+      "cowboy boot_415_06_12_2024.mp3",
+      "cowboy boot_755_06_12_2024.mp3"
+    ],
+    "categories": [
+      "footwear"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a type of leather boot with a high heel and a pointed toe, originally worn by  cowboys  ",
+                "example": "Gemma wore a pair of white cowboy boots decorated with silver stitching. "
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkaʊbɔɪ buːt/"
+        ]
+      }
+    ],
+    "photo": "cowboy boot_05122024.jpg",
+    "word": "cowboy boot"
+  },
+  {
+    "audio": [
+      "rare breed_585_06_12_2024.mp3",
+      "rare breed_904_06_12_2024.mp3"
+    ],
+    "categories": [
+      "farm_animals"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a variety of farm animal that only exists in small numbers, especially one that is traditionally farmed in a particular region",
+                "example": "The wool comes from a rare breed of Turkish sheep."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person or thing with characteristics that are unusual among people or things of their kind",
+                "example": "He's that rare breed of politician who has remained true to his ideals."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌrer ˈbriːd/",
+          "/ˌreə ˈbriːd/"
+        ]
+      }
+    ],
+    "photo": "rare breed_05122024.jpg",
+    "word": "rare breed"
+  }
+]

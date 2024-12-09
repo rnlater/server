@@ -1,0 +1,197 @@
+[
+  {
+    "audio": [
+      "income stream_933_06_12_2024.mp3",
+      "income stream_271_06_12_2024.mp3",
+      "income stream_510_06_12_2024.mp3",
+      "income stream_480_06_12_2024.mp3"
+    ],
+    "categories": [
+      "running_a_business",
+      "finance"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the money that a company or person earns from a particular activity; a means by which a company or person earns money",
+                "example": "The company understands the need to diversify its income streams in the coming years."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈɪnkʌm striːm/",
+          "/ˈɪnkəm striːm/"
+        ]
+      }
+    ],
+    "photo": "income stream_04122024.jpg",
+    "word": "income stream"
+  },
+  {
+    "audio": [
+      "government health warning_423_06_12_2024.mp3",
+      "government health warning_037_06_12_2024.mp3"
+    ],
+    "categories": [
+      "health_care"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in the UK) a notice that must by law appear on a product, especially a pack of cigarettes, that warns people that it is dangerous to their health",
+                "example": "All tobacco products are required to carry a government health warning."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a warning that something should be treated carefully because it may cause problems",
+                "example": "These figures should come with a government health warning."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɡʌvənmənt ˈhelθ wɔːnɪŋ/",
+          "/ˌɡʌvərnmənt ˈhelθ wɔːrnɪŋ/"
+        ]
+      }
+    ],
+    "photo": "government health warning_04122024.jpg",
+    "word": "government health warning"
+  },
+  {
+    "audio": [
+      "surf lifesaver_083_06_12_2024.mp3",
+      "surf lifesaver_468_06_12_2024.mp3"
+    ],
+    "categories": [
+      "swimming",
+      "jobs_and_professions"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who is employed at a beach to rescue people who are in danger in the water",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsɜːf ˈlaɪfseɪvə(r)/",
+          "/ˌsɜːrf ˈlaɪfseɪvər/"
+        ]
+      }
+    ],
+    "photo": "surf lifesaver_04122024.jpg",
+    "word": "surf lifesaver"
+  },
+  {
+    "audio": [
+      "utility vehicle_452_06_12_2024.mp3",
+      "utility vehicle_103_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_vehicle"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a small truck with low sides designed for carrying light loads",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/juːˈtɪləti viːəkl/",
+          "/juːˈtɪləti viːhɪkl/"
+        ]
+      }
+    ],
+    "photo": "utility vehicle_04122024.jpg",
+    "word": "utility vehicle"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "like"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to begin to like somebody",
+                "example": "I warmed to her immediately."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to become more interested in or enthusiastic about something",
+                "example": "The speaker was now warming to her theme."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "warm towards_04122024.jpg",
+    "word": "warm towards"
+  }
+]

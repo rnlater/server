@@ -1,0 +1,174 @@
+[
+  {
+    "audio": [
+      "junior technician_800_06_12_2024.mp3",
+      "junior technician_594_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_air_force"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a member of the British  air force , of fairly low rank",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdʒuːniə tekˈnɪʃn/",
+          "/ˌdʒuːniər tekˈnɪʃn/"
+        ]
+      }
+    ],
+    "photo": "junior technician_05122024.jpg",
+    "word": "junior technician"
+  },
+  {
+    "audio": [
+      "jet black_129_06_12_2024.mp3",
+      "jet black_325_06_12_2024.mp3"
+    ],
+    "categories": [
+      "colours"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "deep shiny black in colour",
+                "example": "jet-black eyes/hair"
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdʒet ˈblæk/"
+        ]
+      }
+    ],
+    "photo": "jet black_05122024.jpg",
+    "word": "jet black"
+  },
+  {
+    "audio": [
+      "good sense_020_06_12_2024.mp3",
+      "good sense_843_06_12_2024.mp3"
+    ],
+    "categories": [
+      "skills_and_qualities"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the ability to make the right decision about something; good judgement",
+                "example": "a man of honour and good sense"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɡʊd ˈsens/"
+        ]
+      }
+    ],
+    "photo": "good sense_05122024.jpg",
+    "word": "good sense"
+  },
+  {
+    "audio": [
+      "Bunsen burner_549_06_12_2024.mp3",
+      "Bunsen burner_348_06_12_2024.mp3"
+    ],
+    "categories": [
+      "scientific_equipment"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an instrument used in scientific work that produces a hot gas flame",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌbʌnsn ˈbɜːrnər/",
+          "/ˌbʌnsn ˈbɜːnə(r)/"
+        ]
+      }
+    ],
+    "photo": "Bunsen burner_06122024.jpg",
+    "word": "Bunsen burner"
+  },
+  {
+    "audio": [
+      "Generation Y_239_06_12_2024.mp3",
+      "Generation Y_447_06_12_2024.mp3"
+    ],
+    "categories": [
+      "belonging_to_society"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the group of people who were born between the early 1980s and the late 1990s, who are mainly the children of the  baby boomers  and who are regarded as being very familiar with computers and electronic technology ",
+                "example": "Generation Y has/have always felt comfortable with technology."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdʒenəreɪʃn ˈwaɪ/"
+        ]
+      }
+    ],
+    "photo": "Generation Y_05122024.jpg",
+    "word": "Generation Y"
+  }
+]

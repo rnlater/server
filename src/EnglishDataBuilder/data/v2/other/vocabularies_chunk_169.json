@@ -1,0 +1,313 @@
+[
+  {
+    "audio": [
+      "tow truck_851_06_12_2024.mp3",
+      "tow truck_598_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_vehicle"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a truck that is used for taking cars away to be repaired when they have had a  breakdown",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈtəʊ trʌk/"
+        ]
+      }
+    ],
+    "photo": "tow truck_06122024.jpg",
+    "word": "tow truck"
+  },
+  {
+    "audio": [
+      "civil engineering_316_06_12_2024.mp3",
+      "civil engineering_858_06_12_2024.mp3"
+    ],
+    "categories": [
+      "branches_of_engineering",
+      "construction"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the design, building and repair of roads, bridges,  canals , etc.; the study of this as a subject",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsɪvl endʒɪˈnɪrɪŋ/",
+          "/ˌsɪvl endʒɪˈnɪərɪŋ/"
+        ]
+      }
+    ],
+    "photo": "civil engineering_05122024.jpg",
+    "word": "civil engineering"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "office_life"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to record the time at which you leave work, especially by putting a card into a machine",
+                "example": "She clocks off at 5.15."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "clock off_05122024.jpg",
+    "word": "clock off"
+  },
+  {
+    "audio": [
+      "drum pad_555_06_12_2024.mp3",
+      "drum pad_726_06_12_2024.mp3"
+    ],
+    "categories": [
+      "musical_instruments"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an electronic musical instrument that makes the sounds of drums when you hit it with a special stick",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈdrʌm pæd/"
+        ]
+      }
+    ],
+    "photo": "drum pad_05122024.jpg",
+    "word": "drum pad"
+  },
+  {
+    "audio": [
+      "staple diet_868_06_12_2024.mp3",
+      "staple diet_268_06_12_2024.mp3"
+    ],
+    "categories": [
+      "diet"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the food that a person or an animal normally eats",
+                "example": "a staple diet of meat and potatoes"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "something that is used a lot",
+                "example": "Sex and violence seem to be the staple diet of television drama."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsteɪpl ˈdaɪət/"
+        ]
+      }
+    ],
+    "photo": "staple diet_05122024.jpg",
+    "word": "staple diet"
+  },
+  {
+    "audio": [
+      "big tech_310_06_12_2024.mp3",
+      "big tech_885_06_12_2024.mp3"
+    ],
+    "categories": [
+      "running_a_business"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "very large technology companies",
+                "example": "Big tech is playing an ever larger role in our lives. "
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌbɪɡ ˈtek/"
+        ]
+      }
+    ],
+    "photo": "big tech_05122024.jpg",
+    "word": "big tech"
+  },
+  {
+    "audio": [
+      "good name_190_06_12_2024.mp3",
+      "good name_778_06_12_2024.mp3"
+    ],
+    "categories": [
+      "forming_an_opinion"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the good opinion that people have of somebody/something",
+                "example": "He told the police he didn't know her, to protect her good name."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɡʊd ˈneɪm/"
+        ]
+      }
+    ],
+    "photo": "good name_05122024.jpg",
+    "word": "good name"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "ambition"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to try to achieve or get something, especially something difficult",
+                "example": "We've been shooting for a pay raise for months."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "shoot for_05122024.jpg",
+    "word": "shoot for"
+  },
+  {
+    "audio": [
+      "Graeco-Roman wrestling_876_06_12_2024.mp3",
+      "Graeco-Roman wrestling_333_06_12_2024.mp3",
+      "Graeco-Roman wrestling_704_06_12_2024.mp3"
+    ],
+    "categories": [
+      "combat_sports"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a form of  wrestling  in which those taking part are not allowed to hold each other below the middle part of the body ",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɡriːkəʊ ˌrəʊmən ˈreslɪŋ/",
+          "/ˌɡrekəʊ ˌrəʊmən ˈreslɪŋ/"
+        ]
+      }
+    ],
+    "photo": "Graeco-Roman wrestling_05122024.jpg",
+    "word": "Graeco-Roman wrestling"
+  }
+]

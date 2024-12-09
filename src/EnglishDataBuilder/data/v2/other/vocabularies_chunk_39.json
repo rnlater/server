@@ -1,0 +1,155 @@
+[
+  {
+    "audio": [
+      "Tok Pisin_702_06_12_2024.mp3",
+      "Tok Pisin_237_06_12_2024.mp3",
+      "Tok Pisin_051_06_12_2024.mp3",
+      "Tok Pisin_639_06_12_2024.mp3"
+    ],
+    "categories": [
+      "languages"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a  Creole  language based on English, used in Papua New Guinea",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌtɑːk ˈpɪzən/",
+          "/ˌtɒk ˈpɪsən/",
+          "/ˌtɒk ˈpɪzən/",
+          "/ˌtɑːk ˈpɪsən/"
+        ]
+      }
+    ],
+    "photo": "Tok Pisin_04122024.jpg",
+    "word": "Tok Pisin"
+  },
+  {
+    "audio": [
+      "mute button_720_06_12_2024.mp3",
+      "mute button_264_06_12_2024.mp3"
+    ],
+    "categories": [
+      "communication_devices"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a button on a phone that you press in order to stop yourself from being heard by the person at the other end of the line (while you speak to somebody else)",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a button that you press in order to turn off the sound on a television, computer, etc.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈmjuːt bʌtn/"
+        ]
+      }
+    ],
+    "photo": "mute button_04122024.jpg",
+    "word": "mute button"
+  },
+  {
+    "audio": [
+      "hot pink_197_06_12_2024.mp3",
+      "hot pink_921_06_12_2024.mp3"
+    ],
+    "categories": [
+      "colours"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "very bright pink in colour",
+                "example": "hot pink flowers"
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌhɒt ˈpɪŋk/",
+          "/ˌhɑːt ˈpɪŋk/"
+        ]
+      }
+    ],
+    "photo": "hot pink_04122024.jpg",
+    "word": "hot pink"
+  },
+  {
+    "audio": [
+      "English rose_033_06_12_2024.mp3",
+      "English rose_206_06_12_2024.mp3"
+    ],
+    "categories": [
+      "attractiveness"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an attractive girl with fair skin and an appearance that is thought to be typical of English people",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɪŋɡlɪʃ ˈrəʊz/"
+        ]
+      }
+    ],
+    "photo": "English rose_04122024.jpg",
+    "word": "English rose"
+  }
+]

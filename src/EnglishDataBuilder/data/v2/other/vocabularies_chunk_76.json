@@ -1,0 +1,118 @@
+[
+  {
+    "audio": [
+      "access provider_288_06_12_2024.mp3",
+      "access provider_479_06_12_2024.mp3"
+    ],
+    "categories": [
+      "business_people",
+      "using_the_internet"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a business company that provides a service to customers, especially one that connects customers to the internet",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈækses prəvaɪdər/",
+          "/ˈækses prəvaɪdə(r)/"
+        ]
+      }
+    ],
+    "photo": "access provider_05122024.jpg",
+    "word": "access provider"
+  },
+  {
+    "audio": [
+      "leading aircraftman_842_06_12_2024.mp3",
+      "leading aircraftman_085_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_air_force"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a male member of one of the lower ranks of the British  air force",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌliːdɪŋ ˈerkræftmən/",
+          "/ˌliːdɪŋ ˈeəkrɑːftmən/"
+        ]
+      }
+    ],
+    "photo": "leading aircraftman_05122024.jpg",
+    "word": "leading aircraftman"
+  },
+  {
+    "audio": [
+      "express lane_498_06_12_2024.mp3",
+      "express lane_670_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_road"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "part of a road on which certain vehicles can travel faster because there is less traffic",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a place in a shop where customers can pay without having to wait for a long time",
+                "example": "Customers with ten items or less can use the express lane."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ɪkˈspres leɪn/"
+        ]
+      }
+    ],
+    "photo": "express lane_05122024.jpg",
+    "word": "express lane"
+  }
+]

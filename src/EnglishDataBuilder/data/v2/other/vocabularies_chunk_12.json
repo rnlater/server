@@ -1,0 +1,159 @@
+[
+  {
+    "audio": [
+      "fitness tracker_733_06_12_2024.mp3",
+      "fitness tracker_893_06_12_2024.mp3"
+    ],
+    "categories": [
+      "exercise"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a device that you can wear that records your daily physical activity, as well as other information about your health, such as your heart rate",
+                "example": "Fitness trackers are popular with serious athletes."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfɪtnəs trækər/",
+          "/ˈfɪtnəs trækə(r)/"
+        ]
+      }
+    ],
+    "photo": "fitness tracker_04122024.jpg",
+    "word": "fitness tracker"
+  },
+  {
+    "audio": [
+      "push technology_950_06_12_2024.mp3",
+      "push technology_121_06_12_2024.mp3"
+    ],
+    "categories": [
+      "using_the_internet"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a service that allows internet users to keep receiving a particular type of information without having to request it each time",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈpʊʃ teknɑːlədʒi/",
+          "/ˈpʊʃ teknɒlədʒi/"
+        ]
+      }
+    ],
+    "photo": "push technology_04122024.jpg",
+    "word": "push technology"
+  },
+  {
+    "audio": [
+      "congestion charging_003_06_12_2024.mp3",
+      "congestion charging_577_06_12_2024.mp3"
+    ],
+    "categories": [
+      "controlling_traffic"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the policy of making people pay an amount of money for driving their cars into the centre of some cities as a way of stopping the city centre from becoming too full of traffic",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/kənˈdʒestʃən tʃɑːrdʒɪŋ/",
+          "/kənˈdʒestʃən tʃɑːdʒɪŋ/"
+        ]
+      }
+    ],
+    "photo": "congestion charging_04122024.jpg",
+    "word": "congestion charging"
+  },
+  {
+    "audio": [
+      "man of colour_658_06_12_2024.mp3",
+      "man of colour_049_06_12_2024.mp3"
+    ],
+    "categories": [
+      "race"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a man who is not white",
+                "example": "They are hoping to attract more men of color into the teaching profession."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌmæn əv ˈkʌlər/",
+          "/ˌmæn əv ˈkʌlə(r)/"
+        ]
+      }
+    ],
+    "photo": "man of colour_04122024.jpg",
+    "word": "man of colour"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "forming_an_opinion"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [],
+        "phonetics": []
+      }
+    ],
+    "photo": "think for yourself_04122024.jpg",
+    "word": "think for yourself"
+  }
+]

@@ -1,0 +1,187 @@
+[
+  {
+    "audio": [
+      "first strike_382_06_12_2024.mp3",
+      "first strike_555_06_12_2024.mp3"
+    ],
+    "categories": [
+      "war"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an attack on an enemy made before they attack you",
+                "example": "the threat of a strategic first strike"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌfɜːst ˈstraɪk/",
+          "/ˌfɜːrst ˈstraɪk/"
+        ]
+      }
+    ],
+    "photo": "first strike_05122024.jpg",
+    "word": "first strike"
+  },
+  {
+    "audio": [
+      "broom cupboard_131_06_12_2024.mp3",
+      "broom cupboard_931_06_12_2024.mp3"
+    ],
+    "categories": [
+      "parts_of_a_house"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a large built-in cupboard used for keeping cleaning equipment, etc. in",
+                "example": "There's a broom cupboard under the stairs."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a very small room",
+                "example": "I couldn't afford more than a broom cupboard to set up office in."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbruːm kʌbərd/",
+          "/ˈbruːm kʌbəd/"
+        ]
+      }
+    ],
+    "photo": "broom cupboard_05122024.jpg",
+    "word": "broom cupboard"
+  },
+  {
+    "audio": [
+      "judgement call_354_06_12_2024.mp3",
+      "judgement call_156_06_12_2024.mp3"
+    ],
+    "categories": [
+      "decision"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a decision you have to make where there is no clear rule about what the right thing to do is, so that you have to use your own judgement",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈdʒʌdʒmənt kɔːl/"
+        ]
+      }
+    ],
+    "photo": "judgement call_05122024.jpg",
+    "word": "judgement call"
+  },
+  {
+    "audio": [
+      "electronic tagging_109_06_12_2024.mp3",
+      "electronic tagging_912_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_police"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the system of attaching an electronic device to a person, animal or object so that the police, etc. know where the person, animal or object is",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ɪˌlektrɑːnɪk ˈtæɡɪŋ/",
+          "/ɪˌlektrɒnɪk ˈtæɡɪŋ/"
+        ]
+      }
+    ],
+    "photo": "electronic tagging_05122024.jpg",
+    "word": "electronic tagging"
+  },
+  {
+    "audio": [
+      "loot box_814_06_12_2024.mp3",
+      "loot box_611_06_12_2024.mp3"
+    ],
+    "categories": [
+      "computer_games"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a feature, usually in the form of a box that a player can pay to open, that allows the player to gain additional benefits that can be used in the game",
+                "example": "You don't know what you're going to get when you open a loot box."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈluːt bɒks/",
+          "/ˈluːt bɑːks/"
+        ]
+      }
+    ],
+    "photo": "loot box_05122024.jpg",
+    "word": "loot box"
+  }
+]

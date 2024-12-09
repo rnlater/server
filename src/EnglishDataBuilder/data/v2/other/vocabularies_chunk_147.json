@@ -1,0 +1,204 @@
+[
+  {
+    "audio": [
+      "club class_440_06_12_2024.mp3",
+      "club class_853_06_12_2024.mp3"
+    ],
+    "categories": [
+      "parts_of_a_plane"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the part of a plane where passengers have a high level of comfort and service, designed for people travelling on business, and less expensive than first class",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈklʌb klɑːs/",
+          "/ˈklʌb klæs/"
+        ]
+      }
+    ],
+    "photo": "club class_04122024.jpg",
+    "word": "club class"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "having_a_disagreement"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to disagree with somebody/something",
+                "example": "Nobody could quarrel with your conclusions."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "quarrel with_04122024.jpg",
+    "word": "quarrel with"
+  },
+  {
+    "audio": [
+      "Creutzfeldt-Jakob disease_315_06_12_2024.mp3",
+      "Creutzfeldt-Jakob disease_431_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_illness"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a brain disease that causes slow loss of control of the mind and body and, finally, death. It is believed to be caused by  prions  and is linked to  BSE  in cows.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌkrɔɪtsfelt ˈjækɒb dɪziːz/",
+          "/ˌkrɔɪtsfelt ˈjækɔːb dɪziːz/"
+        ]
+      }
+    ],
+    "photo": "Creutzfeldt-Jakob disease_04122024.jpg",
+    "word": "Creutzfeldt-Jakob disease"
+  },
+  {
+    "audio": [
+      "Shetland pony_034_06_12_2024.mp3",
+      "Shetland pony_246_06_12_2024.mp3"
+    ],
+    "categories": [
+      "pets"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a very small, strong horse with a rough coat",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌʃetlənd ˈpəʊni/"
+        ]
+      }
+    ],
+    "photo": "Shetland pony_04122024.jpg",
+    "word": "Shetland pony"
+  },
+  {
+    "audio": [
+      "music therapy_809_06_12_2024.mp3",
+      "music therapy_448_06_12_2024.mp3"
+    ],
+    "categories": [
+      "mental_health_care"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a treatment for mental, emotional or physical health problems that involves playing or listening to music",
+                "example": "Music therapy has proved more effective for me than any other kind of treatment."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌmjuːzɪk ˈθerəpi/"
+        ]
+      }
+    ],
+    "photo": "music therapy_04122024.jpg",
+    "word": "music therapy"
+  },
+  {
+    "audio": [
+      "British Summer Time_129_06_12_2024.mp3",
+      "British Summer Time_930_06_12_2024.mp3"
+    ],
+    "categories": [
+      "time_zones"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the time used in the UK in summer that is one hour ahead of  UTC",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌbrɪtɪʃ ˈsʌmər taɪm/",
+          "/ˌbrɪtɪʃ ˈsʌmə taɪm/"
+        ]
+      }
+    ],
+    "photo": "British Summer Time_04122024.jpg",
+    "word": "British Summer Time"
+  }
+]

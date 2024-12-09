@@ -1,0 +1,290 @@
+[
+  {
+    "audio": [
+      "bathing suit_075_06_12_2024.mp3",
+      "bathing suit_647_06_12_2024.mp3"
+    ],
+    "categories": [
+      "swimming",
+      "items_of_clothing"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a piece of clothing worn for swimming, especially the type worn by women and girls",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbeɪðɪŋ suːt/"
+        ]
+      }
+    ],
+    "photo": "bathing suit_05122024.jpg",
+    "word": "bathing suit"
+  },
+  {
+    "audio": [
+      "Middle English_176_06_12_2024.mp3",
+      "Middle English_774_06_12_2024.mp3"
+    ],
+    "categories": [
+      "languages"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an old form of English that was used between about AD 1150 and AD 1500",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌmɪdl ˈɪŋɡlɪʃ/"
+        ]
+      }
+    ],
+    "photo": "Middle English_05122024.jpg",
+    "word": "Middle English"
+  },
+  {
+    "audio": [
+      "weak force_822_06_12_2024.mp3",
+      "weak force_486_06_12_2024.mp3"
+    ],
+    "categories": [
+      "energy_and_physical_forces"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "one of the four  fundamental forces  in the universe, which is produced between  particles  in an  atom",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈwiːk fɔːrs/",
+          "/ˈwiːk fɔːs/"
+        ]
+      }
+    ],
+    "photo": "weak force_05122024.jpg",
+    "word": "weak force"
+  },
+  {
+    "audio": [
+      "social enterprise_489_06_12_2024.mp3",
+      "social enterprise_745_06_12_2024.mp3"
+    ],
+    "categories": [
+      "running_a_business"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a business that uses its profits to try and help the community or for another social purpose",
+                "example": "It's a social enterprise aiming to help ex-offenders find work."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsəʊʃl ˈentərpraɪz/",
+          "/ˌsəʊʃl ˈentəpraɪz/"
+        ]
+      }
+    ],
+    "photo": "social enterprise_05122024.jpg",
+    "word": "social enterprise"
+  },
+  {
+    "audio": [
+      "varicose vein_812_06_12_2024.mp3",
+      "varicose vein_221_06_12_2024.mp3"
+    ],
+    "categories": [
+      "being_ill"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a  vein , especially one in the leg, that has become  swollen   (= larger than normal)  and painful",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌværɪkəʊs ˈveɪn/"
+        ]
+      }
+    ],
+    "photo": "varicose vein_05122024.jpg",
+    "word": "varicose vein"
+  },
+  {
+    "audio": [
+      "feel good_383_06_12_2024.mp3",
+      "feel good_175_06_12_2024.mp3"
+    ],
+    "categories": [
+      "happiness"
+    ],
+    "level": [
+      "A2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "making you feel happy and pleased about life",
+                "example": "a feel-good movie"
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the feeling of confidence in the future that is shared by many people",
+                "example": "After the recession, people were waiting for the return of the feel-good factor before starting to spend money again."
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfiːl ɡʊd/"
+        ]
+      }
+    ],
+    "photo": "feel good_05122024.jpg",
+    "word": "feel good"
+  },
+  {
+    "audio": [
+      "mystery shopping_952_06_12_2024.mp3",
+      "mystery shopping_760_06_12_2024.mp3"
+    ],
+    "categories": [
+      "shopping_in_stores"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the activity of visiting or phoning a shop or other business, or using their website, pretending to be a customer, in order to get information on the quality of the service, the facilities, etc.",
+                "example": " Today, mystery shopping is primarily used by businesses to measure their customer service."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌmɪstri ˈʃɒpɪŋ/",
+          "/ˌmɪstəri ˈʃɑːpɪŋ/"
+        ]
+      }
+    ],
+    "photo": "mystery shopping_05122024.jpg",
+    "word": "mystery shopping"
+  },
+  {
+    "audio": [
+      "code word_888_06_12_2024.mp3",
+      "code word_489_06_12_2024.mp3"
+    ],
+    "categories": [
+      "linguistic_devices"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a word or phrase with a secret meaning that is used instead of the usual name for something",
+                "example": "They were asked to bring ‘cigars’ to the meeting, a code word for guns."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkəʊd wɜːd/",
+          "/ˈkəʊd wɜːrd/"
+        ]
+      }
+    ],
+    "photo": "code word_05122024.jpg",
+    "word": "code word"
+  }
+]

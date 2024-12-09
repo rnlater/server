@@ -1,0 +1,163 @@
+[
+  {
+    "audio": [
+      "foam roller_678_06_12_2024.mp3",
+      "foam roller_854_06_12_2024.mp3"
+    ],
+    "categories": [
+      "exercise"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a tube made of rubber or plastic that you can lie on and roll on in various positions in order to reduce  tension   (= tight feelings)  in the muscles",
+                "example": "A foam roller can be used both in your warm-up and in recovery after exercise."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌfəʊm ˈrəʊlər/",
+          "/ˌfəʊm ˈrəʊlə(r)/"
+        ]
+      }
+    ],
+    "photo": "foam roller_05122024.jpg",
+    "word": "foam roller"
+  },
+  {
+    "audio": [
+      "sparring partner_215_06_12_2024.mp3",
+      "sparring partner_424_06_12_2024.mp3"
+    ],
+    "categories": [
+      "having_a_disagreement"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person that you regularly have friendly arguments or discussions with",
+                "example": "He was an old political sparring partner of mine."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person that a  boxer  regularly practises with",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈspɑːrɪŋ pɑːtnə(r)/",
+          "/ˈspɑːrɪŋ pɑːrtnər/"
+        ]
+      }
+    ],
+    "photo": "sparring partner_05122024.jpg",
+    "word": "sparring partner"
+  },
+  {
+    "audio": [
+      "impulse buy_735_06_12_2024.mp3",
+      "impulse buy_917_06_12_2024.mp3"
+    ],
+    "categories": [
+      "shopping_in_stores"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "something that you buy without planning to do so in advance, and without thinking about it carefully",
+                "example": "It was an impulse buy."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈɪmpʌls baɪ/"
+        ]
+      }
+    ],
+    "photo": "impulse buy_05122024.jpg",
+    "word": "impulse buy"
+  },
+  {
+    "audio": [
+      "shopping bag_265_06_12_2024.mp3",
+      "shopping bag_457_06_12_2024.mp3"
+    ],
+    "categories": [
+      "shopping_in_stores"
+    ],
+    "level": [
+      "A2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a large, strong bag made of cloth, plastic, etc. used for carrying your shopping",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a paper or plastic bag for carrying shopping",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈʃɒpɪŋ bæɡ/",
+          "/ˈʃɑːpɪŋ bæɡ/"
+        ]
+      }
+    ],
+    "photo": "shopping bag_06122024.jpg",
+    "word": "shopping bag"
+  }
+]

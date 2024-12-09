@@ -1,0 +1,187 @@
+[
+  {
+    "audio": [
+      "colour supplement_425_06_12_2024.mp3",
+      "colour supplement_015_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_press"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a magazine printed in colour and forming an extra part of a newspaper, particularly on Saturdays or Sundays",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkʌlə sʌplɪmənt/",
+          "/ˈkʌlər sʌplɪmənt/"
+        ]
+      }
+    ],
+    "photo": "colour supplement_04122024.jpg",
+    "word": "colour supplement"
+  },
+  {
+    "audio": [
+      "Rosh Hashana_938_06_12_2024.mp3",
+      "Rosh Hashana_095_06_12_2024.mp3"
+    ],
+    "categories": [
+      "religious_holidays_and_festivals"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the Jewish New Year festival, held in September",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌrɒʃ həˈʃɑːnə/",
+          "/ˌrɑːʃ həˈʃɑːnə/"
+        ]
+      }
+    ],
+    "photo": "Rosh Hashana_04122024.jpg",
+    "word": "Rosh Hashana"
+  },
+  {
+    "audio": [
+      "salmon pink_643_06_12_2024.mp3",
+      "salmon pink_487_06_12_2024.mp3"
+    ],
+    "categories": [
+      "colours"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "orange-pink in colour, like the inside of a  salmon",
+                "example": "a salmon-pink shirt"
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsæmən ˈpɪŋk/"
+        ]
+      }
+    ],
+    "photo": "salmon pink_04122024.jpg",
+    "word": "salmon pink"
+  },
+  {
+    "audio": [
+      "last call_634_06_12_2024.mp3",
+      "last call_225_06_12_2024.mp3"
+    ],
+    "categories": [
+      "plane_travel"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the last opportunity for people to buy drinks in a pub or a bar before it closes",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the final request at an airport for passengers to get on their plane",
+                "example": "This is the last call for passengers on Lufthansa flight 420 to Frankfurt."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌlɑːst ˈkɔːl/",
+          "/ˌlæst ˈkɔːl/"
+        ]
+      }
+    ],
+    "photo": "last call_04122024.jpg",
+    "word": "last call"
+  },
+  {
+    "audio": [
+      "passenger seat_158_06_12_2024.mp3",
+      "passenger seat_355_06_12_2024.mp3"
+    ],
+    "categories": [
+      "parts_of_a_car"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the seat in a car that is next to the driver’s seat",
+                "example": "the  front passenger seat"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈpæsɪndʒə siːt/",
+          "/ˈpæsɪndʒər siːt/"
+        ]
+      }
+    ],
+    "photo": "passenger seat_06122024.jpg",
+    "word": "passenger seat"
+  }
+]

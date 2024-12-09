@@ -1,0 +1,187 @@
+[
+  {
+    "audio": [
+      "heel turn_305_06_12_2024.mp3",
+      "heel turn_507_06_12_2024.mp3"
+    ],
+    "categories": [
+      "winter_sports"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a complete change of attitude, opinion or character",
+                "example": "Fans of the show did not really buy the lead character's heel turn."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a turn made by pushing down on your heel",
+                "example": "Slide your board into a heel turn and turn it sideways to slow down."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈhiːl tɜːn/",
+          "/ˈhiːl tɜːrn/"
+        ]
+      }
+    ],
+    "photo": "heel turn_05122024.jpg",
+    "word": "heel turn"
+  },
+  {
+    "audio": [
+      "party list_059_06_12_2024.mp3",
+      "party list_852_06_12_2024.mp3"
+    ],
+    "categories": [
+      "political_views_and_systems"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an election system in which people vote for a party, not a candidate, and successful candidates are chosen from a list, based on how many votes each party has received",
+                "example": "Members of Parliament in the country are elected from party lists and do not represent constituencies."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌpɑːti ˈlɪst/",
+          "/ˌpɑːrti ˈlɪst/"
+        ]
+      }
+    ],
+    "photo": "party list_05122024.jpg",
+    "word": "party list"
+  },
+  {
+    "audio": [
+      "home confinement_891_06_12_2024.mp3",
+      "home confinement_391_06_12_2024.mp3"
+    ],
+    "categories": [
+      "punishment"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the state of being a prisoner in your own house rather than in a prison",
+                "example": "He was sentenced to six months of home confinement."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌhəʊm kənˈfaɪnmənt/"
+        ]
+      }
+    ],
+    "photo": "home confinement_05122024.jpg",
+    "word": "home confinement"
+  },
+  {
+    "audio": [
+      "statutory instrument_405_06_12_2024.mp3",
+      "statutory instrument_633_06_12_2024.mp3"
+    ],
+    "categories": [
+      "rules"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a law or other rule which has legal status",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌstætʃətɔːri ˈɪnstrəmənt/",
+          "/ˌstætʃətri ˈɪnstrəmənt/"
+        ]
+      }
+    ],
+    "photo": "statutory instrument_05122024.jpg",
+    "word": "statutory instrument"
+  },
+  {
+    "audio": [
+      "news cycle_054_06_12_2024.mp3",
+      "news cycle_254_06_12_2024.mp3"
+    ],
+    "categories": [
+      "journalism"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the period between one news broadcast or edition of a newspaper and the next one",
+                "example": "The 24-hour news cycle typical of print journalism has become ever shorter, especially now with non-stop updates on the internet. "
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈnuːz saɪkl/",
+          "/ˈnjuːz saɪkl/"
+        ]
+      }
+    ],
+    "photo": "news cycle_05122024.jpg",
+    "word": "news cycle"
+  }
+]

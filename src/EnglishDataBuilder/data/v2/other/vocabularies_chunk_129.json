@@ -1,0 +1,319 @@
+[
+  {
+    "audio": [
+      "commentary box_888_06_12_2024.mp3",
+      "commentary box_687_06_12_2024.mp3"
+    ],
+    "categories": [
+      "ball_sports_in_general"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a place in a sports ground where the people who describe what is happening in a sports event for radio or television sit",
+                "example": "They will be in the commentary box to broadcast live and exclusive coverage of the game."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkɒməntri bɒks/",
+          "/ˈkɑːmənteri bɑːks/"
+        ]
+      }
+    ],
+    "photo": "commentary box_05122024.jpg",
+    "word": "commentary box"
+  },
+  {
+    "audio": [
+      "preparatory school_241_06_12_2024.mp3",
+      "preparatory school_424_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_school"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in the UK) a private school for children between the ages of 7 and 13",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in the US) a school, usually a private one, that prepares students for college",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/prɪˈpærətɔːri skuːl/",
+          "/prɪˈpærətri skuːl/"
+        ]
+      }
+    ],
+    "photo": "preparatory school_05122024.jpg",
+    "word": "preparatory school"
+  },
+  {
+    "audio": [
+      "shin bone_501_06_12_2024.mp3",
+      "shin bone_327_06_12_2024.mp3"
+    ],
+    "categories": [
+      "skeleton_and_muscles"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the front and larger bone of the two bones in the lower part of the leg between the knee and the ankle",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈʃɪn bəʊn/"
+        ]
+      }
+    ],
+    "photo": "shin bone_06122024.jpg",
+    "word": "shin bone"
+  },
+  {
+    "audio": [
+      "personal trainer_253_06_12_2024.mp3",
+      "personal trainer_075_06_12_2024.mp3"
+    ],
+    "categories": [
+      "exercise"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who is paid by somebody to help them exercise, especially by deciding what types of exercise are best for them",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌpɜːsənl ˈtreɪnə(r)/",
+          "/ˌpɜːrsənl ˈtreɪnər/"
+        ]
+      }
+    ],
+    "photo": "personal trainer_05122024.jpg",
+    "word": "personal trainer"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "achieving_success"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to succeed in dealing with a difficult situation by making other people believe something which is not true",
+                "example": "She successfully bluffed her way through the interview."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "bluff your way into_05122024.jpg",
+    "word": "bluff your way into"
+  },
+  {
+    "audio": [
+      "matric exemption_785_06_12_2024.mp3",
+      "matric exemption_634_06_12_2024.mp3"
+    ],
+    "categories": [
+      "exams_and_assessment"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the fact of successfully completing the final year of school and being able to study at university or college",
+                "example": "A senior certificate with matric exemption is required for entry to university."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/məˌtrɪk ɪɡˈzempʃn/"
+        ]
+      }
+    ],
+    "photo": "matric exemption_05122024.jpg",
+    "word": "matric exemption"
+  },
+  {
+    "audio": [
+      "conservation area_158_06_12_2024.mp3",
+      "conservation area_363_06_12_2024.mp3"
+    ],
+    "categories": [
+      "conservation"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in the UK) an area where the natural environment or the buildings are protected by law from being damaged or changed",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌkɑːnsərˈveɪʃn eriə/",
+          "/ˌkɒnsəˈveɪʃn eəriə/"
+        ]
+      }
+    ],
+    "photo": "conservation area_05122024.jpg",
+    "word": "conservation area"
+  },
+  {
+    "audio": [
+      "vacant possession_089_06_12_2024.mp3",
+      "vacant possession_932_06_12_2024.mp3"
+    ],
+    "categories": [
+      "buying_a_home"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the fact of owning a house that is empty because the people who lived there have moved out",
+                "example": "They want to sell the house with vacant possession so they have asked their tenants to leave."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌveɪkənt pəˈzeʃn/"
+        ]
+      }
+    ],
+    "photo": "vacant possession_05122024.jpg",
+    "word": "vacant possession"
+  },
+  {
+    "audio": [
+      "rearguard action_646_06_12_2024.mp3",
+      "rearguard action_435_06_12_2024.mp3"
+    ],
+    "categories": [
+      "unsuccessful_people_things"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a struggle to change or stop something even when it is not likely that you will succeed",
+                "example": "They have been  fighting a rearguard action  for two years to stop their house being demolished."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌrɪəɡɑːd ˈækʃn/",
+          "/ˌrɪrɡɑːrd ˈækʃn/"
+        ]
+      }
+    ],
+    "photo": "rearguard action_05122024.jpg",
+    "word": "rearguard action"
+  }
+]

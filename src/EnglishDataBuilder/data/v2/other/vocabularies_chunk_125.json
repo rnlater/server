@@ -1,0 +1,179 @@
+[
+  {
+    "audio": [],
+    "categories": [
+      "preventing_danger"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "used to tell somebody to move so that you can pass",
+                "example": "Mind out—you're in the way there!"
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "used to warn somebody of danger",
+                "example": "Have some of my plum jam—but mind out for the stones."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "mind out_05122024.jpg",
+    "word": "mind out"
+  },
+  {
+    "audio": [
+      "in tray_442_06_12_2024.mp3",
+      "in tray_643_06_12_2024.mp3"
+    ],
+    "categories": [
+      "office_life"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in an office) a container on your desk for letters that are waiting to be read or answered",
+                "example": "She had a full in tray to deal with when she got back."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈɪn treɪ/"
+        ]
+      }
+    ],
+    "photo": "in tray_06122024.jpg",
+    "word": "in tray"
+  },
+  {
+    "audio": [
+      "victim blaming_422_06_12_2024.mp3",
+      "victim blaming_249_06_12_2024.mp3"
+    ],
+    "categories": [
+      "social_justice"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the practice of saying or implying that a person who has suffered harm or injury is responsible for it, rather than the person who caused the harm or injury",
+                "example": "We need to challenge the victim blaming that often surrounds sexual assault. "
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈvɪktɪm bleɪmɪŋ/"
+        ]
+      }
+    ],
+    "photo": "victim blaming_05122024.jpg",
+    "word": "victim blaming"
+  },
+  {
+    "audio": [
+      "pond skater_818_06_12_2024.mp3",
+      "pond skater_016_06_12_2024.mp3"
+    ],
+    "categories": [
+      "insects"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an insect that moves quickly across the surface of water",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈpɒnd skeɪtə(r)/",
+          "/ˈpɑːnd skeɪtər/"
+        ]
+      }
+    ],
+    "photo": "pond skater_05122024.jpg",
+    "word": "pond skater"
+  },
+  {
+    "audio": [
+      "blind test_792_06_12_2024.mp3",
+      "blind test_971_06_12_2024.mp3"
+    ],
+    "categories": [
+      "decision"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a way of deciding which product out of a number of competing products is the best or most popular, or how a new product compares with others. People are asked to try the different products and to say which ones they prefer, but they are not told the names of the products.",
+                "example": "In blind tests, consumers chose our cola over more established brands."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌblaɪnd ˈtest/"
+        ]
+      }
+    ],
+    "photo": "blind test_05122024.jpg",
+    "word": "blind test"
+  }
+]

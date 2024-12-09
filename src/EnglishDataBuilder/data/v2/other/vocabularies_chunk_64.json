@@ -1,0 +1,208 @@
+[
+  {
+    "audio": [
+      "class war_574_06_12_2024.mp3",
+      "class war_263_06_12_2024.mp3"
+    ],
+    "categories": [
+      "social_justice"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "opposition between the different social classes in society, especially that described in Marxist theory",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌklɑːs ˈwɔː(r)/",
+          "/ˌklæs ˈwɔːr/"
+        ]
+      }
+    ],
+    "photo": "class war_04122024.jpg",
+    "word": "class war"
+  },
+  {
+    "audio": [
+      "tribute band_422_06_12_2024.mp3",
+      "tribute band_214_06_12_2024.mp3"
+    ],
+    "categories": [
+      "people_in_the_music_world"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a group of musicians who play the music of a famous band and copy the way they look and sound",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈtrɪbjuːt bænd/"
+        ]
+      }
+    ],
+    "photo": "tribute band_04122024.jpg",
+    "word": "tribute band"
+  },
+  {
+    "audio": [
+      "sunrise industry_346_06_12_2024.mp3",
+      "sunrise industry_222_06_12_2024.mp3"
+    ],
+    "categories": [
+      "running_a_business"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a new industry, especially one connected with  electronics  or computers, that is successful and growing",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈsʌnraɪz ɪndəstri/"
+        ]
+      }
+    ],
+    "photo": "sunrise industry_04122024.jpg",
+    "word": "sunrise industry"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "fear"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to avoid thinking about or doing something unpleasant",
+                "example": "He never flinched from facing up to trouble."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "flinch from_04122024.jpg",
+    "word": "flinch from"
+  },
+  {
+    "audio": [
+      "safe room_869_06_12_2024.mp3",
+      "safe room_878_06_12_2024.mp3",
+      "safe room_933_06_12_2024.mp3",
+      "safe room_117_06_12_2024.mp3"
+    ],
+    "categories": [
+      "rooms_in_a_house"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a room in a home or an office building where people can go to avoid a dangerous situation",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈseɪf rʊm/",
+          "/ˈseɪf ruːm/"
+        ]
+      }
+    ],
+    "photo": "safe room_04122024.jpg",
+    "word": "safe room"
+  },
+  {
+    "audio": [
+      "battery farm_878_06_12_2024.mp3",
+      "battery farm_822_06_12_2024.mp3",
+      "battery farm_625_06_12_2024.mp3"
+    ],
+    "categories": [
+      "animal_farming"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a farm where large numbers of chickens or other animals are kept in very small  cages  or crowded conditions",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbætəri fɑːrm/",
+          "/ˈbætəri fɑːm/",
+          "/ˈbætri fɑːm/"
+        ]
+      }
+    ],
+    "photo": "battery farm_04122024.jpg",
+    "word": "battery farm"
+  }
+]

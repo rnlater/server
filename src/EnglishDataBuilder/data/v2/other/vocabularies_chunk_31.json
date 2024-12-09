@@ -1,0 +1,210 @@
+[
+  {
+    "audio": [
+      "American plan_666_06_12_2024.mp3",
+      "American plan_822_06_12_2024.mp3"
+    ],
+    "categories": [
+      "staying_in_a_hotel"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a type of accommodation in a hotel, etc. that includes all meals",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/əˌmerɪkən ˈplæn/"
+        ]
+      }
+    ],
+    "photo": "American plan_05122024.jpg",
+    "word": "American plan"
+  },
+  {
+    "audio": [
+      "activity tracker_148_06_12_2024.mp3",
+      "activity tracker_319_06_12_2024.mp3"
+    ],
+    "categories": [
+      "exercise"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a device that you can wear that records your daily physical activity, as well as other information about your health, such as your heart rate",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ækˈtɪvəti trækər/",
+          "/ækˈtɪvəti trækə(r)/"
+        ]
+      }
+    ],
+    "photo": "activity tracker_05122024.jpg",
+    "word": "activity tracker"
+  },
+  {
+    "audio": [
+      "3D printer_681_06_12_2024.mp3",
+      "3D printer_838_06_12_2024.mp3"
+    ],
+    "categories": [
+      "machines_and_devices"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a machine that makes solid objects from a digital file by adding more and more layers of a material until the object is complete",
+                "example": "The car's entire body, seats and windshield are printed by a 3D printer and are made out of carbon fibre and plastic."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌθriː diː ˈprɪntər/",
+          "/ˌθriː diː ˈprɪntə(r)/"
+        ]
+      }
+    ],
+    "photo": "3D printer_05122024.jpg",
+    "word": "3D printer"
+  },
+  {
+    "audio": [
+      "fundamental force_153_06_12_2024.mp3",
+      "fundamental force_335_06_12_2024.mp3"
+    ],
+    "categories": [
+      "energy_and_physical_forces"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a force that is a property (= characteristic) of everything in the universe. There are four  fundamental forces  including  gravity  and  electromagnetism .",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌfʌndəmentl ˈfɔːrs/",
+          "/ˌfʌndəmentl ˈfɔːs/"
+        ]
+      }
+    ],
+    "photo": "fundamental force_05122024.jpg",
+    "word": "fundamental force"
+  },
+  {
+    "audio": [
+      "Phi Beta Kappa_482_06_12_2024.mp3",
+      "Phi Beta Kappa_282_06_12_2024.mp3"
+    ],
+    "categories": [
+      "universities_and_colleges"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in the US) a society for college and university students who are very successful in their studies",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌfaɪ ˌbeɪtə ˈkæpə/",
+          "/ˌfaɪ ˌbiːtə ˈkæpə/"
+        ]
+      }
+    ],
+    "photo": "Phi Beta Kappa_05122024.jpg",
+    "word": "Phi Beta Kappa"
+  },
+  {
+    "audio": [
+      "musical bumps_814_06_12_2024.mp3",
+      "musical bumps_986_06_12_2024.mp3"
+    ],
+    "categories": [
+      "childrens_games"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a children’s party game in which the players must sit down on the floor when the music stops. The last person to sit down each time cannot continue playing.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌmjuːzɪkl ˈbʌmps/"
+        ]
+      }
+    ],
+    "photo": "musical bumps_05122024.jpg",
+    "word": "musical bumps"
+  }
+]

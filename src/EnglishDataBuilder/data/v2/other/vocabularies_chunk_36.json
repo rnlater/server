@@ -1,0 +1,216 @@
+[
+  {
+    "audio": [
+      "back bench_547_06_12_2024.mp3",
+      "back bench_969_06_12_2024.mp3"
+    ],
+    "categories": [
+      "parliament"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in the House of Commons in the UK, and in certain other parliaments) any of the seats for Members of Parliament who do not have senior positions in the government or the other parties",
+                "example": "He resigned as Home Secretary and returned to the back benches."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌbæk ˈbentʃ/"
+        ]
+      }
+    ],
+    "photo": "back bench_05122024.jpg",
+    "word": "back bench"
+  },
+  {
+    "audio": [
+      "housing association_543_06_12_2024.mp3",
+      "housing association_157_06_12_2024.mp3",
+      "housing association_900_06_12_2024.mp3",
+      "housing association_598_06_12_2024.mp3"
+    ],
+    "categories": [
+      "helping_others"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in the UK) an organization that owns houses, flats, etc. and helps people to rent or buy them at a low price",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈhaʊzɪŋ əsəʊsieɪʃn/",
+          "/ˈhaʊzɪŋ əsəʊʃieɪʃn/"
+        ]
+      }
+    ],
+    "photo": "housing association_05122024.jpg",
+    "word": "housing association"
+  },
+  {
+    "audio": [
+      "primary care physician_583_06_12_2024.mp3",
+      "primary care physician_147_06_12_2024.mp3"
+    ],
+    "categories": [
+      "medical_staff"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a doctor who is trained in general medicine and who treats patients in a local community rather than at a hospital",
+                "example": "advice on choosing a good primary care physician"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌpraɪməri ˈkeə fɪzɪʃn/",
+          "/ˌpraɪmeri ˈker fɪzɪʃn/"
+        ]
+      }
+    ],
+    "photo": "primary care physician_05122024.jpg",
+    "word": "primary care physician"
+  },
+  {
+    "audio": [
+      "Inauguration Day_329_06_12_2024.mp3",
+      "Inauguration Day_126_06_12_2024.mp3"
+    ],
+    "categories": [
+      "parliament"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in the US) 20 January, officially the first day of a new President’s period of office",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ɪˌnɔːɡjəˈreɪʃn deɪ/"
+        ]
+      }
+    ],
+    "photo": "Inauguration Day_05122024.jpg",
+    "word": "Inauguration Day"
+  },
+  {
+    "audio": [
+      "Air Force One_899_06_12_2024.mp3",
+      "Air Force One_269_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_air_force"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the name given to a special aircraft in the US  air force  when the US President is using it",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌer fɔːrs ˈwʌn/",
+          "/ˌeə fɔːs ˈwʌn/"
+        ]
+      }
+    ],
+    "photo": "Air Force One_05122024.jpg",
+    "word": "Air Force One"
+  },
+  {
+    "audio": [
+      "ophthalmic optician_109_06_12_2024.mp3",
+      "ophthalmic optician_927_06_12_2024.mp3",
+      "ophthalmic optician_065_06_12_2024.mp3"
+    ],
+    "categories": [
+      "jobs_and_professions",
+      "medical_staff"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person whose job is to examine people’s eyes and to recommend and sell glasses",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ɒpˌθælmɪk ɒpˈtɪʃn/",
+          "/ɒfˌθælmɪk ɒpˈtɪʃn/",
+          "/ɑːpˌθælmɪk ɑːpˈtɪʃn/",
+          "/ɑːfˌθælmɪk ɑːpˈtɪʃn/"
+        ]
+      }
+    ],
+    "photo": "ophthalmic optician_05122024.jpg",
+    "word": "ophthalmic optician"
+  }
+]

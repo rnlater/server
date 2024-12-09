@@ -1,0 +1,174 @@
+[
+  {
+    "audio": [
+      "electronic payment_440_06_12_2024.mp3",
+      "electronic payment_258_06_12_2024.mp3"
+    ],
+    "categories": [
+      "paying_for_shopping",
+      "finance"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a way of paying money that uses digital technology; an act of paying in this way",
+                "example": "Electronic payment systems have transformed the financial services sector."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ɪˌlektrɑːnɪk ˈpeɪmənt/",
+          "/ɪˌlektrɒnɪk ˈpeɪmənt/"
+        ]
+      }
+    ],
+    "photo": "electronic payment_05122024.jpg",
+    "word": "electronic payment"
+  },
+  {
+    "audio": [
+      "biological warfare_812_06_12_2024.mp3",
+      "biological warfare_045_06_12_2024.mp3"
+    ],
+    "categories": [
+      "war"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the use of weapons of war that spread disease",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌbaɪəˌlɑːdʒɪkl ˈwɔːrfer/",
+          "/ˌbaɪəˌlɒdʒɪkl ˈwɔːfeə(r)/"
+        ]
+      }
+    ],
+    "photo": "biological warfare_05122024.jpg",
+    "word": "biological warfare"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "email"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to send somebody a copy of a letter, an email message, etc. that you are sending to somebody else",
+                "example": "Can you copy me in on your report?"
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "copy in_05122024.jpg",
+    "word": "copy in"
+  },
+  {
+    "audio": [
+      "return ticket_834_06_12_2024.mp3",
+      "return ticket_632_06_12_2024.mp3"
+    ],
+    "categories": [
+      "plane_travel",
+      "train_and_bus_travel"
+    ],
+    "level": [
+      "A2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a ticket for a journey to a place and back again",
+                "example": "I lost my return ticket and was stranded in Thailand."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/rɪˌtɜːn ˈtɪkɪt/",
+          "/rɪˌtɜːrn ˈtɪkɪt/"
+        ]
+      }
+    ],
+    "photo": "return ticket_05122024.jpg",
+    "word": "return ticket"
+  },
+  {
+    "audio": [
+      "railroad crossing_189_06_12_2024.mp3",
+      "railroad crossing_396_06_12_2024.mp3"
+    ],
+    "categories": [
+      "railway_tracks_and_stations",
+      "controlling_traffic"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a place where a road crosses a railroad at the same level (not on a bridge)",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈreɪlrəʊd krɒsɪŋ/",
+          "/ˈreɪlrəʊd krɔːsɪŋ/"
+        ]
+      }
+    ],
+    "photo": "railroad crossing_05122024.jpg",
+    "word": "railroad crossing"
+  }
+]

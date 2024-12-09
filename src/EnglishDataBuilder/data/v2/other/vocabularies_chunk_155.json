@@ -1,0 +1,174 @@
+[
+  {
+    "audio": [
+      "recreational vehicle_321_06_12_2024.mp3",
+      "recreational vehicle_085_06_12_2024.mp3",
+      "recreational vehicle_877_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_vehicle"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a large vehicle designed for people to live and sleep in when they are travelling",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌrekriˌeɪʃənl ˈviːəkl/",
+          "/ˌrekriˌeɪʃənl ˈviːhɪkl/"
+        ]
+      }
+    ],
+    "photo": "recreational vehicle_05122024.jpg",
+    "word": "recreational vehicle"
+  },
+  {
+    "audio": [
+      "package store_705_06_12_2024.mp3",
+      "package store_915_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_store"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a shop that sells alcoholic drinks in bottles and cans to take away",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈpækɪdʒ stɔːr/",
+          "/ˈpækɪdʒ stɔː(r)/"
+        ]
+      }
+    ],
+    "photo": "package store_05122024.jpg",
+    "word": "package store"
+  },
+  {
+    "audio": [
+      "true crime_285_06_12_2024.mp3",
+      "true crime_482_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_story",
+      "tv_and_radio_shows"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a genre of book, film, etc. that examines or tells the story of a real crime ",
+                "example": "It's a true crime story in which truth is stranger than fiction."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌtruː ˈkraɪm/"
+        ]
+      }
+    ],
+    "photo": "true crime_05122024.jpg",
+    "word": "true crime"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "motoring_problems_and_accidents"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to form a  tailback",
+                "example": "Traffic tailed back five miles from the scene of the accident."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "tail back_05122024.jpg",
+    "word": "tail back"
+  },
+  {
+    "audio": [
+      "Makar Sankranti_614_06_12_2024.mp3",
+      "Makar Sankranti_088_06_12_2024.mp3",
+      "Makar Sankranti_851_06_12_2024.mp3"
+    ],
+    "categories": [
+      "religious_holidays_and_festivals"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a Hindu festival celebrated in various regions of India, marking the beginning of the  harvest   (= the time of year when crops are gathered in)  ",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/mæˌkɑː sæŋˈkrænti/",
+          "/mæˌkɑː sæŋˈkrɑːnti/",
+          "/mæˌkɑːr sæŋˈkrɑːnti/"
+        ]
+      }
+    ],
+    "photo": "Makar Sankranti_05122024.jpg",
+    "word": "Makar Sankranti"
+  }
+]

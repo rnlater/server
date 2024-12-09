@@ -1,0 +1,136 @@
+[
+  {
+    "audio": [
+      "MP3 player_182_06_12_2024.mp3",
+      "MP3 player_381_06_12_2024.mp3"
+    ],
+    "categories": [
+      "listening_to_music"
+    ],
+    "level": [
+      "A2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a small piece of equipment that can store information taken from the internet and that you can carry with you, for example so that you can listen to music",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌem piː ˈθriː pleɪə(r)/",
+          "/ˌem piː ˈθriː pleɪər/"
+        ]
+      }
+    ],
+    "photo": "MP3 player_05122024.jpg",
+    "word": "MP3 player"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "cause_and_effect"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to be the result of something",
+                "example": "Most people’s insecurities stem from something that happened in their childhood."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "stem from_05122024.jpg",
+    "word": "stem from"
+  },
+  {
+    "audio": [
+      "shit stirrer_881_06_12_2024.mp3",
+      "shit stirrer_686_06_12_2024.mp3"
+    ],
+    "categories": [
+      "having_a_disagreement"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who tries to make situations in which people disagree even worse",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈʃɪt stɜːrə(r)/",
+          "/ˈʃɪt stɜːrər/"
+        ]
+      }
+    ],
+    "photo": "shit stirrer_05122024.jpg",
+    "word": "shit stirrer"
+  },
+  {
+    "audio": [
+      "banner headline_634_06_12_2024.mp3",
+      "banner headline_834_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_press"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a line of words printed in large letters across the front page of a newspaper",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌbænər ˈhedlaɪn/",
+          "/ˌbænə ˈhedlaɪn/"
+        ]
+      }
+    ],
+    "photo": "banner headline_05122024.jpg",
+    "word": "banner headline"
+  }
+]

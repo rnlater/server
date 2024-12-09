@@ -1,0 +1,350 @@
+[
+  {
+    "audio": [
+      "model home_923_06_12_2024.mp3",
+      "model home_746_06_12_2024.mp3"
+    ],
+    "categories": [
+      "describing_buildings"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a house in a group of new houses that has been painted and filled with furniture, so that people who might want to buy one of the houses can see what they will be like",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈmɑːdl həʊm/",
+          "/ˈmɒdl həʊm/"
+        ]
+      }
+    ],
+    "photo": "model home_05122024.jpg",
+    "word": "model home"
+  },
+  {
+    "audio": [
+      "staff writer_777_06_12_2024.mp3",
+      "staff writer_601_06_12_2024.mp3"
+    ],
+    "categories": [
+      "job_titles"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person whose job is to write stories, articles, etc. for a newspaper, magazine, radio or television company. A  staff writer  is employed by one particular organization and works in one of their offices.",
+                "example": "She's a staff writer on a popular show."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈstæf raɪtər/",
+          "/ˈstɑːf raɪtə(r)/"
+        ]
+      }
+    ],
+    "photo": "staff writer_05122024.jpg",
+    "word": "staff writer"
+  },
+  {
+    "audio": [
+      "spy balloon_124_06_12_2024.mp3",
+      "spy balloon_354_06_12_2024.mp3"
+    ],
+    "categories": [
+      "war",
+      "aircraft"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a large  balloon  that flies high in the sky and is fitted with cameras and other recording equipment, used for obtaining secret military information about another country",
+                "example": "The US military shot down a suspected spy balloon."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈspaɪ bəluːn/"
+        ]
+      }
+    ],
+    "photo": "spy balloon_05122024.jpg",
+    "word": "spy balloon"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "ambition"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to try to reach or achieve a goal",
+                "example": "They are all working towards/toward a common goal."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "work towards_05122024.jpg",
+    "word": "work towards"
+  },
+  {
+    "audio": [
+      "soft furnishings_090_06_12_2024.mp3",
+      "soft furnishings_271_06_12_2024.mp3"
+    ],
+    "categories": [
+      "furniture"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "cushions , curtains and other things made from cloth that are found in a house",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsɒft ˈfɜːnɪʃɪŋz/",
+          "/ˌsɔːft ˈfɜːrnɪʃɪŋz/"
+        ]
+      }
+    ],
+    "photo": "soft furnishings_05122024.jpg",
+    "word": "soft furnishings"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "on_the_road",
+      "other_geographic_features"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to be joined to another road or river but lead in a different direction",
+                "example": "Just after the lake, the path branches off to the right."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to leave a road or path and travel in a different direction",
+                "example": null
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "branch off_05122024.jpg",
+    "word": "branch off"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "persuasion"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to persuade or encourage somebody to do something by making them feel happy about it",
+                "example": null
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "jolly into doing_05122024.jpg",
+    "word": "jolly into doing"
+  },
+  {
+    "audio": [
+      "screen reader_389_06_12_2024.mp3",
+      "screen reader_543_06_12_2024.mp3"
+    ],
+    "categories": [
+      "living_with_disability"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a computer program that turns the text displayed on a screen into speech or  Braille",
+                "example": "Creating a website compatible with screen readers is essential."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈskriːn riːdə(r)/",
+          "/ˈskriːn riːdər/"
+        ]
+      }
+    ],
+    "photo": "screen reader_05122024.jpg",
+    "word": "screen reader"
+  },
+  {
+    "audio": [
+      "multi-storey car park_871_06_12_2024.mp3",
+      "multi-storey car park_072_06_12_2024.mp3"
+    ],
+    "categories": [
+      "public_buildings"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a large building with several floors for parking cars in",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌmʌlti stɔːri ˈkɑːr pɑːrk/",
+          "/ˌmʌlti stɔːri ˈkɑː pɑːk/"
+        ]
+      }
+    ],
+    "photo": "multi-storey car park_05122024.jpg",
+    "word": "multi-storey car park"
+  },
+  {
+    "audio": [
+      "rubber dinghy_764_06_12_2024.mp3",
+      "rubber dinghy_428_06_12_2024.mp3",
+      "rubber dinghy_581_06_12_2024.mp3",
+      "rubber dinghy_968_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_boat"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a small boat made of rubber that is filled with air",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌrʌbə ˈdɪŋɡi/",
+          "/ˌrʌbər ˈdɪŋɡi/",
+          "/ˌrʌbə ˈdɪŋi/",
+          "/ˌrʌbər ˈdɪŋi/"
+        ]
+      }
+    ],
+    "photo": "rubber dinghy_05122024.jpg",
+    "word": "rubber dinghy"
+  }
+]

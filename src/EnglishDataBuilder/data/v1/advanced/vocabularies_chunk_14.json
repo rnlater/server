@@ -1,0 +1,334 @@
+[
+  {
+    "audio": [
+      "demonstration_115_04_12_2024.mp3"
+    ],
+    "categories": [
+      "protest"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "The act of demonstrating; showing or explaining something.",
+                "example": null
+              },
+              {
+                "definition": "An event at which something will be demonstrated.",
+                "example": "I have to give a demonstration to the class tomorrow, and I'm ill-prepared."
+              },
+              {
+                "definition": "Expression of one's feelings by outward signs.",
+                "example": null
+              },
+              {
+                "definition": "A public display of group opinion, such as a protest march.",
+                "example": null
+              },
+              {
+                "definition": "A show of military force.",
+                "example": null
+              },
+              {
+                "definition": "A mathematical proof.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/dɛmənˈstɹeɪʃən/"
+        ]
+      }
+    ],
+    "photo": "demonstration_04122024.jpg",
+    "word": "demonstration"
+  },
+  {
+    "audio": [
+      "legitimate_066_04_12_2024.mp3"
+    ],
+    "categories": [
+      "the_law",
+      "family_background",
+      "allowed"
+    ],
+    "level": [
+      "C2",
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [
+              "bastard",
+              "illegitimate"
+            ],
+            "definitions": [
+              {
+                "definition": "A person born to a legally married couple.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To make legitimate, lawful, or valid; especially, to put in the position or state of a legitimate person before the law, by legal means.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": [
+              "legitimize"
+            ]
+          },
+          {
+            "antonyms": [
+              "false",
+              "illegitimate",
+              "illegitimate",
+              "illegitimate"
+            ],
+            "definitions": [
+              {
+                "definition": "In accordance with the law or established legal forms and requirements.",
+                "example": null
+              },
+              {
+                "definition": "Conforming to known principles, or established or accepted rules or standards; valid.",
+                "example": "legitimate reasoning; a legitimate standard or method"
+              },
+              {
+                "definition": "Authentic, real, genuine.",
+                "example": "legitimate poems of Chaucer; legitimate inscriptions"
+              },
+              {
+                "definition": "Lawfully begotten, i.e., born to a legally married couple.",
+                "example": null
+              },
+              {
+                "definition": "Relating to hereditary rights.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": [
+              "lawful",
+              "legal",
+              "rightful"
+            ]
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "legitimate_04122024.jpg",
+    "word": "legitimate"
+  },
+  {
+    "audio": [
+      "fraction_413_04_12_2024.mp3"
+    ],
+    "categories": [
+      "numbers"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A part of a whole, especially a comparatively small part.",
+                "example": null
+              },
+              {
+                "definition": "A ratio of two numbers, the numerator and the denominator, usually written one above the other and separated by a horizontal bar.",
+                "example": null
+              },
+              {
+                "definition": "A component of a mixture, separated by fractionation.",
+                "example": null
+              },
+              {
+                "definition": "In a eucharistic service, the breaking of the host.",
+                "example": null
+              },
+              {
+                "definition": "A small amount.",
+                "example": null
+              },
+              {
+                "definition": "The act of breaking, or state of being broken, especially by violence.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To divide or break into fractions.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfɹæk.ʃən/"
+        ]
+      }
+    ],
+    "photo": "fraction_04122024.jpg",
+    "word": "fraction"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "business_people",
+      "office_life"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "All the workers employed by a specific organization or state, or on a specific project",
+                "example": null
+              },
+              {
+                "definition": "The total population of a country or region that is employed or employable.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "workforce_04122024.jpg",
+    "word": "workforce"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "committing_crime"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "The crime, or an instance, of kidnapping.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To seize and detain a person unlawfully; sometimes for ransom.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "kidnap_04122024.jpg",
+    "word": "kidnap"
+  },
+  {
+    "audio": [
+      "aside_751_04_12_2024.mp3"
+    ],
+    "categories": [
+      "elements_of_a_play_or_film"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "An incidental remark made quietly so as to be heard by the person to whom it is said and not by any others in the vicinity.",
+                "example": null
+              },
+              {
+                "definition": "A brief comment by a character addressing the audience, unheard by other characters.",
+                "example": null
+              },
+              {
+                "definition": "A minor related mention, an afterthought.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "side note",
+              "sidebar"
+            ]
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To or on one side so as to be out of the way.",
+                "example": "Move aside, please, so that these people can come through."
+              }
+            ],
+            "part_of_speech": "adverb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/əˈsaɪd/"
+        ]
+      }
+    ],
+    "photo": "aside_04122024.jpg",
+    "word": "aside"
+  }
+]

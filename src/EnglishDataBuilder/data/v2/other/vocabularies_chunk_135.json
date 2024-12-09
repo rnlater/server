@@ -1,0 +1,210 @@
+[
+  {
+    "audio": [
+      "genetic modification_873_06_12_2024.mp3",
+      "genetic modification_241_06_12_2024.mp3"
+    ],
+    "categories": [
+      "genetics"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the use of  genetic engineering  to change how a plant or living creature develops",
+                "example": "Genetic modification has the potential to reduce the incidence of disease in livestock."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/dʒəˌnetɪk mɒdɪfɪˈkeɪʃn/",
+          "/dʒəˌnetɪk mɑːdɪfɪˈkeɪʃn/"
+        ]
+      }
+    ],
+    "photo": "genetic modification_05122024.jpg",
+    "word": "genetic modification"
+  },
+  {
+    "audio": [
+      "street people_803_06_12_2024.mp3",
+      "street people_226_06_12_2024.mp3"
+    ],
+    "categories": [
+      "poverty_and_famine"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "people who have no home and who live outside in a town",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈstriːt piːpl/"
+        ]
+      }
+    ],
+    "photo": "street people_05122024.jpg",
+    "word": "street people"
+  },
+  {
+    "audio": [
+      "master corporal_155_06_12_2024.mp3",
+      "master corporal_725_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_armed_forces"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a member of one of the lower ranks of the Canadian army or  air force",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌmɑːstə ˈkɔːpərəl/",
+          "/ˌmæstər ˈkɔːrpərəl/"
+        ]
+      }
+    ],
+    "photo": "master corporal_05122024.jpg",
+    "word": "master corporal"
+  },
+  {
+    "audio": [
+      "federal government_153_06_12_2024.mp3",
+      "federal government_525_06_12_2024.mp3"
+    ],
+    "categories": [
+      "political_views_and_systems"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the system of government as defined in the Constitution which is based on the  separation of powers  among three branches: the  executive branch , the  legislative  branch and the  judicial  branch. This system provides a series of  checks and balances  because each branch is able to limit the power of the others. ",
+                "example": null
+              }
+            ],
+            "part_of_speech": "",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌfedərəl ˈɡʌvənmənt/",
+          "/ˌfedərəl ˈɡʌvərnmənt/"
+        ]
+      }
+    ],
+    "photo": "federal government_05122024.jpg",
+    "word": "federal government"
+  },
+  {
+    "audio": [
+      "light aircraft_926_06_12_2024.mp3",
+      "light aircraft_642_06_12_2024.mp3"
+    ],
+    "categories": [
+      "aircraft"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a small plane with seats for no more than about six passengers",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌlaɪt ˈerkræft/",
+          "/ˌlaɪt ˈeəkrɑːft/"
+        ]
+      }
+    ],
+    "photo": "light aircraft_06122024.jpg",
+    "word": "light aircraft"
+  },
+  {
+    "audio": [
+      "Justice of the Peace_414_06_12_2024.mp3",
+      "Justice of the Peace_101_06_12_2024.mp3"
+    ],
+    "categories": [
+      "people_in_law"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an official who acts as a judge in the lowest courts of law",
+                "example": "In 1579 he was appointed Justice of the Peace for Kent."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdʒʌstɪs əv ðə ˈpiːs/"
+        ]
+      }
+    ],
+    "photo": "Justice of the Peace_05122024.jpg",
+    "word": "Justice of the Peace"
+  }
+]

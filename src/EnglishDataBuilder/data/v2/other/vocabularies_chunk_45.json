@@ -1,0 +1,222 @@
+[
+  {
+    "audio": [
+      "action movie_610_06_12_2024.mp3",
+      "action movie_438_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_film"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a film that has a lot of exciting action and adventure",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈækʃn muːvi/"
+        ]
+      }
+    ],
+    "photo": "action movie_04122024.jpg",
+    "word": "action movie"
+  },
+  {
+    "audio": [
+      "rowdy sheet_492_06_12_2024.mp3",
+      "rowdy sheet_655_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_police"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a record kept in a police station of the names of people that the police have charged with a crime ",
+                "example": "Police have opened a rowdy sheet against him."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈraʊdi ʃiːt/"
+        ]
+      }
+    ],
+    "photo": "rowdy sheet_04122024.jpg",
+    "word": "rowdy sheet"
+  },
+  {
+    "audio": [
+      "spoken word_274_06_12_2024.mp3",
+      "spoken word_649_06_12_2024.mp3"
+    ],
+    "categories": [
+      "poetry",
+      "linguistic_devices"
+    ],
+    "level": [
+      "C2",
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "language expressed in speech, rather than being written or sung",
+                "example": "She combines visual images and the spoken word to great effect in her presentations."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a type of poetry that is spoken  aloud  and performed to an audience",
+                "example": "Sounding the Spider is a day of spoken word and live music from local artists."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌspəʊkən ˈwɜːd/",
+          "/ˌspəʊkən ˈwɜːrd/"
+        ]
+      }
+    ],
+    "photo": "spoken word_04122024.jpg",
+    "word": "spoken word"
+  },
+  {
+    "audio": [
+      "health anxiety_800_06_12_2024.mp3",
+      "health anxiety_121_06_12_2024.mp3"
+    ],
+    "categories": [
+      "mental_and_emotional_problems"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a condition in which somebody worries so much about the possibility that they are ill or may become ill that it badly affects their life",
+                "example": "A person with health anxiety can misinterpret sensations as a sign of serious disease."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈhelθ æŋzaɪəti/"
+        ]
+      }
+    ],
+    "photo": "health anxiety_04122024.jpg",
+    "word": "health anxiety"
+  },
+  {
+    "audio": [
+      "second base_943_06_12_2024.mp3",
+      "second base_177_06_12_2024.mp3"
+    ],
+    "categories": [
+      "baseball"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the second of the four positions that players must reach in order to score points; the position of the player on the defending team near  second base",
+                "example": "He ran around second base."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsekənd ˈbeɪs/"
+        ]
+      }
+    ],
+    "photo": "second base_04122024.jpg",
+    "word": "second base"
+  },
+  {
+    "audio": [
+      "gender gap_526_06_12_2024.mp3",
+      "gender gap_204_06_12_2024.mp3"
+    ],
+    "categories": [
+      "gender_and_sexuality",
+      "social_justice"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a difference that separates men and women, in terms of attitudes, opportunities and status",
+                "example": "A gender gap has opened in academic achievement in recent years."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈdʒendə ɡæp/",
+          "/ˈdʒendər ɡæp/"
+        ]
+      }
+    ],
+    "photo": "gender gap_04122024.jpg",
+    "word": "gender gap"
+  }
+]

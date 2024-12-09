@@ -1,0 +1,210 @@
+[
+  {
+    "audio": [],
+    "categories": [
+      "lazy"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to spend time in a pleasant lazy way",
+                "example": "We whiled away the time reading and playing cards."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "while away_05122024.jpg",
+    "word": "while away"
+  },
+  {
+    "audio": [
+      "vice principal_407_06_12_2024.mp3",
+      "vice principal_204_06_12_2024.mp3"
+    ],
+    "categories": [
+      "university_people",
+      "job_titles"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a senior person at a college or (in Scotland and Canada) a university, below the  principal   (= the person who is in charge)  in rank",
+                "example": "Vice principal Deborah Steel"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a senior teacher at a school, below the  principal   (= the person who is in charge)  in rank",
+                "example": "She has been appointed as the new vice principal of the local middle school."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌvaɪs ˈprɪnsəpl/"
+        ]
+      }
+    ],
+    "photo": "vice principal_05122024.jpg",
+    "word": "vice principal"
+  },
+  {
+    "audio": [
+      "health spa_522_06_12_2024.mp3",
+      "health spa_919_06_12_2024.mp3"
+    ],
+    "categories": [
+      "exercise"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a place where people can relax and receive health and beauty treatments, with, for example,  steam  baths and exercise equipment",
+                "example": "a superb health spa, which includes sauna, Turkish bath and fitness rooms"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈhelθ spɑː/"
+        ]
+      }
+    ],
+    "photo": "health spa_05122024.jpg",
+    "word": "health spa"
+  },
+  {
+    "audio": [
+      "double-entry bookkeeping_685_06_12_2024.mp3",
+      "double-entry bookkeeping_621_06_12_2024.mp3"
+    ],
+    "categories": [
+      "finance"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a system of keeping financial records in which each piece of business is recorded as a  credit  in one account and a  debit  in another",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdʌbl ˌentri ˈbʊkkiːpɪŋ/"
+        ]
+      }
+    ],
+    "photo": "double-entry bookkeeping_05122024.jpg",
+    "word": "double-entry bookkeeping"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "prefer",
+      "forming_an_opinion"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to tend to prefer something, especially a particular opinion or interest",
+                "example": "The UK leant towards the US proposal."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "lean to_05122024.jpg",
+    "word": "lean to"
+  },
+  {
+    "audio": [
+      "sheltered housing_372_06_12_2024.mp3",
+      "sheltered housing_798_06_12_2024.mp3"
+    ],
+    "categories": [
+      "living_with_disability"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "houses or flats that are designed and built for elderly people or for people with  disabilities  so that they can live in the local community instead of in hospitals or care homes.  Sheltered housing  is usually arranged in small blocks, with a person in each block whose job is to help the people living there. The term is less often used in the US for this type of housing.",
+                "example": "sheltered housing for older people"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌʃeltəd ˈhaʊzɪŋ/",
+          "/ˌʃeltərd ˈhaʊzɪŋ/"
+        ]
+      }
+    ],
+    "photo": "sheltered housing_05122024.jpg",
+    "word": "sheltered housing"
+  }
+]

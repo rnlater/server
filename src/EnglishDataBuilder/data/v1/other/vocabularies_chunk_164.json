@@ -1,0 +1,3354 @@
+[
+  {
+    "audio": null,
+    "categories": [
+      "types_of_belief"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Respiration, breathing, seen as a life principle or life force.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈpɹɑːnə/"
+        ]
+      }
+    ],
+    "photo": "prana_05122024.jpg",
+    "word": "prana"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "styles_of_music"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "An Afro-American urban youth culture based on rap music, breakdancing etc.",
+                "example": null
+              },
+              {
+                "definition": "A form of popular and dance music featuring strong percussion and a powerful rhythm, usually accompanied by rapping.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "hip-hop_05122024.jpg",
+    "word": "hip-hop"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "jobs_and_professions"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A bookmaker (gambling)",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "turf accountant_05122024.jpg",
+    "word": "turf accountant"
+  },
+  {
+    "audio": [
+      "scrub_729_05_12_2024.mp3"
+    ],
+    "categories": [
+      "plants",
+      "operations"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "One who labors hard and lives meanly; a mean fellow.",
+                "example": null
+              },
+              {
+                "definition": "One who is incompetent or unable to complete easy tasks.",
+                "example": "What a scrub! Instead of washing the dishes she put the used food on her face!"
+              },
+              {
+                "definition": "A thicket or jungle, often specified by the name of the prevailing plant",
+                "example": "oak scrub"
+              },
+              {
+                "definition": "(stock breeding) One of the common livestock of a region of no particular breed or not of pure breed, especially when inferior in size, etc. Often used to refer to male animals unsuited for breeding.",
+                "example": null
+              },
+              {
+                "definition": "Vegetation of inferior quality, though sometimes thick and impenetrable, growing in poor soil or in sand; also, brush.",
+                "example": null
+              },
+              {
+                "definition": "One not on the first team of players; a substitute.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Mean; dirty; contemptible; scrubby.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/skɹʌb/"
+        ]
+      },
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "An instance of scrubbing.",
+                "example": null
+              },
+              {
+                "definition": "A cancellation.",
+                "example": null
+              },
+              {
+                "definition": "A worn-out brush.",
+                "example": null
+              },
+              {
+                "definition": "One who scrubs.",
+                "example": null
+              },
+              {
+                "definition": "(in the plural) Clothing worn while performing surgery.",
+                "example": null
+              },
+              {
+                "definition": "(by extension, in the plural) Any medical uniform consisting of a short-sleeved shirt and pants (trousers).",
+                "example": null
+              },
+              {
+                "definition": "An exfoliant for the body.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To rub hard; to wash with rubbing; usually, to rub with a wet brush, or with something coarse or rough, for the purpose of cleaning or brightening",
+                "example": "to scrub a floor"
+              },
+              {
+                "definition": "To rub anything hard, especially with a wet brush; to scour",
+                "example": null
+              },
+              {
+                "definition": "To be diligent and penurious",
+                "example": "to scrub hard for a living"
+              },
+              {
+                "definition": "To call off a scheduled event; to cancel.",
+                "example": "Engineers had to scrub the satellite launch due to bad weather."
+              },
+              {
+                "definition": "To eliminate or to correct data from a set of records to bring it inline with other similar datasets",
+                "example": "The street segment data from the National Post Office will need to be scrubbed before it can be integrated into our system."
+              },
+              {
+                "definition": "(audio) To move a recording tape back and forth with a scrubbing motion to produce a scratching sound, or to do so by a similar use of a control on an editing system.",
+                "example": null
+              },
+              {
+                "definition": "(audio, video) To maneuver the play position on a media editing system by using a scroll bar or touch-based interface.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": [
+              "seek"
+            ]
+          }
+        ],
+        "phonetics": [
+          "/skɹʌb/"
+        ]
+      }
+    ],
+    "photo": "scrub_05122024.jpg",
+    "word": "scrub"
+  },
+  {
+    "audio": [
+      "baked beans_515_05_12_2024.mp3"
+    ],
+    "categories": [
+      "vegetables"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A food consisting of beans baked or stewed in a usually tomato-based sauce.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "cowboy caviar"
+            ]
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "baked beans_05122024.jpg",
+    "word": "baked beans"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "journalism"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A form of journalism in which a story is told primarily through photographs and other images",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "photojournalism_05122024.jpg",
+    "word": "photojournalism"
+  },
+  {
+    "audio": [
+      "feeder_780_05_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_road"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "One who feeds, or gives food to another.",
+                "example": null
+              },
+              {
+                "definition": "One who feeds, or takes in food.",
+                "example": null
+              },
+              {
+                "definition": "One who, or that which, feeds material into something.",
+                "example": null
+              },
+              {
+                "definition": "That which is used to feed.",
+                "example": "a bird feeder"
+              },
+              {
+                "definition": "A tributary stream, especially of a canal.",
+                "example": null
+              },
+              {
+                "definition": "A branch line of a railway.",
+                "example": null
+              },
+              {
+                "definition": "A transmission line that feeds the electricity for an electricity substation, or for a transmitter.",
+                "example": null
+              },
+              {
+                "definition": "A feeder school.",
+                "example": null
+              },
+              {
+                "definition": "A feeder ship.",
+                "example": null
+              },
+              {
+                "definition": "A judge whose law clerks are often selected to become clerks for the Supreme Court.",
+                "example": null
+              },
+              {
+                "definition": "(1800s) The pitcher.",
+                "example": null
+              },
+              {
+                "definition": "A player whose character is killed by the opposing player or team more than once, deliberately or through lack of skills and experience, thus helping the opposing side.",
+                "example": null
+              },
+              {
+                "definition": "One who abets another.",
+                "example": null
+              },
+              {
+                "definition": "A parasite.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfidɚ/"
+        ]
+      }
+    ],
+    "photo": "feeder_05122024.jpg",
+    "word": "feeder"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "the_armed_forces"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "The lowest rank of a commissioned army officer, below a lieutenant.",
+                "example": null
+              },
+              {
+                "definition": "The lowest rank of a commissioned officer in the United States Army, United States Air Force, or United States Marine Corps, below a first lieutenant. The rank of second lieutenant is equivalent to the naval rank of ensign.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "coronet",
+              "ensign"
+            ]
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "second lieutenant_05122024.jpg",
+    "word": "second lieutenant"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "the_economy"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A public official in certain countries having control of public revenue.",
+                "example": null
+              },
+              {
+                "definition": "Procurator fiscal, a public prosecutor.",
+                "example": null
+              },
+              {
+                "definition": "In certain countries, including Spain, Portugal, the Netherlands, and former colonies of these countries and certain British colonies, solicitor or attorney general.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Related to the treasury of a country, company, region or city, particularly to government spending and revenue.",
+                "example": null
+              },
+              {
+                "definition": "Pertaining to finance and money in general; financial.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfɪskəl/"
+        ]
+      },
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Any of various African shrikes of the genus Lanius.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfɪskəl/"
+        ]
+      }
+    ],
+    "photo": "fiscal_05122024.jpg",
+    "word": "fiscal"
+  },
+  {
+    "audio": [
+      "cyclist_393_05_12_2024.mp3"
+    ],
+    "categories": [
+      "cycling",
+      "people_in_motoring"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A person who rides a cycle, especially a bicycle, or who habitually engages in cycling.",
+                "example": null
+              },
+              {
+                "definition": "A user of the software language CycL.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "bicyclist",
+              "biker",
+              "cycler",
+              "wheelman"
+            ]
+          }
+        ],
+        "phonetics": [
+          "/ˈsaɪ.klɪst/"
+        ]
+      }
+    ],
+    "photo": "cyclist_05122024.jpg",
+    "word": "cyclist"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "house_equipment"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A warning device that is activated by trespassers, intended to deter burglars.",
+                "example": null
+              },
+              {
+                "definition": "The loud warning signal produced by a burglar alarm.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "burglar alarm_05122024.jpg",
+    "word": "burglar alarm"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "mental_health_care"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "The process of removing toxins.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "detoxification_05122024.jpg",
+    "word": "detoxification"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "holidays_in_general"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [
+              "pack"
+            ],
+            "definitions": [
+              {
+                "definition": "To remove from a package or container, particularly with respect to items that had previously been arranged closely and securely in a pack.",
+                "example": "They didn't have time to unpack their bags before going out to dinner."
+              },
+              {
+                "definition": "To empty containers that had been packed.",
+                "example": "They didn't have time to unpack before going to dinner."
+              },
+              {
+                "definition": "To analyze a concept or a text.",
+                "example": null
+              },
+              {
+                "definition": "(of a segment such as a vowel) To undergo separation of its features into distinct segments.",
+                "example": null
+              },
+              {
+                "definition": "To decompress.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ʌnˈpæk/"
+        ]
+      }
+    ],
+    "photo": "unpack_05122024.jpg",
+    "word": "unpack"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "successful_people"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A celebrity couple who intrigue and fascinate the public.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "power couple"
+            ]
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "power couple_05122024.jpg",
+    "word": "power couple"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "helping_others",
+      "types_of_house"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Rental accommodation subsidised by public funds and provided for disadvantaged groups such as low-income earners, social-security recipients, the elderly and people with disabilities.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "public housing_05122024.jpg",
+    "word": "public housing"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "agreement"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [
+              "non-consensual"
+            ],
+            "definitions": [
+              {
+                "definition": "With permission, with consensus, without coercion; allowed without objecting or resisting",
+                "example": null
+              },
+              {
+                "definition": "Existing, or made, by the mutual consent of two or more parties",
+                "example": "a consensual contract"
+              },
+              {
+                "definition": "Excited or caused by sensation, sympathy, or reflex action, and not by conscious volition",
+                "example": "consensual motions"
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/kənˈsɛnʃuəl/"
+        ]
+      }
+    ],
+    "photo": "consensual_05122024.jpg",
+    "word": "consensual"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "school_life"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To be absent from school without permission.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "play truant_05122024.jpg",
+    "word": "play truant"
+  },
+  {
+    "audio": [
+      "stile_354_05_12_2024.mp3"
+    ],
+    "categories": [
+      "on_the_farm"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A set of one or more steps surmounting a fence or wall, or a narrow gate or contrived passage through a fence or wall, which in either case allows people but not livestock to pass.",
+                "example": null
+              },
+              {
+                "definition": "A vertical component of a frame or panel, such as that of a door, window, or ladder.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Senses relating to a thin, pointed object.",
+                "example": null
+              },
+              {
+                "definition": "(by extension from sense 1.1) A particular manner of expression in writing or speech, especially one regarded as good.",
+                "example": null
+              },
+              {
+                "definition": "A particular manner of creating, doing, or presenting something, especially a work of architecture or art.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To design, fashion, make, or arrange in a certain way or form (style)",
+                "example": null
+              },
+              {
+                "definition": "To call or give a name or title to.",
+                "example": null
+              },
+              {
+                "definition": "To create for, or give to, someone a style, fashion, or image, particularly one which is regarded as attractive, tasteful, or trendy.",
+                "example": null
+              },
+              {
+                "definition": "To act in a way which seeks to show that one possesses style.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": [
+              "designate",
+              "dub",
+              "name"
+            ]
+          }
+        ],
+        "phonetics": [
+          "/staɪl/"
+        ]
+      }
+    ],
+    "photo": "stile_05122024.jpg",
+    "word": "stile"
+  },
+  {
+    "audio": [
+      "committed_613_05_12_2024.mp3"
+    ],
+    "categories": [
+      "skills_and_qualities"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To give in trust; to put into charge or keeping; to entrust; to consign; used with to or formerly unto.",
+                "example": null
+              },
+              {
+                "definition": "To put in charge of a jailer; to imprison.",
+                "example": null
+              },
+              {
+                "definition": "To have (a person) enter an establishment, such as a hospital or asylum, as a patient.",
+                "example": "Tony should be committed to a nuthouse!"
+              },
+              {
+                "definition": "To do (something bad); to perpetrate, as a crime, sin, or fault.",
+                "example": "to commit a series of heinous crimes"
+              },
+              {
+                "definition": "To join a contest; to match; followed by with.",
+                "example": null
+              },
+              {
+                "definition": "To pledge or bind; to compromise, expose, or endanger by some decisive act or preliminary step. (Traditionally used only reflexively but now also without oneself etc.)",
+                "example": "to commit oneself to a certain action"
+              },
+              {
+                "definition": "To make a set of changes permanent.",
+                "example": null
+              },
+              {
+                "definition": "(Latinism) To confound.",
+                "example": null
+              },
+              {
+                "definition": "To commit an offence; especially, to fornicate.",
+                "example": null
+              },
+              {
+                "definition": "To be committed or perpetrated; to take place; to occur.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Obligated by a pledge to some course of action.",
+                "example": null
+              },
+              {
+                "definition": "Showing commitment.",
+                "example": null
+              },
+              {
+                "definition": "Associated in an exclusive (but not necessarily permanent) sexual relationship.",
+                "example": null
+              },
+              {
+                "definition": "Required by logic to endorse the conclusion of an argument.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/kəˈmɪtɪd/"
+        ]
+      }
+    ],
+    "photo": "committed_05122024.jpg",
+    "word": "committed"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "natural_disasters"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A hydrostatic pressure disturbance caused by an earthquake or volcano in the seabed.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "seaquake_05122024.jpg",
+    "word": "seaquake"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "exercise"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A device, consisting of a tough cloth bag over sand or other material, used to practice punching, boxing or kicking.",
+                "example": null
+              },
+              {
+                "definition": "A person serving as an object of abuse.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "punching bag_05122024.jpg",
+    "word": "punching bag"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "genetics"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A nucleic acid found in all living things (and some non-living, see virus); consists of a polymer formed from nucleotides which are shaped into a double helix; it is associated with the transmission of genetic information.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "deoxyribose nucleic acid",
+              "desoxyribose nucleic acid",
+              "double helix"
+            ]
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "deoxyribonucleic acid_05122024.jpg",
+    "word": "deoxyribonucleic acid"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "advice"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A warning.",
+                "example": "The Coast Guard issued a small craft advisory, warning little boats to watch out for bad weather."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Able to give advice.",
+                "example": "The advisory committee could only offer advice, but since that was almost always accepted they had real power."
+              },
+              {
+                "definition": "Containing advice; advising.",
+                "example": "The consultant's advisory recommendations were selectively adopted."
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ədˈvaɪzəɹi/"
+        ]
+      }
+    ],
+    "photo": "advisory_05122024.jpg",
+    "word": "advisory"
+  },
+  {
+    "audio": [
+      "caterpillar_321_05_12_2024.mp3"
+    ],
+    "categories": [
+      "insect_forms"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "The larva of a butterfly or moth; leafworm.",
+                "example": "The bird just ate that green caterpillar."
+              },
+              {
+                "definition": "A vehicle with a caterpillar track; a crawler.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "leafworm"
+            ]
+          }
+        ],
+        "phonetics": [
+          "/ˈkætɚˌpɪlɚ/",
+          "/ˈkætəˌpɪlə/"
+        ]
+      }
+    ],
+    "photo": "caterpillar_05122024.jpg",
+    "word": "caterpillar"
+  },
+  {
+    "audio": [
+      "underlie_093_05_12_2024.mp3"
+    ],
+    "categories": [
+      "cause_and_effect"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To lie in a position directly beneath.",
+                "example": null
+              },
+              {
+                "definition": "To lie under or beneath.",
+                "example": "A stratum of clay underlies the surface gravel."
+              },
+              {
+                "definition": "To serve as a basis of; form the foundation of.",
+                "example": "a doctrine underlying a theory"
+              },
+              {
+                "definition": "To be subject to; be liable to answer, as a charge or challenge.",
+                "example": null
+              },
+              {
+                "definition": "To underlay.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌʌn.də(ɹ)ˈlaɪ/"
+        ]
+      }
+    ],
+    "photo": "underlie_05122024.jpg",
+    "word": "underlie"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "the_law"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "The state of being invalid; lack of validity.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "invalidity_05122024.jpg",
+    "word": "invalidity"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "health_care"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Any chemical treatment intended to be therapeutic with respect to a disease state.",
+                "example": null
+              },
+              {
+                "definition": "(most common usage) chemical treatment to kill or halt the replication and/or spread of cancerous cells in a patient.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkimoʊ/",
+          "/ˈkiːməʊ/"
+        ]
+      }
+    ],
+    "photo": "chemo_05122024.jpg",
+    "word": "chemo"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "parts_of_animals"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A divided hoof, as on bovine animals.",
+                "example": null
+              },
+              {
+                "definition": "The mark of the Devil.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "cleft hoof",
+              "cloven foot"
+            ]
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "cloven hoof_05122024.jpg",
+    "word": "cloven hoof"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "running_a_business"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To reduce debt by rapidly selling assets.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": null,
+    "word": "deleverage"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "elections"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Any machine used in place of a paper ballot. In the model used in the US the voters mark their choice by switching levers and then pulling the master switch to reset the machine and place their vote.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "voting machine_05122024.jpg",
+    "word": "voting machine"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "health_care"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "The field of medicine concerned with the study, diagnosis and treatment of conditions of the teeth and oral cavity.",
+                "example": null
+              },
+              {
+                "definition": "Operations performed on teeth and adjoining areas such as drilling, filling cavities and placing crowns and bridges.",
+                "example": null
+              },
+              {
+                "definition": "A dental surgery, an operation on the teeth.",
+                "example": null
+              },
+              {
+                "definition": "A place where dental operations are performed. (Not as common as \"dentist's office\". Compare surgery.)",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈdɛntɪstɹi/"
+        ]
+      }
+    ],
+    "photo": "dentistry_05122024.jpg",
+    "word": "dentistry"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "languages"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A horizontal architectural element of a building, projecting forward from the main walls, originally used as a means of directing rainwater away from the building's walls.",
+                "example": null
+              },
+              {
+                "definition": "A decorative element applied at the topmost part of the wall of a room, as with a crown molding.",
+                "example": null
+              },
+              {
+                "definition": "A decorative element at the topmost portion of certain pieces of furniture, as with a highboy.",
+                "example": null
+              },
+              {
+                "definition": "(mountaineering) An overhanging edge of snow on a ridge or the crest of a mountain and along the sides of gullies.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "snow cornice"
+            ]
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "One of several decorative rings around the barrel of a cannon; the next ring from the muzzle backwards.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "Cornish_05122024.jpg",
+    "word": "Cornish"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "coastlines_and_the_sea"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A shallow portion of an otherwise deep body of water.",
+                "example": "The ship ran aground in an unexpected shallow."
+              },
+              {
+                "definition": "A fish, the rudd.",
+                "example": null
+              },
+              {
+                "definition": "A costermonger's barrow.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To make or become less deep.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "An area in a large body of water with many shallow areas.",
+                "example": "You'll have to navigate carefully through these shallows."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "shallows_05122024.jpg",
+    "word": "shallows"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "types_of_holiday_vacation",
+      "driving"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A recreational or impromptu excursion in a car, usually at long distances from home.",
+                "example": null
+              },
+              {
+                "definition": "A series of games played by a team away from its home field.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "road trip_05122024.jpg",
+    "word": "road trip"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "sports_in_general"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Close ending to a sports match, race or competition",
+                "example": "Could we be in for a grandstand finish? Lewis Hamilton isn't hitting the mark Mercedes have requested, with his lap a 1:46."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "grandstand finish_05122024.jpg",
+    "word": "grandstand finish"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "mental_health_care"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "The branch of medicine that subjectively diagnoses, treats, and studies mental disorders and behavioural conditions.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/saɪˈkaɪ.əˌtɹi/"
+        ]
+      }
+    ],
+    "photo": "psychiatry_05122024.jpg",
+    "word": "psychiatry"
+  },
+  {
+    "audio": [
+      "heathen_548_05_12_2024.mp3"
+    ],
+    "categories": [
+      "religious_people"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "An adherent of the Germanic neo-pagan faith of Heathenry.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Pertaining or adhering to the Germanic neo-pagan faith Heathenry.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A person who does not follow a Christian religion; a pagan.",
+                "example": null
+              },
+              {
+                "definition": "(by extension) An uncultured or uncivilized person, philistine.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Not adhering to Christian religion; pagan.",
+                "example": null
+              },
+              {
+                "definition": "(by extension) Uncultured; uncivilized; savage, philistine.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈhiːðən/"
+        ]
+      }
+    ],
+    "photo": "heathen_05122024.jpg",
+    "word": "heathen"
+  },
+  {
+    "audio": [
+      "rhetorical_760_05_12_2024.mp3"
+    ],
+    "categories": [
+      "linguistic_devices"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Part of or similar to rhetoric, the use of language as a means to persuade.",
+                "example": "A rhetorical question is one used merely to make a point, with no response expected."
+              },
+              {
+                "definition": "Not earnest, or presented only for the purpose of an argument.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ɹəˈtɔɹɪkəl/",
+          "/ɹəˈtɒɹ.ɪ.kəl/"
+        ]
+      }
+    ],
+    "photo": "rhetorical_05122024.jpg",
+    "word": "rhetorical"
+  },
+  {
+    "audio": [
+      "muck_681_05_12_2024.mp3"
+    ],
+    "categories": [
+      "growing_crops"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(slimy) mud, sludge.",
+                "example": "I need to clean the muck off my shirt."
+              },
+              {
+                "definition": "Soft (or slimy) manure.",
+                "example": null
+              },
+              {
+                "definition": "Anything filthy or vile. Dirt; something that makes another thing dirty.",
+                "example": "What's that green muck on the floor?"
+              },
+              {
+                "definition": "Grub, slop, swill",
+                "example": null
+              },
+              {
+                "definition": "Money",
+                "example": null
+              },
+              {
+                "definition": "The pile of discarded cards.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To shovel muck.",
+                "example": "We need to muck the stable before it gets too thick."
+              },
+              {
+                "definition": "To manure with muck.",
+                "example": null
+              },
+              {
+                "definition": "To do a dirty job.",
+                "example": null
+              },
+              {
+                "definition": "To pass, to fold without showing one's cards, often done when a better hand has already been revealed.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/mʌk/"
+        ]
+      }
+    ],
+    "photo": "muck_05122024.jpg",
+    "word": "muck"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "biology"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A dendritic cell",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Having a branching structure similar to a tree",
+                "example": null
+              },
+              {
+                "definition": "Of, pertaining to or possessing dendrites",
+                "example": null
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/dɛndˈɹɪtɪk/"
+        ]
+      }
+    ],
+    "photo": "dendritic_05122024.jpg",
+    "word": "dendritic"
+  },
+  {
+    "audio": [
+      "uterus_341_05_12_2024.mp3"
+    ],
+    "categories": [
+      "inside_the_body"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "The womb, an organ of the female reproductive system in which the young are conceived and develop until birth.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "matrix",
+              "metra",
+              "womb"
+            ]
+          }
+        ],
+        "phonetics": [
+          "/ˈjuː.təɹ.əs/"
+        ]
+      }
+    ],
+    "photo": "uterus_05122024.jpg",
+    "word": "uterus"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "excitement"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To excite to an excessive degree",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Excessively excited",
+                "example": null
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "overexcited_05122024.jpg",
+    "word": "overexcited"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "war"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A fighter in the medieval Crusades.",
+                "example": "the crusaders of the Middle Ages"
+              },
+              {
+                "definition": "A person engaged in a crusade.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/kɹuːˈseɪdə/",
+          "/kɹuˈseɪdɚ/"
+        ]
+      }
+    ],
+    "photo": "crusader_05122024.jpg",
+    "word": "crusader"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "gardening",
+      "growing_crops"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Anything that sprinkles.",
+                "example": null
+              },
+              {
+                "definition": "An irrigation device that sprays water into the air whilst moving back and forth.",
+                "example": null
+              },
+              {
+                "definition": "A heat-activated device that sprays water in the event of a fire, usually mounted on a ceiling.",
+                "example": null
+              },
+              {
+                "definition": "(preceded by definite article) A dance move in which the dancer places one hand on the head behind the ear, with elbow bent, stretches the other arm forwards and mimics the motions of an irrigation sprinkler with a rotary head.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈspɹiŋklɚ/"
+        ]
+      }
+    ],
+    "photo": "sprinkler_05122024.jpg",
+    "word": "sprinkler"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "pets"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A person with hair longer than the norm, especially someone viewed as bohemian, non-conventional or a hippie.",
+                "example": null
+              },
+              {
+                "definition": "A person with a deep interest in the classical arts, especially music.",
+                "example": null
+              },
+              {
+                "definition": "A person considered to have excessively refined taste for the arts.",
+                "example": null
+              },
+              {
+                "definition": "A cat with hair longer than the norm.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Concerning or characteristic of classical music.",
+                "example": "I would rather see a musical, but my wife, who loves longhair music, is dragging me to the symphony again."
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "longhair_05122024.jpg",
+    "word": "longhair"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "types_of_illness"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [
+              "normality"
+            ],
+            "definitions": [
+              {
+                "definition": "The state or quality of being abnormal; variation; irregularity.",
+                "example": null
+              },
+              {
+                "definition": "Something abnormal; an aberration; an abnormal occurrence or feature.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "aberrant",
+              "deviant",
+              "outlier",
+              "abnormalcy",
+              "anomalousness",
+              "enormity",
+              "weirdness"
+            ]
+          }
+        ],
+        "phonetics": [
+          "/ˌæbˌnɔɹˈmæl.ət.i/"
+        ]
+      }
+    ],
+    "photo": "abnormality_05122024.jpg",
+    "word": "abnormality"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "jobs_and_professions",
+      "business_people"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A person responsible for keeping records or documents, such as of a business.",
+                "example": null
+              },
+              {
+                "definition": "A bookseller",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "accountant"
+            ]
+          }
+        ],
+        "phonetics": [
+          "/bʌʔˈkiː.pə(ɹ)/"
+        ]
+      }
+    ],
+    "photo": "bookkeeper_05122024.jpg",
+    "word": "bookkeeper"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "achieving_success"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To find gold",
+                "example": null
+              },
+              {
+                "definition": "To be lucky, to win or be successful.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "strike gold_05122024.jpg",
+    "word": "strike gold"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "crafts_and_skills"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Something made from wood.",
+                "example": null
+              },
+              {
+                "definition": "Wood product.",
+                "example": null
+              },
+              {
+                "definition": "Working with wood.",
+                "example": "He does woodwork as a hobby."
+              },
+              {
+                "definition": "(only in plural, often in proper names) A workshop or factory devoted to making wood products.",
+                "example": null
+              },
+              {
+                "definition": "A place of concealment or obscurity.",
+                "example": "Friends and relatives were coming out of the woodwork to celebrate his good fortune."
+              },
+              {
+                "definition": "The frame of the goal, i.e. the goalpost or crossbar.",
+                "example": "That goal was so close, it went in off the woodwork."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "woodworking"
+            ]
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "woodwork_05122024.jpg",
+    "word": "woodwork"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "in_the_theatre"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A stage light located at the front edge of the stage that illuminates the actors from foot level up.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "footlights_05122024.jpg",
+    "word": "footlights"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "types_of_road"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A segment of roadway that joins a motorway to ordinary roads (in either direction)",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "slip road_05122024.jpg",
+    "word": "slip road"
+  },
+  {
+    "audio": [
+      "parking ticket_785_05_12_2024.mp3"
+    ],
+    "categories": [
+      "controlling_traffic"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A legal summons issued for parking a motor vehicle in a place where such parking is restricted, or beyond the time paid for.",
+                "example": null
+              },
+              {
+                "definition": "A small ticket issued as proof of payment for the right to park a motor vehicle.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈpɑɹ.kɪŋ ˈtɪk.ɪt/",
+          "/ˈpɑː.kɪŋ ˈtɪk.ɪt/"
+        ]
+      }
+    ],
+    "photo": "parking ticket_05122024.jpg",
+    "word": "parking ticket"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "the_economy"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A form of collective investment in which money from many investors is pooled and invested in stocks, bonds, short-term money market instruments, and/or other securities under the direction of a fund manager.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "mutual fund_05122024.jpg",
+    "word": "mutual fund"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "describing_buildings"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A plaster that is used to coat (interior or) exterior walls, or used for mouldings.",
+                "example": null
+              },
+              {
+                "definition": "Work made of stucco; stuccowork.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "plaster",
+              "render"
+            ]
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To coat or decorate with stucco.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": [
+              "plaster",
+              "render"
+            ]
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "stucco_05122024.jpg",
+    "word": "stucco"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "certainty"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "In a concrete manner, physically, definitely",
+                "example": null
+              }
+            ],
+            "part_of_speech": "adverb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "concretely_05122024.jpg",
+    "word": "concretely"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "plants",
+      "biology"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Any of a group of green pigments that are found in the chloroplasts of plants and in other photosynthetic organisms such as cyanobacteria.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈklɔɹ.ə.fɪl/",
+          "/ˈklɒɹ.ə.fɪl/"
+        ]
+      }
+    ],
+    "photo": "chlorophyll_05122024.jpg",
+    "word": "chlorophyll"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "poetry"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A rhyming pair of lines in iambic pentameter, used in epic poetry.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "heroic couplet_05122024.jpg",
+    "word": "heroic couplet"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "taste_and_texture_of_food",
+      "describing_hair"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Composed of, or resembling, string or strings.",
+                "example": null
+              },
+              {
+                "definition": "(of food) Tough to the bite, as containing too much sinew or string tissue.",
+                "example": "The meat was quite stringy."
+              },
+              {
+                "definition": "(of a person) Wiry, lean, scrawny.",
+                "example": null
+              },
+              {
+                "definition": "Resembling or involving text strings.",
+                "example": null
+              },
+              {
+                "definition": "Of a sighting, unlikely to be accurate; probably based on a misidentification, whether innocent or deliberate.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": [
+              "fibrous",
+              "filamentous"
+            ]
+          }
+        ],
+        "phonetics": [
+          "/ˈstɹɪŋi/"
+        ]
+      }
+    ],
+    "photo": "stringy_05122024.jpg",
+    "word": "stringy"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "types_of_belief",
+      "religious_people"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A person who baptizes",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbæptɪst/"
+        ]
+      }
+    ],
+    "photo": "Baptist_05122024.jpg",
+    "word": "Baptist"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "belonging_to_society"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To regard, label or treat as an \"other\", as not part of the same group; to view as different and alien.",
+                "example": null
+              },
+              {
+                "definition": "To treat as different or separate; segregate; ostracise.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Present participle of other: the process of perceiving or portraying someone or something as essentially alien or different.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "alienation",
+              "discrimination",
+              "otherization"
+            ]
+          }
+        ],
+        "phonetics": [
+          "/ˈʌðəɹɪŋ/"
+        ]
+      }
+    ],
+    "photo": "othering_05122024.jpg",
+    "word": "othering"
+  },
+  {
+    "audio": [
+      "dilapidation_516_05_12_2024.mp3"
+    ],
+    "categories": [
+      "describing_buildings"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "The state of being dilapidated, reduced to decay, partially ruined.",
+                "example": null
+              },
+              {
+                "definition": "The act of dilapidating, damaging a building or structure through neglect or intentionally.",
+                "example": null
+              },
+              {
+                "definition": "Ecclesiastical waste: impairing of church property by an incumbent, through neglect or intentionally.",
+                "example": null
+              },
+              {
+                "definition": "(in the plural) Money paid at the end of an incumbency by the incumbent or his heirs for the purpose of putting the parsonage etc. in good repair for the succeeding incumbent.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/dəˌlæp.əˈdeɪ.ʃən/"
+        ]
+      }
+    ],
+    "photo": "dilapidation_05122024.jpg",
+    "word": "dilapidation"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "architectural_features",
+      "waste_and_pollution"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To cover, fill, or affect with lead",
+                "example": "continuous firing leads the grooves of a rifle."
+              },
+              {
+                "definition": "To place leads between the lines of.",
+                "example": "leaded matter"
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Held in place by strips of lead.",
+                "example": null
+              },
+              {
+                "definition": "Containing or treated with the element lead.",
+                "example": null
+              },
+              {
+                "definition": "Containing tetraethyllead.",
+                "example": "Leaded gasoline is hard to find in some areas now."
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "leaded_05122024.jpg",
+    "word": "leaded"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "measurements"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A graph in the form of boxes of different heights, with each box representing a different value or category of data, and the heights representing frequencies.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "bar graph"
+            ]
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "bar graph_05122024.jpg",
+    "word": "bar graph"
+  },
+  {
+    "audio": [
+      "mural_302_05_12_2024.mp3"
+    ],
+    "categories": [
+      "interior_decor",
+      "artwork_and_techniques"
+    ],
+    "level": [
+      "C1",
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A large painting, usually drawn on a wall.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "To create a mural.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Of or relating to a wall; on, or in, or against a wall.",
+                "example": "a mural quadrant"
+              },
+              {
+                "definition": "Resembling a wall; perpendicular or steep.",
+                "example": "a mural precipice"
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈmjʊəɹəl/",
+          "/ˈmjɝəl/"
+        ]
+      }
+    ],
+    "photo": "mural_05122024.jpg",
+    "word": "mural"
+  },
+  {
+    "audio": [
+      "ghastly_673_05_12_2024.mp3"
+    ],
+    "categories": [
+      "being_ill"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Like a ghost in appearance; death-like; pale; pallid; dismal.",
+                "example": null
+              },
+              {
+                "definition": "Horrifyingly shocking.",
+                "example": null
+              },
+              {
+                "definition": "Extremely bad.",
+                "example": "The play was simply ghastly."
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": [
+              "lurid"
+            ]
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "In a ghastly manner.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "adverb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈɡæs(t).li/",
+          "/ˈɡɑːs(t).li/"
+        ]
+      }
+    ],
+    "photo": "ghastly_05122024.jpg",
+    "word": "ghastly"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "amphibians_and_reptiles"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A crocodile.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/kɹɒk/"
+        ]
+      },
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A plastic slip-on shoe.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/kɹɒk/"
+        ]
+      }
+    ],
+    "photo": "croc_05122024.jpg",
+    "word": "croc"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "rooms_in_a_house"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A room used as a barrier between outdoors and indoors.",
+                "example": "We made sure to hang our wet clothes on the hook in the mudroom when we came in from the snow."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": null,
+    "word": "mudroom"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "house_equipment"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A smoke detector.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "smoke alarm_05122024.jpg",
+    "word": "smoke alarm"
+  },
+  {
+    "audio": [
+      "hurler_690_05_12_2024.mp3"
+    ],
+    "categories": [
+      "other_ball_sports"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Agent noun of hurl; someone who hurls or throws.",
+                "example": null
+              },
+              {
+                "definition": "(1800s) The pitcher.",
+                "example": null
+              },
+              {
+                "definition": "Someone who participates in the sport of hurling.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "hurler_05122024.jpg",
+    "word": "hurler"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "running_a_business"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A debt owed, usually to a business, from the perspective of that business",
+                "example": "One man's receivable is another man's payable."
+              },
+              {
+                "definition": "Especially, a debt arising from a sale on account or on credit.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "receivables_05122024.jpg",
+    "word": "receivables"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "staying_in_a_hotel"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A private home, guesthouse, etc. where guests are provided overnight accommodations and served breakfast but usually no other meals.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "B&B"
+            ]
+          }
+        ],
+        "phonetics": []
+      },
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A score of 26, made up of a score of 20, 1 and 5 in any order.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "B&B"
+            ]
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "bed and breakfast_05122024.jpg",
+    "word": "bed and breakfast"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "business_meetings",
+      "running_a_business"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "The room where a group of people (especially the board of a company or organization) conducts its meetings",
+                "example": null
+              },
+              {
+                "definition": "Corporations or corporate management considered as a section of society",
+                "example": "Though the new law is popular among the general public, it is hated in the boardroom."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbɔɹdˌɹuːm/"
+        ]
+      }
+    ],
+    "photo": "boardroom_05122024.jpg",
+    "word": "boardroom"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "studying_history",
+      "data"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Radiocarbon dating.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "carbon dating_05122024.jpg",
+    "word": "carbon dating"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "gender_and_sexuality"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A person's sense of self as a member of a particular gender.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "gender identity_05122024.jpg",
+    "word": "gender identity"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "people_in_schools"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Someone who takes care of a place or thing; someone looking after a place, or responsible for keeping it in good repair.",
+                "example": null
+              },
+              {
+                "definition": "Someone who takes care of a person; a parent, carer or other guardian.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": [
+              "concierge",
+              "janitor"
+            ]
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Temporary, on a short term basis.",
+                "example": "Johnson had to be drafted in as the caretaker manager after Hewlett resigned without warning the day before the final."
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": [
+              "interim"
+            ]
+          }
+        ],
+        "phonetics": [
+          "/ˈkɛɹˌteɪ.kɚ/",
+          "/ˈkɛəˌteɪ.kə/"
+        ]
+      }
+    ],
+    "photo": "caretaker_05122024.jpg",
+    "word": "caretaker"
+  },
+  {
+    "audio": null,
+    "categories": [
+      "listening_to_music"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "An album of music where the content follows an overall theme or narrative.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "concept album_05122024.jpg",
+    "word": "concept album"
+  },
+  {
+    "audio": [
+      "alliteration_175_05_12_2024.mp3"
+    ],
+    "categories": [
+      "linguistic_devices",
+      "poetry"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "The repetition of consonant sounds at the beginning of two or more words immediately succeeding each other, or at short intervals.",
+                "example": null
+              },
+              {
+                "definition": "The recurrence of the same letter in accented parts of words, as in Anglo-Saxon alliterative meter.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/əˌlɪtəˈɹeɪʃən/"
+        ]
+      }
+    ],
+    "photo": null,
+    "word": "alliteration"
+  },
+  {
+    "audio": [
+      "bungee jumping_066_05_12_2024.mp3"
+    ],
+    "categories": [
+      "extreme_sports"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "The activity of jumping from a great height with an elasticated cord attached to the ankles.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "bungee jumping_05122024.jpg",
+    "word": "bungee jumping"
+  },
+  {
+    "audio": [
+      "vineyard_821_05_12_2024.mp3"
+    ],
+    "categories": [
+      "growing_crops"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "A grape plantation, especially one used in the production of wine.",
+                "example": "The vineyard of Château Margaux stands as the producer of one of the world's greatest and most sought-after red wines."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈvɪn.jɚd/"
+        ]
+      }
+    ],
+    "photo": "vineyard_05122024.jpg",
+    "word": "vineyard"
+  }
+]

@@ -1,0 +1,178 @@
+[
+  {
+    "audio": [
+      "sand dune_891_06_12_2024.mp3",
+      "sand dune_715_06_12_2024.mp3"
+    ],
+    "categories": [
+      "coastlines_and_the_sea"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a small hill of sand formed by the wind, near the sea or in a desert",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈsænd duːn/",
+          "/ˈsænd djuːn/"
+        ]
+      }
+    ],
+    "photo": "sand dune_05122024.jpg",
+    "word": "sand dune"
+  },
+  {
+    "audio": [
+      "green vegetable_459_06_12_2024.mp3",
+      "green vegetable_615_06_12_2024.mp3"
+    ],
+    "categories": [
+      "vegetables"
+    ],
+    "level": [
+      "A1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a vegetable with dark green leaves, for example  cabbage  or  spinach",
+                "example": "Many people do not eat enough green vegetables."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɡriːn ˈvedʒtəbl/"
+        ]
+      }
+    ],
+    "photo": "green vegetable_05122024.jpg",
+    "word": "green vegetable"
+  },
+  {
+    "audio": [
+      "Atlantic Daylight Time_366_06_12_2024.mp3",
+      "Atlantic Daylight Time_576_06_12_2024.mp3"
+    ],
+    "categories": [
+      "time_zones"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the time used in summer in an area that includes the east of Canada, Puerto Rico and the Virgin Islands, that is three hours earlier than UTC ",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ətˌlæntɪk ˈdeɪlaɪt taɪm/"
+        ]
+      }
+    ],
+    "photo": "Atlantic Daylight Time_05122024.jpg",
+    "word": "Atlantic Daylight Time"
+  },
+  {
+    "audio": [
+      "joint resolution_152_06_12_2024.mp3",
+      "joint resolution_951_06_12_2024.mp3"
+    ],
+    "categories": [
+      "decision"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in the US) a decision that has been approved by the Senate and the House of Representatives",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdʒɔɪnt rezəˈluːʃn/"
+        ]
+      }
+    ],
+    "photo": "joint resolution_05122024.jpg",
+    "word": "joint resolution"
+  },
+  {
+    "audio": [
+      "factory farming_003_06_12_2024.mp3",
+      "factory farming_487_06_12_2024.mp3",
+      "factory farming_660_06_12_2024.mp3",
+      "factory farming_844_06_12_2024.mp3"
+    ],
+    "categories": [
+      "animal_farming"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a method of farming in which animals are kept inside in small spaces and are fed special food so that a large amount of meat, milk, etc. is produced as quickly and cheaply as possible",
+                "example": "the factory farming of beef, pork and chicken"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfæktri fɑːmɪŋ/",
+          "/ˈfæktəri fɑːmɪŋ/",
+          "/ˈfæktəri fɑːrmɪŋ/",
+          "/ˈfæktri fɑːrmɪŋ/"
+        ]
+      }
+    ],
+    "photo": "factory farming_05122024.jpg",
+    "word": "factory farming"
+  }
+]

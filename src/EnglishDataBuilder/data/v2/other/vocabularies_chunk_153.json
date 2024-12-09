@@ -1,0 +1,220 @@
+[
+  {
+    "audio": [
+      "auction room_982_06_12_2024.mp3",
+      "auction room_786_06_12_2024.mp3",
+      "auction room_514_06_12_2024.mp3",
+      "auction room_394_06_12_2024.mp3",
+      "auction room_096_06_12_2024.mp3",
+      "auction room_356_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_art_world",
+      "public_buildings"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a building in which  auctions  are held",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈɒkʃn ruːm/",
+          "/ˈɔːkʃn ruːm/",
+          "/ˈɒkʃn rʊm/",
+          "/ˈɔːkʃn rʊm/"
+        ]
+      }
+    ],
+    "photo": "auction room_05122024.jpg",
+    "word": "auction room"
+  },
+  {
+    "audio": [
+      "free safety_447_06_12_2024.mp3",
+      "free safety_143_06_12_2024.mp3"
+    ],
+    "categories": [
+      "american_football"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a defending player who can try to stop any attacking player rather than one particular attacking player",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌfriː ˈseɪfti/"
+        ]
+      }
+    ],
+    "photo": "free safety_05122024.jpg",
+    "word": "free safety"
+  },
+  {
+    "audio": [
+      "resource person_218_06_12_2024.mp3",
+      "resource person_634_06_12_2024.mp3",
+      "resource person_024_06_12_2024.mp3",
+      "resource person_046_06_12_2024.mp3"
+    ],
+    "categories": [
+      "job_titles"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who knows a lot about a particular subject, who may be employed to perform a task or provide information",
+                "example": "The successful applicant will serve as a resource person for member organizations."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/rɪˈsɔːrs pɜːrsn/",
+          "/rɪˈsɔːs pɜːsn/",
+          "/rɪˈzɔːs pɜːsn/",
+          "/ˈriːsɔːrs pɜːrsn/"
+        ]
+      }
+    ],
+    "photo": "resource person_05122024.jpg",
+    "word": "resource person"
+  },
+  {
+    "audio": [
+      "car pool_312_06_12_2024.mp3",
+      "car pool_843_06_12_2024.mp3"
+    ],
+    "categories": [
+      "on_the_road"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a group of cars owned by a company or an organization, that its staff can use",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkɑːr puːl/",
+          "/ˈkɑː puːl/"
+        ]
+      }
+    ],
+    "photo": "car pool_05122024.jpg",
+    "word": "car pool"
+  },
+  {
+    "audio": [
+      "bus rapid transit_304_06_12_2024.mp3",
+      "bus rapid transit_873_06_12_2024.mp3"
+    ],
+    "categories": [
+      "train_and_bus_travel"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a public bus transport system that is faster and more reliable than an ordinary bus system, with features like  bus lanes  with the right to go before other traffic, and bus stops with payment before boarding",
+                "example": "Bus Rapid Transit is a high-quality, bus-based transport system that can deliver a fast and cost-effective service. "
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbʌs ræpɪd trænzɪt/"
+        ]
+      }
+    ],
+    "photo": "bus rapid transit_05122024.jpg",
+    "word": "bus rapid transit"
+  },
+  {
+    "audio": [
+      "wiped out_531_06_12_2024.mp3",
+      "wiped out_115_06_12_2024.mp3"
+    ],
+    "categories": [
+      "tiredness"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "extremely tired",
+                "example": "You look wiped out."
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌwaɪpt ˈaʊt/"
+        ]
+      }
+    ],
+    "photo": "wiped out_05122024.jpg",
+    "word": "wiped out"
+  }
+]

@@ -1,0 +1,220 @@
+[
+  {
+    "audio": [
+      "fuel efficiency_388_06_12_2024.mp3",
+      "fuel efficiency_815_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_power_industry",
+      "driving"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an engine's ability to get energy from fuel",
+                "example": "Increasing the fuel efficiency results in each kilometre of driving being cheaper."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfjuːəl ɪfɪʃnsi/",
+          "/ˌfjuːəl ɪˈfɪʃnsi/"
+        ]
+      }
+    ],
+    "photo": "fuel efficiency_04122024.jpg",
+    "word": "fuel efficiency"
+  },
+  {
+    "audio": [
+      "peace process_956_06_12_2024.mp3",
+      "peace process_356_06_12_2024.mp3"
+    ],
+    "categories": [
+      "peacekeeping"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a series of talks and agreements designed to end war or violence between two groups",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈpiːs prɑːses/",
+          "/ˈpiːs prəʊses/"
+        ]
+      }
+    ],
+    "photo": "peace process_04122024.jpg",
+    "word": "peace process"
+  },
+  {
+    "audio": [
+      "X chromosome_529_06_12_2024.mp3",
+      "X chromosome_139_06_12_2024.mp3"
+    ],
+    "categories": [
+      "genetics"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a  sex chromosome . Two  X chromosomes  exist in the cells of human females. In human males each cell has one  X chromosome  and one  Y chromosome .",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈeks krəʊməsəʊm/"
+        ]
+      }
+    ],
+    "photo": "X chromosome_04122024.jpg",
+    "word": "X chromosome"
+  },
+  {
+    "audio": [
+      "public access_018_06_12_2024.mp3",
+      "public access_355_06_12_2024.mp3"
+    ],
+    "categories": [
+      "broadcasting"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the right of people in general to go into particular buildings or areas of land or to obtain particular information",
+                "example": "We believe there is scope to improve public access to the countryside."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in the US and some other countries) the right of people in general to use television or radio channels to present their own programmes",
+                "example": "a public access radio station"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌpʌblɪk ˈækses/"
+        ]
+      }
+    ],
+    "photo": "public access_04122024.jpg",
+    "word": "public access"
+  },
+  {
+    "audio": [
+      "chicken rice_186_06_12_2024.mp3",
+      "chicken rice_919_06_12_2024.mp3"
+    ],
+    "categories": [
+      "savoury_dishes"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a dish of chicken, served with rice cooked in chicken  stock",
+                "example": "The restaurant serves the best chicken rice in town."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈtʃɪkɪn raɪs/"
+        ]
+      }
+    ],
+    "photo": "chicken rice_04122024.jpg",
+    "word": "chicken rice"
+  },
+  {
+    "audio": [
+      "Roman Catholic_415_06_12_2024.mp3",
+      "Roman Catholic_625_06_12_2024.mp3"
+    ],
+    "categories": [
+      "religious_people"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "belonging to or connected with the part of the Christian Church that has the  pope  as its leader",
+                "example": null
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌrəʊmən ˈkæθlɪk/"
+        ]
+      }
+    ],
+    "photo": "Roman Catholic_04122024.jpg",
+    "word": "Roman Catholic"
+  }
+]

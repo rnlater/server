@@ -1,0 +1,247 @@
+[
+  {
+    "audio": [
+      "modern slavery_989_06_12_2024.mp3",
+      "modern slavery_381_06_12_2024.mp3"
+    ],
+    "categories": [
+      "social_justice",
+      "types_of_crime"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a form of  slavery  that exists in the 21st century, in which people are illegally forced to work and prevented from escaping",
+                "example": "It is estimated that millions of people around the world are victims of modern slavery."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌmɑːdərn ˈsleɪvəri/",
+          "/ˌmɒdn ˈsleɪvəri/"
+        ]
+      }
+    ],
+    "photo": "modern slavery_04122024.jpg",
+    "word": "modern slavery"
+  },
+  {
+    "audio": [
+      "street smarts_095_06_12_2024.mp3",
+      "street smarts_907_06_12_2024.mp3"
+    ],
+    "categories": [
+      "clever"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the knowledge and experience that is needed to deal with the difficulties and dangers of life in a big city",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈstriːt smɑːts/",
+          "/ˈstriːt smɑːrts/"
+        ]
+      }
+    ],
+    "photo": "street smarts_04122024.jpg",
+    "word": "street smarts"
+  },
+  {
+    "audio": [
+      "disorderly conduct_632_06_12_2024.mp3",
+      "disorderly conduct_072_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_crime"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the crime of behaving in a noisy or violent way in a public place",
+                "example": "He has been charged with disorderly conduct."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/dɪsˌɔːdəli ˈkɒndʌkt/",
+          "/dɪsˌɔːrdərli ˈkɑːndʌkt/"
+        ]
+      }
+    ],
+    "photo": "disorderly conduct_04122024.jpg",
+    "word": "disorderly conduct"
+  },
+  {
+    "audio": [
+      "spring training_823_06_12_2024.mp3",
+      "spring training_647_06_12_2024.mp3"
+    ],
+    "categories": [
+      "baseball"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the period in the spring when baseball players practise to prepare for their regular games",
+                "example": "Spring training starts February 18 this year."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsprɪŋ ˈtreɪnɪŋ/"
+        ]
+      }
+    ],
+    "photo": "spring training_04122024.jpg",
+    "word": "spring training"
+  },
+  {
+    "audio": [
+      "private finance initiative_289_06_12_2024.mp3",
+      "private finance initiative_821_06_12_2024.mp3"
+    ],
+    "categories": [
+      "finance"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a financial arrangement in which a private company pays for a new large public project, such as a hospital, and the government pays the company in exchange for using it",
+                "example": "The city council made payments to the contractor who was part of the private finance initiative for the new bypass."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌpraɪvət ˈfaɪnæns ɪnɪʃətɪv/"
+        ]
+      }
+    ],
+    "photo": "private finance initiative_04122024.jpg",
+    "word": "private finance initiative"
+  },
+  {
+    "audio": [
+      "gas ring_777_06_12_2024.mp3",
+      "gas ring_038_06_12_2024.mp3"
+    ],
+    "categories": [
+      "kitchen_equipment"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a round piece of metal with holes in it on the top of a gas cooker, where the gas is lit to produce the flame for cooking",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈɡæs rɪŋ/"
+        ]
+      }
+    ],
+    "photo": "gas ring_06122024.jpg",
+    "word": "gas ring"
+  },
+  {
+    "audio": [
+      "back nine_418_06_12_2024.mp3",
+      "back nine_360_06_12_2024.mp3",
+      "back nine_748_06_12_2024.mp3",
+      "back nine_125_06_12_2024.mp3"
+    ],
+    "categories": [
+      "golf"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the last nine holes of a course",
+                "example": "She played the back nine in two under par."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌbæk ˈnaɪn/",
+          "/ˈbæk naɪn/"
+        ]
+      }
+    ],
+    "photo": "back nine_04122024.jpg",
+    "word": "back nine"
+  }
+]

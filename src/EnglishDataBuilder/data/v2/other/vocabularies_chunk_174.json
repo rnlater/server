@@ -1,0 +1,415 @@
+[
+  {
+    "audio": [
+      "sponge pudding_912_06_12_2024.mp3",
+      "sponge pudding_573_06_12_2024.mp3"
+    ],
+    "categories": [
+      "sweets_and_desserts"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a hot  dessert  (= a sweet dish) like a  sponge cake  that usually has jam or fruit on top",
+                "example": "sponge pudding and custard"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌspʌndʒ ˈpʊdɪŋ/"
+        ]
+      }
+    ],
+    "photo": "sponge pudding_05122024.jpg",
+    "word": "sponge pudding"
+  },
+  {
+    "audio": [
+      "capital budget_062_06_12_2024.mp3",
+      "capital budget_253_06_12_2024.mp3"
+    ],
+    "categories": [
+      "finance"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the money that is available to an organization for buying and maintaining land, buildings and equipment ",
+                "example": "The first phase of the project will use approximately half of the city's annual capital budget. "
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌkæpɪtl ˈbʌdʒɪt/"
+        ]
+      }
+    ],
+    "photo": "capital budget_05122024.jpg",
+    "word": "capital budget"
+  },
+  {
+    "audio": [
+      "fidget spinner_511_06_12_2024.mp3",
+      "fidget spinner_789_06_12_2024.mp3"
+    ],
+    "categories": [
+      "toys"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a small flat toy that can be rapidly turned around in circles between two fingers",
+                "example": "He drove me mad by playing with a fidget spinner throughout the meeting."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfɪdʒɪt spɪnə(r)/",
+          "/ˈfɪdʒɪt spɪnər/"
+        ]
+      }
+    ],
+    "photo": "fidget spinner_05122024.jpg",
+    "word": "fidget spinner"
+  },
+  {
+    "audio": [
+      "Pancake Day_342_06_12_2024.mp3",
+      "Pancake Day_569_06_12_2024.mp3"
+    ],
+    "categories": [
+      "holidays_and_celebrations"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the day before the beginning of Lent, when people traditionally eat  pancakes",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈpænkeɪk deɪ/"
+        ]
+      }
+    ],
+    "photo": "Pancake Day_05122024.jpg",
+    "word": "Pancake Day"
+  },
+  {
+    "audio": [
+      "calico cat_400_06_12_2024.mp3",
+      "calico cat_597_06_12_2024.mp3"
+    ],
+    "categories": [
+      "pets"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a cat with black, brown, orange and white fur",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkælɪkəʊ kæt/"
+        ]
+      }
+    ],
+    "photo": "calico cat_05122024.jpg",
+    "word": "calico cat"
+  },
+  {
+    "audio": [
+      "remote learning_916_06_12_2024.mp3",
+      "remote learning_620_06_12_2024.mp3"
+    ],
+    "categories": [
+      "using_the_internet",
+      "teaching_and_learning"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a system of education in which students study at home and communicate with their teachers over the internet",
+                "example": "The Covid-19 pandemic saw teachers and students all over the world getting used to remote learning."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/rɪˌməʊt ˈlɜːnɪŋ/",
+          "/rɪˌməʊt ˈlɜːrnɪŋ/"
+        ]
+      }
+    ],
+    "photo": "remote learning_05122024.jpg",
+    "word": "remote learning"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "prefer",
+      "forming_an_opinion"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to tend to prefer something, especially a particular opinion or interest",
+                "example": "The UK leant towards the US proposal."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "lean toward_05122024.jpg",
+    "word": "lean toward"
+  },
+  {
+    "audio": [
+      "Roman Catholicism_641_06_12_2024.mp3",
+      "Roman Catholicism_930_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_belief"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the beliefs and principles of the part of the Christian Church that has the  pope  as its leader",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌrəʊmən kəˈθɒləsɪzəm/",
+          "/ˌrəʊmən kəˈθɑːləsɪzəm/"
+        ]
+      }
+    ],
+    "photo": "Roman Catholicism_05122024.jpg",
+    "word": "Roman Catholicism"
+  },
+  {
+    "audio": [
+      "care worker_799_06_12_2024.mp3",
+      "care worker_379_06_12_2024.mp3"
+    ],
+    "categories": [
+      "jobs_and_professions"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person whose job is to help and take care of people who have a medical condition or  disability  that means they need help, especially people who live in special homes or hospitals",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈker wɜːrkər/",
+          "/ˈkeə wɜːkə(r)/"
+        ]
+      }
+    ],
+    "photo": "care worker_05122024.jpg",
+    "word": "care worker"
+  },
+  {
+    "audio": [
+      "genre painting_500_06_12_2024.mp3",
+      "genre painting_923_06_12_2024.mp3",
+      "genre painting_509_06_12_2024.mp3"
+    ],
+    "categories": [
+      "styles_of_art"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a style of painting showing scenes from ordinary life, especially associated with 17th century Dutch and Flemish artists; a painting done in this style",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈʒɒnrə peɪntɪŋ/",
+          "/ˈʒɒ̃rə peɪntɪŋ/",
+          "/ˈʒɑːnrə peɪntɪŋ/"
+        ]
+      }
+    ],
+    "photo": "genre painting_05122024.jpg",
+    "word": "genre painting"
+  },
+  {
+    "audio": [
+      "sheep dip_714_06_12_2024.mp3",
+      "sheep dip_093_06_12_2024.mp3"
+    ],
+    "categories": [
+      "animal_farming"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a liquid which is used to kill insects, etc. in a sheep’s coat; the container in which sheep are put to treat them with this",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈʃiːp dɪp/"
+        ]
+      }
+    ],
+    "photo": "sheep dip_05122024.jpg",
+    "word": "sheep dip"
+  },
+  {
+    "audio": [
+      "made to measure_343_06_12_2024.mp3",
+      "made to measure_942_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_fashion_world"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "made specially to fit a particular person, window, etc.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌmeɪd tə ˈmeʒə(r)/",
+          "/ˌmeɪd tə ˈmeʒər/"
+        ]
+      }
+    ],
+    "photo": "made to measure_05122024.jpg",
+    "word": "made to measure"
+  }
+]

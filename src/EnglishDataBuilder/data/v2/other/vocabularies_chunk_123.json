@@ -1,0 +1,278 @@
+[
+  {
+    "audio": [
+      "CAT scan_990_06_12_2024.mp3",
+      "CAT scan_363_06_12_2024.mp3"
+    ],
+    "categories": [
+      "medical_examinations"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a medical examination that uses a computer to produce an image of the inside of somebody’s body from  X-ray  or  ultrasound  pictures",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkæt skæn/"
+        ]
+      }
+    ],
+    "photo": "CAT scan_05122024.jpg",
+    "word": "CAT scan"
+  },
+  {
+    "audio": [
+      "minimum security prison_226_06_12_2024.mp3",
+      "minimum security prison_675_06_12_2024.mp3"
+    ],
+    "categories": [
+      "prison"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a prison in which prisoners have more freedom than in ordinary prisons",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌmɪnɪməm sɪˌkjʊərəti ˈprɪzn/",
+          "/ˌmɪnɪməm sɪˌkjʊrəti ˈprɪzn/"
+        ]
+      }
+    ],
+    "photo": "minimum security prison_05122024.jpg",
+    "word": "minimum security prison"
+  },
+  {
+    "audio": [
+      "flag football_042_06_12_2024.mp3",
+      "flag football_219_06_12_2024.mp3"
+    ],
+    "categories": [
+      "american_football"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a type of  American football  played without the usual form of  tackling . A  tackle  is made instead by pulling a piece of cloth from an opponent’s  waistband .",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌflæɡ ˈfʊtbɔːl/"
+        ]
+      }
+    ],
+    "photo": "flag football_05122024.jpg",
+    "word": "flag football"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "driving"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to leave in a vehicle; to take somebody away in a vehicle",
+                "example": "We heard him drive away."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to make somebody not want to stay or not want to go somewhere",
+                "example": "Her erratic behaviour eventually drove him away."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "drive away_05122024.jpg",
+    "word": "drive away"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "preparing_food"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to make something hot or warm",
+                "example": "Just heat up the food in the microwave."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "heat up_05122024.jpg",
+    "word": "heat up"
+  },
+  {
+    "audio": [
+      "liner note_854_06_12_2024.mp3",
+      "liner note_057_06_12_2024.mp3"
+    ],
+    "categories": [
+      "listening_to_music"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "information about the music or the performers that comes with a CD or DVD or is printed on the cover of a record",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈlaɪnər nəʊt/",
+          "/ˈlaɪnə nəʊt/"
+        ]
+      }
+    ],
+    "photo": "liner note_05122024.jpg",
+    "word": "liner note"
+  },
+  {
+    "audio": [
+      "body armour_840_06_12_2024.mp3",
+      "body armour_067_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_police"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "clothing worn by the police, etc. to protect themselves",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbɒdi ɑːmə(r)/",
+          "/ˈbɑːdi ɑːrmər/"
+        ]
+      }
+    ],
+    "photo": "body armour_05122024.jpg",
+    "word": "body armour"
+  },
+  {
+    "audio": [
+      "credit agency_351_06_12_2024.mp3",
+      "credit agency_192_06_12_2024.mp3"
+    ],
+    "categories": [
+      "finance"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a company that collects information about people's  credit ratings  and makes it available to credit card companies, financial institutions, etc.",
+                "example": "Credit scores are compiled by the three major credit agencies, based on information provided by creditors."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkredɪt eɪdʒənsi/"
+        ]
+      }
+    ],
+    "photo": "credit agency_05122024.jpg",
+    "word": "credit agency"
+  }
+]

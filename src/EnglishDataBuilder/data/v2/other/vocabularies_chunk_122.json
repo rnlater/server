@@ -1,0 +1,209 @@
+[
+  {
+    "audio": [],
+    "categories": [
+      "growing_crops"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to turn over a field or other area of land with a  plow  to change it from grass, for example, to land for growing crops",
+                "example": null
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to break up the surface of the ground by walking or driving across it again and again",
+                "example": "Heavy traffic had plowed up the surface of the track."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "plow up_05122024.jpg",
+    "word": "plow up"
+  },
+  {
+    "audio": [
+      "monozygotic twin_395_06_12_2024.mp3",
+      "monozygotic twin_189_06_12_2024.mp3"
+    ],
+    "categories": [
+      "relatives"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "either of two children or animals born from the same mother at the same time who have developed from a single egg.  Identical twins  are of the same sex and look very similar.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌmɑːnəʊzaɪˌɡɑːtɪk ˈtwɪn/",
+          "/ˌmɒnəʊzaɪˌɡɒtɪk ˈtwɪn/"
+        ]
+      }
+    ],
+    "photo": "monozygotic twin_05122024.jpg",
+    "word": "monozygotic twin"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "achieving_success"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to succeed in dealing with a difficult situation by making other people believe something which is not true",
+                "example": "She successfully bluffed her way through the interview."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "bluff your way out of_05122024.jpg",
+    "word": "bluff your way out of"
+  },
+  {
+    "audio": [
+      "pay TV_950_06_12_2024.mp3",
+      "pay TV_774_06_12_2024.mp3"
+    ],
+    "categories": [
+      "watching_tv_listening_to_the_radio"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a system of television broadcasting in which you pay to watch particular television programmes or channels",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌpeɪ tiː ˈviː/"
+        ]
+      }
+    ],
+    "photo": "pay TV_05122024.jpg",
+    "word": "pay TV"
+  },
+  {
+    "audio": [
+      "primary stress_497_06_12_2024.mp3",
+      "primary stress_298_06_12_2024.mp3"
+    ],
+    "categories": [
+      "phonetics"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the strongest stress that is put on a syllable in a word or a phrase when it is spoken",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌpraɪmeri ˈstres/",
+          "/ˌpraɪməri ˈstres/"
+        ]
+      }
+    ],
+    "photo": "primary stress_05122024.jpg",
+    "word": "primary stress"
+  },
+  {
+    "audio": [
+      "gene editing_844_06_12_2024.mp3",
+      "gene editing_037_06_12_2024.mp3"
+    ],
+    "categories": [
+      "genetics"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a technique by which the  DNA  that makes up the  genes  of an  organism   (= living thing)  is deliberately altered in order to correct a problem or to improve the characteristics of the  organism",
+                "example": "Gene editing could provide a permanent cure for many diseases."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈdʒiːn edɪtɪŋ/"
+        ]
+      }
+    ],
+    "photo": "gene editing_05122024.jpg",
+    "word": "gene editing"
+  }
+]

@@ -1,0 +1,137 @@
+[
+  {
+    "audio": [],
+    "categories": [
+      "persuasion"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to talk to somebody in order to persuade them to be more sensible",
+                "example": "I tried to reason with him, but he wouldn't listen."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "reason with_05122024.jpg",
+    "word": "reason with"
+  },
+  {
+    "audio": [
+      "in-goal area_112_06_12_2024.mp3",
+      "in-goal area_101_06_12_2024.mp3"
+    ],
+    "categories": [
+      "rugby"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the area between the  goal line  and the line at the end of the field, inside which a player must put the ball in order to score a  try",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈɪn ɡəʊl eəriə/",
+          "/ˈɪn ɡəʊl eriə/"
+        ]
+      }
+    ],
+    "photo": "in-goal area_05122024.jpg",
+    "word": "in-goal area"
+  },
+  {
+    "audio": [
+      "sea fish_192_06_12_2024.mp3",
+      "sea fish_526_06_12_2024.mp3"
+    ],
+    "categories": [
+      "fish"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a fish that lives in the sea, rather than in rivers or lakes",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈsiː fɪʃ/"
+        ]
+      }
+    ],
+    "photo": "sea fish_05122024.jpg",
+    "word": "sea fish"
+  },
+  {
+    "audio": [
+      "twin bedroom_801_06_12_2024.mp3",
+      "twin bedroom_975_06_12_2024.mp3",
+      "twin bedroom_393_06_12_2024.mp3",
+      "twin bedroom_577_06_12_2024.mp3"
+    ],
+    "categories": [
+      "staying_in_a_hotel"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a room in a hotel, etc. that has two single beds",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌtwɪn ˈbedrʊm/",
+          "/ˌtwɪn ˈbedruːm/"
+        ]
+      }
+    ],
+    "photo": "twin bedroom_05122024.jpg",
+    "word": "twin bedroom"
+  }
+]

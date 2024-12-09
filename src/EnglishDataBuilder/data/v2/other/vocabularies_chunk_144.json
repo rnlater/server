@@ -1,0 +1,251 @@
+[
+  {
+    "audio": [],
+    "categories": [
+      "finance"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to do something to protect yourself against problems, especially against losing money",
+                "example": "a way of hedging against currency risks"
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "hedge against_05122024.jpg",
+    "word": "hedge against"
+  },
+  {
+    "audio": [
+      "reality TV_085_06_12_2024.mp3",
+      "reality TV_895_06_12_2024.mp3"
+    ],
+    "categories": [
+      "tv_and_radio_shows"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "television shows that are based on real people (not actors) in real situations, presented as entertainment",
+                "example": "a reality TV star"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/riˌæləti ˌtiː ˈviː/"
+        ]
+      }
+    ],
+    "photo": "reality TV_05122024.jpg",
+    "word": "reality TV"
+  },
+  {
+    "audio": [
+      "Alexander technique_706_06_12_2024.mp3",
+      "Alexander technique_473_06_12_2024.mp3",
+      "Alexander technique_911_06_12_2024.mp3"
+    ],
+    "categories": [
+      "complementary_medicine"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a method of improving somebody’s health by teaching them how to stand, sit and move correctly",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌælɪɡˈzɑːndə tekniːk/",
+          "/ˌælɪɡˈzændə tekniːk/",
+          "/ˌælɪɡˈzændər tekniːk/"
+        ]
+      }
+    ],
+    "photo": "Alexander technique_05122024.jpg",
+    "word": "Alexander technique"
+  },
+  {
+    "audio": [
+      "general counsel_307_06_12_2024.mp3",
+      "general counsel_492_06_12_2024.mp3"
+    ],
+    "categories": [
+      "people_in_law"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in the US) the main lawyer who gives legal advice to a company",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdʒenrəl ˈkaʊnsl/"
+        ]
+      }
+    ],
+    "photo": "general counsel_05122024.jpg",
+    "word": "general counsel"
+  },
+  {
+    "audio": [
+      "luggage van_844_06_12_2024.mp3",
+      "luggage van_020_06_12_2024.mp3"
+    ],
+    "categories": [
+      "trains"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a coach on a train for carrying passengers’ bags, cases, etc.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈlʌɡɪdʒ væn/"
+        ]
+      }
+    ],
+    "photo": "luggage van_05122024.jpg",
+    "word": "luggage van"
+  },
+  {
+    "audio": [
+      "rain barrel_583_06_12_2024.mp3",
+      "rain barrel_787_06_12_2024.mp3"
+    ],
+    "categories": [
+      "in_the_garden"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a large  barrel  for collecting rain as it flows off a roof",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈreɪn bærəl/"
+        ]
+      }
+    ],
+    "photo": "rain barrel_06122024.jpg",
+    "word": "rain barrel"
+  },
+  {
+    "audio": [
+      "burnt ochre_493_06_12_2024.mp3",
+      "burnt ochre_319_06_12_2024.mp3"
+    ],
+    "categories": [
+      "colours",
+      "art_equipment"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a deep yellow-brown colour",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a yellow-brown  pigment , used in art",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌbɜːrnt ˈəʊkər/",
+          "/ˌbɜːnt ˈəʊkə(r)/"
+        ]
+      }
+    ],
+    "photo": "burnt ochre_05122024.jpg",
+    "word": "burnt ochre"
+  }
+]

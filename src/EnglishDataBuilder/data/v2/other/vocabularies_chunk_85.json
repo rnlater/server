@@ -1,0 +1,220 @@
+[
+  {
+    "audio": [
+      "Christmas Eve_090_06_12_2024.mp3",
+      "Christmas Eve_139_06_12_2024.mp3"
+    ],
+    "categories": [
+      "religious_holidays_and_festivals"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the day before Christmas Day, 24 December; the evening of this day",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌkrɪsməs ˈiːv/"
+        ]
+      }
+    ],
+    "photo": "Christmas Eve_05122024.jpg",
+    "word": "Christmas Eve"
+  },
+  {
+    "audio": [
+      "Welsh dresser_282_06_12_2024.mp3",
+      "Welsh dresser_913_06_12_2024.mp3"
+    ],
+    "categories": [
+      "furniture"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a large piece of wooden furniture with shelves in the top part and cupboards below, used for displaying and storing cups, plates, etc.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌwelʃ ˈdresər/",
+          "/ˌwelʃ ˈdresə(r)/"
+        ]
+      }
+    ],
+    "photo": "Welsh dresser_05122024.jpg",
+    "word": "Welsh dresser"
+  },
+  {
+    "audio": [
+      "factory floor_859_06_12_2024.mp3",
+      "factory floor_081_06_12_2024.mp3",
+      "factory floor_500_06_12_2024.mp3",
+      "factory floor_876_06_12_2024.mp3"
+    ],
+    "categories": [
+      "manufacturing"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the part of a factory where the goods are actually produced",
+                "example": "Jobs are at risk, not just  on the factory floor   (= among the workers, rather than the managers)  but throughout the business."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌfæktəri ˈflɔːr/",
+          "/ˌfæktri ˈflɔː(r)/",
+          "/ˌfæktri ˈflɔːr/",
+          "/ˌfæktəri ˈflɔː(r)/"
+        ]
+      }
+    ],
+    "photo": "factory floor_05122024.jpg",
+    "word": "factory floor"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "persuasion"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to try to persuade somebody to do something for you by being very nice to them before you ask them",
+                "example": "Potential customers are softened up with free gifts before the sales talk."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to make an enemy weaker and easier to attack",
+                "example": null
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "soften up_05122024.jpg",
+    "word": "soften up"
+  },
+  {
+    "audio": [
+      "phone booth_183_06_12_2024.mp3",
+      "phone booth_379_06_12_2024.mp3"
+    ],
+    "categories": [
+      "communication_devices"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a place that is partly separated from the surrounding area, containing a public phone, in a hotel, restaurant, in the street, etc.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfəʊn buːð/",
+          "/ˈfəʊn buːθ/"
+        ]
+      }
+    ],
+    "photo": "phone booth_05122024.jpg",
+    "word": "phone booth"
+  },
+  {
+    "audio": [
+      "sweated labour_348_06_12_2024.mp3",
+      "sweated labour_950_06_12_2024.mp3"
+    ],
+    "categories": [
+      "poverty_and_famine"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "hard work that is done for low wages in poor conditions; the people who do this work",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌswetɪd ˈleɪbər/",
+          "/ˌswetɪd ˈleɪbə(r)/"
+        ]
+      }
+    ],
+    "photo": "sweated labour_05122024.jpg",
+    "word": "sweated labour"
+  }
+]

@@ -1,0 +1,309 @@
+[
+  {
+    "audio": [
+      "beauty school_123_06_12_2024.mp3",
+      "beauty school_917_06_12_2024.mp3"
+    ],
+    "categories": [
+      "styling_hair"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a place that trains people to cut hair, take care of nails, etc. as a job",
+                "example": "She’s going to beauty school to become a hair stylist."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbjuːti skuːl/"
+        ]
+      }
+    ],
+    "photo": "beauty school_05122024.jpg",
+    "word": "beauty school"
+  },
+  {
+    "audio": [
+      "mortar board_475_06_12_2024.mp3",
+      "mortar board_648_06_12_2024.mp3"
+    ],
+    "categories": [
+      "hats",
+      "degrees"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a black hat with a stiff square top, worn by some university teachers and students at special ceremonies",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈmɔːrtər bɔːrd/",
+          "/ˈmɔːtə bɔːd/"
+        ]
+      }
+    ],
+    "photo": "mortar board_06122024.jpg",
+    "word": "mortar board"
+  },
+  {
+    "audio": [
+      "cancel culture_345_06_12_2024.mp3",
+      "cancel culture_518_06_12_2024.mp3"
+    ],
+    "categories": [
+      "protest"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the practice of  excluding  somebody from social or professional life by refusing to communicate with them online or in real life, because they have said or done something that other people do not agree with",
+                "example": "Cancel culture punishes people who break the rules by saying the wrong thing."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkænsl kʌltʃə(r)/",
+          "/ˈkænsl kʌltʃər/"
+        ]
+      }
+    ],
+    "photo": "cancel culture_05122024.jpg",
+    "word": "cancel culture"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "achieving_success"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to pass an exam, a test, etc. without any difficulty",
+                "example": null
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "sail through_05122024.jpg",
+    "word": "sail through"
+  },
+  {
+    "audio": [
+      "desk clerk_969_06_12_2024.mp3",
+      "desk clerk_174_06_12_2024.mp3"
+    ],
+    "categories": [
+      "staying_in_a_hotel"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person whose job is dealing with people arriving at or leaving a hotel",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈdesk klɑːk/",
+          "/ˈdesk klɜːrk/"
+        ]
+      }
+    ],
+    "photo": "desk clerk_05122024.jpg",
+    "word": "desk clerk"
+  },
+  {
+    "audio": [
+      "Canada goose_715_06_12_2024.mp3",
+      "Canada goose_506_06_12_2024.mp3"
+    ],
+    "categories": [
+      "birds"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a common North American  goose  with a black head and neck",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌkænədə ˈɡuːs/"
+        ]
+      }
+    ],
+    "photo": "Canada goose_05122024.jpg",
+    "word": "Canada goose"
+  },
+  {
+    "audio": [
+      "full professor_144_06_12_2024.mp3",
+      "full professor_350_06_12_2024.mp3"
+    ],
+    "categories": [
+      "university_people",
+      "job_titles"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a university teacher of the highest rank",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfʊl prəfesə(r)/",
+          "/ˈfʊl prəfesər/"
+        ]
+      }
+    ],
+    "photo": "full professor_05122024.jpg",
+    "word": "full professor"
+  },
+  {
+    "audio": [
+      "infant school_406_06_12_2024.mp3",
+      "infant school_620_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_school"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a type of school for children from the age of four or five (when children are required by law to start school) until the age of seven. Often an infant school forms, together with a  junior school , part of a  primary school .",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈɪnfənt skuːl/"
+        ]
+      }
+    ],
+    "photo": "infant school_05122024.jpg",
+    "word": "infant school"
+  },
+  {
+    "audio": [
+      "Nipah virus_990_06_12_2024.mp3",
+      "Nipah virus_186_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_illness"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a virus carried by  fruit bats , which can cause a serious disease in humans and pigs",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈniːpə vaɪrəs/"
+        ]
+      }
+    ],
+    "photo": "Nipah virus_05122024.jpg",
+    "word": "Nipah virus"
+  }
+]

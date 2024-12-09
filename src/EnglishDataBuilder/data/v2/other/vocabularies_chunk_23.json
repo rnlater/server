@@ -1,0 +1,213 @@
+[
+  {
+    "audio": [
+      "reading list_399_06_12_2024.mp3",
+      "reading list_238_06_12_2024.mp3"
+    ],
+    "categories": [
+      "teaching_and_learning"
+    ],
+    "level": [
+      "A2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a list of books, articles, etc. that students are expected to read for a particular subject",
+                "example": "The reading list is available online."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈriːdɪŋ lɪst/"
+        ]
+      }
+    ],
+    "photo": "reading list_05122024.jpg",
+    "word": "reading list"
+  },
+  {
+    "audio": [
+      "Rotary club_496_06_12_2024.mp3",
+      "Rotary club_253_06_12_2024.mp3"
+    ],
+    "categories": [
+      "helping_others"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a branch of an organization of business and professional people whose members meet for social reasons and to raise money for charity",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈrəʊtəri klʌb/"
+        ]
+      }
+    ],
+    "photo": "Rotary club_05122024.jpg",
+    "word": "Rotary club"
+  },
+  {
+    "audio": [
+      "green wall_320_06_12_2024.mp3",
+      "green wall_092_06_12_2024.mp3"
+    ],
+    "categories": [
+      "architectural_features"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a structure covered in plants that can be attached to the wall of a building ",
+                "example": "a 12-storey green wall"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈɡriːn wɔːl/"
+        ]
+      }
+    ],
+    "photo": "green wall_06122024.jpg",
+    "word": "green wall"
+  },
+  {
+    "audio": [
+      "lone parent_776_06_12_2024.mp3",
+      "lone parent_328_06_12_2024.mp3"
+    ],
+    "categories": [
+      "raising_children"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who takes care of their child or children without a husband, wife or partner",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌləʊn ˈpeərənt/",
+          "/ˌləʊn ˈperənt/"
+        ]
+      }
+    ],
+    "photo": "lone parent_05122024.jpg",
+    "word": "lone parent"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "like"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to begin to like somebody",
+                "example": "I warmed to her immediately."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to become more interested in or enthusiastic about something",
+                "example": "The speaker was now warming to her theme."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "warm to_05122024.jpg",
+    "word": "warm to"
+  },
+  {
+    "audio": [
+      "outside lane_382_06_12_2024.mp3",
+      "outside lane_558_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_road"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the part of a major road such as a  motorway  or  interstate  nearest the middle of the road, where vehicles drive fastest and can go past vehicles ahead",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌaʊtsaɪd ˈleɪn/"
+        ]
+      }
+    ],
+    "photo": "outside lane_05122024.jpg",
+    "word": "outside lane"
+  }
+]

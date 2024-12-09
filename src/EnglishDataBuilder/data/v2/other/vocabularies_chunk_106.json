@@ -1,0 +1,264 @@
+[
+  {
+    "audio": [
+      "football boot_051_06_12_2024.mp3",
+      "football boot_466_06_12_2024.mp3"
+    ],
+    "categories": [
+      "footwear",
+      "football"
+    ],
+    "level": [
+      "A2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a leather shoe with  studs   (= pieces of plastic or metal)  on the bottom to stop it from slipping, worn for playing football (soccer)",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfʊtbɔːl buːt/"
+        ]
+      }
+    ],
+    "photo": "football boot_04122024.jpg",
+    "word": "football boot"
+  },
+  {
+    "audio": [
+      "deed of covenant_897_06_12_2024.mp3",
+      "deed of covenant_167_06_12_2024.mp3"
+    ],
+    "categories": [
+      "helping_others"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a legal agreement to pay a regular amount of money to somebody/something over a fixed period of time",
+                "example": "The gift was made under a deed of covenant."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdiːd əv ˈkʌvənənt/"
+        ]
+      }
+    ],
+    "photo": "deed of covenant_04122024.jpg",
+    "word": "deed of covenant"
+  },
+  {
+    "audio": [
+      "monkey in the middle_688_06_12_2024.mp3",
+      "monkey in the middle_970_06_12_2024.mp3"
+    ],
+    "categories": [
+      "having_a_disagreement",
+      "childrens_games"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a children’s game where two people throw a ball to each other over the head of another person who tries to catch it",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who is caught between two people or groups who are fighting or arguing",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌmʌŋki ɪn ðə ˈmɪdl/"
+        ]
+      }
+    ],
+    "photo": "monkey in the middle_04122024.jpg",
+    "word": "monkey in the middle"
+  },
+  {
+    "audio": [
+      "Ts and Cs_857_06_12_2024.mp3",
+      "Ts and Cs_441_06_12_2024.mp3"
+    ],
+    "categories": [
+      "business_deals",
+      "legal_documents",
+      "agreement"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "rules that you must agree to when you make a contract or an official agreement (the abbreviation for  terms and conditions )",
+                "example": "Full Ts and Cs are available on our website."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌtiːz ən ˈsiːz/"
+        ]
+      }
+    ],
+    "photo": "Ts and Cs_04122024.jpg",
+    "word": "Ts and Cs"
+  },
+  {
+    "audio": [
+      "parliamentary privilege_052_06_12_2024.mp3",
+      "parliamentary privilege_817_06_12_2024.mp3"
+    ],
+    "categories": [
+      "parliament"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the special right of Members of Parliament to speak freely in Parliament, especially about another person, without risking legal action",
+                "example": "He made the allegation under the protection of parliamentary privilege."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌpɑːləˌmentri ˈprɪvəlɪdʒ/",
+          "/ˌpɑːrləˌmentri ˈprɪvəlɪdʒ/"
+        ]
+      }
+    ],
+    "photo": "parliamentary privilege_04122024.jpg",
+    "word": "parliamentary privilege"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "growing_crops"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to turn over growing crops, grass, etc. with a  plow  and mix them into the soil to improve its quality",
+                "example": null
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to put money made as profit back into a business in order to improve it",
+                "example": "The money was all plowed back into the company."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "plow back in_04122024.jpg",
+    "word": "plow back in"
+  },
+  {
+    "audio": [
+      "single-parent family_958_06_12_2024.mp3",
+      "single-parent family_134_06_12_2024.mp3"
+    ],
+    "categories": [
+      "family_background",
+      "raising_children"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a family in which the children live with one parent rather than two",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsɪŋɡl ˌperənt ˈfæməli/",
+          "/ˌsɪŋɡl ˌpeərənt ˈfæməli/"
+        ]
+      }
+    ],
+    "photo": "single-parent family_04122024.jpg",
+    "word": "single-parent family"
+  }
+]

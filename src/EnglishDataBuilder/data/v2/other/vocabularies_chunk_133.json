@@ -1,0 +1,169 @@
+[
+  {
+    "audio": [
+      "fire trap_235_06_12_2024.mp3",
+      "fire trap_999_06_12_2024.mp3"
+    ],
+    "categories": [
+      "describing_buildings"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a building that would be very dangerous if a fire started there, especially because it would be difficult for people to escape",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfaɪə træp/",
+          "/ˈfaɪər træp/"
+        ]
+      }
+    ],
+    "photo": "fire trap_05122024.jpg",
+    "word": "fire trap"
+  },
+  {
+    "audio": [
+      "technical hitch_175_06_12_2024.mp3",
+      "technical hitch_997_06_12_2024.mp3"
+    ],
+    "categories": [
+      "causing_difficulty"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a temporary problem or difficulty, especially one caused by a machine or a piece of equipment",
+                "example": "Because of a technical hitch, we are unable to bring you the advertised programme."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌteknɪkl ˈhɪtʃ/"
+        ]
+      }
+    ],
+    "photo": "technical hitch_05122024.jpg",
+    "word": "technical hitch"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "persuasion"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to get somebody to change their opinion about something and give you their support and approval",
+                "example": "She's against the idea but I'm sure I can win her over."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "win around_05122024.jpg",
+    "word": "win around"
+  },
+  {
+    "audio": [
+      "housing project_873_06_12_2024.mp3",
+      "housing project_100_06_12_2024.mp3"
+    ],
+    "categories": [
+      "helping_others"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a group of houses or apartments built for poor families, usually with government money",
+                "example": "She lives in a housing project on the edge of town."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈhaʊzɪŋ prɑːdʒekt/",
+          "/ˈhaʊzɪŋ prɒdʒekt/"
+        ]
+      }
+    ],
+    "photo": "housing project_05122024.jpg",
+    "word": "housing project"
+  },
+  {
+    "audio": [
+      "rest house_617_06_12_2024.mp3",
+      "rest house_445_06_12_2024.mp3"
+    ],
+    "categories": [
+      "holiday_accommodation"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in parts of Asia and Africa) a house or  hut  that you can pay to stay in like a hotel room, especially in the countryside",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈrest haʊs/"
+        ]
+      }
+    ],
+    "photo": "rest house_05122024.jpg",
+    "word": "rest house"
+  }
+]
