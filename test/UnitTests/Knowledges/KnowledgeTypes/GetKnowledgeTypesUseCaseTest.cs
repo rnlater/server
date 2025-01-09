@@ -33,7 +33,8 @@ namespace UnitTests.Knowledges.KnowledgeTypes
         {
             _knowledgeTypeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<KnowledgeType>>())).ReturnsAsync(Enumerable.Empty<KnowledgeType>());
 
-            var result = await _getKnowledgeTypesUseCase.Execute(NoParam.Value);
+            var Params = new GetKnowledgeTypesParams { };
+            var result = await _getKnowledgeTypesUseCase.Execute(Params);
 
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeTypesFound, result.Error);
@@ -45,8 +46,9 @@ namespace UnitTests.Knowledges.KnowledgeTypes
             var knowledgeTypes = SeedData.GetKnowledgeTypes();
 
             _knowledgeTypeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<KnowledgeType>>())).ReturnsAsync(knowledgeTypes);
+            var Params = new GetKnowledgeTypesParams { };
 
-            var result = await _getKnowledgeTypesUseCase.Execute(NoParam.Value);
+            var result = await _getKnowledgeTypesUseCase.Execute(Params);
 
             Assert.True(result.IsSuccess);
             Assert.NotEmpty(result.Value);

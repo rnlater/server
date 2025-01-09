@@ -10,5 +10,6 @@ namespace Application.DTOs.SingleIdPivotEntities
         public ICollection<LearningHistoryDto> LearningHistories { get; set; } = [];
 
         public LearningHistoryDto? LatestLearningHistory { get; set; }
+        public int? LearningListCount { get; set; }
     }
 }

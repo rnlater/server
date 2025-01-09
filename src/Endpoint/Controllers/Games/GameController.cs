@@ -5,6 +5,7 @@ using AutoMapper;
 using Domain.Enums;
 using Endpoint.ApiRequests.Games;
 using Endpoint.ApiRequests.Games.GameOptions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Constants;
 using Shared.Utils;
@@ -13,7 +14,7 @@ namespace Endpoint.Controllers.Games
 {
     [Route("api/[controller]")]
     [ApiController]
-    // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = nameof(Role.Admin))]
     public class GameController : ControllerBase
     {
         private readonly IGameService _gameService;

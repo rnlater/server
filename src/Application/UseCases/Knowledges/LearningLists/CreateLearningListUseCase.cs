@@ -15,7 +15,7 @@ namespace Application.UseCases.Knowledges.LearningLists
     public class CreateLearningListParams
     {
         public required string Title { get; set; }
-        public Guid? KnowledgeId { get; set; }
+        public List<Guid>? KnowledgeIds { get; set; }
     }
 
     public class CreateLearningListUseCase : IUseCase<LearningListDto, CreateLearningListParams>
@@ -36,7 +36,7 @@ namespace Application.UseCases.Knowledges.LearningLists
             {
                 var userId = UserExtractor.GetUserId(_httpContextAccessor);
                 var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
-                if (userId == null)
+                if (user == null)
                     return Result<LearningListDto>.Fail(ErrorMessage.UserNotFound);
 
                 var learningListRepository = _unitOfWork.Repository<LearningList>();
@@ -47,37 +47,44 @@ namespace Application.UseCases.Knowledges.LearningLists
                 var learningList = new LearningList
                 {
                     Title = parameters.Title,
-                    LearnerId = userId.Value
+                    LearnerId = user.Id
                 };
 
                 learningList = await learningListRepository.Add(learningList);
+                var learningListDto = _mapper.Map<LearningListDto>(learningList);
 
-                if (parameters.KnowledgeId != null)
+                if (parameters.KnowledgeIds != null)
                 {
-                    var knowledge = await _unitOfWork.Repository<Knowledge>().Find(
-                        new BaseSpecification<Knowledge>(k => k.Id == parameters.KnowledgeId)
+                    var knowledges = await _unitOfWork.Repository<Knowledge>().FindMany(
+                        new BaseSpecification<Knowledge>(k => parameters.KnowledgeIds.Contains(k.Id))
                     );
 
-                    if (knowledge == null)
+                    if (knowledges == null || knowledges.Count() != parameters.KnowledgeIds.Count)
                     {
                         await _unitOfWork.RollBackChangesAsync();
-                        return Result<LearningListDto>.Fail(ErrorMessage.NoKnowledgeFoundWithGuid);
+                        return Result<LearningListDto>.Fail(ErrorMessage.SomeKnowledgesNotFound);
                     }
-                    else if (knowledge.Visibility == KnowledgeVisibility.Private && knowledge.CreatorId != userId)
+                    else if (knowledges.Any(k => k.Visibility == KnowledgeVisibility.Private && k.CreatorId != userId))
                     {
                         await _unitOfWork.RollBackChangesAsync();
                         return Result<LearningListDto>.Fail(ErrorMessage.UserNotAuthorized);
                     }
 
-                    var learningListKnowledge = new LearningListKnowledge
+                    foreach (var knowledge in knowledges)
                     {
-                        LearningListId = learningList.Id,
-                        KnowledgeId = knowledge.Id
-                    };
-                    await _unitOfWork.Repository<LearningListKnowledge>().Add(learningListKnowledge);
+                        var learningListKnowledge = new LearningListKnowledge
+                        {
+                            LearningListId = learningList.Id,
+                            KnowledgeId = knowledge.Id
+                        };
+
+                        await _unitOfWork.Repository<LearningListKnowledge>().Add(learningListKnowledge);
+                    }
+                    learningListDto.NotLearntKnowledgeCount = 0;
+                    learningListDto.LearntKnowledgeCount = knowledges.Count();
                 }
 
-                return Result<LearningListDto>.Done(_mapper.Map<LearningListDto>(learningList));
+                return Result<LearningListDto>.Done(learningListDto);
             }
             catch (Exception)
             {

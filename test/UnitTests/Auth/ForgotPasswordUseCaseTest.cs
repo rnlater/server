@@ -1,4 +1,5 @@
 using Application.DTOs;
+using Application.Interfaces;
 using Application.UseCases.Auth;
 using AutoMapper;
 using Domain.Base;
@@ -13,14 +14,16 @@ namespace UnitTests.Auth
     {
         private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<IMapper> _mapperMock;
+        private readonly Mock<IMailService> _mailServiceMock;
         private readonly ForgotPasswordUseCase _forgotPasswordUseCase;
 
         public ForgotPasswordUseCaseTest()
         {
             _unitOfWorkMock = new Mock<IUnitOfWork>();
             _mapperMock = new Mock<IMapper>();
+            _mailServiceMock = new Mock<IMailService>();
 
-            _forgotPasswordUseCase = new ForgotPasswordUseCase(_unitOfWorkMock.Object, _mapperMock.Object);
+            _forgotPasswordUseCase = new ForgotPasswordUseCase(_unitOfWorkMock.Object, _mapperMock.Object, _mailServiceMock.Object);
         }
 
         [Fact]

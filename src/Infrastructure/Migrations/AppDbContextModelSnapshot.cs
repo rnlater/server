@@ -38,20 +38,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("KnowledgeId");
 
                     b.ToTable("KnowledgeTopicKnowledges");
-
-                    b.HasData(
-                        new
-                        {
-                            KnowledgeTopicId = new Guid("405a09dd-2964-440f-b1ad-058c1c222a6c"),
-                            KnowledgeId = new Guid("5a5fb990-9636-4ed8-ae0b-52a978a821ef"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7450)
-                        },
-                        new
-                        {
-                            KnowledgeTopicId = new Guid("a1e62b54-2a47-492b-98b4-5d72a8b722e3"),
-                            KnowledgeId = new Guid("8c57b1be-9f45-424c-8a38-6a99438f07cd"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7450)
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.PivotEntities.KnowledgeTypeKnowledge", b =>
@@ -70,20 +56,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("KnowledgeId");
 
                     b.ToTable("KnowledgeTypeKnowledges");
-
-                    b.HasData(
-                        new
-                        {
-                            KnowledgeTypeId = new Guid("b0ce8d13-338e-4579-9078-e390147a3ee4"),
-                            KnowledgeId = new Guid("5a5fb990-9636-4ed8-ae0b-52a978a821ef"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7420)
-                        },
-                        new
-                        {
-                            KnowledgeTypeId = new Guid("f77de0fa-394f-4748-8441-a89d23b4fb4f"),
-                            KnowledgeId = new Guid("8c57b1be-9f45-424c-8a38-6a99438f07cd"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7420)
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.PivotEntities.LearningListKnowledge", b =>
@@ -102,20 +74,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("KnowledgeId");
 
                     b.ToTable("LearningListKnowledges");
-
-                    b.HasData(
-                        new
-                        {
-                            LearningListId = new Guid("e64cad03-3542-49eb-9c00-58a04f29940b"),
-                            KnowledgeId = new Guid("5a5fb990-9636-4ed8-ae0b-52a978a821ef"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7820)
-                        },
-                        new
-                        {
-                            LearningListId = new Guid("88f3ab00-ff8f-4b90-b00c-107284079276"),
-                            KnowledgeId = new Guid("8c57b1be-9f45-424c-8a38-6a99438f07cd"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7820)
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.PivotEntities.SubjectKnowledge", b =>
@@ -134,20 +92,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("KnowledgeId");
 
                     b.ToTable("SubjectKnowledges");
-
-                    b.HasData(
-                        new
-                        {
-                            SubjectId = new Guid("927a88f4-114a-46fb-ae0d-ac23772c5284"),
-                            KnowledgeId = new Guid("5a5fb990-9636-4ed8-ae0b-52a978a821ef"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7390)
-                        },
-                        new
-                        {
-                            SubjectId = new Guid("b4c4220e-c9fa-4fae-ae35-041e756d1224"),
-                            KnowledgeId = new Guid("8c57b1be-9f45-424c-8a38-6a99438f07cd"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7390)
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.PivotEntities.TrackSubject", b =>
@@ -166,20 +110,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("SubjectId");
 
                     b.ToTable("TrackSubjects");
-
-                    b.HasData(
-                        new
-                        {
-                            TrackId = new Guid("925aa2a2-3407-48b5-9c2d-652b74cec34a"),
-                            SubjectId = new Guid("927a88f4-114a-46fb-ae0d-ac23772c5284"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7360)
-                        },
-                        new
-                        {
-                            TrackId = new Guid("49a7c9f6-0406-49b1-9190-da476d8a3a0f"),
-                            SubjectId = new Guid("b4c4220e-c9fa-4fae-ae35-041e756d1224"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7360)
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.SingleIdEntities.Authentication", b =>
@@ -227,12 +157,21 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("17777d10-46a5-4d3c-a381-40055e563536"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(6450),
+                            Id = new Guid("e92a3508-d2be-4ab4-9316-b0825fff4551"),
+                            CreatedAt = new DateTime(2024, 12, 26, 3, 7, 37, 955, DateTimeKind.Utc).AddTicks(3420),
                             HashedPassword = "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg=",
                             IsActivated = true,
                             IsEmailConfirmed = true,
-                            UserId = new Guid("96d38ccc-cbae-4e68-bb50-f423dee7fb86")
+                            UserId = new Guid("dca6b17f-7007-43bd-9fae-754d2e42936f")
+                        },
+                        new
+                        {
+                            Id = new Guid("c7b91d5f-594a-4d63-8389-676afc445a22"),
+                            CreatedAt = new DateTime(2024, 12, 26, 3, 7, 37, 955, DateTimeKind.Utc).AddTicks(3530),
+                            HashedPassword = "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg=",
+                            IsActivated = true,
+                            IsEmailConfirmed = true,
+                            UserId = new Guid("11111111-1111-1111-1111-111111111111")
                         });
                 });
 
@@ -260,24 +199,6 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Games");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("1d6fa74e-c88f-4fcb-b7da-4f88f91c6f12"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7480),
-                            Description = "Description 1",
-                            ImageUrl = "image1.jpg",
-                            Name = "Game 1"
-                        },
-                        new
-                        {
-                            Id = new Guid("b7c255be-e122-458e-8664-7ce6f2383e76"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7490),
-                            Description = "Description 2",
-                            ImageUrl = "image2.jpg",
-                            Name = "Game 2"
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.SingleIdEntities.GameOption", b =>
@@ -313,64 +234,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("GameKnowledgeSubscriptionId");
 
                     b.ToTable("GameOptions");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("dd12808e-e97a-4254-bb93-a3f4dda5dca5"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7560),
-                            GameKnowledgeSubscriptionId = new Guid("7e718c47-2fd2-4eec-88bd-db9c28ca7cb2"),
-                            Group = 1,
-                            Type = 0,
-                            Value = "What is Value 1?"
-                        },
-                        new
-                        {
-                            Id = new Guid("0b98309a-65eb-4d70-a597-d96f54c30993"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7560),
-                            GameKnowledgeSubscriptionId = new Guid("7e718c47-2fd2-4eec-88bd-db9c28ca7cb2"),
-                            Group = 1,
-                            IsCorrect = true,
-                            Type = 1,
-                            Value = "Value 1"
-                        },
-                        new
-                        {
-                            Id = new Guid("412bfeb8-020f-438c-962c-2ce0734ace20"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7570),
-                            GameKnowledgeSubscriptionId = new Guid("7e718c47-2fd2-4eec-88bd-db9c28ca7cb2"),
-                            Group = 1,
-                            Type = 1,
-                            Value = "Wrong Value"
-                        },
-                        new
-                        {
-                            Id = new Guid("5119fa88-4ddf-4d5f-b58f-6d6afa9fdeed"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7570),
-                            GameKnowledgeSubscriptionId = new Guid("c2f9c8a4-af73-48d9-909e-47d292220f81"),
-                            Group = 2,
-                            Type = 0,
-                            Value = "What is Value 2?"
-                        },
-                        new
-                        {
-                            Id = new Guid("711b26ff-495b-4c55-8f4e-4e0c2ef8df92"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7580),
-                            GameKnowledgeSubscriptionId = new Guid("c2f9c8a4-af73-48d9-909e-47d292220f81"),
-                            Group = 2,
-                            IsCorrect = true,
-                            Type = 1,
-                            Value = "Value 2"
-                        },
-                        new
-                        {
-                            Id = new Guid("d3085699-c0db-4453-aa90-a9f2969c426a"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7580),
-                            GameKnowledgeSubscriptionId = new Guid("c2f9c8a4-af73-48d9-909e-47d292220f81"),
-                            Group = 2,
-                            Type = 1,
-                            Value = "Value 2"
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.SingleIdEntities.Knowledge", b =>
@@ -400,26 +263,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("CreatorId");
 
                     b.ToTable("Knowledges", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("5a5fb990-9636-4ed8-ae0b-52a978a821ef"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7230),
-                            CreatorId = new Guid("96d38ccc-cbae-4e68-bb50-f423dee7fb86"),
-                            Level = 0,
-                            Title = "Introduction to Algebra",
-                            Visibility = 0
-                        },
-                        new
-                        {
-                            Id = new Guid("8c57b1be-9f45-424c-8a38-6a99438f07cd"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7240),
-                            CreatorId = new Guid("96d38ccc-cbae-4e68-bb50-f423dee7fb86"),
-                            Level = 2,
-                            Title = "Introduction to Physics",
-                            Visibility = 0
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.SingleIdEntities.KnowledgeTopic", b =>
@@ -446,22 +289,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("ParentId");
 
                     b.ToTable("KnowledgeTopics", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("405a09dd-2964-440f-b1ad-058c1c222a6c"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7180),
-                            Order = 1,
-                            Title = "Algebra"
-                        },
-                        new
-                        {
-                            Id = new Guid("a1e62b54-2a47-492b-98b4-5d72a8b722e3"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7180),
-                            Order = 2,
-                            Title = "Physics"
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.SingleIdEntities.KnowledgeType", b =>
@@ -485,20 +312,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("ParentId");
 
                     b.ToTable("KnowledgeTypes", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("b0ce8d13-338e-4579-9078-e390147a3ee4"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7130),
-                            Name = "Theory"
-                        },
-                        new
-                        {
-                            Id = new Guid("f77de0fa-394f-4748-8441-a89d23b4fb4f"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7140),
-                            Name = "Practical"
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.SingleIdEntities.LearningHistory", b =>
@@ -532,28 +345,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("PlayedGameId");
 
                     b.ToTable("LearningHistories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("ad4df6a1-4f53-4129-8530-8718c414d13b"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7740),
-                            IsMemorized = true,
-                            LearningId = new Guid("522f4e6c-25ae-46b2-8db3-e9b7511fca2d"),
-                            LearningLevel = 0,
-                            PlayedGameId = new Guid("1d6fa74e-c88f-4fcb-b7da-4f88f91c6f12"),
-                            Score = 100
-                        },
-                        new
-                        {
-                            Id = new Guid("e3a724fa-4e89-4dde-afbd-fa7f227fd907"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7750),
-                            IsMemorized = false,
-                            LearningId = new Guid("bbec6258-de5d-4932-a456-511da53fe382"),
-                            LearningLevel = 1,
-                            PlayedGameId = new Guid("b7c255be-e122-458e-8664-7ce6f2383e76"),
-                            Score = 80
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.SingleIdEntities.LearningList", b =>
@@ -577,22 +368,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("LearnerId");
 
                     b.ToTable("LearningLists");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("e64cad03-3542-49eb-9c00-58a04f29940b"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7780),
-                            LearnerId = new Guid("96d38ccc-cbae-4e68-bb50-f423dee7fb86"),
-                            Title = "Learning List 1"
-                        },
-                        new
-                        {
-                            Id = new Guid("88f3ab00-ff8f-4b90-b00c-107284079276"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7790),
-                            LearnerId = new Guid("96d38ccc-cbae-4e68-bb50-f423dee7fb86"),
-                            Title = "Learning List 2"
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.SingleIdEntities.Material", b =>
@@ -627,26 +402,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("ParentId");
 
                     b.ToTable("Materials", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("90f4377d-d165-4e57-8e56-02573131c8af"),
-                            Content = "Video content about Algebra.",
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7310),
-                            KnowledgeId = new Guid("5a5fb990-9636-4ed8-ae0b-52a978a821ef"),
-                            Order = 1,
-                            Type = 5
-                        },
-                        new
-                        {
-                            Id = new Guid("01fccd72-2cb7-41a3-b500-4730b2c55756"),
-                            Content = "Article about Physics.",
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7320),
-                            KnowledgeId = new Guid("8c57b1be-9f45-424c-8a38-6a99438f07cd"),
-                            Order = 2,
-                            Type = 2
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.SingleIdEntities.PublicationRequest", b =>
@@ -670,22 +425,6 @@ namespace Infrastructure.Migrations
                         .IsUnique();
 
                     b.ToTable("PublicationRequests", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("96e508bf-7ded-4fe6-a772-b6bc717c9269"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7270),
-                            KnowledgeId = new Guid("5a5fb990-9636-4ed8-ae0b-52a978a821ef"),
-                            Status = 0
-                        },
-                        new
-                        {
-                            Id = new Guid("d0fbe966-749c-4f48-9632-517caadd3246"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7280),
-                            KnowledgeId = new Guid("8c57b1be-9f45-424c-8a38-6a99438f07cd"),
-                            Status = 1
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.SingleIdEntities.Subject", b =>
@@ -712,24 +451,6 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Subjects", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("927a88f4-114a-46fb-ae0d-ac23772c5284"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(6820),
-                            Description = "Study of numbers, shapes, and patterns.",
-                            Name = "Mathematics",
-                            Photo = "test.png"
-                        },
-                        new
-                        {
-                            Id = new Guid("b4c4220e-c9fa-4fae-ae35-041e756d1224"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(6830),
-                            Description = "Study of the physical and natural world.",
-                            Name = "Science",
-                            Photo = "test.png"
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.SingleIdEntities.Track", b =>
@@ -752,22 +473,6 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tracks", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("925aa2a2-3407-48b5-9c2d-652b74cec34a"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7080),
-                            Description = "A track focused on Mathematics.",
-                            Name = "Mathematics Track"
-                        },
-                        new
-                        {
-                            Id = new Guid("49a7c9f6-0406-49b1-9190-da476d8a3a0f"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7090),
-                            Description = "A track focused on Science.",
-                            Name = "Science Track"
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.SingleIdEntities.User", b =>
@@ -803,11 +508,19 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("96d38ccc-cbae-4e68-bb50-f423dee7fb86"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(6110),
+                            Id = new Guid("dca6b17f-7007-43bd-9fae-754d2e42936f"),
+                            CreatedAt = new DateTime(2024, 12, 26, 3, 7, 37, 955, DateTimeKind.Utc).AddTicks(3080),
                             Email = "testuser@example.com",
                             Role = 1,
                             UserName = "testuser"
+                        },
+                        new
+                        {
+                            Id = new Guid("11111111-1111-1111-1111-111111111111"),
+                            CreatedAt = new DateTime(2024, 12, 26, 3, 7, 37, 955, DateTimeKind.Utc).AddTicks(3150),
+                            Email = "admin@admin.admin",
+                            Role = 1,
+                            UserName = "admin"
                         });
                 });
 
@@ -839,22 +552,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("KnowledgeId");
 
                     b.ToTable("GameKnowledgeSubscriptions");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("7e718c47-2fd2-4eec-88bd-db9c28ca7cb2"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7520),
-                            GameId = new Guid("1d6fa74e-c88f-4fcb-b7da-4f88f91c6f12"),
-                            KnowledgeId = new Guid("5a5fb990-9636-4ed8-ae0b-52a978a821ef")
-                        },
-                        new
-                        {
-                            Id = new Guid("c2f9c8a4-af73-48d9-909e-47d292220f81"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7530),
-                            GameId = new Guid("b7c255be-e122-458e-8664-7ce6f2383e76"),
-                            KnowledgeId = new Guid("8c57b1be-9f45-424c-8a38-6a99438f07cd")
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.SingleIdPivotEntities.Learning", b =>
@@ -888,24 +585,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Learnings");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("522f4e6c-25ae-46b2-8db3-e9b7511fca2d"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7710),
-                            KnowledgeId = new Guid("5a5fb990-9636-4ed8-ae0b-52a978a821ef"),
-                            NextReviewDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = new Guid("96d38ccc-cbae-4e68-bb50-f423dee7fb86")
-                        },
-                        new
-                        {
-                            Id = new Guid("bbec6258-de5d-4932-a456-511da53fe382"),
-                            CreatedAt = new DateTime(2024, 11, 22, 11, 6, 55, 632, DateTimeKind.Utc).AddTicks(7710),
-                            KnowledgeId = new Guid("8c57b1be-9f45-424c-8a38-6a99438f07cd"),
-                            NextReviewDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = new Guid("96d38ccc-cbae-4e68-bb50-f423dee7fb86")
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.PivotEntities.KnowledgeTopicKnowledge", b =>

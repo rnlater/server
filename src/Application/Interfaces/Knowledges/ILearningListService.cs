@@ -11,6 +11,6 @@ namespace Application.Interfaces.Knowledges
         Task<Result<LearningListDto>> CreateLearningList(CreateLearningListParams Params);
         Task<Result<LearningListDto>> UpdateLearningList(UpdateLearningListParams Params);
         Task<Result<LearningListDto>> DeleteLearningList(Guid guid);
-        Task<Result<LearningListKnowledgeDto>> AddRemoveKnowledgeToLearningList(AddRemoveKnowledgeToLearningListParams Params);
+        Task<Result<List<LearningListKnowledgeDto>>> AddRemoveKnowledgesToLearningList(AddRemoveKnowledgesToLearningListParams Params);
     }
 }

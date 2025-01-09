@@ -1,8 +1,10 @@
 using Application.DTOs;
+using Application.DTOs.SingleIdPivotEntities;
 using AutoMapper;
 using Domain.Base;
 using Domain.Entities.PivotEntities;
 using Domain.Entities.SingleIdEntities;
+using Domain.Entities.SingleIdPivotEntities;
 using Domain.Enums;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
@@ -45,14 +47,14 @@ namespace Application.UseCases.Knowledges.LearningLists
 
                 var userId = UserExtractor.GetUserId(_httpContextAccessor);
                 var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
-                if (userId == null)
+                if (user == null)
                     return Result<LearningListDto>.Fail(ErrorMessage.UserNotFound);
 
-                if (learningList.LearnerId != userId.Value)
+                if (learningList.LearnerId != user.Id)
                     return Result<LearningListDto>.Fail(ErrorMessage.UserNotAuthorized);
 
                 var learningListKnowledgesToRemove = learningList.LearningListKnowledges
-                    .Where(llk => llk.Knowledge!.Visibility == KnowledgeVisibility.Private && llk.Knowledge.CreatorId != userId.Value)
+                    .Where(llk => llk.Knowledge!.Visibility == KnowledgeVisibility.Private && llk.Knowledge.CreatorId != user.Id)
                     .ToList();
                 foreach (var llk in learningListKnowledgesToRemove)
                 {
@@ -60,7 +62,35 @@ namespace Application.UseCases.Knowledges.LearningLists
                     learningList.LearningListKnowledges.Remove(llk);
                 }
 
-                return Result<LearningListDto>.Done(_mapper.Map<LearningListDto>(learningList));
+                var learningListDto = _mapper.Map<LearningListDto>(learningList);
+
+                var learningRepository = _unitOfWork.Repository<Learning>();
+                // ICollection<LearningDto> LearntKnowledges = [];
+                // ICollection<KnowledgeDto> NotLearntKnowledges = [];
+                foreach (var item in learningListDto.LearningListKnowledges)
+                {
+                    var learning = await learningRepository.Find(
+                        new BaseSpecification<Learning>(l => l.UserId == userId && l.KnowledgeId == item.KnowledgeId));
+                    var learningDto = _mapper.Map<LearningDto>(learning);
+                    item.Knowledge!.CurrentUserLearning = learningDto;
+
+                    // if (learning == null)
+                    //     NotLearntKnowledges.Add(item.Knowledge!);
+                    // else
+                    // {
+                    //     var learningDto = _mapper.Map<LearningDto>(learning);
+                    //     learningDto.Knowledge = item.Knowledge;
+                    //     LearntKnowledges.Add(learningDto);
+
+                    //     item.Knowledge!.CurrentUserLearning = learningDto;
+                    // }
+                }
+
+                // learningListDto.LearntKnowledges = LearntKnowledges;
+                // learningListDto.NotLearntKnowledges = NotLearntKnowledges;
+                // learningListDto.LearningListKnowledges = [];
+
+                return Result<LearningListDto>.Done(learningListDto);
             }
             catch (Exception)
             {

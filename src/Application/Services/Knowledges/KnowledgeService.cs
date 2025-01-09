@@ -14,6 +14,7 @@ namespace Application.Services.Knowledges
         private readonly UpdateKnowledgeUseCase _updateKnowledgeUseCase;
         private readonly DeleteKnowledgeUseCase _deleteKnowledgeUseCase;
         private readonly GetKnowledgesToLearnUseCase _getKnowledgesToLearnUseCase;
+        private readonly GetCreatedKnowledgesUseCase _getCreatedKnowledgesUseCase;
 
         public KnowledgeService(
             GetDetailedKnowledgeByGuidUseCase getDetailedKnowledgeByGuidUseCase,
@@ -22,7 +23,8 @@ namespace Application.Services.Knowledges
             CreateKnowledgeUseCase createKnowledgeUseCase,
             UpdateKnowledgeUseCase updateKnowledgeUseCase,
             DeleteKnowledgeUseCase deleteKnowledgeUseCase,
-            GetKnowledgesToLearnUseCase getKnowledgesToLearnUseCase
+            GetKnowledgesToLearnUseCase getKnowledgesToLearnUseCase,
+            GetCreatedKnowledgesUseCase getCreatedKnowledgesUseCase
         )
         {
             _getDetailedKnowledgeByGuidUseCase = getDetailedKnowledgeByGuidUseCase;
@@ -32,6 +34,7 @@ namespace Application.Services.Knowledges
             _updateKnowledgeUseCase = updateKnowledgeUseCase;
             _deleteKnowledgeUseCase = deleteKnowledgeUseCase;
             _getKnowledgesToLearnUseCase = getKnowledgesToLearnUseCase;
+            _getCreatedKnowledgesUseCase = getCreatedKnowledgesUseCase;
         }
 
         public Task<Result<KnowledgeDto>> CreateKnowledge(CreateKnowledgeParams Params)
@@ -64,9 +67,14 @@ namespace Application.Services.Knowledges
             return _getKnowledgesUseCase.Execute(Params);
         }
 
-        public Task<Result<List<Dictionary<Guid, KnowledgeDataToLearn>>>> GetKnowledgesToLearn(GetKnowledgesToLearnParams Params)
+        public Task<Result<List<List<KnowledgeDto>>>> GetKnowledgesToLearn(GetKnowledgesToLearnParams Params)
         {
             return _getKnowledgesToLearnUseCase.Execute(Params);
+        }
+
+        public Task<Result<IEnumerable<KnowledgeDto>>> GetCreatedKnowledges(GetCreatedKnowledgesParams Params)
+        {
+            return _getCreatedKnowledgesUseCase.Execute(Params);
         }
     }
 }

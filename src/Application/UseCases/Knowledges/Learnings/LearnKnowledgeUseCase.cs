@@ -11,25 +11,21 @@ using Shared.Utils;
 using Domain.Enums;
 using Domain.Entities.PivotEntities;
 using Application.DTOs.SingleIdPivotEntities;
-using Application.DTOs;
 
 namespace Application.UseCases.Knowledges.Learnings;
 
 public class LearnKnowledgeParams
 {
-    public Guid KnowledgeId;
-    public Guid CorrectGameOptionId;
-    public Guid GameOptionAnswerId;
-    public required string Interpretation;
-    public required string WordMatchAnswer;
-}
-public class LearntKnowledgeData
-{
-    public required LearningDto Learning { get; set; }
-    public List<LearningListKnowledgeDto>? LearningListKnowledges { get; set; }
+    public Guid KnowledgeId { get; set; }
+    public Guid QuestionIdOne { get; set; }
+    public required string AnswerOne { get; set; }
+    public Guid QuestionIdTwo { get; set; }
+    public required string AnswerTwo { get; set; }
+    public required string Interpretation { get; set; }
+    public required string WordMatchAnswer { get; set; }
 }
 
-public class LearnKnowledgeUseCase : IUseCase<Dictionary<Guid, LearntKnowledgeData>, List<LearnKnowledgeParams>>
+public class LearnKnowledgeUseCase : IUseCase<List<LearningDto>, List<LearnKnowledgeParams>>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
@@ -41,7 +37,7 @@ public class LearnKnowledgeUseCase : IUseCase<Dictionary<Guid, LearntKnowledgeDa
         _mapper = mapper;
         _httpContextAccessor = httpContextAccessor;
     }
-    public async Task<Result<Dictionary<Guid, LearntKnowledgeData>>> Execute(List<LearnKnowledgeParams> parameters)
+    public async Task<Result<List<LearningDto>>> Execute(List<LearnKnowledgeParams> parameters)
     {
         try
         {
@@ -58,53 +54,72 @@ public class LearnKnowledgeUseCase : IUseCase<Dictionary<Guid, LearntKnowledgeDa
             );
 
             if (knowledgesCount != parameters.Count)
-                return Result<Dictionary<Guid, LearntKnowledgeData>>.Fail(ErrorMessage.SomeKnowledgesNotFound);
+                return Result<List<LearningDto>>.Fail(ErrorMessage.SomeKnowledgesNotFound);
 
             var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
-            if (userId == null)
-                return Result<Dictionary<Guid, LearntKnowledgeData>>.Fail(ErrorMessage.UserNotFound);
+            if (user == null)
+                return Result<List<LearningDto>>.Fail(ErrorMessage.UserNotFound);
 
             var learningsCount = await learningRepository.Count(
                 new BaseSpecification<Learning>(l => l.UserId == userId && parameters.Select(gks => gks.KnowledgeId).Contains(l.KnowledgeId))
             );
             if (learningsCount != 0)
-                return Result<Dictionary<Guid, LearntKnowledgeData>>.Fail(ErrorMessage.SomeKnowledgesAlreadyLearned);
+                return Result<List<LearningDto>>.Fail(ErrorMessage.SomeKnowledgesAlreadyLearned);
 
-            Dictionary<Guid, LearntKnowledgeData> LearntKnowledgeData = [];
+            List<LearningDto> learningsResponse = [];
 
             foreach (var param in parameters)
             {
                 var score = 0;
 
-                var gameOptions = await gameOptionRepository.FindMany(
+                var isGuid1 = Guid.TryParse(param.AnswerOne, out var answerGuid1);
+                var QuestionOne = await gameOptionRepository.Find(
                     new BaseSpecification<GameOption>(go =>
-                        go.Id == param.GameOptionAnswerId
-                        || go.Id == param.CorrectGameOptionId)
+                        go.Id == param.QuestionIdOne)
+                    .ApplyTracking(true)
                     .AddInclude(query => query
                         .Include(go => go.GameKnowledgeSubscription!)
-                        .ThenInclude(gks => gks.Knowledge!)
-                        .ThenInclude(k => k.Materials))
+                        .ThenInclude(gks => gks.GameOptions!))
                 );
-                var correctGameOption = gameOptions.First(go => go.Id == param.CorrectGameOptionId);
+                var userAnswerOne = isGuid1
+                    ? QuestionOne!.GameKnowledgeSubscription!.GameOptions.FirstOrDefault(go => go.Group == QuestionOne.Group && go.Type == GameOptionType.Answer && go.Id == answerGuid1)
+                    : QuestionOne!.GameKnowledgeSubscription!.GameOptions.FirstOrDefault(go => go.Group == QuestionOne.Group && go.Type == GameOptionType.Answer && go.Value.ToLower().Equals(param.AnswerOne.ToLower()));
 
-                if (gameOptions == null
-                || gameOptions.Count() != 2
-                || correctGameOption.GameKnowledgeSubscription!.Knowledge!.Id != param.KnowledgeId
-                || !correctGameOption.GameKnowledgeSubscription!.Knowledge!.Materials.Select(m => m.Content).Contains(param.Interpretation))
+                var isGuid2 = Guid.TryParse(param.AnswerTwo, out var answerGuid2);
+                var QuestionTwo = await gameOptionRepository.Find(
+                    new BaseSpecification<GameOption>(go =>
+                        go.Id == param.QuestionIdTwo)
+                    .ApplyTracking(true)
+                    .AddInclude(query => query
+                        .Include(go => go.GameKnowledgeSubscription!)
+                        .ThenInclude(gks => gks.GameOptions!))
+                );
+                var userAnswerTwo = isGuid2
+                    ? QuestionTwo!.GameKnowledgeSubscription!.GameOptions.FirstOrDefault(go => go.Group == QuestionTwo.Group && go.Type == GameOptionType.Answer && go.Id == answerGuid2)
+                    : QuestionTwo!.GameKnowledgeSubscription!.GameOptions.FirstOrDefault(go => go.Group == QuestionTwo.Group && go.Type == GameOptionType.Answer && go.Value.ToLower().Equals(param.AnswerTwo.ToLower()));
+
+
+                if ((isGuid1 && isGuid2 && param.AnswerOne == param.AnswerTwo)
+                || QuestionOne == null
+                || QuestionTwo == null
+                || QuestionOne.GameKnowledgeSubscription!.KnowledgeId != param.KnowledgeId
+                || QuestionTwo.GameKnowledgeSubscription!.KnowledgeId != param.KnowledgeId
+                )
                 {
                     await _unitOfWork.RollBackChangesAsync();
-                    return Result<Dictionary<Guid, LearntKnowledgeData>>.Fail(ErrorMessage.InvalidData);
+                    return Result<List<LearningDto>>.Fail(ErrorMessage.InvalidData);
                 }
 
-                if (param.GameOptionAnswerId == param.CorrectGameOptionId)
-                    score += 50;
-
+                if (userAnswerOne != null && userAnswerOne.IsCorrect == true)
+                    score += 35;
+                if (userAnswerTwo != null && userAnswerTwo.IsCorrect == true)
+                    score += 35;
                 if (param.WordMatchAnswer == param.Interpretation)
-                    score += 50;
+                    score += 30;
 
                 var newLearning = new Learning
                 {
-                    UserId = userId.Value,
+                    UserId = user.Id,
                     KnowledgeId = param.KnowledgeId,
                     NextReviewDate = DateTime.Now + (score != 0 ? NeededReviewTime.Level0 : NeededReviewTime.NotMemorized),
                 };
@@ -114,8 +129,17 @@ public class LearnKnowledgeUseCase : IUseCase<Dictionary<Guid, LearntKnowledgeDa
                     {
                         LearningId = newLearning.Id,
                         LearningLevel = LearningLevel.LevelZero,
-                        IsMemorized = score != 0,
-                        PlayedGameId = correctGameOption.GameKnowledgeSubscription!.GameId,
+                        IsMemorized = score >= 35,
+                        PlayedGameId = QuestionOne.GameKnowledgeSubscription!.GameId,
+                        Score = score,
+                    });
+                await learningHistoryRepository.Add(
+                    new LearningHistory
+                    {
+                        LearningId = newLearning.Id,
+                        LearningLevel = LearningLevel.LevelZero,
+                        IsMemorized = score >= 35,
+                        PlayedGameId = QuestionTwo.GameKnowledgeSubscription!.GameId,
                         Score = score,
                     });
 
@@ -126,27 +150,22 @@ public class LearnKnowledgeUseCase : IUseCase<Dictionary<Guid, LearntKnowledgeDa
                         .Include(l => l.LearningHistories))
                 );
 
-                var learningListKnowledges = await learningListKnowledgeRepository.FindMany(
-                    new BaseSpecification<LearningListKnowledge>(llk => llk.KnowledgeId == param.KnowledgeId && llk.LearningList!.LearnerId == userId)
+                var learningListKnowledgeCount = await learningListKnowledgeRepository.Count(
+                    new BaseSpecification<LearningListKnowledge>(llk => llk.LearningList!.LearnerId == userId && llk.KnowledgeId == param.KnowledgeId)
                     .AddInclude(query => query.Include(llk => llk.LearningList!))
                 );
+                var learningDto = _mapper.Map<LearningDto>(newLearning);
+                learningDto.LearningListCount = learningListKnowledgeCount;
 
-                LearntKnowledgeData.Add(
-                    param.KnowledgeId,
-                    new LearntKnowledgeData
-                    {
-                        Learning = _mapper.Map<LearningDto>(newLearning),
-                        LearningListKnowledges = _mapper.Map<List<LearningListKnowledgeDto>>(learningListKnowledges)
-                    }
-                );
+                learningsResponse.Add(learningDto);
             }
 
-            return Result<Dictionary<Guid, LearntKnowledgeData>>.Done(LearntKnowledgeData);
+            return Result<List<LearningDto>>.Done(learningsResponse);
         }
         catch (Exception)
         {
             await _unitOfWork.RollBackChangesAsync();
-            return Result<Dictionary<Guid, LearntKnowledgeData>>.Fail(ErrorMessage.UnknownError);
+            return Result<List<LearningDto>>.Fail(ErrorMessage.UnknownError);
         }
     }
 }

@@ -1,4 +1,5 @@
 using Application.DTOs;
+using Application.Interfaces;
 using AutoMapper;
 using Domain.Base;
 using Domain.Entities.SingleIdEntities;
@@ -20,11 +21,13 @@ public class RegisterUseCase : IUseCase<UserDto, RegisterParams>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
+    private readonly IMailService _mailService;
 
-    public RegisterUseCase(IUnitOfWork unitOfWork, IMapper mapper)
+    public RegisterUseCase(IUnitOfWork unitOfWork, IMapper mapper, IMailService mailService)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
+        _mailService = mailService;
     }
 
     public async Task<Result<UserDto>> Execute(RegisterParams parameters)
@@ -34,8 +37,14 @@ public class RegisterUseCase : IUseCase<UserDto, RegisterParams>
             var userRepository = _unitOfWork.Repository<User>();
             var user = await userRepository.Find(
                 new BaseSpecification<User>(x => x.Email == parameters.Email)
+                .AddInclude(query => query.Include(x => x.Authentication!))
             );
-            if (user != null) return Result<UserDto>.Fail(ErrorMessage.UserAlreadyExistsWithSameEmail);
+            if (user != null)
+            {
+                if (user.Authentication != null && !user.Authentication.IsEmailConfirmed)
+                    return Result<UserDto>.Fail(ErrorMessage.EmailNotConfirmed);
+                return Result<UserDto>.Fail(ErrorMessage.UserAlreadyExistsWithSameEmail);
+            };
             var savedUser = await userRepository.Add(new User
             {
                 Email = parameters.Email,
@@ -43,21 +52,28 @@ public class RegisterUseCase : IUseCase<UserDto, RegisterParams>
             });
 
             var userAuthenticationRepository = _unitOfWork.Repository<Authentication>();
-            await userAuthenticationRepository.Add(new Authentication
+            var ConfirmationCode = Guid.NewGuid().ToString()[..6];
+            var authentication = new Authentication
             {
                 UserId = savedUser.Id,
                 HashedPassword = PasswordHasher.HashWithSHA256(parameters.Password),
-                ConfirmationCode = Guid.NewGuid().ToString()[..6],
+                ConfirmationCode = ConfirmationCode,
                 ConfirmationCodeExpiryTime = DateTime.UtcNow.AddMinutes(15),
                 IsEmailConfirmed = false,
                 IsActivated = true,
-            });
+            };
+            await userAuthenticationRepository.Add(authentication);
+            await _mailService.SendEmail(
+                savedUser.Email,
+                savedUser.UserName,
+                "Email Confirmation",
+                $"Your confirmation code is: {ConfirmationCode}"
+            );
 
-            var result = await userRepository.Find(
-                new BaseSpecification<User>(u => u.Id == savedUser.Id)
-                .AddInclude(query => query.Include(u => u.Authentication!)));
+            var userDto = _mapper.Map<UserDto>(savedUser);
+            userDto.ConfirmationCodeExpiryTime = authentication.ConfirmationCodeExpiryTime;
 
-            return Result<UserDto>.Done(_mapper.Map<UserDto>(result));
+            return Result<UserDto>.Done(userDto);
         }
         catch (Exception)
         {

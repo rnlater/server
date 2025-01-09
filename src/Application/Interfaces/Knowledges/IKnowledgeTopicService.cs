@@ -19,7 +19,7 @@ namespace Application.Interfaces.Knowledges
         /// </summary>
         /// <returns>Returns the result containing a list of knowledge topic DTOs if found, otherwise an error message.</returns>
         /// <exception cref="ErrorMessage.NoKnowledgeTopicsFound">Thrown when no knowledge topics are found.</exception>
-        Task<Result<IEnumerable<KnowledgeTopicDto>>> GetKnowledgeTopics();
+        Task<Result<IEnumerable<KnowledgeTopicDto>>> GetKnowledgeTopics(GetKnowledgeTopicsParams Params);
 
         /// <summary>
         /// Create a new knowledge topic.

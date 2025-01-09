@@ -1,6 +1,6 @@
 using Application.DTOs;
+using Application.Interfaces;
 using AutoMapper;
-using Domain.Base;
 using Domain.Entities.SingleIdEntities;
 using Domain.Interfaces;
 using Shared.Constants;
@@ -12,11 +12,13 @@ namespace Application.UseCases.Games
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IRedisCache _cache;
 
-        public GetAllGamesUseCase(IUnitOfWork unitOfWork, IMapper mapper)
+        public GetAllGamesUseCase(IUnitOfWork unitOfWork, IMapper mapper, IRedisCache cache)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _cache = cache;
         }
 
         public async Task<Result<IEnumerable<GameDto>>> Execute(NoParam nothing)
@@ -24,14 +26,22 @@ namespace Application.UseCases.Games
             try
             {
                 var gameRepository = _unitOfWork.Repository<Game>();
-                var games = await gameRepository.FindMany(new BaseSpecification<Game>());
 
-                if (!games.Any())
+                var gameDtos = await _cache.GetAsync<IEnumerable<GameDto>>($"{RedisCache.Keys.GetAllGames}");
+
+                if (gameDtos == null)
+                {
+                    var games = await gameRepository.GetAll();
+                    gameDtos = _mapper.Map<IEnumerable<GameDto>>(games);
+                    await _cache.SetAsync($"{RedisCache.Keys.GetAllGames}", gameDtos);
+                }
+
+                if (!gameDtos.Any())
                 {
                     return Result<IEnumerable<GameDto>>.Fail(ErrorMessage.NoGamesFound);
                 }
 
-                return Result<IEnumerable<GameDto>>.Done(_mapper.Map<IEnumerable<GameDto>>(games));
+                return Result<IEnumerable<GameDto>>.Done(gameDtos);
             }
             catch (Exception)
             {

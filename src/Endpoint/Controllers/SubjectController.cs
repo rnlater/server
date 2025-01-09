@@ -2,7 +2,9 @@ using
  Application.Interfaces;
 using Application.UseCases.Subjects;
 using AutoMapper;
+using Domain.Enums;
 using Endpoint.ApiRequests.Subjects;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Constants;
 
@@ -31,20 +33,24 @@ namespace Endpoint.Controllers
         }
 
         [HttpPost(HttpRoute.GetSubjects)]
-        // [Authorize]
-        public async Task<IActionResult> GetSubjects([FromBody] GetSubjectsRequest @params)
+        [Authorize]
+        public async Task<IActionResult> GetSubjects([FromBody] GetSubjectsRequest request)
         {
-            var Params = _mapper.Map<GetSubjectsParams>(@params);
+            var Params = _mapper.Map<GetSubjectsParams>(request);
 
             var result = await _subjectService.GetSubjects(Params);
 
             return result.IsSuccess
-                ? Ok(result.Value)
+                ? Ok(new
+                {
+                    data = result.Value,
+                    paging = result.Paging
+                })
                 : BadRequest(result.Errors);
         }
 
         [HttpGet(HttpRoute.GetSubjectById)]
-        // [Authorize]
+        [Authorize]
         public async Task<IActionResult> GetSubjectById(Guid id)
         {
             var result = await _subjectService.GetSubjectByGuid(id);
@@ -55,10 +61,10 @@ namespace Endpoint.Controllers
         }
 
         [HttpPost(HttpRoute.CreateSubject)]
-        // [Authorize(Roles = nameof(Role.Admin))]
-        public async Task<IActionResult> CreateSubject([FromForm] CreateSubjectRequest @params)
+        [Authorize(Roles = nameof(Role.Admin))]
+        public async Task<IActionResult> CreateSubject([FromForm] CreateSubjectRequest request)
         {
-            var Params = _mapper.Map<CreateSubjectParams>(@params);
+            var Params = _mapper.Map<CreateSubjectParams>(request);
 
             var result = await _subjectService.CreateSubject(Params);
 
@@ -68,10 +74,10 @@ namespace Endpoint.Controllers
         }
 
         [HttpPost(HttpRoute.UpdateSubject)]
-        // [Authorize(Roles = nameof(Role.Admin))]
-        public async Task<IActionResult> UpdateSubject([FromForm] UpdateSubjectRequest @params)
+        [Authorize(Roles = nameof(Role.Admin))]
+        public async Task<IActionResult> UpdateSubject([FromForm] UpdateSubjectRequest request)
         {
-            var Params = _mapper.Map<UpdateSubjectParams>(@params);
+            var Params = _mapper.Map<UpdateSubjectParams>(request);
 
             var result = await _subjectService.UpdateSubject(Params);
 
@@ -81,7 +87,7 @@ namespace Endpoint.Controllers
         }
 
         [HttpDelete(HttpRoute.DeleteSubject)]
-        // [Authorize(Roles = nameof(Role.Admin))]
+        [Authorize(Roles = nameof(Role.Admin))]
         public async Task<IActionResult> DeleteSubject(Guid id)
         {
             var result = await _subjectService.DeleteSubject(id);
@@ -92,10 +98,10 @@ namespace Endpoint.Controllers
         }
 
         [HttpPost(HttpRoute.CreateDeleteSubjectKnowledge)]
-        // [Authorize(Roles = nameof(Role.Admin))]
-        public async Task<IActionResult> CreateDeleteSubjectKnowledge([FromBody] CreateDeleteSubjectKnowledgeRequest @params)
+        [Authorize(Roles = nameof(Role.Admin))]
+        public async Task<IActionResult> CreateDeleteSubjectKnowledge([FromBody] CreateDeleteSubjectKnowledgeRequest request)
         {
-            var Params = _mapper.Map<CreateDeleteSubjectKnowledgeParams>(@params);
+            var Params = _mapper.Map<CreateDeleteSubjectKnowledgeParams>(request);
 
             var result = await _subjectService.CreateDeleteSubjectKnowledge(Params);
 

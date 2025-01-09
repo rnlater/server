@@ -1,4 +1,5 @@
 using Application.DTOs;
+using Application.Interfaces;
 using AutoMapper;
 using Domain.Base;
 using Domain.Entities.SingleIdEntities;
@@ -17,11 +18,13 @@ public class ForgotPasswordUseCase : IUseCase<UserDto, ForgotPasswordParams>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
+    private readonly IMailService _mailService;
 
-    public ForgotPasswordUseCase(IUnitOfWork unitOfWork, IMapper mapper)
+    public ForgotPasswordUseCase(IUnitOfWork unitOfWork, IMapper mapper, IMailService mailService)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
+        _mailService = mailService;
     }
 
     public async Task<Result<UserDto>> Execute(ForgotPasswordParams parameters)
@@ -29,6 +32,8 @@ public class ForgotPasswordUseCase : IUseCase<UserDto, ForgotPasswordParams>
         try
         {
             var userRepository = _unitOfWork.Repository<User>();
+            var authenticationRepository = _unitOfWork.Repository<Authentication>();
+
             var user = await userRepository.Find(
                 new BaseSpecification<User>(u => u.Email == parameters.Email)
                 .AddInclude(query => query.Include(u => u.Authentication!)));
@@ -40,11 +45,25 @@ public class ForgotPasswordUseCase : IUseCase<UserDto, ForgotPasswordParams>
             else if (!user.Authentication.IsActivated)
                 return Result<UserDto>.Fail(ErrorMessage.AccountIsLocked);
 
-            user.Authentication.ConfirmationCode = Guid.NewGuid().ToString()[..6];
-            user.Authentication.ConfirmationCodeExpiryTime = DateTime.UtcNow.AddMinutes(15);
-            await userRepository.Update(user);
+            var ConfirmationCode = Guid.NewGuid().ToString()[..6];
+            var authentication = user.Authentication;
+            authentication.User = null;
+            authentication.ConfirmationCode = ConfirmationCode;
+            authentication.ConfirmationCodeExpiryTime = DateTime.UtcNow.AddMinutes(15);
+            await authenticationRepository.Update(authentication);
 
-            return Result<UserDto>.Done(_mapper.Map<UserDto>(user));
+            user.Authentication = null;
+            await _mailService.SendEmail(
+                user.Email,
+                user.UserName,
+                "Reset Password",
+                $"Your confirmation code is {ConfirmationCode}"
+            );
+
+            var userDto = _mapper.Map<UserDto>(user);
+            userDto.ConfirmationCodeExpiryTime = authentication.ConfirmationCodeExpiryTime;
+
+            return Result<UserDto>.Done(userDto);
         }
         catch (Exception)
         {

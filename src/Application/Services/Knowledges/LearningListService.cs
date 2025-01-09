@@ -13,7 +13,7 @@ namespace Application.Services.Knowledges
         private readonly GetAllLearningListsUseCase _getAllLearningListsUseCase;
         private readonly UpdateLearningListUseCase _updateLearningListUseCase;
         private readonly DeleteLearningListUseCase _deleteLearningListUseCase;
-        private readonly AddRemoveKnowledgeToLearningListUseCase _addRemoveKnowledgeToLearningListUseCase;
+        private readonly AddRemoveKnowledgesToLearningListUseCase _AddRemoveKnowledgesToLearningListUseCase;
 
         public LearningListService(
             CreateLearningListUseCase createLearningListUseCase,
@@ -21,7 +21,7 @@ namespace Application.Services.Knowledges
             GetAllLearningListsUseCase getAllLearningListsUseCase,
             UpdateLearningListUseCase updateLearningListUseCase,
             DeleteLearningListUseCase deleteLearningListUseCase,
-            AddRemoveKnowledgeToLearningListUseCase addRemoveKnowledgeToLearningListUseCase
+            AddRemoveKnowledgesToLearningListUseCase AddRemoveKnowledgesToLearningListUseCase
         )
         {
             _createLearningListUseCase = createLearningListUseCase;
@@ -29,7 +29,7 @@ namespace Application.Services.Knowledges
             _getAllLearningListsUseCase = getAllLearningListsUseCase;
             _updateLearningListUseCase = updateLearningListUseCase;
             _deleteLearningListUseCase = deleteLearningListUseCase;
-            _addRemoveKnowledgeToLearningListUseCase = addRemoveKnowledgeToLearningListUseCase;
+            _AddRemoveKnowledgesToLearningListUseCase = AddRemoveKnowledgesToLearningListUseCase;
         }
 
         public Task<Result<LearningListDto>> CreateLearningList(CreateLearningListParams parameters)
@@ -37,9 +37,9 @@ namespace Application.Services.Knowledges
             return _createLearningListUseCase.Execute(parameters);
         }
 
-        public Task<Result<LearningListKnowledgeDto>> AddRemoveKnowledgeToLearningList(AddRemoveKnowledgeToLearningListParams parameters)
+        public Task<Result<List<LearningListKnowledgeDto>>> AddRemoveKnowledgesToLearningList(AddRemoveKnowledgesToLearningListParams parameters)
         {
-            return _addRemoveKnowledgeToLearningListUseCase.Execute(parameters);
+            return _AddRemoveKnowledgesToLearningListUseCase.Execute(parameters);
         }
 
         public Task<Result<IEnumerable<LearningListDto>>> GetAllLearningLists()

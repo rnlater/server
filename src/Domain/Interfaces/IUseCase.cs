@@ -19,9 +19,3 @@ public class NoParam
     /// </summary>
     public static NoParam Value { get; } = new NoParam();
 }
-
-public enum PivotSuccessModificationType
-{
-    Created,
-    Deleted
-}

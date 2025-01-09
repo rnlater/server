@@ -10,4 +10,5 @@ public class SubjectDto : SingleIdEntityDto
     public IEnumerable<TrackSubjectDto> TrackSubjects { get; set; } = [];
     public IEnumerable<SubjectKnowledgeDto> SubjectKnowledges { get; set; } = [];
     public int KnowledgeCount { get; set; }
+    public int UserLearningCount { get; set; }
 }

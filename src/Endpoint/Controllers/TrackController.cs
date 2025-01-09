@@ -1,7 +1,9 @@
 using Application.Interfaces;
 using Application.UseCases.Tracks;
 using AutoMapper;
+using Domain.Enums;
 using Endpoint.ApiRequests.Tracks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Constants;
 
@@ -30,7 +32,7 @@ namespace Endpoint.Controllers
         }
 
         [HttpGet(HttpRoute.GetDetailedTracks)]
-        // [Authorize(Roles = nameof(Role.User))]
+        [Authorize(Roles = nameof(Role.User))]
         public async Task<IActionResult> GetDetailedTracks()
         {
             var result = await _trackService.GetDetailedTracks();
@@ -41,20 +43,24 @@ namespace Endpoint.Controllers
         }
 
         [HttpPost(HttpRoute.GetTracks)]
-        // [Authorize(Roles = nameof(Role.Admin))]
-        public async Task<IActionResult> GetTracks([FromBody] GetTracksRequest @params)
+        [Authorize(Roles = nameof(Role.Admin))]
+        public async Task<IActionResult> GetTracks([FromBody] GetTracksRequest request)
         {
-            var Params = _mapper.Map<GetTracksParams>(@params);
+            var Params = _mapper.Map<GetTracksParams>(request);
 
             var result = await _trackService.GetTracks(Params);
 
             return result.IsSuccess
-                ? Ok(result.Value)
+                ? Ok(new
+                {
+                    data = result.Value,
+                    paging = result.Paging
+                })
                 : BadRequest(result.Errors);
         }
 
         [HttpGet(HttpRoute.GetTrackById)]
-        // [Authorize(Roles = nameof(Role.Admin))]
+        [Authorize]
         public async Task<IActionResult> GetTrackById(Guid id)
         {
             var result = await _trackService.GetTrackById(id);
@@ -65,10 +71,10 @@ namespace Endpoint.Controllers
         }
 
         [HttpPost(HttpRoute.CreateTrack)]
-        // [Authorize(Roles = nameof(Role.Admin))]
-        public async Task<IActionResult> CreateTrack([FromBody] CreateTrackRequest @params)
+        [Authorize(Roles = nameof(Role.Admin))]
+        public async Task<IActionResult> CreateTrack([FromBody] CreateTrackRequest request)
         {
-            var Params = _mapper.Map<CreateTrackParams>(@params);
+            var Params = _mapper.Map<CreateTrackParams>(request);
 
             var result = await _trackService.CreateTrack(Params);
 
@@ -78,10 +84,10 @@ namespace Endpoint.Controllers
         }
 
         [HttpPost(HttpRoute.UpdateTrack)]
-        // [Authorize(Roles = nameof(Role.Admin))]
-        public async Task<IActionResult> UpdateTrack([FromBody] UpdateTrackRequest @params)
+        [Authorize(Roles = nameof(Role.Admin))]
+        public async Task<IActionResult> UpdateTrack([FromBody] UpdateTrackRequest request)
         {
-            var Params = _mapper.Map<UpdateTrackParams>(@params);
+            var Params = _mapper.Map<UpdateTrackParams>(request);
 
             var result = await _trackService.UpdateTrack(Params);
 
@@ -91,7 +97,7 @@ namespace Endpoint.Controllers
         }
 
         [HttpDelete(HttpRoute.DeleteTrack)]
-        // [Authorize(Roles = nameof(Role.Admin))]
+        [Authorize(Roles = nameof(Role.Admin))]
         public async Task<IActionResult> DeleteTrack(Guid id)
         {
             var result = await _trackService.DeleteTrack(id);
@@ -102,10 +108,10 @@ namespace Endpoint.Controllers
         }
 
         [HttpPost(HttpRoute.CreateDeleteTrackSubject)]
-        // [Authorize(Roles = nameof(Role.Admin))]
-        public async Task<IActionResult> CreateDeleteTrackSubject([FromBody] CreateDeleteTrackSubjectRequest @params)
+        [Authorize(Roles = nameof(Role.Admin))]
+        public async Task<IActionResult> CreateDeleteTrackSubject([FromBody] CreateDeleteTrackSubjectRequest request)
         {
-            var Params = _mapper.Map<CreateDeleteTrackSubjectParams>(@params);
+            var Params = _mapper.Map<CreateDeleteTrackSubjectParams>(request);
 
             var result = await _trackService.CreateDeleteTrackSubject(Params);
 

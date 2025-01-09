@@ -3,6 +3,7 @@ using Application.UseCases.Knowledges.PublicationRequests;
 using AutoMapper;
 using Domain.Enums;
 using Endpoint.ApiRequests.Knowledges.PublicationRequests;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Constants;
 using Shared.Utils;
@@ -50,17 +51,21 @@ namespace Endpoint.Controllers.Knowledges
             return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
         }
 
-        [HttpGet(HttpRoute.GetPublicationRequests)]
-        // [Authorize(Roles = "Admin")]
+        [HttpPost(HttpRoute.GetPublicationRequests)]
+        [Authorize(Roles = nameof(Role.Admin))]
         public async Task<IActionResult> GetPublicationRequests([FromQuery] GetPublicationRequestsRequest request)
         {
             var parameters = _mapper.Map<GetPublicationRequestsParams>(request);
             var result = await _publicationRequestService.GetPublicationRequests(parameters);
-            return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
+            return result.IsSuccess ? Ok(new
+            {
+                data = result.Value,
+                paging = result.Paging
+            }) : BadRequest(result.Errors);
         }
 
         [HttpPost(HttpRoute.ApproveRejectPublicationRequest)]
-        // [Authorize(Roles = "Admin")]
+        [Authorize(Roles = nameof(Role.Admin))]
         public async Task<IActionResult> ApproveRejectPublicationRequest([FromBody] ApproveRejectPublicationRequestRequest request)
         {
             var parameters = _mapper.Map<ApproveRejectPublicationRequestParams>(request);
@@ -69,7 +74,7 @@ namespace Endpoint.Controllers.Knowledges
         }
 
         [HttpPost(HttpRoute.UpdateKnowledgeVisibility)]
-        // [Authorize(Roles = "Admin")]
+        [Authorize(Roles = nameof(Role.Admin))]
         public async Task<IActionResult> UpdateKnowledgeVisibility([FromBody] UpdateKnowledgeVisibilityRequest request)
         {
             var parameters = _mapper.Map<UpdateKnowledgeVisibilityParams>(request);

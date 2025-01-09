@@ -24,6 +24,7 @@ using Application.UseCases.Games.GameOptions;
 using Application.Interfaces.Games.GameOptions;
 using Application.UseCases.Knowledges.LearningLists;
 using Application.UseCases.Knowledges.PublicationRequests;
+using Application.UseCases.Profile;
 
 namespace Endpoint.Extensions;
 
@@ -44,19 +45,26 @@ public static class AppServiceCollectionExtensions
 
         services.AddScoped<IFileStorageService, FileStorageService>();
 
+        services.AddScoped<IMailService, MailService>();
+
         services.AddAutoMapper(typeof(MappingProfile));
 
         services.AddScoped<GenerateTokenPairUseCase>();
-        services.AddScoped<RenewAccessTokenUseCase>();
+        services.AddScoped<RenewTokenPairUseCase>();
         services.AddScoped<IJWTService, JwtService>();
 
         services.AddScoped<LoginUseCase>();
         services.AddScoped<RegisterUseCase>();
         services.AddScoped<ConfirmRegistrationEmailUseCase>();
         services.AddScoped<ForgotPasswordUseCase>();
+        services.AddScoped<ResendCodeUseCase>();
         services.AddScoped<ConfirmPasswordResettingEmailUseCase>();
         services.AddScoped<LogoutUseCase>();
         services.AddScoped<IAuthService, AuthService>();
+
+        services.AddScoped<GetProfileUseCase>();
+        services.AddScoped<UpdateProfileUseCase>();
+        services.AddScoped<IProfileService, ProfileService>();
 
         services.AddScoped<CreateDeleteTrackSubjectUseCase>();
         services.AddScoped<GetDetailedTracksUseCase>();
@@ -94,6 +102,7 @@ public static class AppServiceCollectionExtensions
         services.AddScoped<SearchKnowledgesUseCase>();
         services.AddScoped<GetKnowledgesUseCase>();
         services.AddScoped<GetDetailedKnowledgeByGuidUseCase>();
+        services.AddScoped<GetCreatedKnowledgesUseCase>();
         services.AddScoped<CreateKnowledgeUseCase>();
         services.AddScoped<UpdateKnowledgeUseCase>();
         services.AddScoped<DeleteKnowledgeUseCase>();
@@ -104,6 +113,7 @@ public static class AppServiceCollectionExtensions
         services.AddScoped<GetLearningsToReviewUseCase>();
         services.AddScoped<ReviewLearningUseCase>();
         services.AddScoped<GetCurrentUserLearningsUseCase>();
+        services.AddScoped<GetUnlistedLearningsUseCase>();
         services.AddScoped<ILearningService, LearningService>();
 
         services.AddScoped<CreateGameUseCase>();
@@ -125,7 +135,7 @@ public static class AppServiceCollectionExtensions
         services.AddScoped<GetLearningListByGuidUseCase>();
         services.AddScoped<GetAllLearningListsUseCase>();
         services.AddScoped<UpdateLearningListUseCase>();
-        services.AddScoped<AddRemoveKnowledgeToLearningListUseCase>();
+        services.AddScoped<AddRemoveKnowledgesToLearningListUseCase>();
         services.AddScoped<ILearningListService, LearningListService>();
 
         services.AddScoped<RequestPublishKnowledgeUseCase>();

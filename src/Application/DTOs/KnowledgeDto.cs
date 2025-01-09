@@ -22,8 +22,11 @@ public class KnowledgeDto : SingleIdEntityDto
     public ICollection<LearningDto> Learnings { get; set; } = [];
     public ICollection<GameKnowledgeSubscriptionDto> GameKnowledgeSubscriptions { get; set; } = [];
     public GameKnowledgeSubscriptionDto? GameToReview { get; set; }
+    public GameKnowledgeSubscriptionDto[]? GamesToLearn { get; set; }
     public ICollection<LearningListKnowledgeDto> LearningListKnowledges { get; set; } = [];
     public LearningDto? CurrentUserLearning { get; set; }
+
+    public string? DistinctInterpretation { get; set; }
 
     public void MergeArrangeMaterials()
     {

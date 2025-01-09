@@ -1,4 +1,5 @@
 using Application.DTOs;
+using Application.UseCases.JWT;
 using AutoMapper;
 using Domain.Base;
 using Domain.Entities.SingleIdEntities;
@@ -15,18 +16,20 @@ public class ConfirmPasswordResettingEmailParams
     public required string ConfirmationCode { get; set; }
     public required string Password { get; set; }
 }
-public class ConfirmPasswordResettingEmailUseCase : IUseCase<UserDto, ConfirmPasswordResettingEmailParams>
+public class ConfirmPasswordResettingEmailUseCase : IUseCase<(UserDto, JWTPairResponse), ConfirmPasswordResettingEmailParams>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
+    private readonly GenerateTokenPairUseCase _generateTokenPairUseCase;
 
-    public ConfirmPasswordResettingEmailUseCase(IUnitOfWork unitOfWork, IMapper mapper)
+    public ConfirmPasswordResettingEmailUseCase(IUnitOfWork unitOfWork, IMapper mapper, GenerateTokenPairUseCase generateTokenPairUseCase)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
+        _generateTokenPairUseCase = generateTokenPairUseCase;
     }
 
-    public async Task<Result<UserDto>> Execute(ConfirmPasswordResettingEmailParams parameters)
+    public async Task<Result<(UserDto, JWTPairResponse)>> Execute(ConfirmPasswordResettingEmailParams parameters)
     {
         try
         {
@@ -36,26 +39,36 @@ public class ConfirmPasswordResettingEmailUseCase : IUseCase<UserDto, ConfirmPas
                 .AddInclude(query => query.Include(u => u.Authentication!)));
 
             if (user == null || user.Authentication == null)
-                return Result<UserDto>.Fail(ErrorMessage.UserNotFoundWithEmail);
+                return Result<(UserDto, JWTPairResponse)>.Fail(ErrorMessage.UserNotFoundWithEmail);
             else if (user.Authentication.ConfirmationCode == null || user.Authentication.ConfirmationCodeExpiryTime == null)
-                return Result<UserDto>.Fail(ErrorMessage.EmailAlreadyConfirmed);
+                return Result<(UserDto, JWTPairResponse)>.Fail(ErrorMessage.EmailAlreadyConfirmed);
             else if (user.Authentication.ConfirmationCode != parameters.ConfirmationCode)
-                return Result<UserDto>.Fail(ErrorMessage.InvalidConfirmationCode);
+                return Result<(UserDto, JWTPairResponse)>.Fail(ErrorMessage.InvalidConfirmationCode);
             else if (user.Authentication.ConfirmationCodeExpiryTime < DateTime.UtcNow)
-                return Result<UserDto>.Fail(ErrorMessage.ConfirmationCodeExpired);
+                return Result<(UserDto, JWTPairResponse)>.Fail(ErrorMessage.ConfirmationCodeExpired);
             else if (!user.Authentication.IsActivated)
-                return Result<UserDto>.Fail(ErrorMessage.AccountIsLocked);
+                return Result<(UserDto, JWTPairResponse)>.Fail(ErrorMessage.AccountIsLocked);
 
-            user.Authentication.SetPassword(parameters.Password);
-            user.Authentication.ConfirmationCode = null;
-            user.Authentication.ConfirmationCodeExpiryTime = null;
-            await userRepository.Update(user);
+            var tokenPairResult = await _generateTokenPairUseCase.Execute(user);
+            if (!tokenPairResult.IsSuccess)
+                return Result<(UserDto, JWTPairResponse)>.Fail(tokenPairResult.Error);
+            var tokenPair = tokenPairResult.Value;
 
-            return Result<UserDto>.Done(_mapper.Map<UserDto>(user));
+            var authentication = user.Authentication;
+            authentication.User = null;
+            authentication.SetPassword(parameters.Password);
+            authentication.ConfirmationCode = null;
+            authentication.ConfirmationCodeExpiryTime = null;
+            authentication.RefreshToken = tokenPair.RefreshToken;
+            authentication.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
+            await _unitOfWork.Repository<Authentication>().Update(authentication);
+            user.Authentication = null;
+
+            return Result<(UserDto, JWTPairResponse)>.Done((_mapper.Map<UserDto>(user), tokenPairResult.Value));
         }
         catch (Exception)
         {
-            return Result<UserDto>.Fail(ErrorMessage.UnknownError);
+            return Result<(UserDto, JWTPairResponse)>.Fail(ErrorMessage.UnknownError);
         }
     }
 }

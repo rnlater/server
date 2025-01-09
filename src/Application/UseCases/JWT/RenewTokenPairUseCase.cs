@@ -1,27 +1,23 @@
-using Application.DTOs;
-using AutoMapper;
 using Domain.Base;
 using Domain.Entities.SingleIdEntities;
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using Shared.Config;
 using Shared.Constants;
 using Shared.Types;
 
 namespace Application.UseCases.JWT;
 
-public class RenewAccessTokenUseCase : AccessTokenGenerator, IUseCase<string, string>
+public class RenewTokenPairUseCase : IUseCase<JWTPairResponse, string>
 {
     private readonly IUnitOfWork _unitOfWork;
-    private readonly IMapper mapper;
-    public RenewAccessTokenUseCase(IUnitOfWork unitOfWork, IMapper mapper, IOptions<JwtSettings> jwtOptions) : base(jwtOptions)
+    private readonly GenerateTokenPairUseCase _generateTokenPairUseCase;
+    public RenewTokenPairUseCase(IUnitOfWork unitOfWork, GenerateTokenPairUseCase generateTokenPairUseCase)
     {
         _unitOfWork = unitOfWork;
-        this.mapper = mapper;
+        _generateTokenPairUseCase = generateTokenPairUseCase;
     }
 
-    public async Task<Result<string>> Execute(string refreshToken)
+    public async Task<Result<JWTPairResponse>> Execute(string refreshToken)
     {
         try
         {
@@ -34,20 +30,21 @@ public class RenewAccessTokenUseCase : AccessTokenGenerator, IUseCase<string, st
 
             if (authentication == null || user == null)
             {
-                return Result<string>.Fail(ErrorMessage.UserNotFound);
+                return Result<JWTPairResponse>.Fail(ErrorMessage.UserNotFound);
             }
             else if (authentication.RefreshTokenExpiryTime < DateTime.UtcNow)
             {
-                return Result<string>.Fail(ErrorMessage.RefreshTokenIsExpired);
+                return Result<JWTPairResponse>.Fail(ErrorMessage.RefreshTokenIsExpired);
             }
 
-            string accessToken = AccessToken(mapper.Map<UserDto>(user)!);
-
-            return Result<string>.Done(accessToken);
+            Result<JWTPairResponse> tokenPairResult = await _generateTokenPairUseCase.Execute(user);
+            return tokenPairResult;
         }
         catch
         {
-            return Result<string>.Fail(ErrorMessage.UnknownError);
+            return Result<JWTPairResponse>.Fail(ErrorMessage.UnknownError);
         }
     }
+
+
 }

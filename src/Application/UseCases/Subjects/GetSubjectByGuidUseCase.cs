@@ -1,5 +1,6 @@
 using Application.DTOs;
 using Application.DTOs.SingleIdPivotEntities;
+using Application.Interfaces;
 using AutoMapper;
 using Domain.Base;
 using Domain.Entities.SingleIdEntities;
@@ -19,12 +20,14 @@ public class GetSubjectByGuidUseCase : IUseCase<SubjectDto, Guid>
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
     private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly IRedisCache _cache;
 
-    public GetSubjectByGuidUseCase(IUnitOfWork unitOfWork, IMapper mapper, IHttpContextAccessor httpContextAccessor)
+    public GetSubjectByGuidUseCase(IUnitOfWork unitOfWork, IMapper mapper, IHttpContextAccessor httpContextAccessor, IRedisCache cache)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
         _httpContextAccessor = httpContextAccessor;
+        _cache = cache;
     }
 
     public async Task<Result<SubjectDto>> Execute(Guid id)
@@ -32,35 +35,51 @@ public class GetSubjectByGuidUseCase : IUseCase<SubjectDto, Guid>
         try
         {
             var subjectRepository = _unitOfWork.Repository<Subject>();
-            var subject = await subjectRepository.Find(
-                new BaseSpecification<Subject>(s => s.Id == id)
-                .AddInclude(query => query
+
+            var userId = UserExtractor.GetUserId(_httpContextAccessor);
+            var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
+            if (user == null)
+                return Result<SubjectDto>.Fail(ErrorMessage.UserNotFound);
+
+            var subjectDto = await _cache.GetAsync<SubjectDto>($"{RedisCache.Keys.GetSubjectByGuid}_{id}");
+            if (subjectDto == null)
+            {
+                var subject = await subjectRepository.Find(
+                    new BaseSpecification<Subject>(s => s.Id == id)
+                    .AddInclude(query => query
                     .Include(s => s.TrackSubjects)
                     .ThenInclude(ts => ts.Track!)
                     .Include(s => s.SubjectKnowledges)
                     .ThenInclude(sk => sk.Knowledge!)));
+                if (subject == null)
+                {
+                    return Result<SubjectDto>.Fail(ErrorMessage.NoSubjectFoundWithGuid);
+                }
 
-            if (subject == null)
-            {
-                return Result<SubjectDto>.Fail(ErrorMessage.NoSubjectFoundWithGuid);
+                if (!user!.IsAdmin)
+                {
+                    subject.SubjectKnowledges = subject.SubjectKnowledges
+                            .Where(sk => sk.Knowledge?.Visibility == KnowledgeVisibility.Public).ToList();
+                }
+
+                subjectDto = _mapper.Map<SubjectDto>(subject);
+
+                if (!user!.IsAdmin)
+                {
+                    subjectDto.SubjectKnowledges = subjectDto.SubjectKnowledges
+                            .Where(sk => sk.Knowledge?.Visibility == KnowledgeVisibility.Public.ToString());
+                    foreach (var item in subjectDto.SubjectKnowledges)
+                    {
+                        var userLearning = await _unitOfWork.Repository<Learning>().Find(
+                            new BaseSpecification<Learning>(ul => ul.UserId == userId && ul.KnowledgeId == item.Knowledge!.Id).AddInclude(query => query.Include(l => l.LearningHistories))
+                        );
+                        item.Knowledge!.CurrentUserLearning = userLearning == null ? null : _mapper.Map<LearningDto>(userLearning);
+                    }
+                    subjectDto.UserLearningCount = subjectDto.SubjectKnowledges.Count(sk => sk.Knowledge!.CurrentUserLearning != null);
+                }
+
+                await _cache.SetAsync($"{RedisCache.Keys.GetSubjectByGuid}_{id}", subjectDto);
             }
-
-            var userId = UserExtractor.GetUserId(_httpContextAccessor);
-            var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
-            if (userId == null)
-                return Result<SubjectDto>.Fail(ErrorMessage.UserNotFound);
-
-            if (!user!.IsAdmin) subject.SubjectKnowledges = subject.SubjectKnowledges
-                                    .Where(sk => sk.Knowledge?.Visibility == KnowledgeVisibility.Public).ToList();
-
-            var subjectDto = _mapper.Map<SubjectDto>(subject);
-            subjectDto.SubjectKnowledges.ToList().ForEach(async sk =>
-            {
-                var userLearning = await _unitOfWork.Repository<Learning>().Find(
-                        new BaseSpecification<Learning>(ul => ul.UserId == userId && ul.KnowledgeId == sk.Knowledge!.Id)
-                    );
-                sk.Knowledge!.CurrentUserLearning = userLearning == null ? null : _mapper.Map<LearningDto>(userLearning);
-            });
 
             return Result<SubjectDto>.Done(subjectDto);
         }

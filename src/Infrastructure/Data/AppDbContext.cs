@@ -27,8 +27,8 @@ namespace Infrastructure.Data
         public required DbSet<Learning> Learnings { get; set; }
         public required DbSet<LearningHistory> LearningHistories { get; set; }
         public required DbSet<Game> Games { get; set; }
-        public required DbSet<GameOption> GameOptions { get; set; }
         public required DbSet<GameKnowledgeSubscription> GameKnowledgeSubscriptions { get; set; }
+        public required DbSet<GameOption> GameOptions { get; set; }
         public required DbSet<LearningList> LearningLists { get; set; }
         public required DbSet<LearningListKnowledge> LearningListKnowledges { get; set; }
 
@@ -66,24 +66,24 @@ namespace Infrastructure.Data
         {
             modelBuilder.Entity<User>().HasData(SeedData.GetUsers());
             modelBuilder.Entity<Authentication>().HasData(SeedData.GetAuthentications());
-            modelBuilder.Entity<Subject>().HasData(SeedData.GetSubjects());
-            modelBuilder.Entity<Track>().HasData(SeedData.GetTracks());
-            modelBuilder.Entity<KnowledgeType>().HasData(SeedData.GetKnowledgeTypes());
-            modelBuilder.Entity<KnowledgeTopic>().HasData(SeedData.GetKnowledgeTopics());
-            modelBuilder.Entity<Knowledge>().HasData(SeedData.GetKnowledges());
-            modelBuilder.Entity<PublicationRequest>().HasData(SeedData.GetPublicationRequests());
-            modelBuilder.Entity<Material>().HasData(SeedData.GetMaterials());
-            modelBuilder.Entity<TrackSubject>().HasData(SeedData.GetTrackSubjects());
-            modelBuilder.Entity<SubjectKnowledge>().HasData(SeedData.GetSubjectKnowledges());
-            modelBuilder.Entity<KnowledgeTypeKnowledge>().HasData(SeedData.GetKnowledgeTypeKnowledges());
-            modelBuilder.Entity<KnowledgeTopicKnowledge>().HasData(SeedData.GetKnowledgeTopicKnowledges());
-            modelBuilder.Entity<Game>().HasData(SeedData.GetGames());
-            modelBuilder.Entity<GameKnowledgeSubscription>().HasData(SeedData.GetGameKnowledgeSubscriptions());
-            modelBuilder.Entity<GameOption>().HasData(SeedData.GetGameOptions());
-            modelBuilder.Entity<Learning>().HasData(SeedData.GetLearnings());
-            modelBuilder.Entity<LearningHistory>().HasData(SeedData.GetLearningHistories());
-            modelBuilder.Entity<LearningList>().HasData(SeedData.GetLearningLists());
-            modelBuilder.Entity<LearningListKnowledge>().HasData(SeedData.GetLearningListKnowledges());
+            // modelBuilder.Entity<Subject>().HasData(SeedData.GetSubjects());
+            // modelBuilder.Entity<Track>().HasData(SeedData.GetTracks());
+            // modelBuilder.Entity<KnowledgeType>().HasData(SeedData.GetKnowledgeTypes());
+            // modelBuilder.Entity<KnowledgeTopic>().HasData(SeedData.GetKnowledgeTopics());
+            // modelBuilder.Entity<Knowledge>().HasData(SeedData.GetKnowledges());
+            // modelBuilder.Entity<PublicationRequest>().HasData(SeedData.GetPublicationRequests());
+            // modelBuilder.Entity<Material>().HasData(SeedData.GetMaterials());
+            // modelBuilder.Entity<TrackSubject>().HasData(SeedData.GetTrackSubjects());
+            // modelBuilder.Entity<SubjectKnowledge>().HasData(SeedData.GetSubjectKnowledges());
+            // modelBuilder.Entity<KnowledgeTypeKnowledge>().HasData(SeedData.GetKnowledgeTypeKnowledges());
+            // modelBuilder.Entity<KnowledgeTopicKnowledge>().HasData(SeedData.GetKnowledgeTopicKnowledges());
+            // modelBuilder.Entity<Game>().HasData(SeedData.GetGames());
+            // modelBuilder.Entity<GameKnowledgeSubscription>().HasData(SeedData.GetGameKnowledgeSubscriptions());
+            // modelBuilder.Entity<GameOption>().HasData(SeedData.GetGameOptions());
+            // modelBuilder.Entity<Learning>().HasData(SeedData.GetLearnings());
+            // modelBuilder.Entity<LearningHistory>().HasData(SeedData.GetLearningHistories());
+            // modelBuilder.Entity<LearningList>().HasData(SeedData.GetLearningLists());
+            // modelBuilder.Entity<LearningListKnowledge>().HasData(SeedData.GetLearningListKnowledges());
         }
 
         #region ConfigureEntities

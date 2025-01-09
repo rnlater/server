@@ -6,6 +6,7 @@ public enum ErrorMessage
     NoChangeDetected,
     InvalidData,
     NoData,
+    EmailNotSent,
 
     #region File
 
@@ -22,6 +23,7 @@ public enum ErrorMessage
     AccountIsLocked,
     InvalidConfirmationCode,
     ConfirmationCodeExpired,
+    ConfirmationCodeNotExpired,
     EmailAlreadyConfirmed,
     UserAlreadyLoggedOut,
 
@@ -87,15 +89,18 @@ public enum ErrorMessage
     NoKnowledgeTopicsFound,
     KnowledgeTopicAlreadyExists,
 
+    NoInterpretationForKnowledge,
+
     KnowledgeAlreadyLearned,
     SomeKnowledgesAlreadyLearned,
     SomeKnowledgesHaveNotBeenLearned,
     SomeKnowledgesAreNotReadyToReview,
     KnowledgeNotReadyToReview,
     LearningNotFound,
+    NoLearningsFound,
     RequireLearningBeforeReview,
 
-    RequireExactTwoGames,
+    RequireTwoGamesToLearn,
     RequireAGameToReview,
     GameKnowledgeSubscriptionNotFound,
     GameKnowledgeSubscriptionAlreadyExists,

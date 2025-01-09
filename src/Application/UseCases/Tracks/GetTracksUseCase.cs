@@ -11,6 +11,8 @@ namespace Application.UseCases.Tracks;
 public class GetTracksParams
 {
     public string? Search { get; set; }
+    public int Page { get; set; } = 1;
+    public int PageSize { get; set; } = 10;
 }
 
 public class GetTracksUseCase : IUseCase<IEnumerable<TrackDto>, GetTracksParams>
@@ -31,14 +33,17 @@ public class GetTracksUseCase : IUseCase<IEnumerable<TrackDto>, GetTracksParams>
             var trackRepository = _unitOfWork.Repository<Track>();
 
             var tracks = await trackRepository
-                .FindMany(new BaseSpecification<Track>(t => parameters.Search == null || t.Name.Contains(parameters.Search)));
+                .FindMany(
+                    new BaseSpecification<Track>(t => parameters.Search == null || t.Name.Contains(parameters.Search))
+                    .ApplyPaging(parameters.Page, parameters.PageSize));
+            var trackCount = await trackRepository.Count();
 
             if (!tracks.Any())
             {
                 return Result<IEnumerable<TrackDto>>.Fail(ErrorMessage.NoTrackFoundWithSearch);
             }
 
-            return Result<IEnumerable<TrackDto>>.Done(tracks.Select(_mapper.Map<TrackDto>));
+            return Result<IEnumerable<TrackDto>>.Done(tracks.Select(_mapper.Map<TrackDto>), new Paging(parameters.Page, parameters.PageSize, trackCount));
         }
         catch (Exception)
         {

@@ -18,4 +18,5 @@ public class UserDto : SingleIdEntityDto
 
     public ICollection<LearningListDto> LearningLists { get; set; } = [];
 
+    public DateTime? ConfirmationCodeExpiryTime { get; set; }
 }

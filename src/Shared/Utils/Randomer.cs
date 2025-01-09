@@ -16,7 +16,28 @@ namespace Shared.Utils
             return [list[index]];
         }
 
-        public static List<List<T>> GetRandomGroups<T>(List<T> List, int maxGroupSize = 6, int minGroupSize = 4)
+        public static List<T> GetRandomElementsAsList<T>(List<T> list, int quantity)
+        {
+            if (list == null || list.Count == 0)
+            {
+                throw new ArgumentOutOfRangeException("The list cannot be null or empty.", nameof(list));
+            }
+
+            if (quantity < 1)
+            {
+                throw new ArgumentOutOfRangeException("The quantity must be greater than 0.", nameof(quantity));
+            }
+
+            if (quantity > list.Count)
+            {
+                throw new ArgumentOutOfRangeException("The quantity must be less than or equal to the list count.", nameof(quantity));
+            }
+
+            var shuffledList = list.OrderBy(_ => random.Next()).ToList();
+            return shuffledList.Take(quantity).ToList();
+        }
+
+        public static List<List<T>> GetRandomGroups<T>(List<T> List, int maxGroupSize = 4, int minGroupSize = 2)
         {
             var random = new Random();
             var Groups = new List<List<T>>();
@@ -54,7 +75,6 @@ namespace Shared.Utils
 
             return Groups;
         }
-
 
     }
 }

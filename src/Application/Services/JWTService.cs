@@ -1,22 +1,22 @@
 using Application.Interfaces;
 using Shared.Types;
 using Application.UseCases.JWT;
-using Application.DTOs;
+using Domain.Entities.SingleIdEntities;
 
 namespace Application.Services;
 
-public class JwtService(GenerateTokenPairUseCase generateTokenPairUseCase, RenewAccessTokenUseCase renewAccessTokenUseCase) : IJWTService
+public class JwtService(GenerateTokenPairUseCase generateTokenPairUseCase, RenewTokenPairUseCase renewTokenPairUseCase) : IJWTService
 {
     private readonly GenerateTokenPairUseCase _generateTokenPairUseCase = generateTokenPairUseCase;
-    private readonly RenewAccessTokenUseCase _renewAccessTokenUseCase = renewAccessTokenUseCase;
+    private readonly RenewTokenPairUseCase _renewTokenPairUseCase = renewTokenPairUseCase;
 
-    public Task<Result<(string, string)>> GenerateTokenPair(UserDto user)
+    public Task<Result<JWTPairResponse>> GenerateTokenPair(User user)
     {
         return _generateTokenPairUseCase.Execute(user);
     }
 
-    public Task<Result<string>> RenewAccessToken(string refreshToken)
+    public Task<Result<JWTPairResponse>> RenewTokenPair(string refreshToken)
     {
-        return _renewAccessTokenUseCase.Execute(refreshToken);
+        return _renewTokenPairUseCase.Execute(refreshToken);
     }
 }

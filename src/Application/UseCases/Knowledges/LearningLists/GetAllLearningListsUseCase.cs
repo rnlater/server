@@ -1,7 +1,9 @@
 using Application.DTOs;
 using AutoMapper;
 using Domain.Base;
+using Domain.Entities.PivotEntities;
 using Domain.Entities.SingleIdEntities;
+using Domain.Entities.SingleIdPivotEntities;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Shared.Constants;
@@ -29,14 +31,28 @@ namespace Application.UseCases.Knowledges.LearningLists
             {
                 var userId = UserExtractor.GetUserId(_httpContextAccessor);
                 var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
-                if (userId == null)
+                if (user == null)
                     return Result<IEnumerable<LearningListDto>>.Fail(ErrorMessage.UserNotFound);
 
                 var learningListRepository = _unitOfWork.Repository<LearningList>();
+                var learningListKnowledgeRepository = _unitOfWork.Repository<LearningListKnowledge>();
+                var learningRepository = _unitOfWork.Repository<Learning>();
+
                 var learningLists = await learningListRepository.FindMany(
                     new BaseSpecification<LearningList>(ll => ll.LearnerId == userId));
+                var LearntListDto = _mapper.Map<IEnumerable<LearningListDto>>(learningLists);
 
-                return Result<IEnumerable<LearningListDto>>.Done(_mapper.Map<IEnumerable<LearningListDto>>(learningLists));
+                foreach (var item in LearntListDto)
+                {
+                    var learningListKnowledge = await learningListKnowledgeRepository.FindMany(
+                        new BaseSpecification<LearningListKnowledge>(llk => llk.LearningListId == item.Id));
+                    var learningCount = await learningRepository.Count(
+                        new BaseSpecification<Learning>(l => l.UserId == userId && learningListKnowledge.Select(llk => llk.KnowledgeId).Contains(l.KnowledgeId)));
+                    item.LearntKnowledgeCount = learningCount;
+                    item.NotLearntKnowledgeCount = learningListKnowledge.Count() - learningCount;
+                }
+
+                return Result<IEnumerable<LearningListDto>>.Done(LearntListDto);
             }
             catch (Exception)
             {

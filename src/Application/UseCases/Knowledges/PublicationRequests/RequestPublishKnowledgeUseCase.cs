@@ -53,12 +53,20 @@ namespace Application.UseCases.Knowledges.PublicationRequests
                     return Result<PublicationRequestDto>.Fail(ErrorMessage.KnowledgeAlreadyRequestedForPublication);
 
                 var publicationRequestRepository = _unitOfWork.Repository<PublicationRequest>();
-                var publicationRequest = new PublicationRequest
-                {
-                    KnowledgeId = parameters.KnowledgeId
-                };
+                PublicationRequest publicationRequest;
 
-                publicationRequest = await publicationRequestRepository.Add(publicationRequest);
+                if (knowledge.PublicationRequest != null)
+                {
+                    publicationRequest = knowledge.PublicationRequest;
+                    publicationRequest.Status = PublicationRequestStatus.Pending;
+                    publicationRequest = await publicationRequestRepository.Update(publicationRequest);
+                }
+                else
+                    publicationRequest = await publicationRequestRepository.Add(new PublicationRequest
+                    {
+                        KnowledgeId = knowledge.Id,
+                    });
+
 
                 return Result<PublicationRequestDto>.Done(_mapper.Map<PublicationRequestDto>(publicationRequest));
             }

@@ -57,8 +57,10 @@ namespace UnitTests.Knowledges.Learnings
                 new LearnKnowledgeParams
                 {
                     KnowledgeId = Guid.NewGuid(),
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    CorrectGameOptionId1 = Guid.NewGuid(),
+                    GameOptionAnswerId1 = Guid.NewGuid(),
+                    CorrectGameOptionId2 = Guid.NewGuid(),
+                    GameOptionAnswerId2 = Guid.NewGuid(),
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -83,8 +85,10 @@ namespace UnitTests.Knowledges.Learnings
                 new LearnKnowledgeParams
                 {
                     KnowledgeId = Guid.NewGuid(),
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    CorrectGameOptionId1 = Guid.NewGuid(),
+                    GameOptionAnswerId1 = Guid.NewGuid(),
+                    CorrectGameOptionId2 = Guid.NewGuid(),
+                    GameOptionAnswerId2 = Guid.NewGuid(),
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -110,8 +114,10 @@ namespace UnitTests.Knowledges.Learnings
                 new LearnKnowledgeParams
                 {
                     KnowledgeId = Guid.NewGuid(),
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    CorrectGameOptionId1 = Guid.NewGuid(),
+                    GameOptionAnswerId1 = Guid.NewGuid(),
+                    CorrectGameOptionId2 = Guid.NewGuid(),
+                    GameOptionAnswerId2 = Guid.NewGuid(),
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -138,8 +144,10 @@ namespace UnitTests.Knowledges.Learnings
                 new LearnKnowledgeParams
                 {
                     KnowledgeId = knowledgeId,
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    CorrectGameOptionId1 = Guid.NewGuid(),
+                    GameOptionAnswerId1 = Guid.NewGuid(),
+                    CorrectGameOptionId2 = Guid.NewGuid(),
+                    GameOptionAnswerId2 = Guid.NewGuid(),
                     Interpretation = "Invalid Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -158,7 +166,7 @@ namespace UnitTests.Knowledges.Learnings
 
             var correctGameOption = new GameOption
             {
-                Id = parameters[0].CorrectGameOptionId,
+                Id = parameters[0].CorrectGameOptionId1,
                 Value = "",
                 GameKnowledgeSubscription = new GameKnowledgeSubscription
                 {
@@ -189,8 +197,10 @@ namespace UnitTests.Knowledges.Learnings
                 new LearnKnowledgeParams
                 {
                     KnowledgeId = knowledgeId,
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    CorrectGameOptionId1 = Guid.NewGuid(),
+                    GameOptionAnswerId1 = Guid.NewGuid(),
+                    CorrectGameOptionId2 = Guid.NewGuid(),
+                    GameOptionAnswerId2 = Guid.NewGuid(),
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -208,7 +218,7 @@ namespace UnitTests.Knowledges.Learnings
             };
             var correctGameOption = new GameOption
             {
-                Id = parameters[0].CorrectGameOptionId,
+                Id = parameters[0].CorrectGameOptionId1,
                 Value = "",
                 GameKnowledgeSubscription = new GameKnowledgeSubscription
                 {

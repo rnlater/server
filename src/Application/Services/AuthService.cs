@@ -1,6 +1,7 @@
 using Application.DTOs;
 using Application.Interfaces;
 using Application.UseCases.Auth;
+using Application.UseCases.JWT;
 using Domain.Interfaces;
 using Shared.Types;
 
@@ -10,6 +11,7 @@ public class AuthService(
     LoginUseCase loginUseCase,
     RegisterUseCase registerUseCase,
     ForgotPasswordUseCase forgotPasswordUseCase,
+    ResendCodeUseCase resendCodeUseCase,
     ConfirmRegistrationEmailUseCase confirmRegistrationEmailUseCase,
     ConfirmPasswordResettingEmailUseCase confirmPasswordResettingEmailUseCase,
     LogoutUseCase logoutUseCase) : IAuthService
@@ -17,11 +19,12 @@ public class AuthService(
     private readonly LoginUseCase loginUseCase = loginUseCase;
     private readonly RegisterUseCase registerUseCase = registerUseCase;
     private readonly ForgotPasswordUseCase forgotPasswordUseCase = forgotPasswordUseCase;
+    private readonly ResendCodeUseCase resendCodeUseCase = resendCodeUseCase;
     private readonly ConfirmRegistrationEmailUseCase confirmRegistrationEmailUseCase = confirmRegistrationEmailUseCase;
     private readonly ConfirmPasswordResettingEmailUseCase confirmPasswordResettingEmailUseCase = confirmPasswordResettingEmailUseCase;
     private readonly LogoutUseCase logoutUseCase = logoutUseCase;
 
-    public Task<Result<UserDto>> Login(LoginParams Params)
+    public Task<Result<(UserDto, JWTPairResponse)>> Login(LoginParams Params)
     {
         return loginUseCase.Execute(Params);
 
@@ -32,7 +35,7 @@ public class AuthService(
         return registerUseCase.Execute(Params);
     }
 
-    public Task<Result<UserDto>> ConfirmRegistrationEmail(ConfirmRegistrationEmailParams Params)
+    public Task<Result<(UserDto, JWTPairResponse)>> ConfirmRegistrationEmail(ConfirmRegistrationEmailParams Params)
     {
         return confirmRegistrationEmailUseCase.Execute(Params);
     }
@@ -42,7 +45,7 @@ public class AuthService(
         return forgotPasswordUseCase.Execute(Params);
     }
 
-    public Task<Result<UserDto>> ConfirmPasswordResettingEmail(ConfirmPasswordResettingEmailParams Params)
+    public Task<Result<(UserDto, JWTPairResponse)>> ConfirmPasswordResettingEmail(ConfirmPasswordResettingEmailParams Params)
     {
         return confirmPasswordResettingEmailUseCase.Execute(Params);
     }
@@ -50,5 +53,10 @@ public class AuthService(
     public Task<Result<UserDto>> Logout()
     {
         return logoutUseCase.Execute(NoParam.Value);
+    }
+
+    public Task<Result<UserDto>> ResendCode(ResendCodeParams Params)
+    {
+        return resendCodeUseCase.Execute(Params);
     }
 }

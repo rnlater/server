@@ -13,7 +13,7 @@ using Shared.Constants;
 
 namespace UnitTests.Knowledges.LearningLists
 {
-    public class AddRemoveKnowledgeToLearningListUseCaseTest
+    public class AddRemoveKnowledgesToLearningListUseCaseTest
     {
         private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<IRepository<LearningListKnowledge>> _learningListKnowledgeRepositoryMock;
@@ -21,9 +21,9 @@ namespace UnitTests.Knowledges.LearningLists
         private readonly Mock<IRepository<Knowledge>> _KnowledgeRepositoryMock;
         private readonly Mock<IHttpContextAccessor> _httpContextAccessorMock;
         private readonly IMapper _mapper;
-        private readonly AddRemoveKnowledgeToLearningListUseCase _addRemoveKnowledgeToLearningListUseCase;
+        private readonly AddRemoveKnowledgesToLearningListUseCase _AddRemoveKnowledgesToLearningListUseCase;
 
-        public AddRemoveKnowledgeToLearningListUseCaseTest()
+        public AddRemoveKnowledgesToLearningListUseCaseTest()
         {
             _unitOfWorkMock = new Mock<IUnitOfWork>();
             _learningListKnowledgeRepositoryMock = new Mock<IRepository<LearningListKnowledge>>();
@@ -36,14 +36,14 @@ namespace UnitTests.Knowledges.LearningLists
             _unitOfWorkMock.Setup(u => u.Repository<Knowledge>()).Returns(_KnowledgeRepositoryMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<User>()).Returns(_userRepositoryMock.Object);
 
-            _addRemoveKnowledgeToLearningListUseCase = new AddRemoveKnowledgeToLearningListUseCase(_unitOfWorkMock.Object, _mapper, _httpContextAccessorMock.Object);
+            _AddRemoveKnowledgesToLearningListUseCase = new AddRemoveKnowledgesToLearningListUseCase(_unitOfWorkMock.Object, _mapper, _httpContextAccessorMock.Object);
         }
 
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenUserNotFound()
         {
             // Arrange
-            var parameters = new AddRemoveKnowledgeToLearningListParams
+            var parameters = new AddRemoveKnowledgesToLearningListParams
             {
                 LearningListId = Guid.NewGuid(),
                 KnowledgeId = Guid.NewGuid()
@@ -52,7 +52,7 @@ namespace UnitTests.Knowledges.LearningLists
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns((Claim?)null);
 
             // Act
-            var result = await _addRemoveKnowledgeToLearningListUseCase.Execute(parameters);
+            var result = await _AddRemoveKnowledgesToLearningListUseCase.Execute(parameters);
 
             // Assert
             Assert.False(result.IsSuccess);
@@ -63,7 +63,7 @@ namespace UnitTests.Knowledges.LearningLists
         public async Task Execute_ShouldReturnFail_WhenUserNotLearner()
         {
             // Arrange
-            var parameters = new AddRemoveKnowledgeToLearningListParams
+            var parameters = new AddRemoveKnowledgesToLearningListParams
             {
                 LearningListId = Guid.NewGuid(),
                 KnowledgeId = Guid.NewGuid()
@@ -87,7 +87,7 @@ namespace UnitTests.Knowledges.LearningLists
 
 
             // Act
-            var result = await _addRemoveKnowledgeToLearningListUseCase.Execute(parameters);
+            var result = await _AddRemoveKnowledgesToLearningListUseCase.Execute(parameters);
 
             // Assert
             Assert.False(result.IsSuccess);
@@ -98,7 +98,7 @@ namespace UnitTests.Knowledges.LearningLists
         public async Task Execute_ShouldReturnFail_WhenUserNotCreatorOfPrivateKnowledge()
         {
             // Arrange
-            var parameters = new AddRemoveKnowledgeToLearningListParams
+            var parameters = new AddRemoveKnowledgesToLearningListParams
             {
                 LearningListId = Guid.NewGuid(),
                 KnowledgeId = Guid.NewGuid()
@@ -119,7 +119,7 @@ namespace UnitTests.Knowledges.LearningLists
             _KnowledgeRepositoryMock.Setup(r => r.GetById(It.IsAny<Guid>())).ReturnsAsync(knowledge);
 
             // Act
-            var result = await _addRemoveKnowledgeToLearningListUseCase.Execute(parameters);
+            var result = await _AddRemoveKnowledgesToLearningListUseCase.Execute(parameters);
 
             // Assert
             Assert.False(result.IsSuccess);
@@ -130,7 +130,7 @@ namespace UnitTests.Knowledges.LearningLists
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgeIsRemovedFromLearningList()
         {
             // Arrange
-            var parameters = new AddRemoveKnowledgeToLearningListParams
+            var parameters = new AddRemoveKnowledgesToLearningListParams
             {
                 LearningListId = Guid.NewGuid(),
                 KnowledgeId = Guid.NewGuid()
@@ -155,7 +155,7 @@ namespace UnitTests.Knowledges.LearningLists
             _learningListKnowledgeRepositoryMock.Setup(r => r.Delete(It.IsAny<LearningListKnowledge>())).ReturnsAsync(learningListKnowledge);
 
             // Act
-            var result = await _addRemoveKnowledgeToLearningListUseCase.Execute(parameters);
+            var result = await _AddRemoveKnowledgesToLearningListUseCase.Execute(parameters);
 
             // Assert
             Assert.True(result.IsSuccess);
@@ -168,7 +168,7 @@ namespace UnitTests.Knowledges.LearningLists
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgeIsAddedToLearningList()
         {
             // Arrange
-            var parameters = new AddRemoveKnowledgeToLearningListParams
+            var parameters = new AddRemoveKnowledgesToLearningListParams
             {
                 LearningListId = Guid.NewGuid(),
                 KnowledgeId = Guid.NewGuid()
@@ -200,7 +200,7 @@ namespace UnitTests.Knowledges.LearningLists
             _KnowledgeRepositoryMock.Setup(r => r.GetById(It.IsAny<Guid>())).ReturnsAsync(learningListKnowledge.Knowledge);
 
             // Act
-            var result = await _addRemoveKnowledgeToLearningListUseCase.Execute(parameters);
+            var result = await _AddRemoveKnowledgesToLearningListUseCase.Execute(parameters);
 
             // Assert
             Assert.True(result.IsSuccess);

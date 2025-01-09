@@ -14,8 +14,16 @@ public class HttpRoute
     public const string Register = "register";
     public const string ConfirmRegistrationEmail = "confirm-registration-email";
     public const string ForgotPassword = "forgot-password";
+    public const string ResendCode = "resend-confirmation-code";
     public const string ConfirmPasswordResettingEmail = "confirm-password-resetting-email";
     public const string Logout = "logout";
+
+    #endregion
+
+    #region Profile
+
+    public const string GetProfile = "get";
+    public const string UpdateProfile = "update";
 
     #endregion
 
@@ -47,6 +55,7 @@ public class HttpRoute
 
     public const string SearchKnowledges = "search";
     public const string GetKnowledges = "list";
+    public const string GetCreatedKnowledges = "list-created";
     public const string GetDetailedKnowledgeByGuid = "detailed/{id}";
     public const string CreateKnowledge = "create";
     public const string UpdateKnowledge = "update";
@@ -84,6 +93,7 @@ public class HttpRoute
     public const string GetLearningsToReview = "to-review";
     public const string ReviewLearning = "review";
     public const string GetCurrentUserLearnings = "get-learnings";
+    public const string GetUnlistedLearnings = "get-unlisted-learnings";
 
     #endregion
 
@@ -111,7 +121,7 @@ public class HttpRoute
 
     public const string CreateLearningList = "create";
     public const string UpdateLearningList = "update";
-    public const string AddRemoveKnowledgeToLearningList = "add-remove-knowledge";
+    public const string AddRemoveKnowledgesToLearningList = "add-remove-knowledges";
     public const string GetAllLearningLists = "list";
     public const string GetLearningListByGuid = "detailed/{id}";
     public const string DeleteLearningList = "delete/{id}";
@@ -121,7 +131,7 @@ public class HttpRoute
     #region PublicationRequest
 
     public const string RequestPublishKnowledge = "request-publish";
-    public const string DeletePublicationRequest = "delete-request";
+    public const string DeletePublicationRequest = "delete-request/{id}";
     public const string GetPublicationRequests = "get-requests";
     public const string ApproveRejectPublicationRequest = "approve-reject";
     public const string UpdateKnowledgeVisibility = "update-visibility";

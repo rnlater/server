@@ -12,6 +12,8 @@ namespace Application.UseCases.Knowledges
     public class GetKnowledgesParams
     {
         public string? Search { get; set; }
+        public int Page { get; set; } = 1;
+        public int PageSize { get; set; } = 10;
     }
 
     public class GetKnowledgesUseCase : IUseCase<IEnumerable<KnowledgeDto>, GetKnowledgesParams>
@@ -33,7 +35,9 @@ namespace Application.UseCases.Knowledges
 
                 var specification = new BaseSpecification<Knowledge>(
                     k => string.IsNullOrEmpty(parameters.Search) || k.Title.Contains(parameters.Search)
-                ).AddInclude(query => query.Include(k => k.Materials));
+                )
+                .AddInclude(query => query.Include(k => k.Materials))
+                .ApplyPaging(parameters.Page, parameters.PageSize);
 
                 var knowledges = await knowledgeRepository.FindMany(specification);
 
@@ -41,8 +45,9 @@ namespace Application.UseCases.Knowledges
                 {
                     return Result<IEnumerable<KnowledgeDto>>.Fail(ErrorMessage.NoKnowledgesFound);
                 }
+                var knowledgeCount = await knowledgeRepository.Count();
 
-                return Result<IEnumerable<KnowledgeDto>>.Done(knowledges.Select(_mapper.Map<KnowledgeDto>));
+                return Result<IEnumerable<KnowledgeDto>>.Done(knowledges.Select(_mapper.Map<KnowledgeDto>), new Paging(parameters.Page, parameters.PageSize, knowledgeCount));
             }
             catch (Exception)
             {

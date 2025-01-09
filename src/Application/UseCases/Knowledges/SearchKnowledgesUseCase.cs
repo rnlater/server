@@ -1,7 +1,9 @@
 using Application.DTOs;
+using Application.DTOs.SingleIdPivotEntities;
 using AutoMapper;
 using Domain.Base;
 using Domain.Entities.SingleIdEntities;
+using Domain.Entities.SingleIdPivotEntities;
 using Domain.Enums;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
@@ -102,33 +104,41 @@ namespace Application.UseCases.Knowledges
                         .ThenInclude(kt => kt.Children)
                         .Include(k => k.KnowledgeTopicKnowledges)
                         .ThenInclude(ktk => ktk.KnowledgeTopic!)
-                        .ThenInclude(kt => kt.Children))
-                    .ApplyPaging(parameters.Page, parameters.PageSize);
+                        .ThenInclude(kt => kt.Children));
+                if (!string.IsNullOrEmpty(parameters.SearchTerm))
+                    specification.AddOrderByDescending(k => k.Title.Equals(parameters.SearchTerm));
+                else
+                    switch (parameters.OrderBy)
+                    {
+                        case SearchKnowledgesParams.OrderByType.Date:
+                            if (parameters.Ascending)
+                                specification.AddOrderBy(k => k.CreatedAt);
+                            else
+                                specification.AddOrderByDescending(k => k.CreatedAt);
+                            break;
+                        case SearchKnowledgesParams.OrderByType.Title:
+                            if (parameters.Ascending)
+                                specification.AddOrderBy(k => k.Title);
+                            else
+                                specification.AddOrderByDescending(k => k.Title);
+                            break;
+                    }
 
-                switch (parameters.OrderBy)
-                {
-                    case SearchKnowledgesParams.OrderByType.Date:
-                        if (parameters.Ascending)
-                            specification.AddOrderBy(k => k.CreatedAt);
-                        else
-                            specification.AddOrderByDescending(k => k.CreatedAt);
-                        break;
-                    case SearchKnowledgesParams.OrderByType.Title:
-                        if (parameters.Ascending)
-                            specification.AddOrderBy(k => k.Title);
-                        else
-                            specification.AddOrderByDescending(k => k.Title);
-                        break;
-                }
-
-                var knowledges = await knowledgeRepository.FindMany(specification);
+                var knowledgeCount = await knowledgeRepository.Count(specification);
+                var knowledges = await knowledgeRepository.FindMany(specification.ApplyPaging(parameters.Page, parameters.PageSize));
 
                 if (!knowledges.Any())
-                {
                     return Result<IEnumerable<KnowledgeDto>>.Fail(ErrorMessage.NoKnowledgesFound);
+
+                var knowledgeDtos = _mapper.Map<IEnumerable<KnowledgeDto>>(knowledges);
+                foreach (var knowledgeDto in knowledgeDtos.ToList())
+                {
+                    var learning = await _unitOfWork.Repository<Learning>().Find(
+                        new BaseSpecification<Learning>(l => l.KnowledgeId == knowledgeDto.Id && l.UserId == userId));
+                    knowledgeDto.CurrentUserLearning = learning == null ? null : _mapper.Map<LearningDto>(learning);
                 }
 
-                return Result<IEnumerable<KnowledgeDto>>.Done(knowledges.Select(_mapper.Map<KnowledgeDto>));
+                return Result<IEnumerable<KnowledgeDto>>.Done(knowledgeDtos, new Paging(parameters.Page, parameters.PageSize, knowledgeCount));
             }
             catch (Exception)
             {

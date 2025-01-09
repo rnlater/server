@@ -5,6 +5,7 @@ using Domain.Base;
 using Domain.Entities.SingleIdEntities;
 using Domain.Interfaces;
 using Infrastructure.Data;
+using Microsoft.AspNetCore.Http;
 using Moq;
 using Shared.Constants;
 
@@ -14,6 +15,7 @@ namespace UnitTests.Tracks
     {
         private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<IRepository<Track>> _trackRepositoryMock;
+        private readonly Mock<IHttpContextAccessor> _httpContextAccessorMock;
         private readonly IMapper _mapper;
         private readonly GetTrackByGuidUseCase _getTrackByGuidUseCase;
 
@@ -21,11 +23,12 @@ namespace UnitTests.Tracks
         {
             _unitOfWorkMock = new Mock<IUnitOfWork>();
             _trackRepositoryMock = new Mock<IRepository<Track>>();
+            _httpContextAccessorMock = new Mock<IHttpContextAccessor>();
             _mapper = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>()).CreateMapper();
 
             _unitOfWorkMock.Setup(u => u.Repository<Track>()).Returns(_trackRepositoryMock.Object);
 
-            _getTrackByGuidUseCase = new GetTrackByGuidUseCase(_unitOfWorkMock.Object, _mapper);
+            _getTrackByGuidUseCase = new GetTrackByGuidUseCase(_unitOfWorkMock.Object, _mapper, _httpContextAccessorMock.Object);
         }
 
         [Fact]

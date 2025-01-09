@@ -29,10 +29,6 @@ using (var scope = host.Services.CreateScope())
     {
         await context.Tracks.AddAsync(InitialData.trackFive);
     }
-    if (!context.KnowledgeTypes.Any(kt => kt.Id == InitialData.knowledgeType.Id))
-    {
-        await context.KnowledgeTypes.AddAsync(InitialData.knowledgeType);
-    }
     if (!context.Games.Any(g => g.Id == InitialData.gameChoose.Id))
     {
         await context.Games.AddAsync(InitialData.gameChoose);
@@ -41,6 +37,11 @@ using (var scope = host.Services.CreateScope())
     {
         await context.Games.AddAsync(InitialData.gameFill);
     }
+    if (!context.Games.Any(g => g.Id == InitialData.gameArrange.Id))
+    {
+        await context.Games.AddAsync(InitialData.gameArrange);
+    }
+
     foreach (var item in InitialData.knowledgeTypes)
     {
         if (!context.KnowledgeTypes.Any(kt => kt.Id == item.Id))

@@ -2,12 +2,15 @@ using Domain.Entities.PivotEntities;
 using Domain.Entities.SingleIdEntities;
 using Domain.Entities.SingleIdPivotEntities;
 using Domain.Enums;
+using Shared.Constants;
 using Shared.Utils;
 
 namespace Infrastructure.Data;
 public static class SeedData
 {
     public static readonly Guid UserId = Guid.NewGuid();
+    public static readonly Guid AdminId = GuidConstants.Admin;
+
     public static User[] GetUsers() => new[]
     {
         new User
@@ -15,6 +18,11 @@ public static class SeedData
             Id = UserId,
             UserName = "testuser",
             Email = "testuser@example.com",
+        },
+        new User {
+            Id = AdminId,
+            UserName = "admin",
+            Email = "admin@admin.admin",
         }
     };
 
@@ -24,6 +32,14 @@ public static class SeedData
         {
             Id = Guid.NewGuid(),
             UserId = UserId,
+            HashedPassword = PasswordHasher.HashWithSHA256("password"),
+            IsEmailConfirmed = true,
+            IsActivated = true
+        },
+        new Authentication
+        {
+            Id = Guid.NewGuid(),
+            UserId = AdminId,
             HashedPassword = PasswordHasher.HashWithSHA256("password"),
             IsEmailConfirmed = true,
             IsActivated = true

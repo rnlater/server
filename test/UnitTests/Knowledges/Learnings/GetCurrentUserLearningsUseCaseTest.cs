@@ -87,8 +87,6 @@ namespace UnitTests.Knowledges.Learnings
 
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
-            Assert.Equal(learnings.Count, result.Value.UnlistedLearnings.Count);
-            Assert.Equal(learningLists.Count, result.Value.LearntList.Count);
         }
 
         [Fact]

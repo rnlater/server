@@ -1,5 +1,6 @@
 using Application.DTOs;
 using Application.DTOs.SingleIdPivotEntities;
+using Application.Interfaces;
 using AutoMapper;
 using Domain.Base;
 using Domain.Entities.SingleIdEntities;
@@ -19,51 +20,61 @@ namespace Application.UseCases.Knowledges
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IRedisCache _cache;
 
-        public GetDetailedKnowledgeByGuidUseCase(IUnitOfWork unitOfWork, IMapper mapper, IHttpContextAccessor httpContextAccessor)
+
+        public GetDetailedKnowledgeByGuidUseCase(IUnitOfWork unitOfWork, IMapper mapper, IHttpContextAccessor httpContextAccessor, IRedisCache cache)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _httpContextAccessor = httpContextAccessor;
+            _cache = cache;
         }
 
         public async Task<Result<KnowledgeDto>> Execute(Guid id)
         {
             try
             {
-                var knowledgeRepository = _unitOfWork.Repository<Knowledge>();
-                var knowledge = await knowledgeRepository.Find(
-                    new BaseSpecification<Knowledge>(k => k.Id == id)
-                    .AddInclude(query => query
-                        .Include(k => k.KnowledgeTypeKnowledges)
-                        .ThenInclude(kt => kt.KnowledgeType!)
-                        .Include(k => k.KnowledgeTopicKnowledges)
-                        .ThenInclude(kt => kt.KnowledgeTopic!)
-                        .Include(k => k.SubjectKnowledges)
-                        .ThenInclude(kt => kt.Subject!)
-                        .Include(k => k.Creator)
-                        .Include(k => k.Materials)
-                ));
+                var cacheKey = $"{RedisCache.Keys.GetDetailedKnowledgeByGuid}_{id}";
+                var knowledgeDto = await _cache.GetAsync<KnowledgeDto>(cacheKey);
+                if (knowledgeDto == null)
+                {
+                    var knowledgeRepository = _unitOfWork.Repository<Knowledge>();
+                    var knowledge = await knowledgeRepository.Find(
+                        new BaseSpecification<Knowledge>(k => k.Id == id)
+                        .AddInclude(query => query
+                            .Include(k => k.KnowledgeTypeKnowledges)
+                            .ThenInclude(kt => kt.KnowledgeType!)
+                            .Include(k => k.KnowledgeTopicKnowledges)
+                            .ThenInclude(kt => kt.KnowledgeTopic!)
+                            .Include(k => k.Creator)
+                            .Include(k => k.Materials)
+                    ));
+
+                    if (knowledge == null)
+                        return Result<KnowledgeDto>.Fail(ErrorMessage.NoKnowledgeFoundWithGuid);
+
+                    knowledgeDto = _mapper.Map<KnowledgeDto>(knowledge);
+                    await _cache.SetAsync(cacheKey, knowledgeDto);
+                }
 
                 var userId = UserExtractor.GetUserId(_httpContextAccessor);
                 var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
                 if (user == null)
                     return Result<KnowledgeDto>.Fail(ErrorMessage.UserNotFound);
 
-                if (knowledge == null || (!user.IsAdmin && knowledge.CreatorId != userId && knowledge.Visibility == KnowledgeVisibility.Private))
+                if (!user.IsAdmin && knowledgeDto.CreatorId != userId && knowledgeDto.Visibility == KnowledgeVisibility.Private.ToString())
                     return Result<KnowledgeDto>.Fail(ErrorMessage.NoKnowledgeFoundWithGuid);
-
-                var KnowledgeDto = _mapper.Map<KnowledgeDto>(knowledge);
 
                 if (!user.IsAdmin)
                 {
                     var userLearning = await _unitOfWork.Repository<Learning>().Find(
                         new BaseSpecification<Learning>(ul => ul.UserId == userId && ul.KnowledgeId == id)
                     );
-                    KnowledgeDto.CurrentUserLearning = userLearning == null ? null : _mapper.Map<LearningDto>(userLearning);
+                    knowledgeDto.CurrentUserLearning = userLearning == null ? null : _mapper.Map<LearningDto>(userLearning);
                 }
 
-                return Result<KnowledgeDto>.Done(KnowledgeDto);
+                return Result<KnowledgeDto>.Done(knowledgeDto);
             }
             catch (Exception)
             {

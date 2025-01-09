@@ -1,4 +1,3 @@
-using Application.DTOs;
 using Application.UseCases.JWT;
 using AutoMapper;
 using Domain.Base;
@@ -42,10 +41,10 @@ public class GenerateTokenPairUseCaseTest
     [Fact]
     public async Task Execute_ShouldReturnTokens_WhenUserExists()
     {
-        var userDto = new UserDto { Id = Guid.NewGuid(), UserName = "test_user", Email = "test_user@example.com" };
+        var User = new User { Id = Guid.NewGuid(), UserName = "test_user", Email = "test_user@example.com" };
         var authentication = new Authentication
         {
-            UserId = userDto.Id,
+            UserId = User.Id,
             HashedPassword = "hashed_password_placeholder",
             IsEmailConfirmed = true,
             IsActivated = true
@@ -53,22 +52,21 @@ public class GenerateTokenPairUseCaseTest
         _tokenRepositoryMock.Setup(tr => tr.Find(It.IsAny<BaseSpecification<Authentication>>()))
             .ReturnsAsync(authentication);
 
-        var result = await _generateTokenPairUseCase.Execute(userDto);
+        var result = await _generateTokenPairUseCase.Execute(User);
 
         Assert.True(result.IsSuccess);
-        Assert.NotNull(result.Value.Item1);
-        Assert.NotNull(result.Value.Item2);
+        Assert.NotNull(result.Value);
         _tokenRepositoryMock.Verify(tr => tr.Update(It.IsAny<Authentication>()), Times.Once);
     }
 
     [Fact]
     public async Task Execute_ShouldReturnFail_WhenUserDoesNotExist()
     {
-        var userDto = new UserDto { Id = Guid.NewGuid(), UserName = "test_user", Email = "test_user@example.com" };
+        var User = new User { Id = Guid.NewGuid(), UserName = "test_user", Email = "test_user@example.com" };
         _tokenRepositoryMock.Setup(tr => tr.Find(It.IsAny<BaseSpecification<Authentication>>()))
             .ReturnsAsync((Authentication?)null);
 
-        var result = await _generateTokenPairUseCase.Execute(userDto);
+        var result = await _generateTokenPairUseCase.Execute(User);
 
         Assert.False(result.IsSuccess);
         Assert.Equal(ErrorMessage.UserNotFound.ToString(), result.Errors[0]);
@@ -78,11 +76,11 @@ public class GenerateTokenPairUseCaseTest
     [Fact]
     public async Task Execute_ShouldReturnFail_OnException()
     {
-        var userDto = new UserDto { Id = Guid.NewGuid(), UserName = "test_user", Email = "test_user@example.com" };
+        var User = new User { Id = Guid.NewGuid(), UserName = "test_user", Email = "test_user@example.com" };
         _tokenRepositoryMock.Setup(tr => tr.Find(It.IsAny<BaseSpecification<Authentication>>()))
             .ThrowsAsync(new Exception());
 
-        var result = await _generateTokenPairUseCase.Execute(userDto);
+        var result = await _generateTokenPairUseCase.Execute(User);
 
         Assert.False(result.IsSuccess);
         Assert.Equal(ErrorMessage.UnknownError.ToString(), result.Errors[0]);

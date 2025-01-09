@@ -9,6 +9,6 @@ namespace Endpoint.ApiRequests.Knowledges.Learninglists
         public required string Title { get; set; }
 
         [AllowNull]
-        public Guid? KnowledgeId { get; set; }
+        public List<Guid>? KnowledgeIds { get; set; }
     }
 }

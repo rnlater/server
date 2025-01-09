@@ -1,7 +1,6 @@
 using Application.DTOs;
 using Application.Interfaces.Knowledges;
 using Application.UseCases.Knowledges.KnowledgeTypes;
-using Domain.Interfaces;
 using Shared.Types;
 
 namespace Application.Services.Knowledges
@@ -36,9 +35,9 @@ namespace Application.Services.Knowledges
             return _getKnowledgeTypeByIdUseCase.Execute(id);
         }
 
-        public Task<Result<IEnumerable<KnowledgeTypeDto>>> GetKnowledgeTypes()
+        public Task<Result<IEnumerable<KnowledgeTypeDto>>> GetKnowledgeTypes(GetKnowledgeTypesParams Params)
         {
-            return _getKnowledgeTypesUseCase.Execute(NoParam.Value);
+            return _getKnowledgeTypesUseCase.Execute(Params);
         }
 
         public Task<Result<KnowledgeTypeDto>> CreateKnowledgeType(CreateKnowledgeTypeParams Params)

@@ -3,7 +3,9 @@ using Domain.Entities.SingleIdEntities;
 using Domain.Entities.SingleIdPivotEntities;
 using EnglishDataBuilder.Models;
 using Infrastructure.Data;
+using Microsoft.IdentityModel.Tokens;
 using Shared.Constants;
+using Shared.Utils;
 
 namespace EnglishDataBuilder
 {
@@ -70,7 +72,7 @@ namespace EnglishDataBuilder
                         context.Materials.Add(new Material
                         {
                             Type = Domain.Enums.MaterialType.Image,
-                            Content = "Upload/Files/knowledges/images/" + vocabulary.Photo,
+                            Content = "knowledges/images/" + vocabulary.Photo,
                             KnowledgeId = knowledge.Id,
                         });
                     }
@@ -81,7 +83,7 @@ namespace EnglishDataBuilder
                             context.Materials.Add(new Material
                             {
                                 Type = Domain.Enums.MaterialType.Audio,
-                                Content = "Upload/Files/knowledges/audios/" + item,
+                                Content = "knowledges/audios/" + item,
                                 KnowledgeId = knowledge.Id,
                             });
                         }
@@ -92,7 +94,7 @@ namespace EnglishDataBuilder
                     {
                         context.Materials.Add(new Material
                         {
-                            Type = Domain.Enums.MaterialType.TextMedium,
+                            Type = Domain.Enums.MaterialType.Subtitle,
                             Content = item,
                             KnowledgeId = knowledge.Id,
                             Order = MaterialOrder++,
@@ -102,7 +104,7 @@ namespace EnglishDataBuilder
                     {
                         var parent = new Material
                         {
-                            Type = Domain.Enums.MaterialType.TextMedium,
+                            Type = Domain.Enums.MaterialType.TextLarge,
                             Content = item.PartOfSpeech ?? "",
                             KnowledgeId = knowledge.Id,
                         };
@@ -110,14 +112,15 @@ namespace EnglishDataBuilder
                         var MeaningOrder = 0;
                         foreach (var definition in item.Definitions)
                         {
-                            context.Materials.Add(new Material
+                            var def = new Material
                             {
                                 Type = Domain.Enums.MaterialType.Interpretation,
                                 Content = definition.DefinitionText,
                                 KnowledgeId = knowledge.Id,
                                 ParentId = parent.Id,
                                 Order = MeaningOrder++,
-                            });
+                            };
+                            context.Materials.Add(def);
                             if (definition.Example != null)
                             {
                                 context.Materials.Add(new Material
@@ -125,7 +128,7 @@ namespace EnglishDataBuilder
                                     Type = Domain.Enums.MaterialType.TextSmall,
                                     Content = definition.Example,
                                     KnowledgeId = knowledge.Id,
-                                    ParentId = parent.Id,
+                                    ParentId = def.Id,
                                     Order = MeaningOrder++,
                                 });
                             }
@@ -134,7 +137,7 @@ namespace EnglishDataBuilder
 
                     foreach (var category in vocabulary.Categories)
                     {
-                        if (dir.Contains("Basic"))
+                        if (dir.Contains("basic"))
                         {
                             var subject = subjectBasicAdvancedTopics[category].Item1;
                             context.SubjectKnowledges.Add(new SubjectKnowledge
@@ -143,7 +146,7 @@ namespace EnglishDataBuilder
                                 SubjectId = subject!.Id,
                             });
                         }
-                        else if (dir.Contains("Advanced"))
+                        else if (dir.Contains("advanced"))
                         {
                             var subject = subjectBasicAdvancedTopics[category].Item2;
                             context.SubjectKnowledges.Add(new SubjectKnowledge
@@ -164,7 +167,9 @@ namespace EnglishDataBuilder
                     foreach (var item in vocabulary.GetListPartOfSpeech())
                     {
                         var typeName = Utils.ConvertToCamelCase(item);
-                        var type = context.KnowledgeTypes.FirstOrDefault(x => x.Name == typeName);
+                        var type = typeName.IsNullOrEmpty()
+                            ? context.KnowledgeTypes.FirstOrDefault(x => x.Name == "Vocabulary")
+                            : context.KnowledgeTypes.FirstOrDefault(x => x.Name == typeName);
 
                         context.KnowledgeTypeKnowledges.Add(new KnowledgeTypeKnowledge
                         {
@@ -192,7 +197,7 @@ namespace EnglishDataBuilder
                         titles.Add(title);
                     }
 
-                    var ChooseTheCorrectAnswerGame = context.Games.First(x => x.Name == "Choose the correct answer");
+                    var ChooseTheCorrectAnswerGame = context.Games.First(x => x.Name == Games.ChooseTheCorrectAnswer);
                     var gameKnowledgeSubscription = new GameKnowledgeSubscription
                     {
                         GameId = ChooseTheCorrectAnswerGame.Id,
@@ -245,7 +250,7 @@ namespace EnglishDataBuilder
                     }
                     Group += 1;
 
-                    var FillInTheBlankGame = context.Games.First(x => x.Name == "Fill in the blank");
+                    var FillInTheBlankGame = context.Games.First(x => x.Name == Games.FillInTheBlank);
                     gameKnowledgeSubscription = new GameKnowledgeSubscription
                     {
                         GameId = FillInTheBlankGame.Id,
@@ -256,81 +261,51 @@ namespace EnglishDataBuilder
                     context.GameOptions.Add(new GameOption
                     {
                         GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
-                        Value = GetBlankedVersion(vocabulary.Word),
-                        Type = Domain.Enums.GameOptionType.Question,
-                        Group = 1,
+                        Value = StringTransformer.GetBlankedVersion(vocabulary.Word),
+                        Type = Domain.Enums.GameOptionType.Question
                     });
                     context.GameOptions.Add(new GameOption
                     {
                         GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
                         Value = vocabulary.Word,
                         Type = Domain.Enums.GameOptionType.Answer,
-                        IsCorrect = true,
-                        Group = 1,
+                        IsCorrect = true
                     });
+
+                    var shuffledWord = StringTransformer.GetShuffledVersion(vocabulary.Word);
+                    if (shuffledWord != null)
+                    {
+                        var ArrangeTheWordsGame = context.Games.First(x => x.Name == Games.ArrangeWordsLetters);
+                        gameKnowledgeSubscription = new GameKnowledgeSubscription
+                        {
+                            GameId = ArrangeTheWordsGame.Id,
+                            KnowledgeId = knowledge.Id,
+                        };
+                        context.GameKnowledgeSubscriptions.Add(gameKnowledgeSubscription);
+
+                        context.GameOptions.Add(new GameOption
+                        {
+                            GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
+                            Value = shuffledWord,
+                            Type = Domain.Enums.GameOptionType.Question,
+                            IsCorrect = false,
+                        });
+
+                        context.GameOptions.Add(new GameOption
+                        {
+                            GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
+                            Value = vocabulary.Word,
+                            Type = Domain.Enums.GameOptionType.Answer,
+                            IsCorrect = true,
+                        });
+                    }
+
                 }
 
             }
             catch (Exception)
             {
                 throw;
-            }
-        }
-
-        private static string GetBlankedVersion(string input)
-        {
-            var words = input.Split(" ");
-            if (words.Length == 1)
-            {
-                return ApplyUnderscore(words[0]);
-            }
-            else if (words.Length >= 2 && words.Length <= 3)
-            {
-                var random = new Random();
-                var index = random.Next(words.Length);
-                words[index] = ApplyUnderscore(words[index]);
-                return string.Join(' ', words);
-            }
-            else if (words.Length > 3)
-            {
-                var random = new Random();
-                var index = random.Next(words.Length);
-                words[index] = new string('_', words[index].Length);
-                return string.Join(' ', words);
-            }
-
-            return input;
-        }
-
-        private static string ApplyUnderscore(string word)
-        {
-            if (word.Length >= 1 && word.Length <= 4)
-            {
-                var random = new Random();
-                var index = word.Length == 1 ? 0 : random.Next(1, word.Length - 1);
-                var chars = word.ToCharArray();
-                chars[index] = '_';
-                var underscoredWord = new string(chars);
-
-                return underscoredWord;
-            }
-            else
-            {
-                var random = new Random();
-                var chars = word.ToCharArray();
-                var index1 = random.Next(1, word.Length - 1);
-                var index2 = random.Next(1, word.Length - 1);
-
-                while (index2 == index1)
-                {
-                    index2 = random.Next(1, word.Length - 1);
-                }
-
-                chars[index1] = '_';
-                chars[index2] = '_';
-                var underscoredWord = new string(chars);
-
-                return underscoredWord;
             }
         }
         private static Domain.Enums.KnowledgeLevel GetAvgLevel(List<string> levels)

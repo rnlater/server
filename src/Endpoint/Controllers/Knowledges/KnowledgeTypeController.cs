@@ -4,6 +4,8 @@ using Application.Interfaces.Knowledges;
 using Application.UseCases.Knowledges.KnowledgeTypes;
 using Endpoint.ApiRequests.Knowledges.KnowledgeTypes;
 using Shared.Constants;
+using Domain.Enums;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Endpoint.Controllers.Knowledges
 {
@@ -24,28 +26,31 @@ namespace Endpoint.Controllers.Knowledges
                 cfg.CreateMap<CreateKnowledgeTypeRequest, CreateKnowledgeTypeParams>();
                 cfg.CreateMap<UpdateKnowledgeTypeRequest, UpdateKnowledgeTypeParams>();
                 cfg.CreateMap<AttachDetachKnowledgesRequest, AttachDetachKnowledgesParams>();
+                cfg.CreateMap<GetKnowledgeTypesRequest, GetKnowledgeTypesParams>();
+
             });
             _mapper = config.CreateMapper();
         }
 
         [HttpGet(HttpRoute.GetKnowledgeTypeByGuid)]
-        // [Authorize(Roles = nameof(Role.Admin))]
+        [Authorize(Roles = nameof(Role.Admin))]
         public async Task<IActionResult> GetKnowledgeTypeByGuid(Guid id)
         {
             var result = await _knowledgeTypeService.GetKnowledgeTypeByGuid(id);
             return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
         }
 
-        [HttpGet(HttpRoute.GetKnowledgeTypes)]
-        // [Authorize(Roles = nameof(Role.Admin))]
-        public async Task<IActionResult> GetKnowledgeTypes()
+        [HttpPost(HttpRoute.GetKnowledgeTypes)]
+        [Authorize(Roles = nameof(Role.Admin))]
+        public async Task<IActionResult> GetKnowledgeTypes(GetKnowledgeTypesRequest request)
         {
-            var result = await _knowledgeTypeService.GetKnowledgeTypes();
+            var Params = _mapper.Map<GetKnowledgeTypesParams>(request);
+            var result = await _knowledgeTypeService.GetKnowledgeTypes(Params);
             return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
         }
 
         [HttpPost(HttpRoute.CreateKnowledgeType)]
-        // [Authorize(Roles = nameof(Role.Admin))]
+        [Authorize(Roles = nameof(Role.Admin))]
         public async Task<IActionResult> CreateKnowledgeType([FromBody] CreateKnowledgeTypeRequest request)
         {
             var Params = _mapper.Map<CreateKnowledgeTypeParams>(request);
@@ -54,7 +59,7 @@ namespace Endpoint.Controllers.Knowledges
         }
 
         [HttpPost(HttpRoute.UpdateKnowledgeType)]
-        // [Authorize(Roles = nameof(Role.Admin))]
+        [Authorize(Roles = nameof(Role.Admin))]
         public async Task<IActionResult> UpdateKnowledgeType([FromBody] UpdateKnowledgeTypeRequest request)
         {
             var Params = _mapper.Map<UpdateKnowledgeTypeParams>(request);
@@ -63,7 +68,7 @@ namespace Endpoint.Controllers.Knowledges
         }
 
         [HttpDelete(HttpRoute.DeleteKnowledgeType)]
-        // [Authorize(Roles = nameof(Role.Admin))]
+        [Authorize(Roles = nameof(Role.Admin))]
         public async Task<IActionResult> DeleteKnowledgeType(Guid id)
         {
             var result = await _knowledgeTypeService.DeleteKnowledgeType(id);
@@ -71,7 +76,7 @@ namespace Endpoint.Controllers.Knowledges
         }
 
         [HttpPost(HttpRoute.AttachDetachKnowledges)]
-        // [Authorize(Roles = nameof(Role.Admin))]
+        [Authorize(Roles = nameof(Role.Admin))]
         public async Task<IActionResult> AttachDetachKnowledges([FromBody] AttachDetachKnowledgesRequest request)
         {
             var Params = _mapper.Map<AttachDetachKnowledgesParams>(request);

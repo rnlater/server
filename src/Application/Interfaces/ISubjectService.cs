@@ -1,6 +1,5 @@
 using Application.DTOs;
 using Application.UseCases.Subjects;
-using Domain.Interfaces;
 using Shared.Types;
 
 namespace Application.Interfaces

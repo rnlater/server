@@ -32,8 +32,9 @@ namespace UnitTests.Knowledges.KnowledgeTopics
         public async Task Execute_ShouldReturnFail_WhenNoKnowledgeTopicsFound()
         {
             _knowledgeTopicRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync(Enumerable.Empty<KnowledgeTopic>());
+            var Params = new GetKnowledgeTopicsParams { };
 
-            var result = await _getKnowledgeTopicsUseCase.Execute(NoParam.Value);
+            var result = await _getKnowledgeTopicsUseCase.Execute(Params);
 
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeTopicsFound, result.Error);
@@ -45,8 +46,9 @@ namespace UnitTests.Knowledges.KnowledgeTopics
             var knowledgeTopics = SeedData.GetKnowledgeTopics();
 
             _knowledgeTopicRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync(knowledgeTopics);
+            var Params = new GetKnowledgeTopicsParams { };
 
-            var result = await _getKnowledgeTopicsUseCase.Execute(NoParam.Value);
+            var result = await _getKnowledgeTopicsUseCase.Execute(Params);
 
             Assert.True(result.IsSuccess);
             Assert.NotEmpty(result.Value);

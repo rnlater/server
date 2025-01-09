@@ -1,7 +1,6 @@
 using Application.DTOs;
 using Application.Interfaces.Knowledges;
 using Application.UseCases.Knowledges.KnowledgeTopics;
-using Domain.Interfaces;
 using Shared.Types;
 
 namespace Application.Services.Knowledges
@@ -36,9 +35,9 @@ namespace Application.Services.Knowledges
             return _getKnowledgeTopicByGuidUseCase.Execute(id);
         }
 
-        public Task<Result<IEnumerable<KnowledgeTopicDto>>> GetKnowledgeTopics()
+        public Task<Result<IEnumerable<KnowledgeTopicDto>>> GetKnowledgeTopics(GetKnowledgeTopicsParams Params)
         {
-            return _getKnowledgeTopicsUseCase.Execute(NoParam.Value);
+            return _getKnowledgeTopicsUseCase.Execute(Params);
         }
 
         public Task<Result<KnowledgeTopicDto>> CreateKnowledgeTopic(CreateKnowledgeTopicParams Params)

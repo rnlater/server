@@ -42,14 +42,19 @@ namespace Application.UseCases.Knowledges.PublicationRequests
                         .Include(pr => pr.Knowledge!)
                         .ThenInclude(k => k.Creator!)
                         .Include(pr => pr.Knowledge!)
-                        .ThenInclude(k => k.Materials))
-                    .ApplyPaging(parameters.Page, parameters.PageSize);
+                        .ThenInclude(k => k.Materials));
 
-                var publicationRequests = await publicationRequestRepository.FindMany(specification);
+                var publicationRequests = await publicationRequestRepository.FindMany(specification.ApplyPaging(parameters.Page, parameters.PageSize));
+                var publicationRequestsCount = await publicationRequestRepository.Count(specification);
+
                 if (!publicationRequests.Any())
                     return Result<IEnumerable<PublicationRequestDto>>.Fail(ErrorMessage.NoPublicationRequestsFound);
 
-                return Result<IEnumerable<PublicationRequestDto>>.Done(_mapper.Map<IEnumerable<PublicationRequestDto>>(publicationRequests));
+                return Result<IEnumerable<PublicationRequestDto>>.Done(_mapper.Map<IEnumerable<PublicationRequestDto>>(publicationRequests), new Paging(
+                    parameters.Page,
+                    parameters.PageSize,
+                    publicationRequestsCount
+                ));
             }
             catch (Exception)
             {

@@ -3,6 +3,7 @@ using Application.UseCases.Games.GameOptions;
 using AutoMapper;
 using Domain.Enums;
 using Endpoint.ApiRequests.Games.GameOptions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Constants;
 using Shared.Utils;
@@ -11,6 +12,7 @@ namespace Endpoint.Controllers.Games
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = nameof(Role.Admin))]
     public class GameOptionController : ControllerBase
     {
         private readonly IGameOptionService _gameOptionService;
@@ -33,7 +35,6 @@ namespace Endpoint.Controllers.Games
         }
 
         [HttpPost(HttpRoute.CreateGameOption)]
-        // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateGameOption([FromBody] CreateGameOptionRequest request)
         {
             var parameters = _mapper.Map<CreateGameOptionParams>(request);
@@ -42,7 +43,6 @@ namespace Endpoint.Controllers.Games
         }
 
         [HttpPost(HttpRoute.CreateGroupedGameOptions)]
-        // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateGroupedGameOptions([FromBody] CreateGroupedGameOptionRequest request)
         {
             var parameters = _mapper.Map<CreateGroupedGameOptionParams>(request);
@@ -51,7 +51,6 @@ namespace Endpoint.Controllers.Games
         }
 
         [HttpPost(HttpRoute.UpdateGameOption)]
-        // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateGameOption([FromBody] UpdateGameOptionRequest request)
         {
             var parameters = _mapper.Map<UpdateGameOptionParams>(request);
@@ -60,7 +59,6 @@ namespace Endpoint.Controllers.Games
         }
 
         [HttpDelete(HttpRoute.DeleteGameOption)]
-        // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteGameOption(Guid id)
         {
             var result = await _gameOptionService.DeleteGameOption(id);

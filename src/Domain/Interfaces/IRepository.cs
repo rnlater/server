@@ -67,5 +67,6 @@ namespace Domain.Interfaces
         /// <param name="spec"></param>
         /// <returns></returns>
         Task<int> Count(ISpecification<T> spec);
+        Task<int> Count();
     }
 }

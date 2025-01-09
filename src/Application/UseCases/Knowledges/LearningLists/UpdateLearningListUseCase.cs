@@ -34,7 +34,7 @@ namespace Application.UseCases.Knowledges.LearningLists
             {
                 var userId = UserExtractor.GetUserId(_httpContextAccessor);
                 var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
-                if (userId == null)
+                if (user == null)
                     return Result<LearningListDto>.Fail(ErrorMessage.UserNotFound);
 
                 var learningListRepository = _unitOfWork.Repository<LearningList>();
@@ -50,6 +50,7 @@ namespace Application.UseCases.Knowledges.LearningLists
                 if (IsTitleExisted)
                     return Result<LearningListDto>.Fail(ErrorMessage.LearningListTitleExisted);
 
+                learningList.Title = parameters.Title;
                 learningList = await learningListRepository.Update(learningList);
 
                 return Result<LearningListDto>.Done(_mapper.Map<LearningListDto>(learningList));

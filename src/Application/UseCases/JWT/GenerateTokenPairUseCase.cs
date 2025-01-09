@@ -1,49 +1,83 @@
-using Application.DTOs;
-using Domain.Base;
 using Domain.Entities.SingleIdEntities;
 using Domain.Interfaces;
 using Microsoft.Extensions.Options;
 using Shared.Config;
 using Shared.Constants;
 using Shared.Types;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
 
-namespace Application.UseCases.JWT;
-
-public class GenerateTokenPairUseCase : AccessTokenGenerator, IUseCase<(string, string), UserDto>
+namespace Application.UseCases.JWT
 {
-    private readonly IUnitOfWork _unitOfWork;
-
-    public GenerateTokenPairUseCase(IOptions<JwtSettings> jwtOptions, IUnitOfWork unitOfWork) : base(jwtOptions)
+    public class JWTPairResponse
     {
-        _unitOfWork = unitOfWork;
+        public required string AccessToken { get; set; }
+        public required string RefreshToken { get; set; }
     }
 
-    public async Task<Result<(string, string)>> Execute(UserDto parameters)
+    public class GenerateTokenPairUseCase : IUseCase<JWTPairResponse, User>
     {
-        try
-        {
-            var tokenRepository = _unitOfWork.Repository<Authentication>();
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly JwtSettings _jwtSettings;
 
-            var userAuthentication = await tokenRepository
-                .Find(new BaseSpecification<Authentication>(rt => rt.UserId == parameters.Id));
-            if (userAuthentication == null)
+        public GenerateTokenPairUseCase(IOptions<JwtSettings> jwtOptions, IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+            _jwtSettings = jwtOptions.Value;
+        }
+
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
+        public async Task<Result<JWTPairResponse>> Execute(User user)
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
+        {
+            try
             {
-                return Result<(string, string)>.Fail(ErrorMessage.UserNotFound);
+                string accessToken = AccessToken(user);
+                string refreshToken = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
+
+                return Result<JWTPairResponse>.Done(new JWTPairResponse
+                {
+                    AccessToken = accessToken,
+                    RefreshToken = refreshToken
+                });
             }
-
-            string refreshToken = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
-
-            userAuthentication.RefreshToken = refreshToken;
-            userAuthentication.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
-            await tokenRepository.Update(userAuthentication);
-
-            string accessToken = AccessToken(parameters);
-
-            return Result<(string, string)>.Done((accessToken, refreshToken));
+            catch
+            {
+                return Result<JWTPairResponse>.Fail(ErrorMessage.UnknownError);
+            }
         }
-        catch
+
+        private string AccessToken(User user)
         {
-            return Result<(string, string)>.Fail(ErrorMessage.UnknownError);
+            var claims = new Claim[]
+        {
+            new(ClaimTypes.Name, user.UserName),
+            new(ClaimTypes.Email, user.Email),
+            new(ClaimTypes.Role, user.Role.ToString()),
+            new(ClaimTypes.NameIdentifier, user.Id.ToString()),
+        };
+
+            var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_jwtSettings.SecretKey));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.UtcNow.AddHours(10),
+                Issuer = _jwtSettings.Issuer,
+                Audience = _jwtSettings.Audience,
+                SigningCredentials = creds,
+            };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+
+            var accessToken = tokenHandler.WriteToken(token);
+
+            return accessToken;
         }
     }
+
 }
