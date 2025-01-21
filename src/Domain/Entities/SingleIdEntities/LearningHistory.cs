@@ -10,7 +10,7 @@ public class LearningHistory : SingleIdEntity
     public LearningHistory(bool IsMemorized, LearningLevel learningLevel) : base()
     {
         this.IsMemorized = IsMemorized;
-        this.LearningLevel = learningLevel;
+        LearningLevel = learningLevel;
     }
 
     public Guid LearningId { get; set; }
@@ -20,7 +20,7 @@ public class LearningHistory : SingleIdEntity
     public LearningLevel LearningLevel { get; set; }
     public bool IsMemorized { get; set; }
 
-    public Guid PlayedGameId { get; set; }
+    public Guid? PlayedGameId { get; set; }
     [ForeignKey(nameof(PlayedGameId))]
     public Game? PlayedGame { get; set; }
 

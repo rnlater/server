@@ -62,20 +62,14 @@ public class ReviewLearningUseCase : IUseCase<List<LearningDto>, List<ReviewLear
                             || (l.Knowledge.Visibility == KnowledgeVisibility.Private && l.Knowledge.CreatorId == userId)))
                     .AddInclude(query => query.Include(l => l.LearningHistories).Include(l => l.Knowledge!)));
                 if (learning == null)
-                {
-                    await _unitOfWork.RollBackChangesAsync();
                     return Result<List<LearningDto>>.Fail(ErrorMessage.LearningNotFound);
-                }
+
                 else if (learning.NextReviewDate > DateTime.Now)
-                {
-                    await _unitOfWork.RollBackChangesAsync();
                     return Result<List<LearningDto>>.Fail(ErrorMessage.KnowledgeNotReadyToReview);
-                }
+
                 else if (learning.LearningHistories.Count == 0)
-                {
-                    await _unitOfWork.RollBackChangesAsync();
                     return Result<List<LearningDto>>.Fail(ErrorMessage.RequireLearningBeforeReview);
-                }
+
 
                 var isGuid = Guid.TryParse(param.Answer, out var answerGuid);
                 var Question = await gameOptionRepository.Find(
@@ -93,10 +87,8 @@ public class ReviewLearningUseCase : IUseCase<List<LearningDto>, List<ReviewLear
 
                 if (Question == null
                 || Question.GameKnowledgeSubscription!.KnowledgeId != param.KnowledgeId)
-                {
-                    await _unitOfWork.RollBackChangesAsync();
                     return Result<List<LearningDto>>.Fail(ErrorMessage.InvalidData);
-                }
+
                 if (userAnswer != null && userAnswer.IsCorrect == true)
                     score += 75;
 

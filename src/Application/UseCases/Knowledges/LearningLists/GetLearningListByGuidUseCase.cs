@@ -65,30 +65,13 @@ namespace Application.UseCases.Knowledges.LearningLists
                 var learningListDto = _mapper.Map<LearningListDto>(learningList);
 
                 var learningRepository = _unitOfWork.Repository<Learning>();
-                // ICollection<LearningDto> LearntKnowledges = [];
-                // ICollection<KnowledgeDto> NotLearntKnowledges = [];
                 foreach (var item in learningListDto.LearningListKnowledges)
                 {
                     var learning = await learningRepository.Find(
                         new BaseSpecification<Learning>(l => l.UserId == userId && l.KnowledgeId == item.KnowledgeId));
                     var learningDto = _mapper.Map<LearningDto>(learning);
                     item.Knowledge!.CurrentUserLearning = learningDto;
-
-                    // if (learning == null)
-                    //     NotLearntKnowledges.Add(item.Knowledge!);
-                    // else
-                    // {
-                    //     var learningDto = _mapper.Map<LearningDto>(learning);
-                    //     learningDto.Knowledge = item.Knowledge;
-                    //     LearntKnowledges.Add(learningDto);
-
-                    //     item.Knowledge!.CurrentUserLearning = learningDto;
-                    // }
                 }
-
-                // learningListDto.LearntKnowledges = LearntKnowledges;
-                // learningListDto.NotLearntKnowledges = NotLearntKnowledges;
-                // learningListDto.LearningListKnowledges = [];
 
                 return Result<LearningListDto>.Done(learningListDto);
             }

@@ -1,4 +1,5 @@
 using Application.DTOs;
+using Application.DTOs.SingleIdPivotEntities;
 using Application.UseCases.Knowledges;
 using Shared.Types;
 
@@ -45,6 +46,12 @@ public interface IKnowledgeService
     /// <exception cref="ErrorMessage.NoKnowledgesFound">No knowledges found</exception>
     Task<Result<IEnumerable<KnowledgeDto>>> GetKnowledges(GetKnowledgesParams Params);
 
+    /// <summary>
+    /// Get user's created knowledges
+    /// </summary>
+    /// <param name="Params"></param>
+    /// <returns>return result of created knowledges with related entities</returns>
+    /// <exception cref="ErrorMessage.NoKnowledgesFound">No knowledges found</exception>
     Task<Result<IEnumerable<KnowledgeDto>>> GetCreatedKnowledges(GetCreatedKnowledgesParams Params);
 
     /// <summary>
@@ -72,4 +79,13 @@ public interface IKnowledgeService
     /// <returns>return result of deleted knowledge</returns>
     /// <exception cref="ErrorMessage.NoKnowledgeFoundWithGuid">No knowledge found with guid</exception>
     Task<Result<KnowledgeDto>> DeleteKnowledge(Guid guid);
+
+    /// <summary>
+    /// Allow user to choose known knowledges
+    /// </summary>
+    /// <param name="Params"></param>
+    /// <returns>return result of learning for the knowledges</returns>
+    /// <exception cref="ErrorMessage.UserNotFound">User not found</exception>
+    /// <exception cref="ErrorMessage.SomeKnowledgesNotFound">Some knowledges not found</exception>
+    Task<Result<IEnumerable<LearningDto>>> MigrateKnowledges(MigrateKnowledgesParams Params);
 }

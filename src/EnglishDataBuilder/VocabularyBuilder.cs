@@ -15,7 +15,7 @@ namespace EnglishDataBuilder
             string dir
         )
         {
-            List<JsonVocabulary> vocabularies = new List<JsonVocabulary>();
+            List<JsonVocabulary> vocabularies = [];
             var files = Directory.GetFiles(dir, "*.json");
             foreach (var file in files)
             {
@@ -168,7 +168,7 @@ namespace EnglishDataBuilder
                     {
                         var typeName = Utils.ConvertToCamelCase(item);
                         var type = typeName.IsNullOrEmpty()
-                            ? context.KnowledgeTypes.FirstOrDefault(x => x.Name == "Vocabulary")
+                            ? context.KnowledgeTypes.FirstOrDefault(x => x.Id == InitialData.KnowledgeTypeIds[0])
                             : context.KnowledgeTypes.FirstOrDefault(x => x.Name == typeName);
 
                         context.KnowledgeTypeKnowledges.Add(new KnowledgeTypeKnowledge

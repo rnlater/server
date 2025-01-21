@@ -63,6 +63,7 @@ public class HttpRoute
     public const string PublishKnowledge = "publish/{id}";
 
     public const string GetKnowledgesToLearn = "to-learn";
+    public const string MigrateKnowledges = "migrate";
 
     #endregion
 
@@ -74,6 +75,7 @@ public class HttpRoute
     public const string UpdateKnowledgeType = "update";
     public const string DeleteKnowledgeType = "delete/{id}";
     public const string AttachDetachKnowledges = "attach-detach-knowledges";
+    public const string GetTopicsForMigration = "get-topics-for-migration";
 
     #endregion
 

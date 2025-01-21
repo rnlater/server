@@ -52,8 +52,8 @@ namespace Infrastructure.Data
             ConfigureKnowledgeTypeKnowledgeEntity(modelBuilder);
             ConfigureKnowledgeTopicKnowledgeEntity(modelBuilder);
             ConfigureGameEntity(modelBuilder);
-            ConfigureGameOptionEntity(modelBuilder);
             ConfigureGameKnowledgeSubscriptionEntity(modelBuilder);
+            ConfigureGameOptionEntity(modelBuilder);
             ConfigureLearningEntity(modelBuilder);
             ConfigureLearningHistoryEntity(modelBuilder);
             ConfigureLearningListEntity(modelBuilder);
@@ -301,7 +301,8 @@ namespace Infrastructure.Data
                 entity.HasKey(gks => gks.Id);
                 entity.HasOne(gks => gks.Game)
                     .WithMany(g => g.GameKnowledgeSubscriptions)
-                    .HasForeignKey(gks => gks.GameId);
+                    .HasForeignKey(gks => gks.GameId)
+                    .OnDelete(DeleteBehavior.Restrict);
                 entity.HasOne(gks => gks.Knowledge)
                     .WithMany(k => k.GameKnowledgeSubscriptions)
                     .HasForeignKey(gks => gks.KnowledgeId);

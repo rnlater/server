@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241226030738_MigrationWithMaterialType")]
-    partial class MigrationWithMaterialType
+    [Migration("20250117043610_LearningHistoryAndGame")]
+    partial class LearningHistoryAndGame
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -160,17 +160,17 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("e92a3508-d2be-4ab4-9316-b0825fff4551"),
-                            CreatedAt = new DateTime(2024, 12, 26, 3, 7, 37, 955, DateTimeKind.Utc).AddTicks(3420),
+                            Id = new Guid("8eb711fc-d597-49d8-bd4a-58024d7f74ed"),
+                            CreatedAt = new DateTime(2025, 1, 17, 4, 36, 10, 112, DateTimeKind.Utc).AddTicks(8820),
                             HashedPassword = "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg=",
                             IsActivated = true,
                             IsEmailConfirmed = true,
-                            UserId = new Guid("dca6b17f-7007-43bd-9fae-754d2e42936f")
+                            UserId = new Guid("91b9597c-acee-4733-88ff-716cde963b37")
                         },
                         new
                         {
-                            Id = new Guid("c7b91d5f-594a-4d63-8389-676afc445a22"),
-                            CreatedAt = new DateTime(2024, 12, 26, 3, 7, 37, 955, DateTimeKind.Utc).AddTicks(3530),
+                            Id = new Guid("a2466d92-c874-4d5f-804a-168bd25849c6"),
+                            CreatedAt = new DateTime(2025, 1, 17, 4, 36, 10, 112, DateTimeKind.Utc).AddTicks(8940),
                             HashedPassword = "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg=",
                             IsActivated = true,
                             IsEmailConfirmed = true,
@@ -335,7 +335,7 @@ namespace Infrastructure.Migrations
                     b.Property<int>("LearningLevel")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("PlayedGameId")
+                    b.Property<Guid?>("PlayedGameId")
                         .HasColumnType("char(36)");
 
                     b.Property<int>("Score")
@@ -511,8 +511,8 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("dca6b17f-7007-43bd-9fae-754d2e42936f"),
-                            CreatedAt = new DateTime(2024, 12, 26, 3, 7, 37, 955, DateTimeKind.Utc).AddTicks(3080),
+                            Id = new Guid("91b9597c-acee-4733-88ff-716cde963b37"),
+                            CreatedAt = new DateTime(2025, 1, 17, 4, 36, 10, 112, DateTimeKind.Utc).AddTicks(8480),
                             Email = "testuser@example.com",
                             Role = 1,
                             UserName = "testuser"
@@ -520,7 +520,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-111111111111"),
-                            CreatedAt = new DateTime(2024, 12, 26, 3, 7, 37, 955, DateTimeKind.Utc).AddTicks(3150),
+                            CreatedAt = new DateTime(2025, 1, 17, 4, 36, 10, 112, DateTimeKind.Utc).AddTicks(8550),
                             Email = "admin@admin.admin",
                             Role = 1,
                             UserName = "admin"
@@ -748,9 +748,7 @@ namespace Infrastructure.Migrations
 
                     b.HasOne("Domain.Entities.SingleIdEntities.Game", "PlayedGame")
                         .WithMany()
-                        .HasForeignKey("PlayedGameId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PlayedGameId");
 
                     b.Navigation("Learning");
 
@@ -802,7 +800,7 @@ namespace Infrastructure.Migrations
                     b.HasOne("Domain.Entities.SingleIdEntities.Game", "Game")
                         .WithMany("GameKnowledgeSubscriptions")
                         .HasForeignKey("GameId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.SingleIdEntities.Knowledge", "Knowledge")

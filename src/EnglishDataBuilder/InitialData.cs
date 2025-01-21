@@ -1,4 +1,5 @@
 using Domain.Entities.SingleIdEntities;
+using Shared.Constants;
 
 namespace EnglishDataBuilder
 {
@@ -10,8 +11,8 @@ namespace EnglishDataBuilder
         public static readonly Guid KnowledgeTypeId = Guid.Parse("605314ff-dc31-463b-af13-907020ef16c8");
         public static readonly Guid GameChooseId = Guid.Parse("9f16d50b-ec45-4873-95ba-13a8f8d9cf70");
         public static readonly Guid GameFillId = Guid.Parse("66d363b1-ef34-4b91-849a-aa13c814e73a");
-        public static readonly List<Guid> KnowledgeTypeIds = new List<Guid>
-        {
+        public static readonly List<Guid> KnowledgeTypeIds =
+        [
             Guid.Parse("605314ff-dc31-463b-af13-907020ef16c8"), // Vocabulary root type
             Guid.Parse("30c747bc-fd5b-40ec-9e2b-4c038deb3447"),
             Guid.Parse("3bb10325-16cc-414e-b90f-252d3cbe9b0c"),
@@ -26,9 +27,9 @@ namespace EnglishDataBuilder
             Guid.Parse("ec3d431b-873d-4ffe-a972-cd615b70d02b"),
             Guid.Parse("ef249e0e-4d5a-4ed1-91c1-f0174ec99deb"),
             Guid.Parse("f9b311c2-e1ad-485b-9c62-611e485f5139"),
-        };
-        public static readonly List<KnowledgeType> knowledgeTypes = new List<KnowledgeType>
-        {
+        ];
+        public static readonly List<KnowledgeType> knowledgeTypes =
+        [
             new KnowledgeType { Id = KnowledgeTypeIds[0], Name = "Vocabulary" },
             new KnowledgeType { Id = KnowledgeTypeIds[1], Name = "Pronoun", ParentId = KnowledgeTypeIds[0] },
             new KnowledgeType { Id = KnowledgeTypeIds[2], Name = "Preposition", ParentId = KnowledgeTypeIds[0] },
@@ -43,23 +44,23 @@ namespace EnglishDataBuilder
             new KnowledgeType { Id = KnowledgeTypeIds[11], Name = "Adverb", ParentId = KnowledgeTypeIds[0] },
             new KnowledgeType { Id = KnowledgeTypeIds[12], Name = "Phrasal verb", ParentId = KnowledgeTypeIds[0] },
             new KnowledgeType { Id = KnowledgeTypeIds[13], Name = "Noun", ParentId = KnowledgeTypeIds[0] },
-        };
+        ];
 
         public static readonly KnowledgeTopic knowledgeTopic = new KnowledgeTopic { Id = KnowledgeTopicId, Title = "English Vocabulary" };
         public static readonly Track trackThree = new Track
         {
             Id = TrackThreeId,
-            Name = "Three thousand Basic English Vocabularies",
+            Name = "3K Basic English Vocabularies",
             Description = "Basic English",
         };
         public static readonly Track trackFive = new Track
         {
             Id = TrackFiveId,
-            Name = "Five thousand Advance English Vocabularies",
+            Name = "5K Advance English Vocabularies",
             Description = "Advance English",
         };
-        public static readonly Game gameChoose = new Game { Id = GameChooseId, Name = "Choose the correct answer", Description = "Choose the correct answer from four options", ImageUrl = "" };
-        public static readonly Game gameFill = new Game { Id = GameFillId, Name = "Fill in the blank", Description = "Fill in the blank with the correct word", ImageUrl = "" };
-        public static readonly Game gameArrange = new Game { Id = Guid.NewGuid(), Name = "Arrange the words", Description = "Arrange the words to form a correct sentence", ImageUrl = "" };
+        public static readonly Game gameChoose = new Game { Id = GameChooseId, Name = Games.ChooseTheCorrectAnswer, Description = "Choose the correct answer from four options", ImageUrl = "" };
+        public static readonly Game gameFill = new Game { Id = GameFillId, Name = Games.FillInTheBlank, Description = "Fill in the blank with the correct word", ImageUrl = "" };
+        public static readonly Game gameArrange = new Game { Id = Guid.NewGuid(), Name = Games.ArrangeWordsLetters, Description = "Arrange the words to form a correct sentence", ImageUrl = "" };
     }
 }

@@ -47,7 +47,14 @@ namespace Application.Interfaces.Knowledges
         /// <returns>A result containing the current user's learnings, or an error message if the operation fails.</returns>
         /// <exception cref="ErrorMessage.UserNotFound">User not found</exception>
         /// <exception cref="ErrorMessage.NoData">No learning found for the specific paramaters</exception>
-        Task<Result<List<LearningDto>>> GetCurrentUserLearnings(GetCurrentUserLearningsParams Params); // TODO
-        Task<Result<List<LearningDto>>> GetUnlistedLearnings(); // TODO
+        Task<Result<List<LearningDto>>> GetCurrentUserLearnings(GetCurrentUserLearningsParams Params);
+
+        /// <summary>
+        /// Retrieves the current user's unlisted learnings.
+        /// </summary>
+        /// <returns>A result containing the current user's unlisted learnings</returns>
+        /// <exception cref="ErrorMessage.UserNotFound">User not found</exception>
+        /// <exception cref="ErrorMessage.NoLearningsFound">No unlisted learnings found</exception>
+        Task<Result<List<LearningDto>>> GetUnlistedLearnings();
     }
 }

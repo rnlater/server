@@ -106,7 +106,6 @@ public class LearnKnowledgeUseCase : IUseCase<List<LearningDto>, List<LearnKnowl
                 || QuestionTwo.GameKnowledgeSubscription!.KnowledgeId != param.KnowledgeId
                 )
                 {
-                    await _unitOfWork.RollBackChangesAsync();
                     return Result<List<LearningDto>>.Fail(ErrorMessage.InvalidData);
                 }
 

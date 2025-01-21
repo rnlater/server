@@ -13,6 +13,7 @@ namespace Application.Services.Knowledges
         private readonly UpdateKnowledgeTopicUseCase _updateKnowledgeTopicUseCase;
         private readonly DeleteKnowledgeTopicUseCase _deleteKnowledgeTopicUseCase;
         private readonly AttachDetachKnowledgesUseCase _attachDetachKnowledgesUseCase;
+        private readonly GetTopicsForMigrationUseCase _getTopicsForMigrationUseCase;
 
         public KnowledgeTopicService(
             GetKnowledgeTopicByGuidUseCase GetKnowledgeTopicByGuidUseCase,
@@ -20,7 +21,8 @@ namespace Application.Services.Knowledges
             CreateKnowledgeTopicUseCase createKnowledgeTopicUseCase,
             UpdateKnowledgeTopicUseCase updateKnowledgeTopicUseCase,
             DeleteKnowledgeTopicUseCase deleteKnowledgeTopicUseCase,
-            AttachDetachKnowledgesUseCase attachDetachKnowledgesUseCase)
+            AttachDetachKnowledgesUseCase attachDetachKnowledgesUseCase,
+            GetTopicsForMigrationUseCase getTopicsForMigrationUseCase)
         {
             _getKnowledgeTopicByGuidUseCase = GetKnowledgeTopicByGuidUseCase;
             _getKnowledgeTopicsUseCase = getKnowledgeTopicsUseCase;
@@ -28,6 +30,7 @@ namespace Application.Services.Knowledges
             _updateKnowledgeTopicUseCase = updateKnowledgeTopicUseCase;
             _deleteKnowledgeTopicUseCase = deleteKnowledgeTopicUseCase;
             _attachDetachKnowledgesUseCase = attachDetachKnowledgesUseCase;
+            _getTopicsForMigrationUseCase = getTopicsForMigrationUseCase;
         }
 
         public Task<Result<KnowledgeTopicDto>> GetKnowledgeTopicByGuid(Guid id)
@@ -58,6 +61,11 @@ namespace Application.Services.Knowledges
         public Task<Result<bool>> AttachDetachKnowledges(AttachDetachKnowledgesParams Params)
         {
             return _attachDetachKnowledgesUseCase.Execute(Params);
+        }
+
+        public Task<Result<IEnumerable<KnowledgeTopicDto>>> GetTopicsForMigration(GetTopicsForMigrationParams Params)
+        {
+            return _getTopicsForMigrationUseCase.Execute(Params);
         }
     }
 }

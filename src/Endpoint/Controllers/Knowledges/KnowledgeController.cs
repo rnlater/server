@@ -35,6 +35,7 @@ namespace Endpoint.Controllers.Knowledges
                 cfg.CreateMap<UpdateKnowledgeRequest, UpdateKnowledgeParams>()
                     .ForMember(dest => dest.Level, opt => opt.MapFrom(src => TypeConverter.StringToEnum<KnowledgeLevel>(src.Level)));
                 cfg.CreateMap<GetKnowledgesToLearnRequest, GetKnowledgesToLearnParams>();
+                cfg.CreateMap<MigrateKnowledgesRequest, MigrateKnowledgesParams>();
             });
             _mapper = config.CreateMapper();
         }
@@ -119,6 +120,15 @@ namespace Endpoint.Controllers.Knowledges
         public async Task<IActionResult> DeleteKnowledge(Guid id)
         {
             var result = await _knowledgeService.DeleteKnowledge(id);
+            return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
+        }
+
+        [HttpPost(HttpRoute.MigrateKnowledges)]
+        [Authorize(Roles = nameof(Role.User))]
+        public async Task<IActionResult> MigrateKnowledges([FromBody] MigrateKnowledgesRequest request)
+        {
+            var parameters = _mapper.Map<MigrateKnowledgesParams>(request);
+            var result = await _knowledgeService.MigrateKnowledges(parameters);
             return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
         }
     }

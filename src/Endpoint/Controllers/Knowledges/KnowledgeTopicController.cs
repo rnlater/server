@@ -27,6 +27,7 @@ namespace Endpoint.Controllers.Knowledges
                 cfg.CreateMap<UpdateKnowledgeTopicRequest, UpdateKnowledgeTopicParams>();
                 cfg.CreateMap<AttachDetachKnowledgesTopicRequest, AttachDetachKnowledgesParams>();
                 cfg.CreateMap<GetKnowledgeTopicsRequest, GetKnowledgeTopicsParams>();
+                cfg.CreateMap<GetTopicsForMigrationRequest, GetTopicsForMigrationParams>();
             });
             _mapper = config.CreateMapper();
         }
@@ -81,6 +82,15 @@ namespace Endpoint.Controllers.Knowledges
             var Params = _mapper.Map<AttachDetachKnowledgesParams>(request);
             var result = await _knowledgeTopicService.AttachDetachKnowledges(Params);
             return result.IsSuccess ? Ok(result.Value.ToString()) : BadRequest(result.Errors);
+        }
+
+        [HttpPost(HttpRoute.GetTopicsForMigration)]
+        [Authorize(Roles = nameof(Role.User))]
+        public async Task<IActionResult> GetTopicsForMigration(GetTopicsForMigrationRequest request)
+        {
+            var Params = _mapper.Map<GetTopicsForMigrationParams>(request);
+            var result = await _knowledgeTopicService.GetTopicsForMigration(Params);
+            return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
         }
     }
 }

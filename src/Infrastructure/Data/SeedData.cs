@@ -23,6 +23,7 @@ public static class SeedData
             Id = AdminId,
             UserName = "admin",
             Email = "admin@admin.admin",
+            Role = Role.Admin
         }
     };
 

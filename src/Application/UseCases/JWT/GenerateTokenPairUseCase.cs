@@ -19,12 +19,10 @@ namespace Application.UseCases.JWT
 
     public class GenerateTokenPairUseCase : IUseCase<JWTPairResponse, User>
     {
-        private readonly IUnitOfWork _unitOfWork;
         private readonly JwtSettings _jwtSettings;
 
-        public GenerateTokenPairUseCase(IOptions<JwtSettings> jwtOptions, IUnitOfWork unitOfWork)
+        public GenerateTokenPairUseCase(IOptions<JwtSettings> jwtOptions)
         {
-            _unitOfWork = unitOfWork;
             _jwtSettings = jwtOptions.Value;
         }
 
@@ -79,5 +77,4 @@ namespace Application.UseCases.JWT
             return accessToken;
         }
     }
-
 }

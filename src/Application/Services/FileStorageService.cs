@@ -12,7 +12,7 @@ namespace Application.Services
 
         public FileStorageService(IConfiguration configuration)
         {
-            _rootPath = configuration.GetSection("FileStorage:RootPath").Value;
+            _rootPath = configuration["FileStorage:RootPath"];
             if (string.IsNullOrEmpty(_rootPath))
             {
                 throw new ArgumentException("File storage root path is not configured.");
@@ -22,7 +22,6 @@ namespace Application.Services
                 Directory.CreateDirectory(_rootPath);
             }
         }
-
 
         public Result<string> DeleteFile(string filePath)
         {
@@ -76,7 +75,6 @@ namespace Application.Services
                 return Result<string>.Fail(ErrorMessage.StoreFileError);
             }
         }
-
         private static string GenerateUniqueFileName(IFormFile file)
         {
             return $"{DateTime.UtcNow:yyyyMMddHHmmssfff}_{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";

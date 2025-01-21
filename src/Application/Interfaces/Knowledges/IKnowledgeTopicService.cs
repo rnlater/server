@@ -56,5 +56,12 @@ namespace Application.Interfaces.Knowledges
         /// <exception cref="ErrorMessage.NoKnowledgeTopicFoundWithGuid">Thrown when no knowledge topic is found with the specified GUID.</exception>
         /// <exception cref="ErrorMessage.NoKnowledgeFoundWithGuid">Thrown when no knowledge is found with the specified GUID.</exception>
         Task<Result<bool>> AttachDetachKnowledges(AttachDetachKnowledgesParams Params);
+
+        /// <summary>
+        /// Get knowledge topics with knowledges and children
+        /// </summary>
+        /// <param name="Params"></param>
+        /// <returns>return knowledge topics with knowledges and children</returns>
+        Task<Result<IEnumerable<KnowledgeTopicDto>>> GetTopicsForMigration(GetTopicsForMigrationParams Params);
     }
 }

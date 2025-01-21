@@ -1,3 +1,4 @@
+
 namespace Application.Interfaces;
 public interface IRedisCache
 {

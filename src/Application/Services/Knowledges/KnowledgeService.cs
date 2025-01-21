@@ -1,4 +1,5 @@
 using Application.DTOs;
+using Application.DTOs.SingleIdPivotEntities;
 using Application.Interfaces.Knowledges;
 using Application.UseCases.Knowledges;
 using Shared.Types;
@@ -15,6 +16,7 @@ namespace Application.Services.Knowledges
         private readonly DeleteKnowledgeUseCase _deleteKnowledgeUseCase;
         private readonly GetKnowledgesToLearnUseCase _getKnowledgesToLearnUseCase;
         private readonly GetCreatedKnowledgesUseCase _getCreatedKnowledgesUseCase;
+        private readonly MigrateKnowledgesUseCase _migrateKnowledgesUseCase;
 
         public KnowledgeService(
             GetDetailedKnowledgeByGuidUseCase getDetailedKnowledgeByGuidUseCase,
@@ -24,7 +26,8 @@ namespace Application.Services.Knowledges
             UpdateKnowledgeUseCase updateKnowledgeUseCase,
             DeleteKnowledgeUseCase deleteKnowledgeUseCase,
             GetKnowledgesToLearnUseCase getKnowledgesToLearnUseCase,
-            GetCreatedKnowledgesUseCase getCreatedKnowledgesUseCase
+            GetCreatedKnowledgesUseCase getCreatedKnowledgesUseCase,
+            MigrateKnowledgesUseCase migrateKnowledgesUseCase
         )
         {
             _getDetailedKnowledgeByGuidUseCase = getDetailedKnowledgeByGuidUseCase;
@@ -35,6 +38,7 @@ namespace Application.Services.Knowledges
             _deleteKnowledgeUseCase = deleteKnowledgeUseCase;
             _getKnowledgesToLearnUseCase = getKnowledgesToLearnUseCase;
             _getCreatedKnowledgesUseCase = getCreatedKnowledgesUseCase;
+            _migrateKnowledgesUseCase = migrateKnowledgesUseCase;
         }
 
         public Task<Result<KnowledgeDto>> CreateKnowledge(CreateKnowledgeParams Params)
@@ -75,6 +79,11 @@ namespace Application.Services.Knowledges
         public Task<Result<IEnumerable<KnowledgeDto>>> GetCreatedKnowledges(GetCreatedKnowledgesParams Params)
         {
             return _getCreatedKnowledgesUseCase.Execute(Params);
+        }
+
+        public Task<Result<IEnumerable<LearningDto>>> MigrateKnowledges(MigrateKnowledgesParams Params)
+        {
+            return _migrateKnowledgesUseCase.Execute(Params);
         }
     }
 }

@@ -7,7 +7,7 @@
 namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class MigrationWithMaterialType : Migration
+    public partial class LearningHistoryAndGame : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -256,7 +256,7 @@ namespace Infrastructure.Migrations
                         column: x => x.GameId,
                         principalTable: "Games",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_GameKnowledgeSubscriptions_Knowledges_KnowledgeId",
                         column: x => x.KnowledgeId,
@@ -486,7 +486,7 @@ namespace Infrastructure.Migrations
                     LearningId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     LearningLevel = table.Column<int>(type: "int", nullable: false),
                     IsMemorized = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    PlayedGameId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    PlayedGameId = table.Column<Guid>(type: "char(36)", nullable: true, collation: "ascii_general_ci"),
                     Score = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
@@ -497,8 +497,7 @@ namespace Infrastructure.Migrations
                         name: "FK_LearningHistories_Games_PlayedGameId",
                         column: x => x.PlayedGameId,
                         principalTable: "Games",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_LearningHistories_Learnings_LearningId",
                         column: x => x.LearningId,
@@ -513,8 +512,8 @@ namespace Infrastructure.Migrations
                 columns: new[] { "Id", "CreatedAt", "Email", "PhotoUrl", "Role", "UserName" },
                 values: new object[,]
                 {
-                    { new Guid("11111111-1111-1111-1111-111111111111"), new DateTime(2024, 12, 26, 3, 7, 37, 955, DateTimeKind.Utc).AddTicks(3150), "admin@admin.admin", null, 1, "admin" },
-                    { new Guid("dca6b17f-7007-43bd-9fae-754d2e42936f"), new DateTime(2024, 12, 26, 3, 7, 37, 955, DateTimeKind.Utc).AddTicks(3080), "testuser@example.com", null, 1, "testuser" }
+                    { new Guid("11111111-1111-1111-1111-111111111111"), new DateTime(2025, 1, 17, 4, 36, 10, 112, DateTimeKind.Utc).AddTicks(8550), "admin@admin.admin", null, 1, "admin" },
+                    { new Guid("91b9597c-acee-4733-88ff-716cde963b37"), new DateTime(2025, 1, 17, 4, 36, 10, 112, DateTimeKind.Utc).AddTicks(8480), "testuser@example.com", null, 1, "testuser" }
                 });
 
             migrationBuilder.InsertData(
@@ -522,8 +521,8 @@ namespace Infrastructure.Migrations
                 columns: new[] { "Id", "ConfirmationCode", "ConfirmationCodeExpiryTime", "CreatedAt", "HashedPassword", "IsActivated", "IsEmailConfirmed", "RefreshToken", "RefreshTokenExpiryTime", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("c7b91d5f-594a-4d63-8389-676afc445a22"), null, null, new DateTime(2024, 12, 26, 3, 7, 37, 955, DateTimeKind.Utc).AddTicks(3530), "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg=", true, true, null, null, new Guid("11111111-1111-1111-1111-111111111111") },
-                    { new Guid("e92a3508-d2be-4ab4-9316-b0825fff4551"), null, null, new DateTime(2024, 12, 26, 3, 7, 37, 955, DateTimeKind.Utc).AddTicks(3420), "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg=", true, true, null, null, new Guid("dca6b17f-7007-43bd-9fae-754d2e42936f") }
+                    { new Guid("8eb711fc-d597-49d8-bd4a-58024d7f74ed"), null, null, new DateTime(2025, 1, 17, 4, 36, 10, 112, DateTimeKind.Utc).AddTicks(8820), "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg=", true, true, null, null, new Guid("91b9597c-acee-4733-88ff-716cde963b37") },
+                    { new Guid("a2466d92-c874-4d5f-804a-168bd25849c6"), null, null, new DateTime(2025, 1, 17, 4, 36, 10, 112, DateTimeKind.Utc).AddTicks(8940), "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg=", true, true, null, null, new Guid("11111111-1111-1111-1111-111111111111") }
                 });
 
             migrationBuilder.CreateIndex(

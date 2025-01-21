@@ -1,4 +1,5 @@
 using Application.DTOs;
+using Application.Interfaces;
 using Application.UseCases.Profile;
 using Domain.Interfaces;
 using Shared.Types;

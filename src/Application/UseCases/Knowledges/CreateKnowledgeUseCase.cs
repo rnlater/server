@@ -88,6 +88,7 @@ namespace Application.UseCases.Knowledges
         {
             try
             {
+                #region Repositories
                 var knowledgeRepository = _unitOfWork.Repository<Knowledge>();
                 var knowledgeTypeRepository = _unitOfWork.Repository<KnowledgeType>();
                 var knowledgeTypeKnowledgeRepository = _unitOfWork.Repository<KnowledgeTypeKnowledge>();
@@ -98,7 +99,9 @@ namespace Application.UseCases.Knowledges
                 var gameKnowledgeSubscriptionRepository = _unitOfWork.Repository<GameKnowledgeSubscription>();
                 var gameOptionRepository = _unitOfWork.Repository<GameOption>();
                 var gameRepository = _unitOfWork.Repository<Game>();
+                #endregion
 
+                #region Validation
                 var knowledgeTypes = await knowledgeTypeRepository.FindMany(new BaseSpecification<KnowledgeType>(kt => parameters.KnowledgeTypeIds.Contains(kt.Id)));
                 if (knowledgeTypes.Count() != parameters.KnowledgeTypeIds.Count) return Result<KnowledgeDto>.Fail(ErrorMessage.NoKnowledgeTypesFound);
 
@@ -113,6 +116,18 @@ namespace Application.UseCases.Knowledges
                 if (user == null)
                     return Result<KnowledgeDto>.Fail(ErrorMessage.UserNotFound);
 
+                if (!user.IsAdmin && subjects.Any())
+                {
+                    return Result<KnowledgeDto>.Fail(ErrorMessage.UserNotAuthorized);
+                }
+
+                if (!parameters.Materials.Any(e => e.ContainsInterpretation()))
+                {
+                    return Result<KnowledgeDto>.Fail(ErrorMessage.NoInterpretationForKnowledge);
+                }
+                #endregion
+
+                #region Knowledge Creation
                 var knowledge = await knowledgeRepository.Add(new Knowledge
                 {
                     Id = Guid.NewGuid(),
@@ -140,11 +155,6 @@ namespace Application.UseCases.Knowledges
                     });
                 }
 
-                if (!user.IsAdmin && subjects.Any())
-                {
-                    await _unitOfWork.RollBackChangesAsync();
-                    return Result<KnowledgeDto>.Fail(ErrorMessage.UserNotAuthorized);
-                }
                 foreach (var subject in subjects)
                 {
                     await subjectKnowledgeRepository.Add(new SubjectKnowledge
@@ -157,52 +167,40 @@ namespace Application.UseCases.Knowledges
                 if (parameters.Audio != null)
                 {
                     var result = await _fileStorageService.StoreFile(parameters.Audio, "materials/audio");
-                    if (!result.IsSuccess)
+                    if (result.IsSuccess)
                     {
-                        await _unitOfWork.RollBackChangesAsync();
-                        return Result<KnowledgeDto>.Fail(result.Error);
+                        parameters.Materials.Add(new CreateMaterialParams
+                        {
+                            Type = MaterialType.Audio,
+                            Content = result.Value,
+                        });
                     }
-                    parameters.Materials.Add(new CreateMaterialParams
-                    {
-                        Type = MaterialType.Audio,
-                        Content = result.Value,
-                    });
                 }
 
                 if (parameters.Image != null)
                 {
                     var result = await _fileStorageService.StoreFile(parameters.Image, "materials/images");
-                    if (!result.IsSuccess)
+                    if (result.IsSuccess)
                     {
-                        await _unitOfWork.RollBackChangesAsync();
-                        return Result<KnowledgeDto>.Fail(result.Error);
+                        parameters.Materials.Add(new CreateMaterialParams
+                        {
+                            Type = MaterialType.Image,
+                            Content = result.Value,
+                        });
                     }
-                    parameters.Materials.Add(new CreateMaterialParams
-                    {
-                        Type = MaterialType.Image,
-                        Content = result.Value,
-                    });
                 }
 
                 if (parameters.Video != null)
                 {
                     var result = await _fileStorageService.StoreFile(parameters.Video, "materials/videos");
-                    if (!result.IsSuccess)
+                    if (result.IsSuccess)
                     {
-                        await _unitOfWork.RollBackChangesAsync();
-                        return Result<KnowledgeDto>.Fail(result.Error);
+                        parameters.Materials.Add(new CreateMaterialParams
+                        {
+                            Type = MaterialType.Video,
+                            Content = result.Value,
+                        });
                     }
-                    parameters.Materials.Add(new CreateMaterialParams
-                    {
-                        Type = MaterialType.Video,
-                        Content = result.Value,
-                    });
-                }
-
-                if (!parameters.Materials.Any(e => e.ContainsInterpretation()))
-                {
-                    await _unitOfWork.RollBackChangesAsync();
-                    return Result<KnowledgeDto>.Fail(ErrorMessage.NoInterpretationForKnowledge);
                 }
 
                 await CreateMaterialParams.AddMaterialsRecursively(
@@ -211,6 +209,7 @@ namespace Application.UseCases.Knowledges
                     null,
                     _unitOfWork.Repository<Material>().Add
                 );
+                #endregion
 
                 knowledge = await knowledgeRepository.Find(
                     new BaseSpecification<Knowledge>(k => k.Id == knowledge.Id)
@@ -218,7 +217,11 @@ namespace Application.UseCases.Knowledges
                 );
                 var knowledgeDto = _mapper.Map<KnowledgeDto>(knowledge);
 
-                var threeOthers = knowledgeTopicKnowledgeRepository.FindMany(
+                #region Choose Correct Answer Games
+                var chooseTheCorrectAnswerGame = await gameRepository.Find(new BaseSpecification<Game>(g => g.Name == Shared.Constants.Games.ChooseTheCorrectAnswer));
+                if (chooseTheCorrectAnswerGame != null)
+                {
+                    var threeOthers = knowledgeTopicKnowledgeRepository.FindMany(
                     new BaseSpecification<KnowledgeTopicKnowledge>(
                         ktk => parameters.KnowledgeTopicIds.Contains(ktk.KnowledgeTopicId)
                         && ktk.KnowledgeId != knowledge!.Id
@@ -227,154 +230,147 @@ namespace Application.UseCases.Knowledges
                     .AddInclude(query => query.Include(ktk => ktk.Knowledge!).ThenInclude(k => k.Materials))
                     .ApplyPaging(1, 3)).Result.Select(ktk => ktk.Knowledge);
 
+                    if (threeOthers.Count() != 3)
+                        threeOthers = knowledgeTypeKnowledgeRepository.FindMany(
+                            new BaseSpecification<KnowledgeTypeKnowledge>(
+                                ktk => parameters.KnowledgeTypeIds.Contains(ktk.KnowledgeTypeId)
+                                && ktk.KnowledgeId != knowledge!.Id
+                                && ktk.Knowledge!.Visibility == KnowledgeVisibility.Public
+                            )
+                            .AddInclude(query => query.Include(ktk => ktk.Knowledge!).ThenInclude(k => k.Materials))
+                            .ApplyPaging(1, 3)).Result.Select(ktk => ktk.Knowledge);
 
-                if (threeOthers.Count() != 3)
-                    threeOthers = knowledgeTypeKnowledgeRepository.FindMany(
-                        new BaseSpecification<KnowledgeTypeKnowledge>(
-                            ktk => parameters.KnowledgeTypeIds.Contains(ktk.KnowledgeTypeId)
-                            && ktk.KnowledgeId != knowledge!.Id
-                            && ktk.Knowledge!.Visibility == KnowledgeVisibility.Public
-                        )
-                        .AddInclude(query => query.Include(ktk => ktk.Knowledge!).ThenInclude(k => k.Materials))
-                        .ApplyPaging(1, 3)).Result.Select(ktk => ktk.Knowledge);
+                    if (threeOthers.Count() != 3)
+                        threeOthers = await knowledgeRepository.FindMany(
+                            new BaseSpecification<Knowledge>(
+                                k => k.Id != knowledge!.Id
+                                && k.Visibility == KnowledgeVisibility.Public
+                            )
+                            .AddInclude(query => query.Include(k => k.Materials))
+                            .ApplyPaging(1, 3));
 
-                if (threeOthers.Count() != 3)
-                    threeOthers = await knowledgeRepository.FindMany(
-                        new BaseSpecification<Knowledge>(
-                            k => k.Id != knowledge!.Id
-                            && k.Visibility == KnowledgeVisibility.Public
-                        )
-                        .AddInclude(query => query.Include(k => k.Materials))
-                        .ApplyPaging(1, 3));
-
-                List<string> definitions =
-                [
-                    knowledgeDto.DistinctInterpretation,
+                    List<string> definitions =
+                    [
+                        knowledgeDto.DistinctInterpretation,
                     .. _mapper.Map<List<KnowledgeDto>>(threeOthers).Select(k => k!.DistinctInterpretation),
                 ];
-                List<string> titles = [
-                    knowledgeDto.Title,
+                    List<string> titles = [
+                        knowledgeDto.Title,
                     .. _mapper.Map<List<Knowledge>>(threeOthers).Select(k => k!.Title),
                 ];
-                var chooseTheCorrectAnswerGame = await gameRepository.Find(new BaseSpecification<Game>(g => g.Name == Shared.Constants.Games.ChooseTheCorrectAnswer));
-                if (chooseTheCorrectAnswerGame == null)
-                {
-                    await _unitOfWork.RollBackChangesAsync();
-                    return Result<KnowledgeDto>.Fail(ErrorMessage.NoGamesFound);
-                }
 
-                var gameKnowledgeSubscription = await gameKnowledgeSubscriptionRepository.Add(new GameKnowledgeSubscription
-                {
-                    GameId = chooseTheCorrectAnswerGame.Id,
-                    KnowledgeId = knowledge!.Id,
-                });
+                    var gameKnowledgeSubscription = await gameKnowledgeSubscriptionRepository.Add(new GameKnowledgeSubscription
+                    {
+                        GameId = chooseTheCorrectAnswerGame.Id,
+                        KnowledgeId = knowledge!.Id,
+                    });
 
-                var Group = 1;
-                await gameOptionRepository.Add(new GameOption
-                {
-                    GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
-                    Value = knowledge.Title,
-                    Type = GameOptionType.Question,
-                    Group = Group,
-                });
-                int Order = 0;
-                foreach (var definition in definitions)
-                {
+                    var Group = 1;
                     await gameOptionRepository.Add(new GameOption
                     {
                         GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
-                        Value = definition,
-                        Type = GameOptionType.Answer,
-                        IsCorrect = definition == definitions[0],
-                        Group = Group,
-                        Order = Order++,
-                    });
-                }
-                Group += 1;
-
-                await gameOptionRepository.Add(new GameOption
-                {
-                    GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
-                    Value = definitions[0],
-                    Type = GameOptionType.Question,
-                    Group = Group,
-                });
-                Order = 0;
-                foreach (var title in titles)
-                {
-                    await gameOptionRepository.Add(new GameOption
-                    {
-                        GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
-                        Value = title,
-                        Type = GameOptionType.Answer,
-                        IsCorrect = title == knowledge.Title,
-                        Group = Group,
-                        Order = Order++,
-                    });
-                }
-
-                var FillInTheBlankGame = await gameRepository.Find(new BaseSpecification<Game>(g => g.Name == Shared.Constants.Games.FillInTheBlank));
-                if (FillInTheBlankGame == null)
-                {
-                    await _unitOfWork.RollBackChangesAsync();
-                    return Result<KnowledgeDto>.Fail(ErrorMessage.NoGamesFound);
-                }
-
-                gameKnowledgeSubscription = await gameKnowledgeSubscriptionRepository.Add(new GameKnowledgeSubscription
-                {
-                    GameId = FillInTheBlankGame.Id,
-                    KnowledgeId = knowledge.Id,
-                });
-
-                await gameOptionRepository.Add(new GameOption
-                {
-                    GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
-                    Value = StringTransformer.GetBlankedVersion(knowledge.Title),
-                    Type = GameOptionType.Question,
-                    Group = 1,
-                });
-                await gameOptionRepository.Add(new GameOption
-                {
-                    GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
-                    Value = knowledge.Title,
-                    Type = GameOptionType.Answer,
-                    IsCorrect = true,
-                    Group = 1,
-                });
-
-                var arrangeWordsGame = await gameRepository.Find(new BaseSpecification<Game>(g => g.Name == Shared.Constants.Games.ArrangeWordsLetters));
-                if (arrangeWordsGame == null)
-                {
-                    await _unitOfWork.RollBackChangesAsync();
-                    return Result<KnowledgeDto>.Fail(ErrorMessage.NoGamesFound);
-                }
-                var shuffledTitle = StringTransformer.GetShuffledVersion(knowledge.Title);
-
-                if (shuffledTitle != null)
-                {
-
-                    gameKnowledgeSubscription = await gameKnowledgeSubscriptionRepository.Add(new GameKnowledgeSubscription
-                    {
-                        GameId = arrangeWordsGame.Id,
-                        KnowledgeId = knowledge.Id,
-                    });
-
-
-                    await gameOptionRepository.Add(new GameOption
-                    {
-                        GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
-                        Value = shuffledTitle,
+                        Value = knowledge.Title,
                         Type = GameOptionType.Question,
+                        Group = Group,
+                    });
+                    int Order = 0;
+                    foreach (var definition in definitions)
+                    {
+                        await gameOptionRepository.Add(new GameOption
+                        {
+                            GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
+                            Value = definition,
+                            Type = GameOptionType.Answer,
+                            IsCorrect = definition == definitions[0],
+                            Group = Group,
+                            Order = Order++,
+                        });
+                    }
+                    Group += 1;
+
+                    await gameOptionRepository.Add(new GameOption
+                    {
+                        GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
+                        Value = definitions[0],
+                        Type = GameOptionType.Question,
+                        Group = Group,
+                    });
+                    Order = 0;
+                    foreach (var title in titles)
+                    {
+                        await gameOptionRepository.Add(new GameOption
+                        {
+                            GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
+                            Value = title,
+                            Type = GameOptionType.Answer,
+                            IsCorrect = title == knowledge.Title,
+                            Group = Group,
+                            Order = Order++,
+                        });
+                    }
+                }
+                #endregion
+
+                #region Fill In The Blank Games
+                var FillInTheBlankGame = await gameRepository.Find(new BaseSpecification<Game>(g => g.Name == Shared.Constants.Games.FillInTheBlank));
+                if (FillInTheBlankGame != null)
+                {
+                    var gameKnowledgeSubscription = await gameKnowledgeSubscriptionRepository.Add(new GameKnowledgeSubscription
+                    {
+                        GameId = FillInTheBlankGame.Id,
+                        KnowledgeId = knowledge!.Id,
                     });
 
+                    await gameOptionRepository.Add(new GameOption
+                    {
+                        GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
+                        Value = StringTransformer.GetBlankedVersion(knowledge.Title),
+                        Type = GameOptionType.Question,
+                        Group = 1,
+                    });
                     await gameOptionRepository.Add(new GameOption
                     {
                         GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
                         Value = knowledge.Title,
                         Type = GameOptionType.Answer,
                         IsCorrect = true,
+                        Group = 1,
                     });
                 }
+                #endregion
+
+                #region Arrange Words Games
+                var arrangeWordsGame = await gameRepository.Find(new BaseSpecification<Game>(g => g.Name == Shared.Constants.Games.ArrangeWordsLetters));
+                if (arrangeWordsGame != null)
+                {
+                    var shuffledTitle = StringTransformer.GetShuffledVersion(knowledge!.Title);
+
+                    if (shuffledTitle != null)
+                    {
+                        var gameKnowledgeSubscription = await gameKnowledgeSubscriptionRepository.Add(new GameKnowledgeSubscription
+                        {
+                            GameId = arrangeWordsGame.Id,
+                            KnowledgeId = knowledge.Id,
+                        });
+
+                        await gameOptionRepository.Add(new GameOption
+                        {
+                            GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
+                            Value = shuffledTitle,
+                            Type = GameOptionType.Question,
+                        });
+
+                        await gameOptionRepository.Add(new GameOption
+                        {
+                            GameKnowledgeSubscriptionId = gameKnowledgeSubscription.Id,
+                            Value = knowledge.Title,
+                            Type = GameOptionType.Answer,
+                            IsCorrect = true,
+                        });
+                    }
+                }
+                #endregion
+
                 return Result<KnowledgeDto>.Done(knowledgeDto);
             }
             catch (Exception)

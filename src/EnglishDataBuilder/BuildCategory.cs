@@ -2,7 +2,6 @@ using Domain.Entities.PivotEntities;
 using Domain.Entities.SingleIdEntities;
 using EnglishDataBuilder.Models;
 using Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
 
 namespace EnglishDataBuilder
 {
@@ -12,7 +11,7 @@ namespace EnglishDataBuilder
         {
             try
             {
-                var rootCategory = await context.KnowledgeTopics.FirstOrDefaultAsync(x => x.Title == "English Vocabulary");
+                var rootCategory = context.KnowledgeTopics.FirstOrDefault(x => x.Id == InitialData.KnowledgeTopicId);
 
                 var categories = await Utils.ReadJsonFileAsync<List<JsonCategory>>(filePath);
                 if (categories == null) return;
