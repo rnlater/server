@@ -14,6 +14,7 @@ namespace UnitTests.Auth
 {
     public class ConfirmPasswordResettingEmailUseCaseTest
     {
+        private readonly Mock<IRepository<Authentication>> _authenticationRepositoryMock;
         private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<IMapper> _mapperMock;
         private readonly Mock<IOptions<JwtSettings>> _jwtOptionsMock;
@@ -22,6 +23,7 @@ namespace UnitTests.Auth
 
         public ConfirmPasswordResettingEmailUseCaseTest()
         {
+            _authenticationRepositoryMock = new Mock<IRepository<Authentication>>();
             _unitOfWorkMock = new Mock<IUnitOfWork>();
             _mapperMock = new Mock<IMapper>();
             _jwtOptionsMock = new Mock<IOptions<JwtSettings>>();
@@ -32,7 +34,10 @@ namespace UnitTests.Auth
                 Audience = "test_audience",
                 ExpiryMinutes = 180
             });
-            _generateTokenPairUseCase = new GenerateTokenPairUseCase(_jwtOptionsMock.Object, _unitOfWorkMock.Object);
+
+            _unitOfWorkMock.Setup(u => u.Repository<Authentication>()).Returns(_authenticationRepositoryMock.Object);
+
+            _generateTokenPairUseCase = new GenerateTokenPairUseCase(_jwtOptionsMock.Object);
             _confirmPasswordResettingEmailUseCase = new ConfirmPasswordResettingEmailUseCase(_unitOfWorkMock.Object, _mapperMock.Object, _generateTokenPairUseCase);
         }
 
@@ -71,9 +76,8 @@ namespace UnitTests.Auth
             Assert.NotNull(result.Value.Item1);
             Assert.NotNull(result.Value.Item2);
             Assert.Equal(user.Email, result.Value.Item1.Email);
-            Assert.Null(user.Authentication.ConfirmationCode);
-            Assert.Null(user.Authentication.ConfirmationCodeExpiryTime);
-            userRepositoryMock.Verify(r => r.Update(It.IsAny<User>()), Times.Once);
+            Assert.Null(user.Authentication);
+            _authenticationRepositoryMock.Verify(r => r.Update(It.IsAny<Authentication>()), Times.Once);
         }
 
         [Fact]

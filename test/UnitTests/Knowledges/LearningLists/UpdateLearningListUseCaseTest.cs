@@ -8,9 +8,9 @@ using Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Moq;
 using Shared.Constants;
+using Xunit;
 
 namespace UnitTests.Knowledges.LearningLists
-
 {
     public class UpdateLearningListUseCaseTest
     {
@@ -18,7 +18,6 @@ namespace UnitTests.Knowledges.LearningLists
         private readonly Mock<IRepository<LearningList>> _learningListRepositoryMock;
         private readonly Mock<IHttpContextAccessor> _httpContextAccessorMock;
         private readonly Mock<IRepository<User>> _userRepositoryMock;
-
         private readonly IMapper _mapper;
         private readonly UpdateLearningListUseCase _updateLearningListUseCase;
 
@@ -67,9 +66,9 @@ namespace UnitTests.Knowledges.LearningLists
                 Title = "Updated Learning List"
             };
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
-            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
-            _learningListRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<LearningList>>())).ReturnsAsync((LearningList?)null);
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = userId, Email = "", UserName = "" });
+            _learningListRepositoryMock.Setup(r => r.GetById(parameters.Id)).ReturnsAsync((LearningList?)null);
 
             // Act
             var result = await _updateLearningListUseCase.Execute(parameters);
@@ -98,6 +97,7 @@ namespace UnitTests.Knowledges.LearningLists
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = userId, Email = "", UserName = "" });
             _learningListRepositoryMock.Setup(r => r.GetById(parameters.Id)).ReturnsAsync(learningList);
 
             // Act
@@ -127,6 +127,7 @@ namespace UnitTests.Knowledges.LearningLists
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = userId, Email = "", UserName = "" });
             _learningListRepositoryMock.Setup(r => r.GetById(parameters.Id)).ReturnsAsync(learningList);
             _learningListRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<LearningList>>())).ReturnsAsync(learningList);
 
@@ -152,11 +153,12 @@ namespace UnitTests.Knowledges.LearningLists
             var learningList = new LearningList
             {
                 Id = parameters.Id,
-                Title = "Updated Learning List",
+                Title = "Old Learning List",
                 LearnerId = userId
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = userId, Email = "", UserName = "" });
             _learningListRepositoryMock.Setup(r => r.GetById(parameters.Id)).ReturnsAsync(learningList);
             _learningListRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<LearningList>>())).ReturnsAsync((LearningList?)null);
             _learningListRepositoryMock.Setup(r => r.Update(It.IsAny<LearningList>())).ReturnsAsync(learningList);
@@ -170,6 +172,5 @@ namespace UnitTests.Knowledges.LearningLists
             Assert.Equal(learningList.Id, result.Value.Id);
             Assert.Equal(parameters.Title, result.Value.Title);
         }
-
     }
 }

@@ -37,7 +37,7 @@ namespace UnitTests.Auth
                 Audience = "test_audience",
                 ExpiryMinutes = 180
             });
-            _generateTokenPairUseCase = new GenerateTokenPairUseCase(_jwtOptionsMock.Object, _unitOfWorkMock.Object);
+            _generateTokenPairUseCase = new GenerateTokenPairUseCase(_jwtOptionsMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<User>()).Returns(_userRepositoryMock.Object);
 
             _loginUseCase = new LoginUseCase(_unitOfWorkMock.Object, _mapperMock.Object, _generateTokenPairUseCase);
@@ -150,6 +150,9 @@ namespace UnitTests.Auth
                     IsActivated = true
                 }
             };
+            var _authenticationRepositoryMock = new Mock<IRepository<Authentication>>();
+            _unitOfWorkMock.Setup(u => u.Repository<Authentication>()).Returns(_authenticationRepositoryMock.Object);
+
             _userRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<User>>()))
                 .ReturnsAsync(user);
             _mapperMock.Setup(m => m.Map<UserDto>(It.IsAny<User>())).Returns(new UserDto { Email = user.Email, UserName = user.UserName });

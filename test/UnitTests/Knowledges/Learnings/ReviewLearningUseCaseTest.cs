@@ -10,7 +10,6 @@ using Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Moq;
 using Shared.Constants;
-
 namespace UnitTests.Knowledges.Learnings
 {
     public class ReviewLearningUseCaseTest
@@ -50,8 +49,8 @@ namespace UnitTests.Knowledges.Learnings
                 new ReviewLearningParams
                 {
                     KnowledgeId = Guid.NewGuid(),
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    QuestionId = Guid.NewGuid(),
+                    Answer = "Answer",
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -74,8 +73,8 @@ namespace UnitTests.Knowledges.Learnings
                 new ReviewLearningParams
                 {
                     KnowledgeId = Guid.NewGuid(),
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    QuestionId = Guid.NewGuid(),
+                    Answer = "Answer",
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -101,8 +100,8 @@ namespace UnitTests.Knowledges.Learnings
             {
                 new() {
                     KnowledgeId = knowledgeId,
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    QuestionId = Guid.NewGuid(),
+                    Answer = "Answer",
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -136,8 +135,8 @@ namespace UnitTests.Knowledges.Learnings
                 new ReviewLearningParams
                 {
                     KnowledgeId = knowledgeId,
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    QuestionId = Guid.NewGuid(),
+                    Answer = "Answer",
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -170,8 +169,8 @@ namespace UnitTests.Knowledges.Learnings
                 new ReviewLearningParams
                 {
                     KnowledgeId = knowledgeId,
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    QuestionId = Guid.NewGuid(),
+                    Answer = "Invalid Answer",
                     Interpretation = "Invalid Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -188,14 +187,17 @@ namespace UnitTests.Knowledges.Learnings
                 }
             };
 
-            var correctGameOption = new GameOption
+            var question = new GameOption
             {
-                Id = parameters[0].CorrectGameOptionId,
                 Value = "",
                 GameKnowledgeSubscription = new GameKnowledgeSubscription
                 {
                     GameId = Guid.NewGuid(),
-                    Knowledge = knowledge
+                    KnowledgeId = Guid.NewGuid(),
+                    GameOptions = new List<GameOption>
+                    {
+                        new GameOption { Value = "Answer", IsCorrect = true, Type = GameOptionType.Answer }
+                    }
                 }
             };
 
@@ -206,11 +208,12 @@ namespace UnitTests.Knowledges.Learnings
             {
                 KnowledgeId = knowledgeId,
                 UserId = userId,
-                LearningHistories = new List<LearningHistory>() {
+                LearningHistories = new List<LearningHistory>
+                {
                     new LearningHistory { Id = Guid.NewGuid(), LearningId = Guid.NewGuid(), LearningLevel = LearningLevel.LevelOne }
                 }
             });
-            _gameOptionRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<GameOption>>())).ReturnsAsync(new List<GameOption> { correctGameOption, new GameOption { Value = "" } });
+            _gameOptionRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<GameOption>>())).ReturnsAsync(question);
 
             var result = await _reviewLearningUseCase.Execute(parameters);
 
@@ -228,8 +231,8 @@ namespace UnitTests.Knowledges.Learnings
                 new ReviewLearningParams
                 {
                     KnowledgeId = knowledgeId,
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    QuestionId = Guid.NewGuid(),
+                    Answer = "Answer",
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -237,7 +240,7 @@ namespace UnitTests.Knowledges.Learnings
 
             var correctGameOption = new GameOption
             {
-                Id = parameters[0].CorrectGameOptionId,
+                Id = parameters[0].QuestionId,
                 Value = "",
                 GameKnowledgeSubscription = new GameKnowledgeSubscription
                 {
@@ -247,10 +250,10 @@ namespace UnitTests.Knowledges.Learnings
                         Id = knowledgeId,
                         Title = "Knowledge 1",
                         Materials = new List<Material>
-                            {
-                                new Material { Id = Guid.NewGuid(), Content = "Interpretation", Type = MaterialType.Interpretation },
-                                new Material { Id = Guid.NewGuid(), Content = "", Type = MaterialType.TextMedium }
-                            }
+                        {
+                            new Material { Id = Guid.NewGuid(), Content = "Interpretation", Type = MaterialType.Interpretation },
+                            new Material { Id = Guid.NewGuid(), Content = "", Type = MaterialType.TextMedium }
+                        }
                     }
                 }
             };
@@ -259,8 +262,18 @@ namespace UnitTests.Knowledges.Learnings
             {
                 KnowledgeId = knowledgeId,
                 UserId = userId,
-                LearningHistories = new List<LearningHistory>() {
+                LearningHistories = new List<LearningHistory>
+                {
                     new LearningHistory { Id = Guid.NewGuid(), LearningId = Guid.NewGuid(), LearningLevel = LearningLevel.LevelOne }
+                }
+            };
+            var question = new GameOption
+            {
+                Value = "",
+                GameKnowledgeSubscription = new GameKnowledgeSubscription
+                {
+                    GameId = Guid.NewGuid(),
+                    KnowledgeId = knowledgeId
                 }
             };
 
@@ -268,7 +281,7 @@ namespace UnitTests.Knowledges.Learnings
             _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
 
             _learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learning);
-            _gameOptionRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<GameOption>>())).ReturnsAsync(new List<GameOption> { correctGameOption, new GameOption { Value = "" } });
+            _gameOptionRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<GameOption>>())).ReturnsAsync(question);
 
             _learningHistoryRepositoryMock.Setup(r => r.Add(It.IsAny<LearningHistory>())).ReturnsAsync(new LearningHistory { Id = Guid.NewGuid(), LearningId = Guid.NewGuid(), LearningLevel = LearningLevel.LevelOne });
 

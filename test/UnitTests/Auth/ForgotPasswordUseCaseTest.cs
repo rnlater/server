@@ -45,7 +45,10 @@ namespace UnitTests.Auth
 
             var userRepositoryMock = new Mock<IRepository<User>>();
             userRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<User>>())).ReturnsAsync(user);
+            var _authenticationRepositoryMock = new Mock<IRepository<Authentication>>();
             _unitOfWorkMock.Setup(u => u.Repository<User>()).Returns(userRepositoryMock.Object);
+            _unitOfWorkMock.Setup(u => u.Repository<Authentication>()).Returns(_authenticationRepositoryMock.Object);
+
             _mapperMock.Setup(m => m.Map<UserDto>(It.IsAny<User>())).Returns(new UserDto { Email = user.Email, UserName = user.UserName });
 
             var result = await _forgotPasswordUseCase.Execute(new ForgotPasswordParams { Email = email });
@@ -53,7 +56,7 @@ namespace UnitTests.Auth
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Equal(user.Email, result.Value.Email);
-            userRepositoryMock.Verify(r => r.Update(It.IsAny<User>()), Times.Once);
+            _authenticationRepositoryMock.Verify(r => r.Update(It.IsAny<Authentication>()), Times.Once);
         }
 
         [Fact]

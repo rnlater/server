@@ -10,6 +10,10 @@ using Infrastructure.Data;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using Domain.Enums;
+using Application.Interfaces;
+using Domain.Entities.PivotEntities;
+using Xunit;
+using Domain.Entities.SingleIdPivotEntities;
 
 namespace UnitTests.Knowledges
 {
@@ -19,6 +23,7 @@ namespace UnitTests.Knowledges
         private readonly Mock<IRepository<Knowledge>> _knowledgeRepositoryMock;
         private readonly Mock<IRepository<User>> _userRepositoryMock;
         private readonly Mock<IHttpContextAccessor> _httpContextAccessorMock;
+        private readonly Mock<IRedisCache> _cacheMock;
         private readonly IMapper _mapper;
         private readonly GetDetailedKnowledgeByGuidUseCase _getDetailedKnowledgeByGuidUseCase;
 
@@ -28,12 +33,13 @@ namespace UnitTests.Knowledges
             _knowledgeRepositoryMock = new Mock<IRepository<Knowledge>>();
             _httpContextAccessorMock = new Mock<IHttpContextAccessor>();
             _userRepositoryMock = new Mock<IRepository<User>>();
+            _cacheMock = new Mock<IRedisCache>();
             _mapper = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>()).CreateMapper();
 
             _unitOfWorkMock.Setup(u => u.Repository<Knowledge>()).Returns(_knowledgeRepositoryMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<User>()).Returns(_userRepositoryMock.Object);
 
-            _getDetailedKnowledgeByGuidUseCase = new GetDetailedKnowledgeByGuidUseCase(_unitOfWorkMock.Object, _mapper, _httpContextAccessorMock.Object);
+            _getDetailedKnowledgeByGuidUseCase = new GetDetailedKnowledgeByGuidUseCase(_unitOfWorkMock.Object, _mapper, _httpContextAccessorMock.Object, _cacheMock.Object);
         }
 
         [Fact]
@@ -42,6 +48,10 @@ namespace UnitTests.Knowledges
             // Arrange
             var knowledgeId = Guid.NewGuid();
 
+            _knowledgeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(new Knowledge
+            {
+                Title = "Test Knowledge",
+            });
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns((Claim?)null);
 
             // Act
@@ -57,8 +67,7 @@ namespace UnitTests.Knowledges
         {
             var knowledgeId = Guid.NewGuid();
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", SeedData.GetUsers().First().Id.ToString()));
-            _userRepositoryMock.Setup(r => r.GetById(SeedData.GetUsers().First().Id)).ReturnsAsync(SeedData.GetUsers().First());
+            _knowledgeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync((Knowledge?)null);
 
             var result = await _getDetailedKnowledgeByGuidUseCase.Execute(knowledgeId);
 
@@ -73,14 +82,12 @@ namespace UnitTests.Knowledges
             {
                 Id = Guid.NewGuid(),
                 Title = "Test Knowledge",
-                KnowledgeTypeKnowledges = [],
-                KnowledgeTopicKnowledges = [],
-                SubjectKnowledges = [],
-                Materials = [],
+                KnowledgeTypeKnowledges = new List<KnowledgeTypeKnowledge>(),
+                KnowledgeTopicKnowledges = new List<KnowledgeTopicKnowledge>(),
+                SubjectKnowledges = new List<SubjectKnowledge>(),
+                Materials = new List<Material>(),
                 Visibility = KnowledgeVisibility.Private
             };
-
-            var claims = new[] { new Claim(ClaimTypes.NameIdentifier, Guid.NewGuid().ToString()) };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", SeedData.GetUsers().First().Id.ToString()));
             _userRepositoryMock.Setup(r => r.GetById(SeedData.GetUsers().First().Id)).ReturnsAsync(SeedData.GetUsers().First());
@@ -100,16 +107,24 @@ namespace UnitTests.Knowledges
                 Id = Guid.NewGuid(),
                 Title = "Test Knowledge",
                 Visibility = KnowledgeVisibility.Public,
-                KnowledgeTypeKnowledges = [],
-                KnowledgeTopicKnowledges = [],
-                SubjectKnowledges = [],
+                KnowledgeTypeKnowledges = new List<KnowledgeTypeKnowledge>(),
+                KnowledgeTopicKnowledges = new List<KnowledgeTopicKnowledge>(),
+                SubjectKnowledges = new List<SubjectKnowledge>(),
                 Creator = SeedData.GetUsers().First(),
-                Materials = []
+                Materials = new List<Material>()
             };
 
             _knowledgeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledge);
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", SeedData.GetUsers().First().Id.ToString()));
             _userRepositoryMock.Setup(r => r.GetById(SeedData.GetUsers().First().Id)).ReturnsAsync(SeedData.GetUsers().First());
+            var learning = new Learning
+            {
+                UserId = SeedData.GetUsers().First().Id,
+                KnowledgeId = knowledge.Id
+            };
+            var learningRepositoryMock = new Mock<IRepository<Learning>>();
+            learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learning);
+            _unitOfWorkMock.Setup(u => u.Repository<Learning>()).Returns(learningRepositoryMock.Object);
 
             var result = await _getDetailedKnowledgeByGuidUseCase.Execute(knowledge.Id);
 
@@ -137,7 +152,14 @@ namespace UnitTests.Knowledges
             _knowledgeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledge);
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", SeedData.GetUsers().First().Id.ToString()));
             _userRepositoryMock.Setup(r => r.GetById(SeedData.GetUsers().First().Id)).ReturnsAsync(SeedData.GetUsers().First());
-
+            var learning = new Learning
+            {
+                UserId = SeedData.GetUsers().First().Id,
+                KnowledgeId = knowledge.Id
+            };
+            var learningRepositoryMock = new Mock<IRepository<Learning>>();
+            learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learning);
+            _unitOfWorkMock.Setup(u => u.Repository<Learning>()).Returns(learningRepositoryMock.Object);
             var result = await _getDetailedKnowledgeByGuidUseCase.Execute(knowledge.Id);
 
             Assert.True(result.IsSuccess);

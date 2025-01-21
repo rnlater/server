@@ -35,7 +35,7 @@ namespace UnitTests.Auth
                 Audience = "test_audience",
                 ExpiryMinutes = 180
             });
-            _generateTokenPairUseCase = new GenerateTokenPairUseCase(_jwtOptionsMock.Object, _unitOfWorkMock.Object);
+            _generateTokenPairUseCase = new GenerateTokenPairUseCase(_jwtOptionsMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<User>()).Returns(_userRepositoryMock.Object);
 
             _confirmRegistrationEmailUseCase = new ConfirmRegistrationEmailUseCase(_unitOfWorkMock.Object, _mapperMock.Object, _generateTokenPairUseCase);
@@ -209,6 +209,8 @@ namespace UnitTests.Auth
             };
             _userRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<User>>()))
                 .ReturnsAsync(user);
+            var _authenticationRepositoryMock = new Mock<IRepository<Authentication>>();
+            _unitOfWorkMock.Setup(u => u.Repository<Authentication>()).Returns(_authenticationRepositoryMock.Object);
 
             _mapperMock.Setup(m => m.Map<UserDto>(It.IsAny<User>())).Returns(new UserDto { Email = user.Email, UserName = user.UserName });
 
@@ -219,9 +221,7 @@ namespace UnitTests.Auth
             Assert.NotNull(result.Value.Item2);
             Assert.Equal(user.Email, result.Value.Item1.Email);
             Assert.Equal(user.UserName, result.Value.Item1.UserName);
-            Assert.True(user.Authentication.IsEmailConfirmed);
-            Assert.Null(user.Authentication.ConfirmationCode);
-            Assert.Null(user.Authentication.ConfirmationCodeExpiryTime);
+            Assert.Null(user.Authentication);
         }
 
         [Fact]

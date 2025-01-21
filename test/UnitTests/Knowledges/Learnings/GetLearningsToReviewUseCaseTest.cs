@@ -146,6 +146,7 @@ namespace UnitTests.Knowledges.Learnings
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
 
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learnings);
             _gameKnowledgeSubscriptionRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<GameKnowledgeSubscription>>())).ReturnsAsync([]);
@@ -213,6 +214,7 @@ namespace UnitTests.Knowledges.Learnings
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = userId, Email = "Email", UserName = "UserName" });
 
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learnings);
             _gameKnowledgeSubscriptionRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<GameKnowledgeSubscription>>())).ReturnsAsync(learnings.First().Knowledge!.GameKnowledgeSubscriptions);
@@ -222,10 +224,10 @@ namespace UnitTests.Knowledges.Learnings
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Single(result.Value.First());
-            Assert.Equal(knowledgeId, result.Value.First().ToList().First().Value.LearningDto.Knowledge!.Id);
-            Assert.Equal("Knowledge 1", result.Value.First().ToList().First().Value.LearningDto.Knowledge!.Title);
-            Assert.Equal(3, result.Value.First().ToList().First().Value.LearningDto.Knowledge!.Materials.Count);
-            Assert.NotNull(result.Value.First().ToList().First().Value.LearningDto.Knowledge!.GameToReview);
+            Assert.Equal(knowledgeId, result.Value.First().ToList().First().Knowledge!.Id);
+            Assert.Equal("Knowledge 1", result.Value.First().ToList().First().Knowledge!.Title);
+            Assert.Equal(3, result.Value.First().ToList().First().Knowledge!.Materials.Count);
+            Assert.NotNull(result.Value.First().ToList().First().Knowledge!.GameToReview);
         }
     }
 }

@@ -1,3 +1,5 @@
+using Application.DTOs;
+using Application.Interfaces;
 using Application.Mappings;
 using Application.UseCases.Tracks;
 using AutoMapper;
@@ -15,7 +17,8 @@ namespace UnitTests.Tracks
     {
         private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<IRepository<Track>> _trackRepositoryMock;
-        private readonly Mock<IRepository<SubjectKnowledge>> _subjectKnowledgeRepositoryMock;
+        private readonly Mock<IRepository<TrackSubject>> _trackSubjectRepositoryMock;
+        private readonly Mock<IRedisCache> _cacheMock;
         private readonly IMapper _mapper;
         private readonly GetDetailedTracksUseCase _getDetailedTracksUseCase;
 
@@ -23,19 +26,21 @@ namespace UnitTests.Tracks
         {
             _unitOfWorkMock = new Mock<IUnitOfWork>();
             _trackRepositoryMock = new Mock<IRepository<Track>>();
-            _subjectKnowledgeRepositoryMock = new Mock<IRepository<SubjectKnowledge>>();
+            _trackSubjectRepositoryMock = new Mock<IRepository<TrackSubject>>();
+            _cacheMock = new Mock<IRedisCache>();
             _mapper = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>()).CreateMapper();
 
             _unitOfWorkMock.Setup(u => u.Repository<Track>()).Returns(_trackRepositoryMock.Object);
-            _unitOfWorkMock.Setup(u => u.Repository<SubjectKnowledge>()).Returns(_subjectKnowledgeRepositoryMock.Object);
+            _unitOfWorkMock.Setup(u => u.Repository<TrackSubject>()).Returns(_trackSubjectRepositoryMock.Object);
 
-            _getDetailedTracksUseCase = new GetDetailedTracksUseCase(_unitOfWorkMock.Object, _mapper);
+            _getDetailedTracksUseCase = new GetDetailedTracksUseCase(_unitOfWorkMock.Object, _mapper, _cacheMock.Object);
         }
 
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenNoTracksFound()
         {
-            _trackRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Track>>())).ReturnsAsync(Enumerable.Empty<Track>());
+            _cacheMock.Setup(c => c.GetAsync<IEnumerable<TrackDto>>(It.IsAny<string>())).ReturnsAsync((IEnumerable<TrackDto>?)null);
+            _trackRepositoryMock.Setup(r => r.GetAll()).ReturnsAsync(Enumerable.Empty<Track>());
 
             var result = await _getDetailedTracksUseCase.Execute(new NoParam());
 
@@ -46,17 +51,13 @@ namespace UnitTests.Tracks
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenTracksAreFound()
         {
-            var subjectKnowledges = SeedData.GetSubjectKnowledges().Where(sk => sk.SubjectId == SeedData.Subject1Id).ToList();
-            var trackSubjects = SeedData.GetTrackSubjects().Where(ts => ts.TrackId == SeedData.Track1Id && ts.SubjectId == SeedData.Subject1Id).ToList();
-            Subject subject = SeedData.GetSubjects().First(s => s.Id == SeedData.Subject1Id);
-            subject.SubjectKnowledges = subjectKnowledges;
-            trackSubjects[0].Subject = subject;
             var tracks = new List<Track> { SeedData.GetTracks()[0] };
-            tracks[0].TrackSubjects = trackSubjects;
+            var trackSubjects = SeedData.GetTrackSubjects().Where(ts => ts.TrackId == SeedData.Track1Id).ToList();
 
-            _trackRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Track>>())).ReturnsAsync(tracks);
-            _subjectKnowledgeRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<SubjectKnowledge>>()))
-                .ReturnsAsync(subjectKnowledges.Count);
+            _cacheMock.Setup(c => c.GetAsync<IEnumerable<TrackDto>>(It.IsAny<string>())).ReturnsAsync((IEnumerable<TrackDto>?)null);
+            _trackRepositoryMock.Setup(r => r.GetAll()).ReturnsAsync(tracks);
+            _trackSubjectRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<TrackSubject>>()))
+                .ReturnsAsync(trackSubjects.Count);
 
             var result = await _getDetailedTracksUseCase.Execute(new NoParam());
 
@@ -68,10 +69,27 @@ namespace UnitTests.Tracks
             Assert.Equal(tracks[0].Id, trackDto.Id);
             Assert.Equal(tracks[0].Name, trackDto.Name);
             Assert.Equal(tracks[0].Description, trackDto.Description);
+            Assert.Equal(trackSubjects.Count, trackDto.SubjectCount);
+        }
 
-            var trackSubjectDto = trackDto.TrackSubjects.First();
-            Assert.Equal(trackSubjects[0].SubjectId, trackSubjectDto.SubjectId);
-            Assert.Equal(subjectKnowledges.Count, trackSubjectDto.Subject!.KnowledgeCount);
+        [Fact]
+        public async Task Execute_ShouldReturnCachedTracks_WhenCacheIsNotEmpty()
+        {
+            var cachedTracks = new List<TrackDto> { new TrackDto { Id = SeedData.Track1Id, Name = "Cached Track", Description = "Cached Description", SubjectCount = 1 } };
+
+            _cacheMock.Setup(c => c.GetAsync<IEnumerable<TrackDto>>(It.IsAny<string>())).ReturnsAsync(cachedTracks);
+
+            var result = await _getDetailedTracksUseCase.Execute(new NoParam());
+
+            Assert.True(result.IsSuccess);
+            Assert.NotEmpty(result.Value);
+            Assert.Equal(cachedTracks.Count, result.Value.Count());
+
+            var trackDto = result.Value.First();
+            Assert.Equal(cachedTracks[0].Id, trackDto.Id);
+            Assert.Equal(cachedTracks[0].Name, trackDto.Name);
+            Assert.Equal(cachedTracks[0].Description, trackDto.Description);
+            Assert.Equal(cachedTracks[0].SubjectCount, trackDto.SubjectCount);
         }
     }
 }

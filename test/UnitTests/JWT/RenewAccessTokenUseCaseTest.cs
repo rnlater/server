@@ -32,7 +32,7 @@ namespace UnitTests.JWT
                 Audience = "test_audience",
                 ExpiryMinutes = 180
             });
-            _generateTokenPairUseCase = new GenerateTokenPairUseCase(_jwtOptionsMock.Object, _unitOfWorkMock.Object);
+            _generateTokenPairUseCase = new GenerateTokenPairUseCase(_jwtOptionsMock.Object);
             _renewTokenPairUseCase = new RenewTokenPairUseCase(_unitOfWorkMock.Object, _generateTokenPairUseCase);
         }
 

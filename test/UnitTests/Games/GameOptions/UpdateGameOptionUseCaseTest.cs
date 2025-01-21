@@ -132,14 +132,14 @@ namespace UnitTests.Games.GameOptions
                     CreatorId = SeedData.GetUsers().First().Id,
                     Title = "Knowledge 1"
                 },
-                GameOptions = new List<GameOption>
-                {
+                GameOptions =
+                [
                     new GameOption { Id = Guid.NewGuid(), GameKnowledgeSubscriptionId = parameters.GameKnowledgeSubscriptionId,
                     Group = 1,
                     Order = 1,
                     Value = "",
                     IsCorrect = true }
-                }
+                ]
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", SeedData.GetUsers().First().Id.ToString()));
@@ -172,8 +172,8 @@ namespace UnitTests.Games.GameOptions
                     CreatorId = SeedData.GetUsers().First().Id,
                     Title = "Knowledge 1"
                 },
-                GameOptions = new List<GameOption>
-                {
+                GameOptions =
+                [
                     new GameOption {
                         Id = Guid.NewGuid(),
                         GameKnowledgeSubscriptionId = parameters.GameKnowledgeSubscriptionId,
@@ -182,7 +182,7 @@ namespace UnitTests.Games.GameOptions
                         Value = "",
                         IsCorrect = true
                     }
-                }
+                ]
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", SeedData.GetUsers().First().Id.ToString()));
@@ -215,8 +215,8 @@ namespace UnitTests.Games.GameOptions
                     CreatorId = SeedData.GetUsers().First().Id,
                     Title = "Knowledge 1"
                 },
-                GameOptions = new List<GameOption>
-                {
+                GameOptions =
+                [
                     new GameOption
                     {
                         Id = gameOptionId,
@@ -225,7 +225,7 @@ namespace UnitTests.Games.GameOptions
                         Group = parameters.Group,
                         IsCorrect = true
                     }
-                }
+                ]
             };
 
 

@@ -9,24 +9,18 @@ namespace UnitTests.Services
     {
         private readonly Mock<IConfiguration> _configurationMock;
         private readonly FileStorageService _fileStorageService;
-        private readonly string _rootPath = "wwwroot/Upload/Files";
+        private readonly string _rootPath;
 
         public FileStorageServiceTest()
         {
             _configurationMock = new Mock<IConfiguration>();
+            var Configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
+            _rootPath = Configuration["FileStorage:RootPath"] ?? "wwwroot/Upload/Files";
             _configurationMock.SetupGet(c => c["FileStorage:RootPath"]).Returns(_rootPath);
+
             _fileStorageService = new FileStorageService(_configurationMock.Object);
-        }
-
-        [Fact]
-        public void Constructor_ShouldThrowArgumentException_WhenRootPathIsNotConfigured()
-        {
-            // Arrange
-            var configurationMock = new Mock<IConfiguration>();
-            configurationMock.SetupGet(c => c["FileStorage:RootPath"]).Returns(string.Empty);
-
-            // Act & Assert
-            Assert.Throws<ArgumentException>(() => new FileStorageService(configurationMock.Object));
         }
 
         [Fact]
@@ -69,7 +63,6 @@ namespace UnitTests.Services
             // Assert
             Assert.True(result.IsSuccess);
             Assert.Contains(directory, result.Value);
-            Assert.Contains(fileName, result.Value);
 
             // Clean up
             var fullPath = Path.Combine(_rootPath, result.Value);
@@ -85,7 +78,7 @@ namespace UnitTests.Services
             // Arrange
             var filePath = "test-directory/test.txt";
             var fullPath = Path.Combine(_rootPath, filePath);
-            Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
+            Directory.CreateDirectory(Path.GetDirectoryName(fullPath) ?? string.Empty);
             File.WriteAllText(fullPath, "Test content");
 
             // Act

@@ -134,14 +134,14 @@ namespace UnitTests.Games.GameOptions
                     CreatorId = SeedData.GetUsers().First().Id,
                     Title = "Knowledge 1"
                 },
-                GameOptions = new List<GameOption>
-                {
+                GameOptions =
+                [
                     new GameOption { Id = Guid.NewGuid(), GameKnowledgeSubscriptionId = parameters.GameKnowledgeSubscriptionId,
                     Group = 1,
                     Order = 1,
                     Value = "",
                     IsCorrect = true }
-                }
+                ]
             };
 
 
@@ -175,14 +175,14 @@ namespace UnitTests.Games.GameOptions
                     CreatorId = SeedData.GetUsers().First().Id,
                     Title = "Knowledge 1"
                 },
-                GameOptions = new List<GameOption>
-                {
+                GameOptions =
+                [
                     new GameOption { Id = Guid.NewGuid(), GameKnowledgeSubscriptionId = parameters.GameKnowledgeSubscriptionId,
                     Group = 1,
                     Order = 1,
                     Value = "",
                     IsCorrect = true }
-                }
+                ]
             };
 
             var newGameOption = new GameOption

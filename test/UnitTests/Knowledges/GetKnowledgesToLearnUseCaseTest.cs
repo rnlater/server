@@ -98,7 +98,7 @@ namespace UnitTests.Knowledges
         }
 
         [Fact]
-        public async Task Execute_ShouldReturnFail_WhenKnowledgeRequireAGameToReview()
+        public async Task Execute_ShouldReturnFail_WhenKnowledgeRequireTwoGamesToLearn()
         {
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
@@ -125,6 +125,7 @@ namespace UnitTests.Knowledges
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
 
             _learningRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(0);
             _knowledgeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledges);
@@ -132,7 +133,7 @@ namespace UnitTests.Knowledges
             var result = await _getKnowledgesToLearnUseCase.Execute(parameters);
 
             Assert.False(result.IsSuccess);
-            Assert.Equal(ErrorMessage.RequireAGameToReview, result.Error);
+            Assert.Equal(ErrorMessage.RequireTwoGamesToLearn, result.Error);
         }
 
 
@@ -211,10 +212,10 @@ namespace UnitTests.Knowledges
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Single(result.Value.First());
-            Assert.Equal(knowledgeId, result.Value.First().ToList().First().Value.Knowledge.Id);
-            Assert.Equal("Knowledge 1", result.Value.First().ToList().First().Value.Knowledge.Title);
-            Assert.Equal(3, result.Value.First().ToList().First().Value.Knowledge.Materials.Count);
-            Assert.NotNull(result.Value.First().ToList().First().Value.Knowledge.GameToReview);
+            Assert.Equal(knowledgeId, result.Value.First().ToList().First().Id);
+            Assert.Equal("Knowledge 1", result.Value.First().ToList().First().Title);
+            Assert.Equal(3, result.Value.First().ToList().First().Materials.Count);
+            Assert.NotNull(result.Value.First().ToList().First().GamesToLearn);
         }
     }
 }

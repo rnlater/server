@@ -40,15 +40,15 @@ namespace UnitTests.Games
             {
                 GameId = Guid.NewGuid(),
                 KnowledgeId = Guid.NewGuid(),
-                GroupedGameOptionsList = new List<List<GroupedGameOption>>
-                {
+                GroupedGameOptionsList =
+                [
                     new List<GroupedGameOption>
                     {
                         new GroupedGameOption { Type = GameOptionType.Question, Value = "Question 1" },
                         new GroupedGameOption { Type = GameOptionType.Answer, Value = "Answer 1", IsCorrect = true },
                         new GroupedGameOption { Type = GameOptionType.Answer, Value = "Answer 2", IsCorrect = false }
                     }
-                }
+                ]
             };
 
             var subscription = new GameKnowledgeSubscription
@@ -73,8 +73,7 @@ namespace UnitTests.Games
             {
                 GameId = Guid.NewGuid(),
                 KnowledgeId = Guid.NewGuid(),
-                GroupedGameOptionsList = new List<List<GroupedGameOption>>
-                { }
+                GroupedGameOptionsList = []
             };
 
             var subscription = new GameKnowledgeSubscription

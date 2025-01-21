@@ -115,7 +115,7 @@ namespace UnitTests.Knowledges.LearningLists
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
-            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = userId, Email = "", UserName = "" });
             _learningListRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<LearningList>>())).ReturnsAsync(learningList);
             _learningListRepositoryMock.Setup(r => r.Delete(It.IsAny<Guid>())).ReturnsAsync(learningList);
 
@@ -128,6 +128,5 @@ namespace UnitTests.Knowledges.LearningLists
             Assert.Equal(learningList.Id, result.Value.Id);
             Assert.Equal(learningList.Title, result.Value.Title);
         }
-
     }
 }

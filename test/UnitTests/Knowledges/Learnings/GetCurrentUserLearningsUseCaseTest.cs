@@ -71,10 +71,10 @@ namespace UnitTests.Knowledges.Learnings
                     Id = Guid.NewGuid(),
                     Title = "Title",
                     LearnerId = userId,
-                    LearningListKnowledges = new List<LearningListKnowledge>
-                    {
+                    LearningListKnowledges =
+                    [
                         new LearningListKnowledge { LearningListId = Guid.NewGuid(), KnowledgeId = Guid.NewGuid() }
-                    }
+                    ]
                 }
             };
 
@@ -106,7 +106,7 @@ namespace UnitTests.Knowledges.Learnings
             var result = await _getCurrentUserLearningsUseCase.Execute(parameters);
 
             Assert.False(result.IsSuccess);
-            Assert.Equal(ErrorMessage.NoData, result.Error);
+            Assert.Equal(ErrorMessage.NoLearningsFound, result.Error);
         }
     }
 }

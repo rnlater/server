@@ -10,6 +10,7 @@ using Application.Mappings;
 using Domain.Base;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
+using Domain.Entities.SingleIdPivotEntities;
 
 namespace UnitTests.Knowledges
 {
@@ -114,6 +115,10 @@ namespace UnitTests.Knowledges
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", SeedData.GetUsers().First().Id.ToString()));
             _knowledgeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledges);
 
+            var learningRepositoryMock = new Mock<IRepository<Learning>>();
+            learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync((Learning?)null);
+            _unitOfWorkMock.Setup(u => u.Repository<Learning>()).Returns(learningRepositoryMock.Object);
+
             var result = await _searchKnowledgesUseCase.Execute(parameters);
 
             Assert.True(result.IsSuccess);
@@ -153,6 +158,10 @@ namespace UnitTests.Knowledges
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", SeedData.GetUsers().First().Id.ToString()));
             _knowledgeTypeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<KnowledgeType>>())).ReturnsAsync([knowledgeTypes[1]]);
             _knowledgeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledges);
+
+            var learningRepositoryMock = new Mock<IRepository<Learning>>();
+            learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync((Learning?)null);
+            _unitOfWorkMock.Setup(u => u.Repository<Learning>()).Returns(learningRepositoryMock.Object);
 
             var result = await _searchKnowledgesUseCase.Execute(parameters);
 
@@ -194,6 +203,10 @@ namespace UnitTests.Knowledges
             _knowledgeTopicRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<KnowledgeTopic>>())).ReturnsAsync([knowledgeTopics[1]]);
             _knowledgeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledges);
 
+            var learningRepositoryMock = new Mock<IRepository<Learning>>();
+            learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync((Learning?)null);
+            _unitOfWorkMock.Setup(u => u.Repository<Learning>()).Returns(learningRepositoryMock.Object);
+
             var result = await _searchKnowledgesUseCase.Execute(parameters);
 
             Assert.True(result.IsSuccess);
@@ -226,6 +239,10 @@ namespace UnitTests.Knowledges
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", SeedData.GetUsers().First().Id.ToString()));
             _knowledgeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledges);
 
+            var learningRepositoryMock = new Mock<IRepository<Learning>>();
+            learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync((Learning?)null);
+            _unitOfWorkMock.Setup(u => u.Repository<Learning>()).Returns(learningRepositoryMock.Object);
+
             var result = await _searchKnowledgesUseCase.Execute(parameters);
 
             Assert.True(result.IsSuccess);
@@ -257,6 +274,10 @@ namespace UnitTests.Knowledges
             _userRepositoryMock.Setup(r => r.GetById(SeedData.GetUsers().First().Id)).ReturnsAsync(SeedData.GetUsers().First());
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", SeedData.GetUsers().First().Id.ToString()));
             _knowledgeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledges);
+
+            var learningRepositoryMock = new Mock<IRepository<Learning>>();
+            learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync((Learning?)null);
+            _unitOfWorkMock.Setup(u => u.Repository<Learning>()).Returns(learningRepositoryMock.Object);
 
             var result = await _searchKnowledgesUseCase.Execute(parameters);
 

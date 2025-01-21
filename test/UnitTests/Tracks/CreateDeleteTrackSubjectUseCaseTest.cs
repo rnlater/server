@@ -7,6 +7,7 @@ using Shared.Constants;
 using Application.UseCases.Tracks;
 using Infrastructure.Data;
 using Domain.Entities.SingleIdEntities;
+using Shared.Types;
 
 namespace UnitTests.Tracks
 {

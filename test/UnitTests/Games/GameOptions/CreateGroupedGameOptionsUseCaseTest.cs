@@ -47,11 +47,11 @@ namespace UnitTests.Games.GameOptions
             var parameters = new CreateGroupedGameOptionParams
             {
                 GameKnowledgeSubscriptionId = Guid.NewGuid(),
-                GroupedGameOptions = new List<GroupedGameOption>
-                {
+                GroupedGameOptions =
+                [
                     new GroupedGameOption { Type = GameOptionType.Question, Value = "Question 1" },
                     new GroupedGameOption { Type = GameOptionType.Answer, Value = "Answer 1", IsCorrect = true }
-                }
+                ]
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns((Claim?)null);
@@ -70,11 +70,11 @@ namespace UnitTests.Games.GameOptions
             var parameters = new CreateGroupedGameOptionParams
             {
                 GameKnowledgeSubscriptionId = Guid.NewGuid(),
-                GroupedGameOptions = new List<GroupedGameOption>
-                {
+                GroupedGameOptions =
+                [
                     new GroupedGameOption { Type = GameOptionType.Question, Value = "Question 1" },
                     new GroupedGameOption { Type = GameOptionType.Answer, Value = "Answer 1", IsCorrect = true }
-                }
+                ]
             };
 
             _userRepositoryMock.Setup(r => r.GetById(SeedData.GetUsers().First().Id)).ReturnsAsync(SeedData.GetUsers().First());
@@ -93,11 +93,11 @@ namespace UnitTests.Games.GameOptions
             var parameters = new CreateGroupedGameOptionParams
             {
                 GameKnowledgeSubscriptionId = Guid.NewGuid(),
-                GroupedGameOptions = new List<GroupedGameOption>
-                {
+                GroupedGameOptions =
+                [
                     new GroupedGameOption { Type = GameOptionType.Question, Value = "Question 1" },
                     new GroupedGameOption { Type = GameOptionType.Answer, Value = "Answer 1", IsCorrect = true }
-                }
+                ]
             };
             var gameKnowledgeSubscription = new GameKnowledgeSubscription
             {
@@ -125,11 +125,11 @@ namespace UnitTests.Games.GameOptions
             var parameters = new CreateGroupedGameOptionParams
             {
                 GameKnowledgeSubscriptionId = Guid.NewGuid(),
-                GroupedGameOptions = new List<GroupedGameOption>
-                {
+                GroupedGameOptions =
+                [
                     new GroupedGameOption { Type = GameOptionType.Answer, Value = "Answer 1", IsCorrect = true },
                     new GroupedGameOption { Type = GameOptionType.Answer, Value = "Answer 2", IsCorrect = false }
-                }
+                ]
             };
             var gameKnowledgeSubscription = new GameKnowledgeSubscription
             {
@@ -157,11 +157,11 @@ namespace UnitTests.Games.GameOptions
             var parameters = new CreateGroupedGameOptionParams
             {
                 GameKnowledgeSubscriptionId = Guid.NewGuid(),
-                GroupedGameOptions = new List<GroupedGameOption>
-                {
+                GroupedGameOptions =
+                [
                     new GroupedGameOption { Type = GameOptionType.Question, Value = "Question 1" },
                     new GroupedGameOption { Type = GameOptionType.Answer, Value = "Answer 1", IsCorrect = true }
-                }
+                ]
             };
             var gameKnowledgeSubscription = new GameKnowledgeSubscription
             {
@@ -189,12 +189,12 @@ namespace UnitTests.Games.GameOptions
             var parameters = new CreateGroupedGameOptionParams
             {
                 GameKnowledgeSubscriptionId = Guid.NewGuid(),
-                GroupedGameOptions = new List<GroupedGameOption>
-                {
+                GroupedGameOptions =
+                [
                     new GroupedGameOption { Type = GameOptionType.Question, Value = "Question 1" },
                     new GroupedGameOption { Type = GameOptionType.Answer, Value = "Answer 1", IsCorrect = true },
                     new GroupedGameOption { Type = GameOptionType.Answer, Value = "Answer 2", IsCorrect = true }
-                }
+                ]
             };
             var gameKnowledgeSubscription = new GameKnowledgeSubscription
             {
@@ -222,12 +222,12 @@ namespace UnitTests.Games.GameOptions
             var parameters = new CreateGroupedGameOptionParams
             {
                 GameKnowledgeSubscriptionId = Guid.NewGuid(),
-                GroupedGameOptions = new List<GroupedGameOption>
-                {
+                GroupedGameOptions =
+                [
                     new GroupedGameOption { Type = GameOptionType.Question, Value = "Question 1" },
                     new GroupedGameOption { Type = GameOptionType.Answer, Value = "Answer 1", IsCorrect = true },
                     new GroupedGameOption { Type = GameOptionType.Answer, Value = "Answer 2", IsCorrect = false }
-                }
+                ]
             };
             var gameKnowledgeSubscription = new GameKnowledgeSubscription
             {

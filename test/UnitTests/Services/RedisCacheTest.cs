@@ -74,15 +74,21 @@ namespace UnitTests.Services
         {
             // Arrange
             var key = "test-key";
-            var value = new { Name = "Test" };
+            var value = new TestObject { Name = "Test" };
             var json = JsonSerializer.Serialize(value);
             _databaseMock.Setup(db => db.StringGetAsync(key, It.IsAny<CommandFlags>())).ReturnsAsync(json);
 
             // Act
-            var result = await _redisCache.GetAsync<object>(key);
+            var result = await _redisCache.GetAsync<TestObject>(key);
 
             // Assert
-            Assert.Equal(value.Name, ((dynamic)result).Name);
+            Assert.NotNull(result);
+            Assert.Equal(value.Name, result.Name);
+        }
+
+        private class TestObject
+        {
+            public required string Name { get; set; }
         }
     }
 }

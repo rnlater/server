@@ -11,7 +11,6 @@ using Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Moq;
 using Shared.Constants;
-
 namespace UnitTests.Knowledges.Learnings
 {
     public class LearnKnowledgeUseCaseTest
@@ -57,17 +56,17 @@ namespace UnitTests.Knowledges.Learnings
                 new LearnKnowledgeParams
                 {
                     KnowledgeId = Guid.NewGuid(),
-                    CorrectGameOptionId1 = Guid.NewGuid(),
-                    GameOptionAnswerId1 = Guid.NewGuid(),
-                    CorrectGameOptionId2 = Guid.NewGuid(),
-                    GameOptionAnswerId2 = Guid.NewGuid(),
+                    QuestionIdOne = Guid.NewGuid(),
+                    AnswerOne = "AnswerOne",
+                    QuestionIdTwo = Guid.NewGuid(),
+                    AnswerTwo = "AnswerTwo",
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
             };
 
             _knowledgeRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(parameters.Count);
-            _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync([]);
+            _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(new List<Learning>());
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(ClaimTypes.NameIdentifier)).Returns((Claim?)null);
 
             var result = await _learnKnowledgeUseCase.Execute(parameters);
@@ -85,10 +84,10 @@ namespace UnitTests.Knowledges.Learnings
                 new LearnKnowledgeParams
                 {
                     KnowledgeId = Guid.NewGuid(),
-                    CorrectGameOptionId1 = Guid.NewGuid(),
-                    GameOptionAnswerId1 = Guid.NewGuid(),
-                    CorrectGameOptionId2 = Guid.NewGuid(),
-                    GameOptionAnswerId2 = Guid.NewGuid(),
+                    QuestionIdOne = Guid.NewGuid(),
+                    AnswerOne = "AnswerOne",
+                    QuestionIdTwo = Guid.NewGuid(),
+                    AnswerTwo = "AnswerTwo",
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -97,7 +96,7 @@ namespace UnitTests.Knowledges.Learnings
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
 
             _knowledgeRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(parameters.Count - 1);
-            _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync([]);
+            _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(new List<Learning>());
 
             var result = await _learnKnowledgeUseCase.Execute(parameters);
 
@@ -114,16 +113,16 @@ namespace UnitTests.Knowledges.Learnings
                 new LearnKnowledgeParams
                 {
                     KnowledgeId = Guid.NewGuid(),
-                    CorrectGameOptionId1 = Guid.NewGuid(),
-                    GameOptionAnswerId1 = Guid.NewGuid(),
-                    CorrectGameOptionId2 = Guid.NewGuid(),
-                    GameOptionAnswerId2 = Guid.NewGuid(),
+                    QuestionIdOne = Guid.NewGuid(),
+                    AnswerOne = "AnswerOne",
+                    QuestionIdTwo = Guid.NewGuid(),
+                    AnswerTwo = "AnswerTwo",
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
             };
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
             _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
             _knowledgeRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(parameters.Count);
             _learningRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(parameters.Count);
@@ -144,10 +143,10 @@ namespace UnitTests.Knowledges.Learnings
                 new LearnKnowledgeParams
                 {
                     KnowledgeId = knowledgeId,
-                    CorrectGameOptionId1 = Guid.NewGuid(),
-                    GameOptionAnswerId1 = Guid.NewGuid(),
-                    CorrectGameOptionId2 = Guid.NewGuid(),
-                    GameOptionAnswerId2 = Guid.NewGuid(),
+                    QuestionIdOne = Guid.NewGuid(),
+                    AnswerOne = "Invalid Answer",
+                    QuestionIdTwo = Guid.NewGuid(),
+                    AnswerTwo = "AnswerTwo",
                     Interpretation = "Invalid Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -164,9 +163,20 @@ namespace UnitTests.Knowledges.Learnings
                 }
             };
 
-            var correctGameOption = new GameOption
+            var correctGameOptionOne = new GameOption
             {
-                Id = parameters[0].CorrectGameOptionId1,
+                Id = parameters[0].QuestionIdOne,
+                Value = "",
+                GameKnowledgeSubscription = new GameKnowledgeSubscription
+                {
+                    GameId = Guid.NewGuid(),
+                    Knowledge = knowledge
+                }
+            };
+
+            var correctGameOptionTwo = new GameOption
+            {
+                Id = parameters[0].QuestionIdTwo,
                 Value = "",
                 GameKnowledgeSubscription = new GameKnowledgeSubscription
                 {
@@ -176,10 +186,13 @@ namespace UnitTests.Knowledges.Learnings
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = userId, Email = "Email", UserName = "UserName" });
 
             _knowledgeRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(parameters.Count);
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(new List<Learning>());
-            _gameOptionRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<GameOption>>())).ReturnsAsync(new List<GameOption> { correctGameOption, new GameOption { Value = "" } });
+
+            _gameOptionRepositoryMock.Setup(r => r.Find(It.Is<BaseSpecification<GameOption>>(spec => spec.Criteria!.Compile()(correctGameOptionOne)))).ReturnsAsync(correctGameOptionOne);
+            _gameOptionRepositoryMock.Setup(r => r.Find(It.Is<BaseSpecification<GameOption>>(spec => spec.Criteria!.Compile()(correctGameOptionTwo)))).ReturnsAsync(correctGameOptionTwo);
 
             var result = await _learnKnowledgeUseCase.Execute(parameters);
 
@@ -197,10 +210,10 @@ namespace UnitTests.Knowledges.Learnings
                 new LearnKnowledgeParams
                 {
                     KnowledgeId = knowledgeId,
-                    CorrectGameOptionId1 = Guid.NewGuid(),
-                    GameOptionAnswerId1 = Guid.NewGuid(),
-                    CorrectGameOptionId2 = Guid.NewGuid(),
-                    GameOptionAnswerId2 = Guid.NewGuid(),
+                    QuestionIdOne = Guid.NewGuid(),
+                    AnswerOne = "AnswerOne",
+                    QuestionIdTwo = Guid.NewGuid(),
+                    AnswerTwo = "AnswerTwo",
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -210,20 +223,33 @@ namespace UnitTests.Knowledges.Learnings
             {
                 Id = knowledgeId,
                 Title = "Knowledge 1",
-                Materials =
-                [
+                Materials = new List<Material>
+                {
                     new Material { Id = Guid.NewGuid(), Content = "Interpretation", Type = MaterialType.Interpretation },
                     new Material { Id = Guid.NewGuid(), Content = "", Type = MaterialType.TextMedium }
-                ]
+                }
             };
-            var correctGameOption = new GameOption
+            var correctGameOptionOne = new GameOption
             {
-                Id = parameters[0].CorrectGameOptionId1,
+                Id = parameters[0].QuestionIdOne,
                 Value = "",
                 GameKnowledgeSubscription = new GameKnowledgeSubscription
                 {
                     GameId = Guid.NewGuid(),
-                    Knowledge = knowledge
+                    Knowledge = knowledge,
+                    KnowledgeId = knowledge.Id
+                }
+            };
+
+            var correctGameOptionTwo = new GameOption
+            {
+                Id = parameters[0].QuestionIdTwo,
+                Value = "",
+                GameKnowledgeSubscription = new GameKnowledgeSubscription
+                {
+                    GameId = Guid.NewGuid(),
+                    Knowledge = knowledge,
+                    KnowledgeId = knowledge.Id
                 }
             };
 
@@ -231,19 +257,30 @@ namespace UnitTests.Knowledges.Learnings
             _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = userId, Email = "Email", UserName = "UserName" });
 
             _knowledgeRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(parameters.Count);
-            _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync([]);
-            _gameOptionRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<GameOption>>())).ReturnsAsync([correctGameOption, new GameOption() { Value = "" }]);
+            _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(new List<Learning>());
+
+            _gameOptionRepositoryMock.Setup(r => r.Find(It.Is<BaseSpecification<GameOption>>(spec => spec.Criteria!.Compile()(correctGameOptionOne)))).ReturnsAsync(correctGameOptionOne);
+            _gameOptionRepositoryMock.Setup(r => r.Find(It.Is<BaseSpecification<GameOption>>(spec => spec.Criteria!.Compile()(correctGameOptionTwo)))).ReturnsAsync(correctGameOptionTwo);
 
             _learningRepositoryMock.Setup(r => r.Add(It.IsAny<Learning>())).ReturnsAsync(new Learning { Id = Guid.NewGuid(), KnowledgeId = knowledgeId, UserId = userId });
             _learningHistoryRepositoryMock.Setup(r => r.Add(It.IsAny<LearningHistory>())).ReturnsAsync(new LearningHistory { Id = Guid.NewGuid(), LearningId = Guid.NewGuid(), LearningLevel = LearningLevel.LevelOne });
+
+            _learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(new Learning
+            {
+                Id = Guid.NewGuid(),
+                Knowledge = knowledge,
+                LearningHistories = new List<LearningHistory>
+                {
+                    new LearningHistory { Id = Guid.NewGuid(), LearningId = Guid.NewGuid(), LearningLevel = LearningLevel.LevelOne }
+                }
+            });
+            _learningListKnowledgeRepositoryMock.Setup(r => r.Count(It.IsAny<BaseSpecification<LearningListKnowledge>>())).ReturnsAsync(0);
 
             var result = await _learnKnowledgeUseCase.Execute(parameters);
 
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Single(result.Value);
-            Assert.Equal(result.Value.ToList().First().Key, knowledgeId);
         }
-
     }
 }

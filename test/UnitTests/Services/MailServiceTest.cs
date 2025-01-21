@@ -25,21 +25,21 @@ namespace UnitTests.Services
             _configurationMock.SetupGet(c => c["Smtp:Pass"]).Returns(Configuration["Smtp:Pass"]);
         }
 
-        [Fact]
-        public async Task SendEmail_ShouldSendRealEmail_WhenEmailIsSent()
-        {
-            // Arrange
-            var to = "boinguyen9701@gmail.com";
-            var name = "Recipient";
-            var subject = "Test Subject";
-            var body = "Test Body";
+        // [Fact]
+        // public async Task SendEmail_ShouldSendRealEmail_WhenEmailIsSent()
+        // {
+        //     // Arrange
+        //     var to = "boinguyen9701@gmail.com";
+        //     var name = "Recipient";
+        //     var subject = "Test Subject";
+        //     var body = "Test Body";
 
-            // Act
-            var result = await _mailService.SendEmail(to, name, subject, body);
+        //     // Act
+        //     var result = await _mailService.SendEmail(to, name, subject, body);
 
-            // Assert
-            Assert.True(result.IsSuccess);
-            Assert.Equal(to, result.Value);
-        }
+        //     // Assert
+        //     Assert.True(result.IsSuccess);
+        //     Assert.Equal(to, result.Value);
+        // }
     }
 }
