@@ -1,6 +1,7 @@
 using Application.DTOs.SingleIdPivotEntities;
 using AutoMapper;
 using Domain.Base;
+using Domain.Entities.SingleIdEntities;
 using Domain.Entities.SingleIdPivotEntities;
 using Domain.Enums;
 using Domain.Interfaces;
@@ -18,15 +19,7 @@ public class GetLearningsToReviewParams
     public List<Guid> KnowledgeIds { get; set; } = [];
 }
 
-
-public class LearningDataToReview
-{
-    public required LearningDto LearningDto { get; set; }
-    public Guid CorrectGameOptionId { get; set; }
-    public required string Interpretation { get; set; }
-}
-
-public class GetLearningsToReviewUseCase : IUseCase<List<Dictionary<Guid, LearningDataToReview>>, GetLearningsToReviewParams>
+public class GetLearningsToReviewUseCase : IUseCase<List<List<LearningDto>>, GetLearningsToReviewParams>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
@@ -39,13 +32,14 @@ public class GetLearningsToReviewUseCase : IUseCase<List<Dictionary<Guid, Learni
         _httpContextAccessor = httpContextAccessor;
     }
 
-    public async Task<Result<List<Dictionary<Guid, LearningDataToReview>>>> Execute(GetLearningsToReviewParams parameters)
+    public async Task<Result<List<List<LearningDto>>>> Execute(GetLearningsToReviewParams parameters)
     {
         try
         {
-            Guid? userId = UserExtractor.GetUserId(_httpContextAccessor);
-            if (userId == null)
-                return Result<List<Dictionary<Guid, LearningDataToReview>>>.Fail(ErrorMessage.UserNotFound);
+            var userId = UserExtractor.GetUserId(_httpContextAccessor);
+            var user = userId == null ? null : await _unitOfWork.Repository<User>().GetById(userId.Value);
+            if (user == null)
+                return Result<List<List<LearningDto>>>.Fail(ErrorMessage.UserNotFound);
 
             IEnumerable<Learning> learnings = await _unitOfWork.Repository<Learning>().FindMany(
                 new BaseSpecification<Learning>(
@@ -55,30 +49,25 @@ public class GetLearningsToReviewUseCase : IUseCase<List<Dictionary<Guid, Learni
                     .Include(l => l.Knowledge!)
                     .ThenInclude(k => k.Materials)
             ));
+            learnings = learnings.Where(l => l.Knowledge!.Visibility == KnowledgeVisibility.Public || (l.Knowledge!.Visibility == KnowledgeVisibility.Private && l.Knowledge.CreatorId == userId));
+
             if (learnings.Count() != parameters.KnowledgeIds.Count)
-                return Result<List<Dictionary<Guid, LearningDataToReview>>>.Fail(ErrorMessage.SomeKnowledgesHaveNotBeenLearned);
+                return Result<List<List<LearningDto>>>.Fail(ErrorMessage.SomeKnowledgesHaveNotBeenLearned);
             else if (learnings.Any(l => l.NextReviewDate > DateTime.Now))
-                return Result<List<Dictionary<Guid, LearningDataToReview>>>.Fail(ErrorMessage.SomeKnowledgesAreNotReadyToReview);
+                return Result<List<List<LearningDto>>>.Fail(ErrorMessage.SomeKnowledgesAreNotReadyToReview);
 
             learnings = ArrangeLearningsByPriority(learnings);
 
             List<List<Learning>> LearningGroups = Randomer.GetRandomGroups(learnings.ToList());
 
-            List<Dictionary<Guid, LearningDataToReview>> LearningDataToReviewResponses = [];
+            List<List<LearningDto>> LearningDataToReviewResponses = [];
 
             for (int i = 0; i < LearningGroups.Count; i++)
             {
                 var _learningDtos = _mapper.Map<List<LearningDto>>(LearningGroups[i]);
-                Dictionary<Guid, LearningDataToReview> LearningDataToReview = [];
 
                 foreach (LearningDto? learning in _learningDtos)
                 {
-                    string DistinctInterpretationMaterial = learning.Knowledge!.Materials
-                        .Where(m => m.Type == MaterialType.Interpretation.ToString())
-                        .Select(m => m.Content)
-                        .OrderBy(_ => new Random().Next())
-                        .First();
-
                     var gameKnowledgeSubscriptionsRepository = _unitOfWork.Repository<GameKnowledgeSubscription>();
                     IEnumerable<GameKnowledgeSubscription> gameKnowledgeSubscriptions = await gameKnowledgeSubscriptionsRepository.FindMany(
                         new BaseSpecification<GameKnowledgeSubscription>(gk =>
@@ -100,30 +89,23 @@ public class GetLearningsToReviewUseCase : IUseCase<List<Dictionary<Guid, Learni
                             .Include(gk => gk.GameOptions)
                         ));
                         if (gameKnowledgeSubscriptions.Count() < 1)
-                            return Result<List<Dictionary<Guid, LearningDataToReview>>>.Fail(ErrorMessage.RequireAGameToReview);
+                            return Result<List<List<LearningDto>>>.Fail(ErrorMessage.RequireAGameToReview);
                     }
 
                     if (gameKnowledgeSubscriptions.Count() > 1)
                         gameKnowledgeSubscriptions = Randomer.GetRandomElementAsList(gameKnowledgeSubscriptions.ToList());
 
-                    learning.Knowledge.GameToReview = _mapper.Map<GameKnowledgeSubscriptionDto>(gameKnowledgeSubscriptions.First()).DistinctGroupedGameOptions();
-
-                    LearningDataToReview.Add(learning.Knowledge.Id, new LearningDataToReview
-                    {
-                        LearningDto = learning,
-                        CorrectGameOptionId = learning.Knowledge.GameToReview.GetCorrectGameOption().Id,
-                        Interpretation = DistinctInterpretationMaterial
-                    });
+                    learning.Knowledge!.GameToReview = _mapper.Map<GameKnowledgeSubscriptionDto>(gameKnowledgeSubscriptions.First()).DistinctGroupedGameOptions();
                 }
 
-                LearningDataToReviewResponses.Add(LearningDataToReview);
+                LearningDataToReviewResponses.Add(_learningDtos);
             }
 
-            return Result<List<Dictionary<Guid, LearningDataToReview>>>.Done(LearningDataToReviewResponses);
+            return Result<List<List<LearningDto>>>.Done(LearningDataToReviewResponses);
         }
         catch (Exception)
         {
-            return Result<List<Dictionary<Guid, LearningDataToReview>>>.Fail(ErrorMessage.UnknownError);
+            return Result<List<List<LearningDto>>>.Fail(ErrorMessage.UnknownError);
         }
     }
 

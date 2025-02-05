@@ -1,0 +1,106 @@
+[
+  {
+    "audio": [],
+    "categories": [
+      "matching"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to agree with or match something",
+                "example": "These results accord closely with our predictions."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "accord with_05122024.jpg",
+    "word": "accord with"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "making_calls",
+      "ambition"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to connect somebody to a  conference call   (= a phone call in which three or more people take part)",
+                "example": "This app will automatically dial you into the call a minute before your meeting starts."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "dial into_05122024.jpg",
+    "word": "dial into"
+  },
+  {
+    "audio": [
+      "low beams_279_06_12_2024.mp3",
+      "low beams_096_06_12_2024.mp3"
+    ],
+    "categories": [
+      "driving"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the lights on a car when they are pointing down at the road, not a long way ahead",
+                "example": "Use your low beams for city driving."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "pointing down at the road, not a long way ahead",
+                "example": "Always have your lights on low beam when another car is coming toward you."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈləʊ biːmz/"
+        ]
+      }
+    ],
+    "photo": "low beams_05122024.jpg",
+    "word": "low beams"
+  }
+]

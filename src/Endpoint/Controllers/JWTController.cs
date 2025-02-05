@@ -13,7 +13,7 @@ namespace Endpoint.Controllers
         [HttpPost("refresh-access-token")]
         public async Task<IActionResult> RefreshAccessToken([FromBody] RefreshAccessTokenRequest request)
         {
-            var Result = await _jWTService.RenewAccessToken(request.RefreshToken);
+            var Result = await _jWTService.RenewTokenPair(request.RefreshToken);
             return Result.IsSuccess ? Ok(Result.Value) : BadRequest(Result.Errors);
         }
 

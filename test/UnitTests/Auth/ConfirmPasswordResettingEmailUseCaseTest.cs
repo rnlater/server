@@ -1,26 +1,44 @@
 using Application.DTOs;
 using Application.UseCases.Auth;
+using Application.UseCases.JWT;
 using AutoMapper;
 using Domain.Base;
 using Domain.Entities.SingleIdEntities;
 using Domain.Interfaces;
+using Microsoft.Extensions.Options;
 using Moq;
+using Shared.Config;
 using Shared.Constants;
 
 namespace UnitTests.Auth
 {
     public class ConfirmPasswordResettingEmailUseCaseTest
     {
+        private readonly Mock<IRepository<Authentication>> _authenticationRepositoryMock;
         private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<IMapper> _mapperMock;
+        private readonly Mock<IOptions<JwtSettings>> _jwtOptionsMock;
+        private readonly GenerateTokenPairUseCase _generateTokenPairUseCase;
         private readonly ConfirmPasswordResettingEmailUseCase _confirmPasswordResettingEmailUseCase;
 
         public ConfirmPasswordResettingEmailUseCaseTest()
         {
+            _authenticationRepositoryMock = new Mock<IRepository<Authentication>>();
             _unitOfWorkMock = new Mock<IUnitOfWork>();
             _mapperMock = new Mock<IMapper>();
+            _jwtOptionsMock = new Mock<IOptions<JwtSettings>>();
+            _jwtOptionsMock.Setup(o => o.Value).Returns(new JwtSettings
+            {
+                SecretKey = "test_secret_key_must_have_at_least_16_chars",
+                Issuer = "test_issuer",
+                Audience = "test_audience",
+                ExpiryMinutes = 180
+            });
 
-            _confirmPasswordResettingEmailUseCase = new ConfirmPasswordResettingEmailUseCase(_unitOfWorkMock.Object, _mapperMock.Object);
+            _unitOfWorkMock.Setup(u => u.Repository<Authentication>()).Returns(_authenticationRepositoryMock.Object);
+
+            _generateTokenPairUseCase = new GenerateTokenPairUseCase(_jwtOptionsMock.Object);
+            _confirmPasswordResettingEmailUseCase = new ConfirmPasswordResettingEmailUseCase(_unitOfWorkMock.Object, _mapperMock.Object, _generateTokenPairUseCase);
         }
 
         [Fact]
@@ -55,11 +73,11 @@ namespace UnitTests.Auth
             var result = await _confirmPasswordResettingEmailUseCase.Execute(parameters);
 
             Assert.True(result.IsSuccess);
-            Assert.NotNull(result.Value);
-            Assert.Equal(user.Email, result.Value.Email);
-            Assert.Null(user.Authentication.ConfirmationCode);
-            Assert.Null(user.Authentication.ConfirmationCodeExpiryTime);
-            userRepositoryMock.Verify(r => r.Update(It.IsAny<User>()), Times.Once);
+            Assert.NotNull(result.Value.Item1);
+            Assert.NotNull(result.Value.Item2);
+            Assert.Equal(user.Email, result.Value.Item1.Email);
+            Assert.Null(user.Authentication);
+            _authenticationRepositoryMock.Verify(r => r.Update(It.IsAny<Authentication>()), Times.Once);
         }
 
         [Fact]

@@ -1,0 +1,486 @@
+[
+  {
+    "audio": [],
+    "categories": [
+      "skills_and_qualities"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to buy something that is expensive but useful",
+                "example": "Don't you think it's about time you invested in a new coat?"
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to be willing to work hard and give your time and energy to something; to believe strongly in something",
+                "example": "We are invested in providing a top-quality service to our customers."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "invest in_05122024.jpg",
+    "word": "invest in"
+  },
+  {
+    "audio": [
+      "ATM card_441_06_12_2024.mp3",
+      "ATM card_643_06_12_2024.mp3"
+    ],
+    "categories": [
+      "banking"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a plastic card used to get money from a  cash machine   (= a machine in or outside a bank)",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌeɪ tiː ˈem kɑːrd/",
+          "/ˌeɪ tiː ˈem kɑːd/"
+        ]
+      }
+    ],
+    "photo": "ATM card_05122024.jpg",
+    "word": "ATM card"
+  },
+  {
+    "audio": [
+      "live chat_185_06_12_2024.mp3",
+      "live chat_006_06_12_2024.mp3"
+    ],
+    "categories": [
+      "using_the_internet"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "discussion between two people using messages sent over the internet; an example of such a discussion",
+                "example": "Live chat is even used for online therapy sessions."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌlaɪv ˈtʃæt/"
+        ]
+      }
+    ],
+    "photo": "live chat_05122024.jpg",
+    "word": "live chat"
+  },
+  {
+    "audio": [
+      "guidance counselor_550_06_12_2024.mp3",
+      "guidance counselor_762_06_12_2024.mp3"
+    ],
+    "categories": [
+      "school_life"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who works in a school and is responsible for giving students advice about classes and helping them with personal problems",
+                "example": "I've got some ideas about how to get kids on the right path, so I'm becoming a guidance counselor. "
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈɡaɪdns kaʊnsələr/",
+          "/ˈɡaɪdns kaʊnsələ(r)/"
+        ]
+      }
+    ],
+    "photo": "guidance counselor_05122024.jpg",
+    "word": "guidance counselor"
+  },
+  {
+    "audio": [
+      "Pacific Daylight Time_791_06_12_2024.mp3",
+      "Pacific Daylight Time_968_06_12_2024.mp3"
+    ],
+    "categories": [
+      "time_zones"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the time used in summer in the western parts of Canada and the US that is seven hours earlier than UTC",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/pəˌsɪfɪk ˈdeɪlaɪt taɪm/"
+        ]
+      }
+    ],
+    "photo": "Pacific Daylight Time_05122024.jpg",
+    "word": "Pacific Daylight Time"
+  },
+  {
+    "audio": [
+      "meme stock_398_06_12_2024.mp3",
+      "meme stock_550_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_economy"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a type of  stock   (= shares in a company)  that becomes very popular because it is talked about a lot on  social media . It usually trades at a prices much higher than its real value.",
+                "example": "Social media and news platforms helped fuel the meme stock frenzy."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈmiːm stɒk/",
+          "/ˈmiːm stɑːk/"
+        ]
+      }
+    ],
+    "photo": "meme stock_05122024.jpg",
+    "word": "meme stock"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "growing_crops"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to turn over growing crops, grass, etc. with a  plow  and mix them into the soil to improve its quality",
+                "example": null
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to put money made as profit back into a business in order to improve it",
+                "example": "The money was all plowed back into the company."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "plow back_05122024.jpg",
+    "word": "plow back"
+  },
+  {
+    "audio": [
+      "gold medallist_254_06_12_2024.mp3",
+      "gold medallist_455_06_12_2024.mp3"
+    ],
+    "categories": [
+      "sports_in_general"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the winner of a race or competition, who is given a  gold medal",
+                "example": "an Olympic gold medallist"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɡəʊld ˈmedəlɪst/"
+        ]
+      }
+    ],
+    "photo": "gold medallist_05122024.jpg",
+    "word": "gold medallist"
+  },
+  {
+    "audio": [
+      "Ivy League_814_06_12_2024.mp3",
+      "Ivy League_019_06_12_2024.mp3"
+    ],
+    "categories": [
+      "universities_and_colleges"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "connected with a group of eight traditional universities in the eastern US with high academic standards and a high social status",
+                "example": "Ivy League colleges"
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌaɪvi ˈliːɡ/"
+        ]
+      }
+    ],
+    "photo": "Ivy League_05122024.jpg",
+    "word": "Ivy League"
+  },
+  {
+    "audio": [
+      "three-day eventing_521_06_12_2024.mp3",
+      "three-day eventing_693_06_12_2024.mp3"
+    ],
+    "categories": [
+      "equine_sports"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the sport of taking part in competitions riding horses. These are often held over three days and include riding across country, jumping and  dressage .",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌθriː deɪ ɪˈventɪŋ/"
+        ]
+      }
+    ],
+    "photo": "three-day eventing_05122024.jpg",
+    "word": "three-day eventing"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "the_economy"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to become cool or cooler",
+                "example": "We cooled off with a swim in the lake."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to become calm, less excited or less enthusiastic",
+                "example": "I think you should wait until she's cooled down a little."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to slow down or decrease",
+                "example": "Growth in the market has started to cool down."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to make somebody feel cooler",
+                "example": "Drink plenty of cold water to cool yourself down."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to make somebody calm, less excited or less enthusiastic",
+                "example": "A few hours in a police cell should cool him off."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to make something cool or cooler",
+                "example": "These plants use river water to cool down the nuclear reactors."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to make something slower or less strong ",
+                "example": "Demand is still too strong to cool down the property market."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "cool off_05122024.jpg",
+    "word": "cool off"
+  },
+  {
+    "audio": [
+      "production values_633_06_12_2024.mp3",
+      "production values_822_06_12_2024.mp3"
+    ],
+    "categories": [
+      "making_films"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the quality of a film, play, music concert, etc. in terms of the money spent on making it look good",
+                "example": "The film benefits from a strong cast and  high production values ."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/prəˈdʌkʃn væljuːz/"
+        ]
+      }
+    ],
+    "photo": "production values_05122024.jpg",
+    "word": "production values"
+  }
+]

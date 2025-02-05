@@ -1,4 +1,5 @@
 using Application.DTOs;
+using Application.UseCases.JWT;
 using AutoMapper;
 using Domain.Base;
 using Domain.Entities.SingleIdEntities;
@@ -15,18 +16,20 @@ public class LoginParams
     public required string Password { get; set; }
 }
 
-public class LoginUseCase : IUseCase<UserDto, LoginParams>
+public class LoginUseCase : IUseCase<(UserDto, JWTPairResponse), LoginParams>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
+    private readonly GenerateTokenPairUseCase _generateTokenPairUseCase;
 
-    public LoginUseCase(IUnitOfWork unitOfWork, IMapper mapper)
+    public LoginUseCase(IUnitOfWork unitOfWork, IMapper mapper, GenerateTokenPairUseCase generateTokenPairUseCase)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
+        _generateTokenPairUseCase = generateTokenPairUseCase;
     }
 
-    public async Task<Result<UserDto>> Execute(LoginParams parameters)
+    public async Task<Result<(UserDto, JWTPairResponse)>> Execute(LoginParams parameters)
     {
         try
         {
@@ -36,19 +39,31 @@ public class LoginUseCase : IUseCase<UserDto, LoginParams>
                 .AddInclude(query => query.Include(u => u.Authentication!)));
 
             if (user == null)
-                return Result<UserDto>.Fail(ErrorMessage.UserNotFoundWithEmail);
+                return Result<(UserDto, JWTPairResponse)>.Fail(ErrorMessage.UserNotFoundWithEmail);
             else if (!user.Authentication!.VerifyPassword(parameters.Password))
-                return Result<UserDto>.Fail(ErrorMessage.WrongPassword);
+                return Result<(UserDto, JWTPairResponse)>.Fail(ErrorMessage.WrongPassword);
             else if (!user.Authentication!.IsEmailConfirmed)
-                return Result<UserDto>.Fail(ErrorMessage.EmailNotConfirmed);
+                return Result<(UserDto, JWTPairResponse)>.Fail(ErrorMessage.EmailNotConfirmed);
             else if (!user.Authentication!.IsActivated)
-                return Result<UserDto>.Fail(ErrorMessage.AccountIsLocked);
+                return Result<(UserDto, JWTPairResponse)>.Fail(ErrorMessage.AccountIsLocked);
 
-            return Result<UserDto>.Done(_mapper.Map<UserDto>(user));
+            var tokenPairResult = await _generateTokenPairUseCase.Execute(user);
+            if (!tokenPairResult.IsSuccess)
+                return Result<(UserDto, JWTPairResponse)>.Fail(tokenPairResult.Error);
+            var tokenPair = tokenPairResult.Value;
+
+            var authentication = user.Authentication;
+            authentication.User = null;
+            authentication.RefreshToken = tokenPair.RefreshToken;
+            authentication.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
+            await _unitOfWork.Repository<Authentication>().Update(authentication);
+            user.Authentication = null;
+
+            return Result<(UserDto, JWTPairResponse)>.Done((_mapper.Map<UserDto>(user), tokenPairResult.Value));
         }
         catch (Exception)
         {
-            return Result<UserDto>.Fail(ErrorMessage.UnknownError);
+            return Result<(UserDto, JWTPairResponse)>.Fail(ErrorMessage.UnknownError);
         }
     }
 }

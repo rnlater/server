@@ -28,6 +28,8 @@ namespace Application.UseCases.Knowledges.KnowledgeTopics
                 var knowledgeTopic = await knowledgeTopicRepository.Find(
                     new BaseSpecification<KnowledgeTopic>(kt => kt.Id == id)
                     .AddInclude(query => query
+                        .Include(kt => kt.Parent)
+                        .Include(kt => kt.Children)
                         .Include(kt => kt.KnowledgeTopicKnowledges)
                         .ThenInclude(ktk => ktk.Knowledge!)));
 

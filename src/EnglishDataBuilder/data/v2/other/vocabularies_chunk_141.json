@@ -1,0 +1,293 @@
+[
+  {
+    "audio": [
+      "horror story_128_06_12_2024.mp3",
+      "horror story_107_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_story"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a story about strange and frightening things that is designed to entertain people",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a report that describes an experience of a situation as very unpleasant",
+                "example": "horror stories about visits to the dentist"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈhɒrə stɔːri/",
+          "/ˈhɔːrər stɔːri/"
+        ]
+      }
+    ],
+    "photo": "horror story_04122024.jpg",
+    "word": "horror story"
+  },
+  {
+    "audio": [
+      "fund manager_488_06_12_2024.mp3",
+      "fund manager_707_06_12_2024.mp3"
+    ],
+    "categories": [
+      "jobs_and_professions"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who works for a large company such as an insurance company or a bank and whose job is to manage how it invests money",
+                "example": "By continuing to put money into fossil fuels, fund managers were placing their clients' money at risk."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfʌnd mænɪdʒə(r)/",
+          "/ˈfʌnd mænɪdʒər/"
+        ]
+      }
+    ],
+    "photo": "fund manager_04122024.jpg",
+    "word": "fund manager"
+  },
+  {
+    "audio": [
+      "rear end_545_06_12_2024.mp3",
+      "rear end_947_06_12_2024.mp3"
+    ],
+    "categories": [
+      "parts_of_the_body",
+      "parts_of_a_car"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the back part of a vehicle",
+                "example": "The rear end has been completely redesigned in order to offer rear passengers more comfort."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the part of the body that you sit on",
+                "example": "He spends all day sitting on his rear end in front of a computer."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌrɪər ˈend/",
+          "/ˌrɪr ˈend/"
+        ]
+      }
+    ],
+    "photo": "rear end_04122024.jpg",
+    "word": "rear end"
+  },
+  {
+    "audio": [
+      "PCR test_919_06_12_2024.mp3",
+      "PCR test_903_06_12_2024.mp3"
+    ],
+    "categories": [
+      "health_care"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a type of test, especially for  coronavirus , that is used to detect  pathogens   (= things that cause disease)  in samples from the body",
+                "example": "A PCR test was required for all passengers entering the country."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌpiː si ˈɑː test/",
+          "/ˌpiː siː ˈɑːr test/"
+        ]
+      }
+    ],
+    "photo": "PCR test_04122024.jpg",
+    "word": "PCR test"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "mediation"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to help two people or groups to end a  disagreement",
+                "example": "The loss of their son brought the two of them together."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "bring A and B together_04122024.jpg",
+    "word": "bring A and B together"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "achieving_success"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to be successful despite difficulties",
+                "example": "It won't be easy but we'll win through in the end."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "win out_04122024.jpg",
+    "word": "win out"
+  },
+  {
+    "audio": [
+      "soft drink_579_06_12_2024.mp3",
+      "soft drink_775_06_12_2024.mp3"
+    ],
+    "categories": [
+      "non_alcoholic_drinks"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a cold drink that does not contain alcohol",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsɒft ˈdrɪŋk/",
+          "/ˌsɔːft ˈdrɪŋk/"
+        ]
+      }
+    ],
+    "photo": "soft drink_04122024.jpg",
+    "word": "soft drink"
+  },
+  {
+    "audio": [
+      "political geography_471_06_12_2024.mp3",
+      "political geography_745_06_12_2024.mp3"
+    ],
+    "categories": [
+      "international_relations"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the way in which the world is divided into different countries, especially as a subject of study",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/pəˌlɪtɪkl dʒiˈɑːɡrəfi/",
+          "/pəˌlɪtɪkl dʒiˈɒɡrəfi/"
+        ]
+      }
+    ],
+    "photo": "political geography_04122024.jpg",
+    "word": "political geography"
+  }
+]

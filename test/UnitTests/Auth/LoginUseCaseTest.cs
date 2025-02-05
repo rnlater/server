@@ -8,6 +8,9 @@ using Domain.Interfaces;
 using Shared.Constants;
 using Shared.Utils;
 using Domain.Entities.SingleIdEntities;
+using Shared.Config;
+using Microsoft.Extensions.Options;
+using Application.UseCases.JWT;
 
 namespace UnitTests.Auth
 {
@@ -16,6 +19,9 @@ namespace UnitTests.Auth
         private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<IRepository<User>> _userRepositoryMock;
         private readonly Mock<IMapper> _mapperMock;
+        private readonly Mock<IOptions<JwtSettings>> _jwtOptionsMock;
+        private readonly GenerateTokenPairUseCase _generateTokenPairUseCase;
+
         private readonly LoginUseCase _loginUseCase;
 
         public LoginUseCaseTest()
@@ -23,10 +29,18 @@ namespace UnitTests.Auth
             _unitOfWorkMock = new Mock<IUnitOfWork>();
             _userRepositoryMock = new Mock<IRepository<User>>();
             _mapperMock = new Mock<IMapper>();
-
+            _jwtOptionsMock = new Mock<IOptions<JwtSettings>>();
+            _jwtOptionsMock.Setup(o => o.Value).Returns(new JwtSettings
+            {
+                SecretKey = "test_secret_key_must_have_at_least_16_chars",
+                Issuer = "test_issuer",
+                Audience = "test_audience",
+                ExpiryMinutes = 180
+            });
+            _generateTokenPairUseCase = new GenerateTokenPairUseCase(_jwtOptionsMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<User>()).Returns(_userRepositoryMock.Object);
 
-            _loginUseCase = new LoginUseCase(_unitOfWorkMock.Object, _mapperMock.Object);
+            _loginUseCase = new LoginUseCase(_unitOfWorkMock.Object, _mapperMock.Object, _generateTokenPairUseCase);
         }
 
         [Fact]
@@ -136,6 +150,9 @@ namespace UnitTests.Auth
                     IsActivated = true
                 }
             };
+            var _authenticationRepositoryMock = new Mock<IRepository<Authentication>>();
+            _unitOfWorkMock.Setup(u => u.Repository<Authentication>()).Returns(_authenticationRepositoryMock.Object);
+
             _userRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<User>>()))
                 .ReturnsAsync(user);
             _mapperMock.Setup(m => m.Map<UserDto>(It.IsAny<User>())).Returns(new UserDto { Email = user.Email, UserName = user.UserName });
@@ -143,9 +160,10 @@ namespace UnitTests.Auth
             var result = await _loginUseCase.Execute(parameters);
 
             Assert.True(result.IsSuccess);
-            Assert.NotNull(result.Value);
-            Assert.Equal(user.Email, result.Value.Email);
-            Assert.Equal(user.UserName, result.Value.UserName);
+            Assert.NotNull(result.Value.Item1);
+            Assert.NotNull(result.Value.Item2);
+            Assert.Equal(user.Email, result.Value.Item1.Email);
+            Assert.Equal(user.UserName, result.Value.Item1.UserName);
         }
 
         [Fact]

@@ -1,0 +1,206 @@
+[
+  {
+    "audio": [
+      "brood mare_886_06_12_2024.mp3",
+      "brood mare_280_06_12_2024.mp3"
+    ],
+    "categories": [
+      "farm_animals"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a female horse kept for producing young",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbruːd mer/",
+          "/ˈbruːd meə(r)/"
+        ]
+      }
+    ],
+    "photo": "brood mare_04122024.jpg",
+    "word": "brood mare"
+  },
+  {
+    "audio": [
+      "public service broadcasting_430_06_12_2024.mp3",
+      "public service broadcasting_979_06_12_2024.mp3"
+    ],
+    "categories": [
+      "broadcasting"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "radio and television programmes broadcast by organizations such as the BBC in the UK that are independent of government but are financed by public money",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌpʌblɪk ˈsɜːrvɪs brɔːdkæstɪŋ/",
+          "/ˌpʌblɪk ˈsɜːvɪs brɔːdkɑːstɪŋ/"
+        ]
+      }
+    ],
+    "photo": "public service broadcasting_04122024.jpg",
+    "word": "public service broadcasting"
+  },
+  {
+    "audio": [
+      "social bookmarking_173_06_12_2024.mp3",
+      "social bookmarking_569_06_12_2024.mp3"
+    ],
+    "categories": [
+      "social_networking"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a way of  bookmarking   (= storing and labelling)  the addresses of pages on the internet, using a special service that enables you to make them available to other internet users",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsəʊʃl ˈbʊkmɑːrkɪŋ/",
+          "/ˌsəʊʃl ˈbʊkmɑːkɪŋ/"
+        ]
+      }
+    ],
+    "photo": "social bookmarking_04122024.jpg",
+    "word": "social bookmarking"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "exams_and_assessment"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to study a particular subject very hard, especially in order to prepare for an exam",
+                "example": "Make sure you swot up on the company before the interview."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "swot up on_04122024.jpg",
+    "word": "swot up on"
+  },
+  {
+    "audio": [
+      "centre field_326_06_12_2024.mp3",
+      "centre field_724_06_12_2024.mp3"
+    ],
+    "categories": [
+      "baseball"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the central part of the outer area of a baseball field, where one player (called the  centre fielder ) stands to catch balls that are hit in that area; the position of this player",
+                "example": "Davis will play center field and bat ninth."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsentə ˈfiːld/",
+          "/ˌsentər ˈfiːld/"
+        ]
+      }
+    ],
+    "photo": "centre field_04122024.jpg",
+    "word": "centre field"
+  },
+  {
+    "audio": [
+      "50-yard line_378_06_12_2024.mp3",
+      "50-yard line_062_06_12_2024.mp3"
+    ],
+    "categories": [
+      "american_football"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the line that marks the middle of the field in  American football",
+                "example": "Try to get tickets near the 50-yard line."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌfɪfti ˈjɑːd laɪn/",
+          "/ˌfɪfti ˈjɑːrd laɪn/"
+        ]
+      }
+    ],
+    "photo": "50-yard line_04122024.jpg",
+    "word": "50-yard line"
+  }
+]

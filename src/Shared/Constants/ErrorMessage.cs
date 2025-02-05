@@ -5,6 +5,8 @@ public enum ErrorMessage
     UnknownError,
     NoChangeDetected,
     InvalidData,
+    NoData,
+    EmailNotSent,
 
     #region File
 
@@ -21,6 +23,7 @@ public enum ErrorMessage
     AccountIsLocked,
     InvalidConfirmationCode,
     ConfirmationCodeExpired,
+    ConfirmationCodeNotExpired,
     EmailAlreadyConfirmed,
     UserAlreadyLoggedOut,
 
@@ -43,6 +46,7 @@ public enum ErrorMessage
     UserAlreadyExists,
     UserAlreadyExistsWithSameEmail,
     UserIsNotActive,
+    UserNotAuthorized,
 
     #endregion
 
@@ -72,6 +76,7 @@ public enum ErrorMessage
     NoKnowledgesFound,
     NoKnowledgeFoundWithGuid,
     SomeKnowledgesNotFound,
+    KnowledgeIsPrivate,
 
     NoKnowledgeTypesFound,
     NoKnowledgeTypeFoundWithGuid,
@@ -84,18 +89,39 @@ public enum ErrorMessage
     NoKnowledgeTopicsFound,
     KnowledgeTopicAlreadyExists,
 
+    NoInterpretationForKnowledge,
+
     KnowledgeAlreadyLearned,
     SomeKnowledgesAlreadyLearned,
     SomeKnowledgesHaveNotBeenLearned,
     SomeKnowledgesAreNotReadyToReview,
     KnowledgeNotReadyToReview,
     LearningNotFound,
+    NoLearningsFound,
     RequireLearningBeforeReview,
 
-    RequireExactTwoGames,
+    RequireTwoGamesToLearn,
     RequireAGameToReview,
     GameKnowledgeSubscriptionNotFound,
+    GameKnowledgeSubscriptionAlreadyExists,
+    NoGameFoundWithGuid,
+    NoGamesFound,
 
+    GameOptionGroupNotFound,
+    GameOptionNotFoundWithGuid,
+    RequireExactOneQuestion,
+    RequireAtLeastTwoAnswers,
+    RequireExactOneCorrectAnswer,
+    CannotDeleteCorrectAnswer,
+
+    LearningListTitleExisted,
+    NoLearningListFoundWithGuid,
+
+    NoPublicationRequestFoundWithGuid,
+    KnowledgeAlreadyRequestedForPublication,
+    PublicationRequestAlreadyApproved,
+    PublicationRequestAlreadyApprovedOrRejected,
+    NoPublicationRequestsFound,
 
     #endregion
 }

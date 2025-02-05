@@ -1,0 +1,217 @@
+[
+  {
+    "audio": [
+      "classified advertisement_200_06_12_2024.mp3",
+      "classified advertisement_555_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_press"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a small advertisement in a newspaper or on a website, put in a section according to its subject, that is placed by a person or small company who wants to buy or sell something, find or offer a job, etc.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌklæsɪfaɪd ədˈvɜːtɪsmənt/",
+          "/ˌklæsɪfaɪd ˌædvərˈtaɪzmənt/"
+        ]
+      }
+    ],
+    "photo": "classified advertisement_05122024.jpg",
+    "word": "classified advertisement"
+  },
+  {
+    "audio": [
+      "compost bin_194_06_12_2024.mp3",
+      "compost bin_368_06_12_2024.mp3"
+    ],
+    "categories": [
+      "gardening"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a container in the garden where leaves, plants, etc. are put to make  compost",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkɑːmpəʊst bɪn/",
+          "/ˈkɒmpɒst bɪn/"
+        ]
+      }
+    ],
+    "photo": "compost bin_05122024.jpg",
+    "word": "compost bin"
+  },
+  {
+    "audio": [
+      "descant recorder_904_06_12_2024.mp3",
+      "descant recorder_389_06_12_2024.mp3"
+    ],
+    "categories": [
+      "musical_instruments"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the most common size of  recorder   (= a musical instrument in the shape of a pipe that you blow into) , with a high range of notes",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdeskænt rɪˈkɔːdə(r)/",
+          "/ˌdeskænt rɪˈkɔːrdər/"
+        ]
+      }
+    ],
+    "photo": "descant recorder_05122024.jpg",
+    "word": "descant recorder"
+  },
+  {
+    "audio": [
+      "miniature golf_905_06_12_2024.mp3",
+      "miniature golf_108_06_12_2024.mp3"
+    ],
+    "categories": [
+      "golf"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a type of golf played on a small course that mainly involves  putting  the ball over short distances. Sometimes you also have to hit the ball through or over little tunnels, hills, bridges and other objects.",
+                "example": "The hotel offers miniature golf and other activities for children."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈmɪnətʃər ɡɑːlf/",
+          "/ˈmɪnətʃə ɡɒlf/"
+        ]
+      }
+    ],
+    "photo": "miniature golf_05122024.jpg",
+    "word": "miniature golf"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "forming_an_opinion"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to form a judgement or an opinion about somebody/something",
+                "example": "She knew that he was looking at her, sizing her up."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "size up_05122024.jpg",
+    "word": "size up"
+  },
+  {
+    "audio": [
+      "alarm call_332_06_12_2024.mp3",
+      "alarm call_329_06_12_2024.mp3"
+    ],
+    "categories": [
+      "phone_services"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a phone call that is intended to wake you up",
+                "example": "Could I have an alarm call at 5.30 tomorrow, please?"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a sound of warning made by a bird or animal",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/əˈlɑːm kɔːl/",
+          "/əˈlɑːrm kɔːl/"
+        ]
+      }
+    ],
+    "photo": "alarm call_05122024.jpg",
+    "word": "alarm call"
+  }
+]

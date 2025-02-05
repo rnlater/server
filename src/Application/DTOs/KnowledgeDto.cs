@@ -14,6 +14,7 @@ public class KnowledgeDto : SingleIdEntityDto
     public required string Level { get; set; }
     public Guid CreatorId { get; set; }
     public UserDto? Creator { get; set; }
+    public PublicationRequestDto? PublicationRequest { get; set; }
     public ICollection<MaterialDto> Materials { get; set; } = [];
     public ICollection<SubjectKnowledgeDto> SubjectKnowledges { get; set; } = [];
     public ICollection<KnowledgeTypeKnowledgeDto> KnowledgeTypeKnowledges { get; set; } = [];
@@ -21,6 +22,11 @@ public class KnowledgeDto : SingleIdEntityDto
     public ICollection<LearningDto> Learnings { get; set; } = [];
     public ICollection<GameKnowledgeSubscriptionDto> GameKnowledgeSubscriptions { get; set; } = [];
     public GameKnowledgeSubscriptionDto? GameToReview { get; set; }
+    public GameKnowledgeSubscriptionDto[]? GamesToLearn { get; set; }
+    public ICollection<LearningListKnowledgeDto> LearningListKnowledges { get; set; } = [];
+    public LearningDto? CurrentUserLearning { get; set; }
+
+    public string? DistinctInterpretation { get; set; }
 
     public void MergeArrangeMaterials()
     {

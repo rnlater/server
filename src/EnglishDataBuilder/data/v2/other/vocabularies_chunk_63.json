@@ -1,0 +1,319 @@
+[
+  {
+    "audio": [
+      "scheduled flight_102_06_12_2024.mp3",
+      "scheduled flight_094_06_12_2024.mp3"
+    ],
+    "categories": [
+      "plane_travel"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a plane service that leaves at a regular time each day or week",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈʃedjuːld flaɪt/",
+          "/ˈskedʒuːld flaɪt/"
+        ]
+      }
+    ],
+    "photo": "scheduled_flight_04122024.jpg",
+    "word": "scheduled flight"
+  },
+  {
+    "audio": [
+      "Celtic harp_820_06_12_2024.mp3",
+      "Celtic harp_278_06_12_2024.mp3"
+    ],
+    "categories": [
+      "musical_instruments"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a small  harp  used in Scottish and Irish music",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌkeltɪk ˈhɑːp/",
+          "/ˌkeltɪk ˈhɑːrp/"
+        ]
+      }
+    ],
+    "photo": "Celtic_harp_04122024.jpg",
+    "word": "Celtic harp"
+  },
+  {
+    "audio": [
+      "fringe medicine_118_06_12_2024.mp3",
+      "fringe medicine_869_06_12_2024.mp3",
+      "fringe medicine_620_06_12_2024.mp3"
+    ],
+    "categories": [
+      "complementary_medicine"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "any type of treatment that is not accepted by many people as being part of Western medicine, for example one using plants instead of artificial drugs",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌfrɪndʒ ˈmedɪsn/",
+          "/ˌfrɪndʒ ˈmedsn/"
+        ]
+      }
+    ],
+    "photo": "fringe_medicine_04122024.jpg",
+    "word": "fringe medicine"
+  },
+  {
+    "audio": [
+      "bike lane_903_06_12_2024.mp3",
+      "bike lane_885_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_road"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a part of a road that only bicycles are allowed to use",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbaɪk leɪn/"
+        ]
+      }
+    ],
+    "photo": "bike_lane_04122024.jpg",
+    "word": "bike lane"
+  },
+  {
+    "audio": [
+      "legal action_546_06_12_2024.mp3",
+      "legal action_074_06_12_2024.mp3"
+    ],
+    "categories": [
+      "justice"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the act of using the legal system to settle an argument, etc.",
+                "example": "to  take/begin legal action  against somebody"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈliːɡl ækʃn/"
+        ]
+      }
+    ],
+    "photo": "legal_action_04122024.jpg",
+    "word": "legal action"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "economic_trends"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to stop rising or falling and remain level ",
+                "example": "The plane levelled off at 1 500 feet."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to stay at a steady level of development or progress after a period of sharp rises or falls",
+                "example": "Sales have levelled off after a period of rapid growth."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "level_out_04122024.jpg",
+    "word": "level out"
+  },
+  {
+    "audio": [
+      "hard left_289_06_12_2024.mp3",
+      "hard left_866_06_12_2024.mp3"
+    ],
+    "categories": [
+      "political_views_and_systems"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the members of a  left-wing  political party who have the most extreme opinions",
+                "example": "hard-left policies"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌhɑːrd ˈleft/",
+          "/ˌhɑːd ˈleft/"
+        ]
+      }
+    ],
+    "photo": "hard_left_04122024.jpg",
+    "word": "hard left"
+  },
+  {
+    "audio": [
+      "gas exchange_237_06_12_2024.mp3",
+      "gas exchange_837_06_12_2024.mp3"
+    ],
+    "categories": [
+      "biology"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the process by which  oxygen  and  carbon dioxide  are transferred between a living thing and the environment ",
+                "example": "Gas exchange is the most important function of the human lung."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈɡæs ɪkstʃeɪndʒ/"
+        ]
+      }
+    ],
+    "photo": "gas_exchange_04122024.jpg",
+    "word": "gas exchange"
+  },
+  {
+    "audio": [
+      "base rate_610_06_12_2024.mp3",
+      "base rate_003_06_12_2024.mp3"
+    ],
+    "categories": [
+      "banking"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a rate of interest, set by a central bank, that banks in the UK use when calculating the amount of interest that they charge on money they lend",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbeɪs reɪt/"
+        ]
+      }
+    ],
+    "photo": "base_rate_04122024.jpg",
+    "word": "base rate"
+  }
+]

@@ -1,0 +1,176 @@
+[
+  {
+    "audio": [
+      "new economy_775_06_12_2024.mp3",
+      "new economy_533_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_economy"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "new industries, such as  biotechnology  or the internet, that rely on the latest technology ",
+                "example": "Innovation in the field of green energy resources plays a key role in the new economy. "
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌnjuː ɪˈkɒnəmi/",
+          "/ˌnuː ɪˈkɑːnəmi/"
+        ]
+      }
+    ],
+    "photo": "new economy_04122024.jpg",
+    "word": "new economy"
+  },
+  {
+    "audio": [
+      "afternoon tea_243_06_12_2024.mp3",
+      "afternoon tea_877_06_12_2024.mp3"
+    ],
+    "categories": [
+      "meals"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a light meal eaten in the afternoon, usually consisting of tea with sandwiches,  scones  and cakes",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɑːftənuːn ˈtiː/",
+          "/ˌæftərnuːn ˈtiː/"
+        ]
+      }
+    ],
+    "photo": "afternoon tea_04122024.jpg",
+    "word": "afternoon tea"
+  },
+  {
+    "audio": [
+      "point-of-care testing_695_06_12_2024.mp3",
+      "point-of-care testing_133_06_12_2024.mp3"
+    ],
+    "categories": [
+      "health_care"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the activity of giving a medical test to somebody at the place where they are being treated",
+                "example": "Point-of-care testing means that patients can get much faster results."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌpɔɪnt əv keə ˈtestɪŋ/",
+          "/ˌpɔɪnt əv ker ˈtestɪŋ/"
+        ]
+      }
+    ],
+    "photo": "point-of-care testing_04122024.jpg",
+    "word": "point-of-care testing"
+  },
+  {
+    "audio": [
+      "fitness test_620_06_12_2024.mp3",
+      "fitness test_250_06_12_2024.mp3"
+    ],
+    "categories": [
+      "good_health"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an examination of somebody's fitness, especially in order to tell whether they are fit enough to play a sport after being injured",
+                "example": "The striker will play after passing a last-minute fitness test."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfɪtnəs test/"
+        ]
+      }
+    ],
+    "photo": "fitness test_04122024.jpg",
+    "word": "fitness test"
+  },
+  {
+    "audio": [
+      "Atlantic Standard Time_755_06_12_2024.mp3",
+      "Atlantic Standard Time_433_06_12_2024.mp3"
+    ],
+    "categories": [
+      "time_zones"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the time used in winter in an area that includes the east of Canada, Puerto Rico and the Virgin Islands that is four hours earlier than UTC",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ətˌlæntɪk ˈstændəd taɪm/",
+          "/ətˌlæntɪk ˈstændərd taɪm/"
+        ]
+      }
+    ],
+    "photo": "Atlantic Standard Time_04122024.jpg",
+    "word": "Atlantic Standard Time"
+  }
+]

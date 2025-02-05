@@ -20,6 +20,6 @@ public class Learning : SingleIdPivotEntity
 
     public ICollection<LearningHistory> LearningHistories { get; set; } = [];
 
-    public LearningHistory LatestLearningHistory => LearningHistories.OrderByDescending(lh => lh.LearningLevel).FirstOrDefault() ?? new LearningHistory(false, LearningLevel.LevelZero);
+    public LearningHistory LatestLearningHistory => LearningHistories.OrderByDescending(lh => lh.CreatedAt).FirstOrDefault() ?? new LearningHistory(false, LearningLevel.LevelZero);
 
 }

@@ -1,0 +1,397 @@
+[
+  {
+    "audio": [
+      "school day_676_06_12_2024.mp3",
+      "school day_876_06_12_2024.mp3"
+    ],
+    "categories": [
+      "youth",
+      "school_life"
+    ],
+    "level": [
+      "A2",
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a day of the week when students go to school",
+                "example": "I get up very early on school days."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the part of the day that students spend at school",
+                "example": "The school day ends at 3 p.m."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the period in your life when you go to school",
+                "example": "She hadn't seen Laura since her schooldays."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈskuːldeɪ/"
+        ]
+      }
+    ],
+    "photo": "school day_05122024.jpg",
+    "word": "school day"
+  },
+  {
+    "audio": [
+      "hard right_250_06_12_2024.mp3",
+      "hard right_424_06_12_2024.mp3"
+    ],
+    "categories": [
+      "political_views_and_systems"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the members of a  right-wing  political party who have the most extreme opinions",
+                "example": "hard-right opinions"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌhɑːd ˈraɪt/",
+          "/ˌhɑːrd ˈraɪt/"
+        ]
+      }
+    ],
+    "photo": "hard right_05122024.jpg",
+    "word": "hard right"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "agreement"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to agree with something",
+                "example": "I don't hold with the use of force."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "hold with_05122024.jpg",
+    "word": "hold with"
+  },
+  {
+    "audio": [
+      "Afghan hound_169_06_12_2024.mp3",
+      "Afghan hound_949_06_12_2024.mp3"
+    ],
+    "categories": [
+      "dogs"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a tall dog with long soft hair and a pointed nose",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌæfɡæn ˈhaʊnd/"
+        ]
+      }
+    ],
+    "photo": "Afghan hound_05122024.jpg",
+    "word": "Afghan hound"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "being_ill"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to fall over unexpectedly, especially because you feel ill",
+                "example": "Several of them keeled over in the heat."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "keel over_05122024.jpg",
+    "word": "keel over"
+  },
+  {
+    "audio": [
+      "ad blocker_736_06_12_2024.mp3",
+      "ad blocker_910_06_12_2024.mp3"
+    ],
+    "categories": [
+      "using_the_internet"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a piece of software that removes the advertisements from a web page when you view it",
+                "example": "Widespread use of ad blockers could pose a threat to the way many websites are currently funded."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈæd blɒkə(r)/",
+          "/ˈæd blɑːkər/"
+        ]
+      }
+    ],
+    "photo": "ad blocker_05122024.jpg",
+    "word": "ad blocker"
+  },
+  {
+    "audio": [
+      "Swiss cheese_287_06_12_2024.mp3",
+      "Swiss cheese_495_06_12_2024.mp3"
+    ],
+    "categories": [
+      "dairy_and_fats"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "any hard cheese with holes in it",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌswɪs ˈtʃiːz/"
+        ]
+      }
+    ],
+    "photo": "Swiss cheese_05122024.jpg",
+    "word": "Swiss cheese"
+  },
+  {
+    "audio": [
+      "weight belt_874_06_12_2024.mp3",
+      "weight belt_078_06_12_2024.mp3"
+    ],
+    "categories": [
+      "diving"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a belt or jacket which helps you to stay  underwater , for example when  diving  or doing exercises",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈweɪt belt/"
+        ]
+      }
+    ],
+    "photo": "weight belt_05122024.jpg",
+    "word": "weight belt"
+  },
+  {
+    "audio": [
+      "appellate court_574_06_12_2024.mp3",
+      "appellate court_764_06_12_2024.mp3"
+    ],
+    "categories": [
+      "decision",
+      "justice"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a court in which people can appeal against decisions made in other courts of law",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/əˈpelət kɔːt/",
+          "/əˈpelət kɔːrt/"
+        ]
+      }
+    ],
+    "photo": "appellate court_05122024.jpg",
+    "word": "appellate court"
+  },
+  {
+    "audio": [
+      "dark meat_114_06_12_2024.mp3",
+      "dark meat_314_06_12_2024.mp3"
+    ],
+    "categories": [
+      "meat_fish_and_seafood"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "meat from the legs of a chicken or other bird that is dark when it has been cooked",
+                "example": "If you're dark meat fans, just cook the legs. "
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈdɑːk miːt/",
+          "/ˈdɑːrk miːt/"
+        ]
+      }
+    ],
+    "photo": "dark meat_05122024.jpg",
+    "word": "dark meat"
+  },
+  {
+    "audio": [
+      "mountain biking_814_06_12_2024.mp3",
+      "mountain biking_637_06_12_2024.mp3"
+    ],
+    "categories": [
+      "cycling",
+      "activities_and_interests"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the sport or activity of riding a  mountain bike",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈmaʊntən baɪkɪŋ/",
+          "/ˈmaʊntn baɪkɪŋ/"
+        ]
+      }
+    ],
+    "photo": "mountain biking_05122024.jpg",
+    "word": "mountain biking"
+  }
+]

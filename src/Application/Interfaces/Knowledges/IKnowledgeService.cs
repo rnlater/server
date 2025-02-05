@@ -1,4 +1,5 @@
 using Application.DTOs;
+using Application.DTOs.SingleIdPivotEntities;
 using Application.UseCases.Knowledges;
 using Shared.Types;
 
@@ -27,15 +28,15 @@ public interface IKnowledgeService
     Task<Result<IEnumerable<KnowledgeDto>>> SearchKnowledges(SearchKnowledgesParams Params);
 
     /// <summary>
-    /// Get knowledges to review
+    /// Get knowledges to learn
     /// </summary>
     /// <param name="Params"></param>
     /// <returns>return result of grouped knowledges to learn</returns>
     /// <exception cref="ErrorMessage.UserNotFound">User not found</exception>
     /// <exception cref="ErrorMessage.KnowledgeAlreadyLearned">Knowledge already learned</exception>
     /// <exception cref="ErrorMessage.SomeKnowledgesNotFound">Some knowledges not found</exception>
-    /// <exception cref="ErrorMessage.RequireAGameToReview">Require a game to review</exception>
-    Task<Result<List<Dictionary<Guid, KnowledgeDataToLearn>>>> GetKnowledgesToLearn(GetKnowledgesToLearnParams Params);
+    /// <exception cref="ErrorMessage.RequireTwoGamesToLearn">Require a game to review</exception>
+    Task<Result<List<List<KnowledgeDto>>>> GetKnowledgesToLearn(GetKnowledgesToLearnParams Params);
 
     /// <summary>
     /// Get knowledges with parameters
@@ -44,6 +45,14 @@ public interface IKnowledgeService
     /// <returns>return result of knowledges with related entities</returns>
     /// <exception cref="ErrorMessage.NoKnowledgesFound">No knowledges found</exception>
     Task<Result<IEnumerable<KnowledgeDto>>> GetKnowledges(GetKnowledgesParams Params);
+
+    /// <summary>
+    /// Get user's created knowledges
+    /// </summary>
+    /// <param name="Params"></param>
+    /// <returns>return result of created knowledges with related entities</returns>
+    /// <exception cref="ErrorMessage.NoKnowledgesFound">No knowledges found</exception>
+    Task<Result<IEnumerable<KnowledgeDto>>> GetCreatedKnowledges(GetCreatedKnowledgesParams Params);
 
     /// <summary>
     /// Create knowledge
@@ -72,10 +81,11 @@ public interface IKnowledgeService
     Task<Result<KnowledgeDto>> DeleteKnowledge(Guid guid);
 
     /// <summary>
-    /// Publish knowledge
+    /// Allow user to choose known knowledges
     /// </summary>
-    /// <param name="guid"></param>
-    /// <returns>return result of published knowledge</returns>
-    /// <exception cref="ErrorMessage.NoKnowledgeFoundWithGuid">No knowledge found with guid</exception>
-    Task<Result<KnowledgeDto>> PublishKnowledge(Guid guid);
+    /// <param name="Params"></param>
+    /// <returns>return result of learning for the knowledges</returns>
+    /// <exception cref="ErrorMessage.UserNotFound">User not found</exception>
+    /// <exception cref="ErrorMessage.SomeKnowledgesNotFound">Some knowledges not found</exception>
+    Task<Result<IEnumerable<LearningDto>>> MigrateKnowledges(MigrateKnowledgesParams Params);
 }

@@ -1,0 +1,177 @@
+[
+  {
+    "audio": [
+      "Denver boot_352_06_12_2024.mp3",
+      "Denver boot_690_06_12_2024.mp3"
+    ],
+    "categories": [
+      "controlling_traffic"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a device that is attached to the wheel of a car that has been parked illegally, so that it cannot be driven away",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdenvə ˈbuːt/",
+          "/ˌdenvər ˈbuːt/"
+        ]
+      }
+    ],
+    "photo": "Denver_boot_04122024.jpg",
+    "word": "Denver boot"
+  },
+  {
+    "audio": [
+      "pet sitter_221_06_12_2024.mp3",
+      "pet sitter_424_06_12_2024.mp3"
+    ],
+    "categories": [
+      "pets"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who takes care of pets while their owners are away from home",
+                "example": "A pet sitter will take the dog for a walk, brush the cat's fur and spend quality time with your pets."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈpet sɪtər/",
+          "/ˈpet sɪtə(r)/"
+        ]
+      }
+    ],
+    "photo": "pet_sitter_04122024.jpg",
+    "word": "pet sitter"
+  },
+  {
+    "audio": [
+      "flash mobbing_512_06_12_2024.mp3",
+      "flash mobbing_858_06_12_2024.mp3"
+    ],
+    "categories": [
+      "social_networking"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an activity in which a large group of people arrange (by mobile phone or email) to gather together in a public place at exactly the same time, spend a short time doing something there and then quickly all leave at the same time",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈflæʃmɑːbɪŋ/",
+          "/ˈflæʃmɒbɪŋ/"
+        ]
+      }
+    ],
+    "photo": "flash_mobbing_04122024.jpg",
+    "word": "flash mobbing"
+  },
+  {
+    "audio": [
+      "consumer economy_211_06_12_2024.mp3",
+      "consumer economy_643_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_economy"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an economic system that depends on people buying a lot of goods and services rather than on production",
+                "example": "Eastern Europe's emerging consumer economies are prime targets for credit card growth."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/kənˌsuːmər ɪˈkɑːnəmi/",
+          "/kənˌsjuːmər ɪˈkɒnəmi/"
+        ]
+      }
+    ],
+    "photo": "consumer_economy_04122024.jpg",
+    "word": "consumer economy"
+  },
+  {
+    "audio": [
+      "after-sales service_046_06_12_2024.mp3",
+      "after-sales service_449_06_12_2024.mp3"
+    ],
+    "categories": [
+      "advice"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the fact of providing help to customers after they have bought a product, usually involving doing repairs that are needed or giving advice on how to use the product",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɑːftə ˌseɪlz ˈsɜːvɪs/",
+          "/ˌæftər ˌseɪlz ˈsɜːrvɪs/"
+        ]
+      }
+    ],
+    "photo": "after-sales_service_04122024.jpg",
+    "word": "after-sales service"
+  }
+]

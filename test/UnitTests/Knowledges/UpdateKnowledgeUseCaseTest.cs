@@ -31,7 +31,6 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenKnowledgeNotFound()
         {
-            // Arrange
             var parameters = new UpdateKnowledgeParams
             {
                 Id = Guid.NewGuid(),
@@ -41,10 +40,8 @@ namespace UnitTests.Knowledges
 
             _knowledgeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync((Knowledge?)null);
 
-            // Act
             var result = await _updateKnowledgeUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgeFoundWithGuid, result.Error);
         }
@@ -52,7 +49,6 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgeIsUpdated()
         {
-            // Arrange
             var knowledgeId = Guid.NewGuid();
             var knowledge = new Knowledge { Id = knowledgeId, Title = "Old Knowledge", Level = KnowledgeLevel.Beginner };
 
@@ -66,10 +62,8 @@ namespace UnitTests.Knowledges
             _knowledgeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledge);
             _knowledgeRepositoryMock.Setup(r => r.Update(It.IsAny<Knowledge>())).ReturnsAsync(knowledge);
 
-            // Act
             var result = await _updateKnowledgeUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Equal(knowledgeId, result.Value.Id);
@@ -80,7 +74,6 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenExceptionIsThrown()
         {
-            // Arrange
             var parameters = new UpdateKnowledgeParams
             {
                 Id = Guid.NewGuid(),
@@ -90,10 +83,8 @@ namespace UnitTests.Knowledges
 
             _knowledgeRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Knowledge>>())).ThrowsAsync(new Exception());
 
-            // Act
             var result = await _updateKnowledgeUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.UnknownError, result.Error);
         }

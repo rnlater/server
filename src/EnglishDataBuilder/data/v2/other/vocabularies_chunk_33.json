@@ -1,0 +1,143 @@
+[
+  {
+    "audio": [
+      "C of E_895_06_12_2024.mp3",
+      "C of E_953_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_belief"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "Church of England",
+                "example": null
+              }
+            ],
+            "part_of_speech": "abbreviation",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsiː əv ˈiː/"
+        ]
+      }
+    ],
+    "photo": "C_of_E_04122024.jpg",
+    "word": "C of E"
+  },
+  {
+    "audio": [
+      "Monterey Jack_324_06_12_2024.mp3",
+      "Monterey Jack_018_06_12_2024.mp3"
+    ],
+    "categories": [
+      "dairy_and_fats"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a type of white American cheese with a mild taste",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌmɑːntəreɪ ˈdʒæk/",
+          "/ˌmɒntəreɪ ˈdʒæk/"
+        ]
+      }
+    ],
+    "photo": "Monterey_Jack_04122024.jpg",
+    "word": "Monterey Jack"
+  },
+  {
+    "audio": [
+      "Lantern Festival_037_06_12_2024.mp3",
+      "Lantern Festival_936_06_12_2024.mp3"
+    ],
+    "categories": [
+      "religious_holidays_and_festivals"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a Japanese Buddhist festival that takes place in July or August, when people show respect to the dead",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈlæntərn festɪvl/",
+          "/ˈlæntən festɪvl/"
+        ]
+      }
+    ],
+    "photo": "Lantern_Festival_04122024.jpg",
+    "word": "Lantern Festival"
+  },
+  {
+    "audio": [
+      "liver salts_790_06_12_2024.mp3",
+      "liver salts_153_06_12_2024.mp3",
+      "liver salts_549_06_12_2024.mp3"
+    ],
+    "categories": [
+      "health_care"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a substance that you drink to help with  indigestion  (= pain caused by difficulty in  digesting  food)",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈlɪvə sɒlts/",
+          "/ˈlɪvər sɔːlts/",
+          "/ˈlɪvə sɔːlts/"
+        ]
+      }
+    ],
+    "photo": "liver_salts_04122024.jpg",
+    "word": "liver salts"
+  }
+]

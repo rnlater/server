@@ -1,0 +1,71 @@
+[
+  {
+    "audio": [],
+    "categories": [
+      "shopping_in_stores"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to be all sold",
+                "example": "The tickets sold out within hours."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to have sold all the available items, tickets, etc.",
+                "example": "I'm sorry, we've sold out of bread."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "sell out_05122024.jpg",
+    "word": "sell out"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "persuasion"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to persuade somebody to do/not do something by giving them reasons",
+                "example": "They argued him into withdrawing his complaint."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "argue out of doing_05122024.jpg",
+    "word": "argue out of doing"
+  }
+]

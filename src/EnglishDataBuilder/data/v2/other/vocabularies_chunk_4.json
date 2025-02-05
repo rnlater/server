@@ -1,0 +1,507 @@
+[
+  {
+    "audio": [
+      "theme music_795_06_12_2024.mp3",
+      "theme music_432_06_12_2024.mp3"
+    ],
+    "categories": [
+      "making_films",
+      "broadcasting",
+      "pieces_of_music"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "music that is played at the beginning and end and/or is often repeated in a film, television programme, etc.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈθiːm mjuːzɪk/"
+        ]
+      }
+    ],
+    "photo": "theme_music_04122024.jpg",
+    "word": "theme music"
+  },
+  {
+    "audio": [
+      "slow lane_718_06_12_2024.mp3",
+      "slow lane_535_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_road"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the part of a major road such as a  motorway  or  interstate  where vehicles drive slowest",
+                "example": "She signalled and pulled over into the slow lane."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "not making progress as fast as other people, countries, companies, etc.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈsləʊ leɪn/"
+        ]
+      }
+    ],
+    "photo": "slow_lane_04122024.jpg",
+    "word": "slow lane"
+  },
+  {
+    "audio": [
+      "nailed on_270_06_12_2024.mp3",
+      "nailed on_616_06_12_2024.mp3"
+    ],
+    "categories": [
+      "certainty"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "certain or definite",
+                "example": "The referee refused to award a nailed-on penalty."
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in  betting ) believed to be very likely to succeed",
+                "example": "a nailed-on bet"
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌneɪld ˈɒn/",
+          "/ˌneɪld ˈɑːn/"
+        ]
+      }
+    ],
+    "photo": "nailed_on_04122024.jpg",
+    "word": "nailed on"
+  },
+  {
+    "audio": [
+      "constitutional monarchy_765_06_12_2024.mp3",
+      "constitutional monarchy_383_06_12_2024.mp3",
+      "constitutional monarchy_175_06_12_2024.mp3"
+    ],
+    "categories": [
+      "political_views_and_systems"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a country that is governed by a king or queen within laws which limit his or her power. Britain is governed in this way, with the Queen or King as head of state and with Parliament and the elected government holding almost all the real power. This system began to develop slowly in the 17th century, when the  Bill of Rights  became law, and then developed more quickly after the  Reform Act  of 1832.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌkɒnstɪˌtjuːʃənl ˈmɒnəki/",
+          "/ˌkɑːnstɪˌtuːʃənl ˈmɑːnərki/",
+          "/ˌkɑːnstɪˌtuːʃənl ˈmɑːnɑːrki/"
+        ]
+      }
+    ],
+    "photo": "constitutional_monarchy_04122024.jpg",
+    "word": "constitutional monarchy"
+  },
+  {
+    "audio": [
+      "legal high_560_06_12_2024.mp3",
+      "legal high_347_06_12_2024.mp3"
+    ],
+    "categories": [
+      "drugs"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a substance that people smoke,  inject , etc. for the physical and mental effects it has, and that, until 2016, was not banned by the law",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌliːɡl ˈhaɪ/"
+        ]
+      }
+    ],
+    "photo": "legal_high_04122024.jpg",
+    "word": "legal high"
+  },
+  {
+    "audio": [
+      "romance scam_592_06_12_2024.mp3",
+      "romance scam_799_06_12_2024.mp3",
+      "romance scam_117_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_crime"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the act of tricking somebody by pretending to be having a romantic relationship with them online in order to get money from them",
+                "example": "Dating apps and chat rooms are commonly used for diferent types of romance scams and catfishing."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/rəʊˈmæns skæm/",
+          "/ˈrəʊmæns skæm/"
+        ]
+      }
+    ],
+    "photo": "romance_scam_04122024.jpg",
+    "word": "romance scam"
+  },
+  {
+    "audio": [
+      "American football_496_06_12_2024.mp3",
+      "American football_302_06_12_2024.mp3"
+    ],
+    "categories": [
+      "american_football"
+    ],
+    "level": [
+      "A2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a game played by two teams of 11 players, using an  oval  ball that players kick, throw, or carry. Teams try to put the ball over the other team’s line.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/əˌmerɪkən ˈfʊtbɔːl/"
+        ]
+      }
+    ],
+    "photo": "American_football_04122024.jpg",
+    "word": "American football"
+  },
+  {
+    "audio": [
+      "thigh bone_228_06_12_2024.mp3",
+      "thigh bone_481_06_12_2024.mp3"
+    ],
+    "categories": [
+      "skeleton_and_muscles"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the large, thick bone in the top part of the leg between the  hip  and the knee",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈθaɪ bəʊn/"
+        ]
+      }
+    ],
+    "photo": "thigh_bone_06122024.jpg",
+    "word": "thigh bone"
+  },
+  {
+    "audio": [
+      "retirement community_163_06_12_2024.mp3",
+      "retirement community_583_06_12_2024.mp3"
+    ],
+    "categories": [
+      "old_age"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a group of homes for older or retired people, with facilities offering activities and services",
+                "example": "My parents' retirement community has its own golf course."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/rɪˈtaɪəmənt kəmjuːnəti/",
+          "/rɪˈtaɪərmənt kəmjuːnəti/"
+        ]
+      }
+    ],
+    "photo": "retirement_community_04122024.jpg",
+    "word": "retirement community"
+  },
+  {
+    "audio": [
+      "stem ginger_197_06_12_2024.mp3",
+      "stem ginger_553_06_12_2024.mp3"
+    ],
+    "categories": [
+      "herbs_and_spices"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "ginger   (= a sweet hot  spice )  that has been preserved in sugar",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌstem ˈdʒɪndʒə(r)/",
+          "/ˌstem ˈdʒɪndʒər/"
+        ]
+      }
+    ],
+    "photo": "stem_ginger_04122024.jpg",
+    "word": "stem ginger"
+  },
+  {
+    "audio": [
+      "people power_890_06_12_2024.mp3",
+      "people power_157_06_12_2024.mp3"
+    ],
+    "categories": [
+      "political_views_and_systems"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the pressure that is placed on politics, business, etc. when large numbers of the public express or act upon their opinions",
+                "example": "This wave of passionate people power has forced the government to see sense."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈpiːpl paʊə(r)/",
+          "/ˈpiːpl paʊər/"
+        ]
+      }
+    ],
+    "photo": "people_power_04122024.jpg",
+    "word": "people power"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "having_a_disagreement"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to fight, argue or compete until an argument or competition has been settled",
+                "example": "The conflict is still being fought out."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "fight_out_04122024.jpg",
+    "word": "fight out"
+  },
+  {
+    "audio": [
+      "hoof-and-mouth disease_602_06_12_2024.mp3",
+      "hoof-and-mouth disease_402_06_12_2024.mp3"
+    ],
+    "categories": [
+      "animal_farming"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a disease of cows, sheep, etc., that causes painful places on the mouth and feet",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌhuːf ən ˈmaʊθ dɪziːz/"
+        ]
+      }
+    ],
+    "photo": "hoof-and-mouth_disease_04122024.jpg",
+    "word": "hoof-and-mouth disease"
+  },
+  {
+    "audio": [
+      "structural engineer_508_06_12_2024.mp3",
+      "structural engineer_744_06_12_2024.mp3"
+    ],
+    "categories": [
+      "jobs_and_professions"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person whose job is to plan large buildings, bridges, etc.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌstrʌktʃərəl endʒɪˈnɪə(r)/",
+          "/ˌstrʌktʃərəl endʒɪˈnɪr/"
+        ]
+      }
+    ],
+    "photo": "structural_engineer_04122024.jpg",
+    "word": "structural engineer"
+  }
+]

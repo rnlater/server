@@ -8,6 +8,7 @@ using Domain.Interfaces;
 using Shared.Constants;
 using Shared.Utils;
 using Domain.Entities.SingleIdEntities;
+using Application.Interfaces;
 
 namespace UnitTests.Auth
 {
@@ -17,6 +18,8 @@ namespace UnitTests.Auth
         private readonly Mock<IRepository<User>> _userRepositoryMock;
         private readonly Mock<IRepository<Authentication>> _authRepositoryMock;
         private readonly Mock<IMapper> _mapperMock;
+        private readonly Mock<IMailService> _mailServiceMock;
+
         private readonly RegisterUseCase _registerUseCase;
 
         public RegisterUseCaseTest()
@@ -25,11 +28,12 @@ namespace UnitTests.Auth
             _userRepositoryMock = new Mock<IRepository<User>>();
             _authRepositoryMock = new Mock<IRepository<Authentication>>();
             _mapperMock = new Mock<IMapper>();
+            _mailServiceMock = new Mock<IMailService>();
 
             _unitOfWorkMock.Setup(u => u.Repository<User>()).Returns(_userRepositoryMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<Authentication>()).Returns(_authRepositoryMock.Object);
 
-            _registerUseCase = new RegisterUseCase(_unitOfWorkMock.Object, _mapperMock.Object);
+            _registerUseCase = new RegisterUseCase(_unitOfWorkMock.Object, _mapperMock.Object, _mailServiceMock.Object);
         }
 
         [Fact]

@@ -1,0 +1,74 @@
+[
+  {
+    "audio": [
+      "birth father_554_06_12_2024.mp3",
+      "birth father_835_06_12_2024.mp3"
+    ],
+    "categories": [
+      "relatives",
+      "birth"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the  biological  father of a child who has been adopted",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbɜːθ fɑːðə(r)/",
+          "/ˈbɜːrθ fɑːðər/"
+        ]
+      }
+    ],
+    "photo": "birth_father_04122024.jpg",
+    "word": "birth father"
+  },
+  {
+    "audio": [
+      "advice column_813_06_12_2024.mp3",
+      "advice column_587_06_12_2024.mp3"
+    ],
+    "categories": [
+      "journalism",
+      "advice"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "part of a newspaper, magazine or website in which somebody gives advice to readers who have sent emails or letters about their personal problems",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ədˈvaɪs kɒləm/",
+          "/ədˈvaɪs kɑːləm/"
+        ]
+      }
+    ],
+    "photo": "advice_column_04122024.jpg",
+    "word": "advice column"
+  }
+]

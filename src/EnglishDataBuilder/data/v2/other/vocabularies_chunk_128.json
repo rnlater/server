@@ -1,0 +1,235 @@
+[
+  {
+    "audio": [],
+    "categories": [
+      "adults"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to become or make somebody become calm, less excited, etc.",
+                "example": "It always takes the class a while to settle down at the start of the lesson."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "settle down_05122024.jpg",
+    "word": "settle down"
+  },
+  {
+    "audio": [
+      "social conscience_087_06_12_2024.mp3",
+      "social conscience_760_06_12_2024.mp3"
+    ],
+    "categories": [
+      "helping_others"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the state of being aware of the problems that affect a lot of people in society, such as being poor or having no home, and wanting to do something to help these people",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsəʊʃl ˈkɑːnʃəns/",
+          "/ˌsəʊʃl ˈkɒnʃəns/"
+        ]
+      }
+    ],
+    "photo": "social conscience_05122024.jpg",
+    "word": "social conscience"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "achieving_success",
+      "good_health"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to enjoy something or be successful at something, especially something that other people would not like",
+                "example": "He thrives on hard work."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "thrive on_05122024.jpg",
+    "word": "thrive on"
+  },
+  {
+    "audio": [
+      "plasma TV_234_06_12_2024.mp3",
+      "plasma TV_933_06_12_2024.mp3"
+    ],
+    "categories": [
+      "watching_tv_listening_to_the_radio"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a television set with a  plasma screen",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌplæzmə tiː ˈviː/"
+        ]
+      }
+    ],
+    "photo": "plasma TV_05122024.jpg",
+    "word": "plasma TV"
+  },
+  {
+    "audio": [
+      "driving while intoxicated_098_06_12_2024.mp3",
+      "driving while intoxicated_622_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_crime",
+      "motoring_problems_and_accidents"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the crime of driving a vehicle after drinking too much alcohol or taking drugs that affect your ability to drive",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdraɪvɪŋ waɪl ɪnˈtɑːksɪkeɪtɪd/",
+          "/ˌdraɪvɪŋ waɪl ɪnˈtɒksɪkeɪtɪd/"
+        ]
+      }
+    ],
+    "photo": "driving while intoxicated_05122024.jpg",
+    "word": "driving while intoxicated"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "change"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to become weaker or less",
+                "example": "She could feel the tension drop away."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "drop away_05122024.jpg",
+    "word": "drop away"
+  },
+  {
+    "audio": [
+      "amateur dramatics_374_06_12_2024.mp3",
+      "amateur dramatics_193_06_12_2024.mp3",
+      "amateur dramatics_780_06_12_2024.mp3",
+      "amateur dramatics_758_06_12_2024.mp3"
+    ],
+    "categories": [
+      "producing_a_play",
+      "activities_and_interests"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the activity of producing and acting in plays for the theatre, by people who do it for pleasure, not as a job",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌæmətʃə drəˈmætɪks/",
+          "/ˌæmətə drəˈmætɪks/",
+          "/ˌæmətər drəˈmætɪks/",
+          "/ˌæmətʃər drəˈmætɪks/"
+        ]
+      }
+    ],
+    "photo": "amateur dramatics_05122024.jpg",
+    "word": "amateur dramatics"
+  }
+]

@@ -19,7 +19,7 @@ namespace Application.Interfaces.Knowledges
         /// </summary>
         /// <returns>return result of list of knowledge type dto with its parent, children and knowledges</returns>
         /// <exception cref="ErrorMessage.NoKnowledgeTypesFound">No knowledge types found</exception>
-        Task<Result<IEnumerable<KnowledgeTypeDto>>> GetKnowledgeTypes();
+        Task<Result<IEnumerable<KnowledgeTypeDto>>> GetKnowledgeTypes(GetKnowledgeTypesParams Params);
 
         /// <summary>
         /// Create knowledge type

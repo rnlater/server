@@ -15,21 +15,41 @@ public class RedisCache : IRedisCache
     public async Task SetStringAsync(string key, string value, TimeSpan? expiry = null)
     {
         var db = _redis.GetDatabase();
-        await db.StringSetAsync(key, value, expiry);
+        try
+        {
+            await db.StringSetAsync(key, value, expiry);
+        }
+        catch { }
     }
 
     public async Task<string?> GetStringAsync(string key)
     {
         var db = _redis.GetDatabase();
-        var result = await db.StringGetAsync(key);
-        return result.IsNullOrEmpty ? null : result.ToString();
+        try
+        {
+            var result = await db.StringGetAsync(key);
+            return result.IsNullOrEmpty ? null : result.ToString();
+        }
+        catch
+        {
+            await db.KeyDeleteAsync(key);
+            return null;
+        }
     }
 
     public async Task SetAsync<T>(string key, T value, TimeSpan? expiry = null)
     {
         var db = _redis.GetDatabase();
-        var json = JsonSerializer.Serialize(value);
-        await db.StringSetAsync(key, json, expiry);
+        try
+        {
+            var options = new JsonSerializerOptions
+            {
+                ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles
+            };
+            var json = JsonSerializer.Serialize(value, options);
+            await db.StringSetAsync(key, json, expiry);
+        }
+        catch { }
     }
 
     public async Task<T?> GetAsync<T>(string key)
@@ -40,6 +60,14 @@ public class RedisCache : IRedisCache
         {
             return default;
         }
-        return JsonSerializer.Deserialize<T>(result.ToString());
+        try
+        {
+            return JsonSerializer.Deserialize<T>(result.ToString());
+        }
+        catch
+        {
+            await db.KeyDeleteAsync(key);
+            return default;
+        }
     }
 }

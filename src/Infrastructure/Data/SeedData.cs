@@ -2,12 +2,15 @@ using Domain.Entities.PivotEntities;
 using Domain.Entities.SingleIdEntities;
 using Domain.Entities.SingleIdPivotEntities;
 using Domain.Enums;
+using Shared.Constants;
 using Shared.Utils;
 
 namespace Infrastructure.Data;
 public static class SeedData
 {
     public static readonly Guid UserId = Guid.NewGuid();
+    public static readonly Guid AdminId = GuidConstants.Admin;
+
     public static User[] GetUsers() => new[]
     {
         new User
@@ -15,6 +18,12 @@ public static class SeedData
             Id = UserId,
             UserName = "testuser",
             Email = "testuser@example.com",
+        },
+        new User {
+            Id = AdminId,
+            UserName = "admin",
+            Email = "admin@admin.admin",
+            Role = Role.Admin
         }
     };
 
@@ -24,6 +33,14 @@ public static class SeedData
         {
             Id = Guid.NewGuid(),
             UserId = UserId,
+            HashedPassword = PasswordHasher.HashWithSHA256("password"),
+            IsEmailConfirmed = true,
+            IsActivated = true
+        },
+        new Authentication
+        {
+            Id = Guid.NewGuid(),
+            UserId = AdminId,
             HashedPassword = PasswordHasher.HashWithSHA256("password"),
             IsEmailConfirmed = true,
             IsActivated = true
@@ -83,10 +100,19 @@ public static class SeedData
     public static readonly Guid KnowledgeType1Id = Guid.NewGuid();
     public static readonly Guid KnowledgeType2Id = Guid.NewGuid();
     public static KnowledgeType[] GetKnowledgeTypes() => new[]
-{
+    {
         new KnowledgeType { Id = KnowledgeType1Id, Name = "Theory" },
         new KnowledgeType { Id = KnowledgeType2Id, Name = "Practical" }
     };
+
+    public static readonly Guid PublicationRequest1Id = Guid.NewGuid();
+    public static readonly Guid PublicationRequest2Id = Guid.NewGuid();
+    public static PublicationRequest[] GetPublicationRequests() => new[]
+    {
+        new PublicationRequest { Id = PublicationRequest1Id, KnowledgeId = Knowledge1Id, Status = PublicationRequestStatus.Pending },
+        new PublicationRequest { Id = PublicationRequest2Id, KnowledgeId = Knowledge2Id, Status = PublicationRequestStatus.Approved }
+    };
+
     public static KnowledgeTypeKnowledge[] GetKnowledgeTypeKnowledges() => new[]
     {
         new KnowledgeTypeKnowledge { KnowledgeTypeId = KnowledgeType1Id, KnowledgeId = Knowledge1Id },
@@ -191,6 +217,26 @@ public static class SeedData
         {
                 new LearningHistory { Id = LearningHistory1Id, LearningId = Learning1Id, LearningLevel = LearningLevel.LevelZero, IsMemorized = true, Score = 100, PlayedGameId = Game1Id },
                 new LearningHistory { Id = LearningHistory2Id, LearningId = Learning2Id, LearningLevel = LearningLevel.LevelOne, IsMemorized = false, Score = 80, PlayedGameId = Game2Id }
+            };
+    }
+
+    public static readonly Guid LearningList1Id = Guid.NewGuid();
+    public static readonly Guid LearningList2Id = Guid.NewGuid();
+    public static LearningList[] GetLearningLists()
+    {
+        return new[]
+        {
+                new LearningList { Id = LearningList1Id, LearnerId = UserId, Title = "Learning List 1" },
+                new LearningList { Id = LearningList2Id, LearnerId = UserId, Title = "Learning List 2" }
+            };
+    }
+
+    public static LearningListKnowledge[] GetLearningListKnowledges()
+    {
+        return new[]
+        {
+                new LearningListKnowledge { LearningListId = LearningList1Id, KnowledgeId = Knowledge1Id },
+                new LearningListKnowledge { LearningListId = LearningList2Id, KnowledgeId = Knowledge2Id }
             };
     }
 }

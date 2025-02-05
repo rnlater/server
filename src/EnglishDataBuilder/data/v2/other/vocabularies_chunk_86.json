@@ -1,0 +1,149 @@
+[
+  {
+    "audio": [
+      "climate action_619_06_12_2024.mp3",
+      "climate action_360_06_12_2024.mp3"
+    ],
+    "categories": [
+      "climate_change"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the act of doing something to reduce or stop  climate change  and prevent serious permanent damage to the environment",
+                "example": "There have been renewed calls for global climate action and reduction of emissions."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈklaɪmət ækʃn/"
+        ]
+      }
+    ],
+    "photo": "climate_action_04122024.jpg",
+    "word": "climate action"
+  },
+  {
+    "audio": [
+      "breakout room_153_06_12_2024.mp3",
+      "breakout room_521_06_12_2024.mp3",
+      "breakout room_803_06_12_2024.mp3",
+      "breakout room_511_06_12_2024.mp3"
+    ],
+    "categories": [
+      "using_the_internet",
+      "business_meetings"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a small meeting room or a part of an online meeting where a small group of participants can do a specific activity ",
+                "example": "The online conference has set up virtual breakout rooms for the discussion of key issues."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbreɪkaʊt ruːm/",
+          "/ˈbreɪkaʊt rʊm/"
+        ]
+      }
+    ],
+    "photo": "breakout_room_04122024.jpg",
+    "word": "breakout room"
+  },
+  {
+    "audio": [
+      "graphic artist_422_06_12_2024.mp3",
+      "graphic artist_026_06_12_2024.mp3"
+    ],
+    "categories": [
+      "artwork_and_techniques"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an artist whose work is based on lines and  shading , rather than  three-dimensional  work or the use of colour",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɡræfɪk ˈɑːtɪst/",
+          "/ˌɡræfɪk ˈɑːrtɪst/"
+        ]
+      }
+    ],
+    "photo": "graphic_artist_04122024.jpg",
+    "word": "graphic artist"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "operations"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to wash your hands and arms before performing a medical operation",
+                "example": null
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to look good when you make an effort",
+                "example": "Barry scrubs up well on a good day, as can be seen in this pic."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "scrub_up_04122024.jpg",
+    "word": "scrub up"
+  }
+]

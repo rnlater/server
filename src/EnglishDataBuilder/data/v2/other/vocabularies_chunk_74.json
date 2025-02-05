@@ -1,0 +1,211 @@
+[
+  {
+    "audio": [
+      "hand baggage_146_06_12_2024.mp3",
+      "hand baggage_871_06_12_2024.mp3"
+    ],
+    "categories": [
+      "plane_travel"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "small bags that you can keep with you on an aircraft",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈhænd bæɡɪdʒ/"
+        ]
+      }
+    ],
+    "photo": "hand baggage_05122024.jpg",
+    "word": "hand baggage"
+  },
+  {
+    "audio": [
+      "dramatic monologue_597_06_12_2024.mp3",
+      "dramatic monologue_020_06_12_2024.mp3"
+    ],
+    "categories": [
+      "poetry"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a poem in the form of a speech by a character, who reveals things about themselves while describing a situation or telling a story ",
+                "example": "The poem is a dramatic monologue spoken by the wife of Socrates."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/drəˌmætɪk ˈmɒnəlɒɡ/",
+          "/drəˌmætɪk ˈmɑːnəlɔːɡ/"
+        ]
+      }
+    ],
+    "photo": "dramatic monologue_05122024.jpg",
+    "word": "dramatic monologue"
+  },
+  {
+    "audio": [
+      "combination therapy_764_06_12_2024.mp3",
+      "combination therapy_147_06_12_2024.mp3"
+    ],
+    "categories": [
+      "health_care"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "treatment in which a patient is given two or more drugs for a single disease",
+                "example": "Ongoing clinical trials are evaluating the effectiveness of triple combination therapy."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌkɒmbɪˈneɪʃn θerəpi/",
+          "/ˌkɑːmbɪˈneɪʃn θerəpi/"
+        ]
+      }
+    ],
+    "photo": "combination therapy_05122024.jpg",
+    "word": "combination therapy"
+  },
+  {
+    "audio": [
+      "fixed penalty_858_06_12_2024.mp3",
+      "fixed penalty_280_06_12_2024.mp3"
+    ],
+    "categories": [
+      "punishment",
+      "payments"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a fixed amount of money that somebody has to pay as a punishment for a driving offence",
+                "example": "The fixed penalty for a first offence is £200."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌfɪkst ˈpenəlti/"
+        ]
+      }
+    ],
+    "photo": "fixed penalty_05122024.jpg",
+    "word": "fixed penalty"
+  },
+  {
+    "audio": [
+      "chief executive officer_025_06_12_2024.mp3",
+      "chief executive officer_645_06_12_2024.mp3"
+    ],
+    "categories": [
+      "business_people"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the person in a company who has the most power and authority",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌtʃiːf ɪɡˌzekjətɪv ˈɒfɪsə(r)/",
+          "/ˌtʃiːf ɪɡˌzekjətɪv ˈɑːfɪsər/"
+        ]
+      }
+    ],
+    "photo": "chief executive officer_05122024.jpg",
+    "word": "chief executive officer"
+  },
+  {
+    "audio": [
+      "secondary education_777_06_12_2024.mp3",
+      "secondary education_145_06_12_2024.mp3"
+    ],
+    "categories": [
+      "teaching_and_learning"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "education for children between the ages of 11 and 18",
+                "example": "primary and secondary education"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsekəndri edʒuˈkeɪʃn/",
+          "/ˌsekənderi edʒuˈkeɪʃn/"
+        ]
+      }
+    ],
+    "photo": "secondary education_05122024.jpg",
+    "word": "secondary education"
+  }
+]

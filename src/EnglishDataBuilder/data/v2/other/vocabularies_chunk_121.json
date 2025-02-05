@@ -1,0 +1,119 @@
+[
+  {
+    "audio": [
+      "superiority complex_371_06_12_2024.mp3",
+      "superiority complex_064_06_12_2024.mp3"
+    ],
+    "categories": [
+      "proud"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a feeling that you are better or more important than other people, often as a way of hiding your feelings of failure",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/suːˌpɪriˈɔːrəti kɑːmpleks/",
+          "/suːˌpɪəriˈɒrəti kɒmpleks/"
+        ]
+      }
+    ],
+    "photo": "superiority_complex_04122024.jpg",
+    "word": "superiority complex"
+  },
+  {
+    "audio": [
+      "automatic pilot_850_06_12_2024.mp3",
+      "automatic pilot_447_06_12_2024.mp3"
+    ],
+    "categories": [
+      "parts_of_boats",
+      "parts_of_a_plane"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a device in an aircraft or a ship that keeps it on a fixed course without the need for a person to control it",
+                "example": "The aircraft was set on automatic pilot."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to do something without thinking because you have done the same thing many times before",
+                "example": "I got up and dressed on automatic pilot."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɔːtəmætɪk ˈpaɪlət/"
+        ]
+      }
+    ],
+    "photo": "automatic_pilot_04122024.jpg",
+    "word": "automatic pilot"
+  },
+  {
+    "audio": [
+      "police constable_293_06_12_2024.mp3",
+      "police constable_083_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_police",
+      "job_titles"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in the UK and some other countries) a police officer of the lowest rank",
+                "example": "Police Constable Jordan"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/pəˌliːs ˈkɑːnstəbl/",
+          "/pəˌliːs ˈkʌnstəbl/"
+        ]
+      }
+    ],
+    "photo": "police_constable_04122024.jpg",
+    "word": "police constable"
+  }
+]

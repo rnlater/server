@@ -13,13 +13,11 @@ namespace Endpoint.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
-        private readonly IJWTService _jWTService;
         private readonly IMapper _mapper;
 
-        public AuthController(IAuthService authService, IJWTService jWTService, IMapper mapper)
+        public AuthController(IAuthService authService, IMapper mapper)
         {
             _authService = authService;
-            _jWTService = jWTService;
             _mapper = mapper;
 
             var config = new MapperConfiguration(cfg =>
@@ -28,6 +26,7 @@ namespace Endpoint.Controllers
                 cfg.CreateMap<RegisterRequest, RegisterParams>();
                 cfg.CreateMap<ConfirmRegistrationEmailRequest, ConfirmRegistrationEmailParams>();
                 cfg.CreateMap<ForgotPasswordRequest, ForgotPasswordParams>();
+                cfg.CreateMap<ResendCodeRequest, ResendCodeParams>();
                 cfg.CreateMap<ConfirmPasswordResettingEmailRequest, ConfirmPasswordResettingEmailParams>();
             });
             _mapper = config.CreateMapper();
@@ -40,19 +39,11 @@ namespace Endpoint.Controllers
 
             var LoginResult = await _authService.Login(Params);
 
-            if (LoginResult.IsSuccess)
+            return LoginResult.IsSuccess ? Ok(new
             {
-                var TokenPairResult = await _jWTService.GenerateTokenPair(LoginResult.Value);
-
-                return TokenPairResult.IsSuccess
-                    ? Ok(new
-                    {
-                        AccessToken = TokenPairResult.Value.Item1,
-                        RefreshToken = TokenPairResult.Value.Item2
-                    })
-                    : BadRequest(TokenPairResult.Errors);
-            }
-            return BadRequest(LoginResult.Errors);
+                user = LoginResult.Value.Item1,
+                tokenPair = LoginResult.Value.Item2
+            }) : BadRequest(LoginResult.Errors);
         }
 
         [HttpPost(HttpRoute.Register)]
@@ -68,19 +59,12 @@ namespace Endpoint.Controllers
         {
             var Params = _mapper.Map<ConfirmRegistrationEmailParams>(request);
             var ConfirmEmailResult = await _authService.ConfirmRegistrationEmail(Params);
-            if (ConfirmEmailResult.IsSuccess)
-            {
-                var TokenPairResult = await _jWTService.GenerateTokenPair(ConfirmEmailResult.Value);
 
-                return TokenPairResult.IsSuccess
-                    ? Ok(new
-                    {
-                        AccessToken = TokenPairResult.Value.Item1,
-                        RefreshToken = TokenPairResult.Value.Item2
-                    })
-                    : BadRequest(TokenPairResult.Errors);
-            }
-            return BadRequest(ConfirmEmailResult.Errors);
+            return ConfirmEmailResult.IsSuccess ? Ok(new
+            {
+                user = ConfirmEmailResult.Value.Item1,
+                tokenPair = ConfirmEmailResult.Value.Item2
+            }) : BadRequest(ConfirmEmailResult.Errors);
         }
 
         [HttpPost(HttpRoute.ForgotPassword)]
@@ -91,24 +75,25 @@ namespace Endpoint.Controllers
             return ForgotPasswordResult.IsSuccess ? Ok(ForgotPasswordResult.Value) : BadRequest(ForgotPasswordResult.Errors);
         }
 
+        [HttpPost(HttpRoute.ResendCode)]
+        public async Task<IActionResult> ResendCode([FromBody] ResendCodeRequest request)
+        {
+            var Params = _mapper.Map<ResendCodeParams>(request);
+            var ResendCodeResult = await _authService.ResendCode(Params);
+            return ResendCodeResult.IsSuccess ? Ok(ResendCodeResult.Value) : BadRequest(ResendCodeResult.Errors);
+        }
+
         [HttpPost(HttpRoute.ConfirmPasswordResettingEmail)]
         public async Task<IActionResult> ConfirmPasswordResettingEmail([FromBody] ConfirmPasswordResettingEmailRequest request)
         {
             var Params = _mapper.Map<ConfirmPasswordResettingEmailParams>(request);
             var ConfirmPasswordResettingEmailResult = await _authService.ConfirmPasswordResettingEmail(Params);
-            if (ConfirmPasswordResettingEmailResult.IsSuccess)
-            {
-                var TokenPairResult = await _jWTService.GenerateTokenPair(ConfirmPasswordResettingEmailResult.Value);
 
-                return TokenPairResult.IsSuccess
-                    ? Ok(new
-                    {
-                        AccessToken = TokenPairResult.Value.Item1,
-                        RefreshToken = TokenPairResult.Value.Item2
-                    })
-                    : BadRequest(TokenPairResult.Errors);
-            }
-            return BadRequest(ConfirmPasswordResettingEmailResult.Errors);
+            return ConfirmPasswordResettingEmailResult.IsSuccess ? Ok(new
+            {
+                user = ConfirmPasswordResettingEmailResult.Value.Item1,
+                tokenPair = ConfirmPasswordResettingEmailResult.Value.Item2
+            }) : BadRequest(ConfirmPasswordResettingEmailResult.Errors);
         }
 
         [HttpPost(HttpRoute.Logout)]

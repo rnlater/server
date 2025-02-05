@@ -1,0 +1,135 @@
+[
+  {
+    "audio": [
+      "lived experience_400_06_12_2024.mp3",
+      "lived experience_964_06_12_2024.mp3"
+    ],
+    "categories": [
+      "belonging_to_society"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "personal knowledge that you gain about the world and events from being directly involved in events, rather than from other people's descriptions of them ",
+                "example": "Grant draws on his own lived experience as a gay, Black father."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌlɪvd ɪkˈspɪəriəns/",
+          "/ˌlɪvd ɪkˈspɪriəns/"
+        ]
+      }
+    ],
+    "photo": "lived experience_04122024.jpg",
+    "word": "lived experience"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "war"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to shoot somebody, especially killing or seriously injuring them",
+                "example": "The policeman was gunned down while on duty."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "gun down_04122024.jpg",
+    "word": "gun down"
+  },
+  {
+    "audio": [
+      "touch judge_758_06_12_2024.mp3",
+      "touch judge_126_06_12_2024.mp3"
+    ],
+    "categories": [
+      "rugby"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a  linesman",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈtʌtʃ dʒʌdʒ/"
+        ]
+      }
+    ],
+    "photo": "touch judge_04122024.jpg",
+    "word": "touch judge"
+  },
+  {
+    "audio": [
+      "power-assisted steering_690_06_12_2024.mp3",
+      "power-assisted steering_907_06_12_2024.mp3"
+    ],
+    "categories": [
+      "parts_of_a_car"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a system that uses power from the engine to help the driver change direction",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌpaʊər əˌsɪstɪd ˈstɪrɪŋ/",
+          "/ˌpaʊər əˌsɪstɪd ˈstɪərɪŋ/"
+        ]
+      }
+    ],
+    "photo": "power-assisted steering_04122024.jpg",
+    "word": "power-assisted steering"
+  }
+]

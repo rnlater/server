@@ -1,0 +1,218 @@
+[
+  {
+    "audio": [
+      "community church_575_06_12_2024.mp3",
+      "community church_879_06_12_2024.mp3"
+    ],
+    "categories": [
+      "religious_places"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a church for a particular area or group of people, especially one that welcomes people from different Christian  denominations   (= branches of Christianity)",
+                "example": "The family attends the non-denominational Antioch Community Church."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/kəˈmjuːnəti tʃɜːtʃ/",
+          "/kəˈmjuːnəti tʃɜːrtʃ/"
+        ]
+      }
+    ],
+    "photo": "community church_05122024.jpg",
+    "word": "community church"
+  },
+  {
+    "audio": [
+      "driving under the influence_374_06_12_2024.mp3",
+      "driving under the influence_609_06_12_2024.mp3"
+    ],
+    "categories": [
+      "motoring_problems_and_accidents",
+      "types_of_crime"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the crime of driving a vehicle after drinking too much alcohol or taking drugs that affect your ability to drive. It is a less serious crime than  ‘ driving while intoxicated ’ .",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdraɪvɪŋ ʌndə ði ˈɪnfluəns/",
+          "/ˌdraɪvɪŋ ʌndər ði ˈɪnfluəns/"
+        ]
+      }
+    ],
+    "photo": "driving under the influence_05122024.jpg",
+    "word": "driving under the influence"
+  },
+  {
+    "audio": [
+      "red alert_737_06_12_2024.mp3",
+      "red alert_028_06_12_2024.mp3"
+    ],
+    "categories": [
+      "preventing_danger"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a situation in which you are prepared for something dangerous to happen; a warning of this",
+                "example": "Following the bomb blast, local hospitals have been  put on red alert ."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌred əˈlɜːt/",
+          "/ˌred əˈlɜːrt/"
+        ]
+      }
+    ],
+    "photo": "red alert_05122024.jpg",
+    "word": "red alert"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "matching"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to make two ideas, facts or situations agree or combine well with each other; to agree or be consistent with another idea, fact or situation",
+                "example": "The interests of farmers need to be squared with those of consumers."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to ask permission or check with somebody that they approve of what you want to do",
+                "example": "I think I'll be able to come, but I'll square it with my parents first."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "square with_05122024.jpg",
+    "word": "square with"
+  },
+  {
+    "audio": [
+      "southern belle_031_06_12_2024.mp3",
+      "southern belle_354_06_12_2024.mp3"
+    ],
+    "categories": [
+      "attractiveness"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an attractive woman from the southern US",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsʌðən ˈbel/",
+          "/ˌsʌðərn ˈbel/"
+        ]
+      }
+    ],
+    "photo": "southern belle_05122024.jpg",
+    "word": "southern belle"
+  },
+  {
+    "audio": [
+      "fast bowler_719_06_12_2024.mp3",
+      "fast bowler_128_06_12_2024.mp3"
+    ],
+    "categories": [
+      "cricket"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who  bowls  very fast",
+                "example": "Australia's fast bowlers bowled well."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfɑːst bəʊlə(r)/",
+          "/ˈfæst bəʊlər/"
+        ]
+      }
+    ],
+    "photo": "fast bowler_05122024.jpg",
+    "word": "fast bowler"
+  }
+]

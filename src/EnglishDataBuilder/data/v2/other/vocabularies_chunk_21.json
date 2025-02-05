@@ -1,0 +1,214 @@
+[
+  {
+    "audio": [
+      "caller ID_875_06_12_2024.mp3",
+      "caller ID_076_06_12_2024.mp3"
+    ],
+    "categories": [
+      "phone_services"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a system that uses a device on your phone to identify and display the phone number of the person who is calling you",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌkɔːlər ˌaɪ ˈdiː/"
+        ]
+      }
+    ],
+    "photo": "caller ID_05122024.jpg",
+    "word": "caller ID"
+  },
+  {
+    "audio": [
+      "mews house_738_06_12_2024.mp3",
+      "mews house_585_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_house"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a house in a row of houses that were  stables   (= buildings used to keep horses in)  in the past",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈmjuːz haʊs/"
+        ]
+      }
+    ],
+    "photo": "mews house_05122024.jpg",
+    "word": "mews house"
+  },
+  {
+    "audio": [
+      "pay gap_095_06_12_2024.mp3",
+      "pay gap_285_06_12_2024.mp3"
+    ],
+    "categories": [
+      "pay_and_conditions_at_work"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the difference between the amount that two different groups of people are paid",
+                "example": "efforts to close the gender pay gap "
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈpeɪ ɡæp/"
+        ]
+      }
+    ],
+    "photo": "pay gap_05122024.jpg",
+    "word": "pay gap"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "agreement"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to formally agree that you will not take part in something",
+                "example": "Many employees contracted out of the pension plan."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to arrange for work to be done by another company rather than your own",
+                "example": "The local authority has contracted out its waste management services."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "contract out_05122024.jpg",
+    "word": "contract out"
+  },
+  {
+    "audio": [
+      "ball hockey_784_06_12_2024.mp3",
+      "ball hockey_955_06_12_2024.mp3"
+    ],
+    "categories": [
+      "other_ball_sports"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a version of  ice hockey  played on a hard surface without ice, and with a ball instead of a  puck",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbɔːl hɒki/",
+          "/ˈbɔːl hɑːki/"
+        ]
+      }
+    ],
+    "photo": "ball hockey_05122024.jpg",
+    "word": "ball hockey"
+  },
+  {
+    "audio": [
+      "manufactured home_024_06_12_2024.mp3",
+      "manufactured home_224_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_house"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a small building for people to live in that is made in a factory and then moved to a permanent place",
+                "example": "Today's manufactured homes are of the same quality as houses built on site."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌmænjuˈfæktʃəd həʊm/",
+          "/ˌmænjuˈfæktʃərd həʊm/"
+        ]
+      }
+    ],
+    "photo": "manufactured home_05122024.jpg",
+    "word": "manufactured home"
+  }
+]

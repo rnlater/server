@@ -31,7 +31,6 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenNoKnowledgesFound()
         {
-            // Arrange
             var parameters = new GetKnowledgesParams
             {
                 Search = "",
@@ -39,10 +38,8 @@ namespace UnitTests.Knowledges
 
             _knowledgeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(Enumerable.Empty<Knowledge>());
 
-            // Act
             var result = await _getKnowledgesUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.NoKnowledgesFound, result.Error);
         }
@@ -50,7 +47,6 @@ namespace UnitTests.Knowledges
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgesAreFound()
         {
-            // Arrange
             var parameters = new GetKnowledgesParams
             {
                 Search = "Introduction"
@@ -60,10 +56,8 @@ namespace UnitTests.Knowledges
 
             _knowledgeRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Knowledge>>())).ReturnsAsync(knowledges);
 
-            // Act
             var result = await _getKnowledgesUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotEmpty(result.Value);
             Assert.Equal(knowledges.Length, result.Value.Count());

@@ -1,0 +1,173 @@
+[
+  {
+    "audio": [
+      "comparison site_730_06_12_2024.mp3",
+      "comparison site_084_06_12_2024.mp3"
+    ],
+    "categories": [
+      "online_shopping"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a website that consumers use to compare the prices and features of goods and services from different companies",
+                "example": "Financial comparison sites offer useful lists of savings accounts to help you narrow down your choices."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/kəmˈpærɪsn saɪt/"
+        ]
+      }
+    ],
+    "photo": "comparison site_04122024.jpg",
+    "word": "comparison site"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "school_life"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to stay away from school or work when you should be there; to leave school or work early",
+                "example": "I’m going to bunk off this afternoon."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "bunk off school_04122024.jpg",
+    "word": "bunk off school"
+  },
+  {
+    "audio": [
+      "preservation order_420_06_12_2024.mp3",
+      "preservation order_075_06_12_2024.mp3"
+    ],
+    "categories": [
+      "historic_buildings"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in the UK) a document that makes it illegal to change or destroy a building, a tree or part of the countryside, because of its beauty or historical interest",
+                "example": "The council has placed a preservation order on the building."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌprezəˈveɪʃn ɔːdə(r)/",
+          "/ˌprezərˈveɪʃn ɔːrdər/"
+        ]
+      }
+    ],
+    "photo": "preservation order_04122024.jpg",
+    "word": "preservation order"
+  },
+  {
+    "audio": [
+      "aid agency_977_06_12_2024.mp3",
+      "aid agency_316_06_12_2024.mp3"
+    ],
+    "categories": [
+      "helping_others"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an organization that helps people or countries in difficult situations by providing food, medicine, etc.",
+                "example": "They work for an  international aid agency  providing support for refugees."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈeɪd eɪdʒənsi/"
+        ]
+      }
+    ],
+    "photo": "aid agency_04122024.jpg",
+    "word": "aid agency"
+  },
+  {
+    "audio": [
+      "improvised explosive device_137_06_12_2024.mp3",
+      "improvised explosive device_024_06_12_2024.mp3",
+      "improvised explosive device_351_06_12_2024.mp3",
+      "improvised explosive device_676_06_12_2024.mp3"
+    ],
+    "categories": [
+      "weapons"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a bomb made and used by people who are not members of the military forces of a country",
+                "example": "An improvised explosive device was triggered at a checkpoint, injuring two soldiers."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɪmprəvaɪzd ɪkˈspləʊzɪv dɪvaɪs/",
+          "/ˌɪmprəvaɪzd ɪkˈspləʊsɪv divaɪs/",
+          "/ˌɪmprəvaɪzd ɪkˈspləʊzɪv divaɪs/",
+          "/ˌɪmprəvaɪzd ɪkˈspləʊsɪv dɪvaɪs/"
+        ]
+      }
+    ],
+    "photo": "improvised explosive device_04122024.jpg",
+    "word": "improvised explosive device"
+  }
+]

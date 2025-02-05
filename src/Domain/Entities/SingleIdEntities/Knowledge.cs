@@ -15,12 +15,14 @@ public class Knowledge : SingleIdEntity
     [ForeignKey("CreatorId")]
     public User? Creator { get; set; }
 
+    public PublicationRequest? PublicationRequest { get; set; }
     public ICollection<Material> Materials { get; set; } = [];
     public ICollection<SubjectKnowledge> SubjectKnowledges { get; set; } = [];
     public ICollection<KnowledgeTypeKnowledge> KnowledgeTypeKnowledges { get; set; } = [];
     public ICollection<KnowledgeTopicKnowledge> KnowledgeTopicKnowledges { get; set; } = [];
     public ICollection<Learning> Learnings { get; set; } = [];
     public ICollection<GameKnowledgeSubscription> GameKnowledgeSubscriptions { get; set; } = [];
+    public ICollection<LearningListKnowledge> LearningListKnowledges { get; set; } = [];
 
     public static Knowledge ForTestPurposeOnly()
     {

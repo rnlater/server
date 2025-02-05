@@ -1,0 +1,257 @@
+[
+  {
+    "audio": [
+      "event manager_028_06_12_2024.mp3",
+      "event manager_201_06_12_2024.mp3"
+    ],
+    "categories": [
+      "job_titles"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person whose job is to arrange events such as festivals, concerts, conferences, etc.",
+                "example": "These event managers specialize in themed weddings."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ɪˈvent mænɪdʒə(r)/",
+          "/ɪˈvent mænɪdʒər/"
+        ]
+      }
+    ],
+    "photo": "event manager_05122024.jpg",
+    "word": "event manager"
+  },
+  {
+    "audio": [
+      "very high frequency_098_06_12_2024.mp3",
+      "very high frequency_889_06_12_2024.mp3"
+    ],
+    "categories": [
+      "broadcasting"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a range of radio waves used for high-quality broadcasting",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌveri haɪ ˈfriːkwənsi/"
+        ]
+      }
+    ],
+    "photo": "very high frequency_05122024.jpg",
+    "word": "very high frequency"
+  },
+  {
+    "audio": [
+      "soft drug_583_06_12_2024.mp3",
+      "soft drug_366_06_12_2024.mp3"
+    ],
+    "categories": [
+      "drugs"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an illegal drug, such as  cannabis , that some people take for pleasure, that is not considered very harmful or likely to cause  addiction",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsɔːft ˈdrʌɡ/",
+          "/ˌsɒft ˈdrʌɡ/"
+        ]
+      }
+    ],
+    "photo": "soft drug_05122024.jpg",
+    "word": "soft drug"
+  },
+  {
+    "audio": [
+      "Nordic walking_889_06_12_2024.mp3",
+      "Nordic walking_068_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_holiday_vacation"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the sport of walking with special long  poles  attached to your  wrists",
+                "example": "Nordic walking is a great way to get fit."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌnɔːrdɪk ˈwɔːkɪŋ/",
+          "/ˌnɔːdɪk ˈwɔːkɪŋ/"
+        ]
+      }
+    ],
+    "photo": "Nordic walking_05122024.jpg",
+    "word": "Nordic walking"
+  },
+  {
+    "audio": [
+      "forward pass_440_06_12_2024.mp3",
+      "forward pass_594_06_12_2024.mp3"
+    ],
+    "categories": [
+      "american_football"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a  pass  where the player catching the ball is closer to the opponent's goal than the player throwing it",
+                "example": "The quarterback made only two forward passes, running the ball on almost every play."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a  pass  where the player catching the ball is closer to the opponent's goal than the player throwing it, which is not allowed by the rules of the game",
+                "example": "The try was disallowed for a forward pass."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌfɔːwəd ˈpɑːs/",
+          "/ˌfɔːrwərd ˈpæs/"
+        ]
+      }
+    ],
+    "photo": "forward pass_05122024.jpg",
+    "word": "forward pass"
+  },
+  {
+    "audio": [
+      "electric vehicle_982_06_12_2024.mp3",
+      "electric vehicle_184_06_12_2024.mp3",
+      "electric vehicle_404_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_vehicle"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a vehicle that uses one or more electric motors",
+                "example": "Demand for electric vehicles continues to grow."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ɪˌlektrɪk ˈviːhɪkl/",
+          "/ɪˌlektrɪk ˈviːəkl/"
+        ]
+      }
+    ],
+    "photo": "electric vehicle_05122024.jpg",
+    "word": "electric vehicle"
+  },
+  {
+    "audio": [
+      "Independence Day_264_06_12_2024.mp3",
+      "Independence Day_089_06_12_2024.mp3"
+    ],
+    "categories": [
+      "holidays_and_celebrations"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "4 July, celebrated in the US as the anniversary of the day in 1776 when the Americans declared themselves independent of Britain",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɪndɪˈpendəns deɪ/"
+        ]
+      }
+    ],
+    "photo": "Independence Day_05122024.jpg",
+    "word": "Independence Day"
+  }
+]

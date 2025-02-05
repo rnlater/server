@@ -1,0 +1,121 @@
+[
+  {
+    "audio": [
+      "horse trailer_683_06_12_2024.mp3",
+      "horse trailer_478_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_vehicle"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a vehicle for transporting horses in, pulled by another vehicle",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈhɔːs treɪlə(r)/",
+          "/ˈhɔːrs treɪlər/"
+        ]
+      }
+    ],
+    "photo": "horse trailer_05122024.jpg",
+    "word": "horse trailer"
+  },
+  {
+    "audio": [
+      "art director_216_06_12_2024.mp3",
+      "art director_699_06_12_2024.mp3",
+      "art director_895_06_12_2024.mp3",
+      "art director_874_06_12_2024.mp3"
+    ],
+    "categories": [
+      "people_in_film_and_theatre"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the person who is responsible for the pictures, photos, etc. in a magazine",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the person who is responsible for the  sets  and  props  when a film is being made",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈɑːrt dərektər/",
+          "/ˈɑːt dərektə(r)/",
+          "/ˈɑːt daɪrektə(r)/",
+          "/ˈɑːrt daɪrektər/"
+        ]
+      }
+    ],
+    "photo": "art director_05122024.jpg",
+    "word": "art director"
+  },
+  {
+    "audio": [
+      "peak time_842_06_12_2024.mp3",
+      "peak time_132_06_12_2024.mp3"
+    ],
+    "categories": [
+      "watching_tv_listening_to_the_radio"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the time when the greatest number of people are watching television or listening to the radio",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈpiːk taɪm/"
+        ]
+      }
+    ],
+    "photo": "peak time_05122024.jpg",
+    "word": "peak time"
+  }
+]

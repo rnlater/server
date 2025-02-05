@@ -1,0 +1,310 @@
+[
+  {
+    "audio": [
+      "boarding card_284_06_12_2024.mp3",
+      "boarding card_459_06_12_2024.mp3"
+    ],
+    "categories": [
+      "plane_travel",
+      "travelling_by_boat"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a card that you show before you get on a plane or boat",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbɔːdɪŋ kɑːd/",
+          "/ˈbɔːrdɪŋ kɑːrd/"
+        ]
+      }
+    ],
+    "photo": "boarding_card_04122024.jpg",
+    "word": "boarding card"
+  },
+  {
+    "audio": [
+      "side order_482_06_12_2024.mp3",
+      "side order_060_06_12_2024.mp3"
+    ],
+    "categories": [
+      "eating_out"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a small amount of food ordered in a restaurant to go with the main dish, but served separately",
+                "example": "a side order of fries"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈsaɪd ɔːdə(r)/",
+          "/ˈsaɪd ɔːrdər/"
+        ]
+      }
+    ],
+    "photo": "side_order_04122024.jpg",
+    "word": "side order"
+  },
+  {
+    "audio": [
+      "Scotland Yard_452_06_12_2024.mp3",
+      "Scotland Yard_044_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_police",
+      "solving_crime"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the main office of the London police, especially the department that deals with serious crimes in London",
+                "example": "Scotland Yard has/have been called in."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌskɒtlənd ˈjɑːd/",
+          "/ˌskɑːtlənd ˈjɑːrd/"
+        ]
+      }
+    ],
+    "photo": "Scotland_Yard_04122024.jpg",
+    "word": "Scotland Yard"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "school_life"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to stay away from school or work when you should be there; to leave school or work early",
+                "example": "I’m going to bunk off this afternoon."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "bunk_off_work_04122024.jpg",
+    "word": "bunk off work"
+  },
+  {
+    "audio": [
+      "private enterprise_527_06_12_2024.mp3",
+      "private enterprise_206_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_economy"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the economic system in which industry or business is owned by independent companies or private people and is not controlled by the government",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌpraɪvət ˈentərpraɪz/",
+          "/ˌpraɪvət ˈentəpraɪz/"
+        ]
+      }
+    ],
+    "photo": "private_enterprise_04122024.jpg",
+    "word": "private enterprise"
+  },
+  {
+    "audio": [
+      "marriage licence_116_06_12_2024.mp3",
+      "marriage licence_504_06_12_2024.mp3"
+    ],
+    "categories": [
+      "legal_documents"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a document that allows two people to get married",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈmærɪdʒ laɪsns/"
+        ]
+      }
+    ],
+    "photo": "marriage_licence_04122024.jpg",
+    "word": "marriage licence"
+  },
+  {
+    "audio": [
+      "John Dory_112_06_12_2024.mp3",
+      "John Dory_389_06_12_2024.mp3"
+    ],
+    "categories": [
+      "fish"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a fish that has a black mark on each side, often eaten as food",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdʒɒn ˈdɔːri/",
+          "/ˌdʒɑːn ˈdɔːri/"
+        ]
+      }
+    ],
+    "photo": "John_Dory_04122024.jpg",
+    "word": "John Dory"
+  },
+  {
+    "audio": [
+      "parental controls_213_06_12_2024.mp3",
+      "parental controls_497_06_12_2024.mp3"
+    ],
+    "categories": [
+      "watching_tv_listening_to_the_radio"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a feature that is offered in some computer, mobile phone and digital television services, that enables parents or other adults to control children’s access to material that is not suitable for them",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/pəˌrentl kənˈtrəʊlz/"
+        ]
+      }
+    ],
+    "photo": "parental_controls_04122024.jpg",
+    "word": "parental controls"
+  },
+  {
+    "audio": [
+      "wave machine_989_06_12_2024.mp3",
+      "wave machine_407_06_12_2024.mp3"
+    ],
+    "categories": [
+      "swimming"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a machine that makes waves in the water in a swimming pool",
+                "example": "The pool has a wave machine."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈweɪv məʃiːn/"
+        ]
+      }
+    ],
+    "photo": "wave_machine_04122024.jpg",
+    "word": "wave machine"
+  }
+]

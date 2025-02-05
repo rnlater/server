@@ -2,6 +2,8 @@
 bin/
 obj/
 
+out 
+
 ## Ignore debug symbols
 *.pdb
 
@@ -24,3 +26,6 @@ packages/
 
 ## Ignore Visual Studio project file
 *.vs.project
+
+## Ignore Docker files
+docker-compose.yml

@@ -1,0 +1,269 @@
+[
+  {
+    "audio": [
+      "rice pudding_319_06_12_2024.mp3",
+      "rice pudding_163_06_12_2024.mp3"
+    ],
+    "categories": [
+      "sweets_and_desserts"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a  dessert  (= a sweet dish) made from rice cooked with milk and sugar",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌraɪs ˈpʊdɪŋ/"
+        ]
+      }
+    ],
+    "photo": "rice pudding_05122024.jpg",
+    "word": "rice pudding"
+  },
+  {
+    "audio": [
+      "time zone_837_06_12_2024.mp3",
+      "time zone_646_06_12_2024.mp3"
+    ],
+    "categories": [
+      "time_zones"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "one of the 24 areas that the world is divided into, each with its own time that is one hour earlier than that of the  time zone  immediately to the east",
+                "example": "a flight crossing several time zones"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈtaɪm zəʊn/"
+        ]
+      }
+    ],
+    "photo": "time zone_05122024.jpg",
+    "word": "time zone"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "advice"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to tell somebody to leave or stay away from a place or person, especially in a  threatening  way",
+                "example": "The farmer warned us off his land when we tried to camp there."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to advise somebody not to do something or to stop doing something",
+                "example": "She wanted to ask him about it but the look in his eyes warned her off."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "warn off_05122024.jpg",
+    "word": "warn off"
+  },
+  {
+    "audio": [
+      "question tag_520_06_12_2024.mp3",
+      "question tag_337_06_12_2024.mp3"
+    ],
+    "categories": [
+      "grammar"
+    ],
+    "level": [
+      "A2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a phrase such as  isn’t it?  or  don’t you?  that you add to the end of a statement in order to turn it into a question or check that the statement is correct, as in  You like mushrooms, don’t you?",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkwestʃən tæɡ/"
+        ]
+      }
+    ],
+    "photo": "question tag_05122024.jpg",
+    "word": "question tag"
+  },
+  {
+    "audio": [
+      "teaching assistant_007_06_12_2024.mp3",
+      "teaching assistant_834_06_12_2024.mp3"
+    ],
+    "categories": [
+      "people_in_schools"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who is not a qualified teacher who helps a teacher in a school",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a graduate student who teaches  undergraduate  classes at a university or college, takes discussion or practical classes, marks written work, etc.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈtiːtʃɪŋ əsɪstənt/"
+        ]
+      }
+    ],
+    "photo": "teaching assistant_05122024.jpg",
+    "word": "teaching assistant"
+  },
+  {
+    "audio": [
+      "high beams_348_06_12_2024.mp3",
+      "high beams_502_06_12_2024.mp3"
+    ],
+    "categories": [
+      "driving"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the lights on a car when they are pointing a long way ahead, not down at the road",
+                "example": "Turn on your high beams."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "pointing a long way ahead, not down at the road",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈhaɪ biːmz/"
+        ]
+      }
+    ],
+    "photo": "high beams_05122024.jpg",
+    "word": "high beams"
+  },
+  {
+    "audio": [
+      "phone mast_023_06_12_2024.mp3",
+      "phone mast_212_06_12_2024.mp3"
+    ],
+    "categories": [
+      "phone_services"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a tall metal tower with an  aerial  that sends and receives phone signals",
+                "example": "A phone mast has been erected on the hill above the village."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfəʊn mɑːst/",
+          "/ˈfəʊn mæst/"
+        ]
+      }
+    ],
+    "photo": "phone mast_05122024.jpg",
+    "word": "phone mast"
+  }
+]

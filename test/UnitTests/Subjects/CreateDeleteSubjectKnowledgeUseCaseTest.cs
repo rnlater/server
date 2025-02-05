@@ -6,6 +6,7 @@ using Domain.Interfaces;
 using Infrastructure.Data;
 using Moq;
 using Shared.Constants;
+using Shared.Types;
 
 namespace UnitTests.Subjects
 {

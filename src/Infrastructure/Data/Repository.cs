@@ -76,6 +76,11 @@ namespace Infrastructure.Data
         {
             return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
         }
+
+        public Task<int> Count()
+        {
+            return _context.Set<T>().CountAsync();
+        }
     }
 
 
@@ -111,7 +116,7 @@ namespace Infrastructure.Data
                              .Take(specification.Take);
             }
 
-            if (!specification.IsTrackingEnabled)
+            if (specification.IsTrackingEnabled == false)
             {
                 query = query.AsNoTracking();
             }

@@ -1,4 +1,5 @@
 using Application.DTOs;
+using Application.DTOs.SingleIdPivotEntities;
 using Application.Interfaces.Knowledges;
 using Application.UseCases.Knowledges;
 using Shared.Types;
@@ -13,8 +14,9 @@ namespace Application.Services.Knowledges
         private readonly CreateKnowledgeUseCase _createKnowledgeUseCase;
         private readonly UpdateKnowledgeUseCase _updateKnowledgeUseCase;
         private readonly DeleteKnowledgeUseCase _deleteKnowledgeUseCase;
-        private readonly PublishKnowledgeUseCase _publishKnowledgeUseCase;
         private readonly GetKnowledgesToLearnUseCase _getKnowledgesToLearnUseCase;
+        private readonly GetCreatedKnowledgesUseCase _getCreatedKnowledgesUseCase;
+        private readonly MigrateKnowledgesUseCase _migrateKnowledgesUseCase;
 
         public KnowledgeService(
             GetDetailedKnowledgeByGuidUseCase getDetailedKnowledgeByGuidUseCase,
@@ -23,8 +25,9 @@ namespace Application.Services.Knowledges
             CreateKnowledgeUseCase createKnowledgeUseCase,
             UpdateKnowledgeUseCase updateKnowledgeUseCase,
             DeleteKnowledgeUseCase deleteKnowledgeUseCase,
-            PublishKnowledgeUseCase publishKnowledgeUseCase,
-            GetKnowledgesToLearnUseCase getKnowledgesToLearnUseCase
+            GetKnowledgesToLearnUseCase getKnowledgesToLearnUseCase,
+            GetCreatedKnowledgesUseCase getCreatedKnowledgesUseCase,
+            MigrateKnowledgesUseCase migrateKnowledgesUseCase
         )
         {
             _getDetailedKnowledgeByGuidUseCase = getDetailedKnowledgeByGuidUseCase;
@@ -33,8 +36,9 @@ namespace Application.Services.Knowledges
             _createKnowledgeUseCase = createKnowledgeUseCase;
             _updateKnowledgeUseCase = updateKnowledgeUseCase;
             _deleteKnowledgeUseCase = deleteKnowledgeUseCase;
-            _publishKnowledgeUseCase = publishKnowledgeUseCase;
             _getKnowledgesToLearnUseCase = getKnowledgesToLearnUseCase;
+            _getCreatedKnowledgesUseCase = getCreatedKnowledgesUseCase;
+            _migrateKnowledgesUseCase = migrateKnowledgesUseCase;
         }
 
         public Task<Result<KnowledgeDto>> CreateKnowledge(CreateKnowledgeParams Params)
@@ -52,11 +56,6 @@ namespace Application.Services.Knowledges
             return _getDetailedKnowledgeByGuidUseCase.Execute(guid);
         }
 
-        public Task<Result<KnowledgeDto>> PublishKnowledge(Guid guid)
-        {
-            return _publishKnowledgeUseCase.Execute(guid);
-        }
-
         public Task<Result<KnowledgeDto>> UpdateKnowledge(UpdateKnowledgeParams Params)
         {
             return _updateKnowledgeUseCase.Execute(Params);
@@ -72,9 +71,19 @@ namespace Application.Services.Knowledges
             return _getKnowledgesUseCase.Execute(Params);
         }
 
-        public Task<Result<List<Dictionary<Guid, KnowledgeDataToLearn>>>> GetKnowledgesToLearn(GetKnowledgesToLearnParams Params)
+        public Task<Result<List<List<KnowledgeDto>>>> GetKnowledgesToLearn(GetKnowledgesToLearnParams Params)
         {
             return _getKnowledgesToLearnUseCase.Execute(Params);
+        }
+
+        public Task<Result<IEnumerable<KnowledgeDto>>> GetCreatedKnowledges(GetCreatedKnowledgesParams Params)
+        {
+            return _getCreatedKnowledgesUseCase.Execute(Params);
+        }
+
+        public Task<Result<IEnumerable<LearningDto>>> MigrateKnowledges(MigrateKnowledgesParams Params)
+        {
+            return _migrateKnowledgesUseCase.Execute(Params);
         }
     }
 }

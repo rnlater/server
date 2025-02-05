@@ -19,7 +19,7 @@ namespace Application.Interfaces.Knowledges
         /// </summary>
         /// <returns>Returns the result containing a list of knowledge topic DTOs if found, otherwise an error message.</returns>
         /// <exception cref="ErrorMessage.NoKnowledgeTopicsFound">Thrown when no knowledge topics are found.</exception>
-        Task<Result<IEnumerable<KnowledgeTopicDto>>> GetKnowledgeTopics();
+        Task<Result<IEnumerable<KnowledgeTopicDto>>> GetKnowledgeTopics(GetKnowledgeTopicsParams Params);
 
         /// <summary>
         /// Create a new knowledge topic.
@@ -56,5 +56,12 @@ namespace Application.Interfaces.Knowledges
         /// <exception cref="ErrorMessage.NoKnowledgeTopicFoundWithGuid">Thrown when no knowledge topic is found with the specified GUID.</exception>
         /// <exception cref="ErrorMessage.NoKnowledgeFoundWithGuid">Thrown when no knowledge is found with the specified GUID.</exception>
         Task<Result<bool>> AttachDetachKnowledges(AttachDetachKnowledgesParams Params);
+
+        /// <summary>
+        /// Get knowledge topics with knowledges and children
+        /// </summary>
+        /// <param name="Params"></param>
+        /// <returns>return knowledge topics with knowledges and children</returns>
+        Task<Result<IEnumerable<KnowledgeTopicDto>>> GetTopicsForMigration(GetTopicsForMigrationParams Params);
     }
 }

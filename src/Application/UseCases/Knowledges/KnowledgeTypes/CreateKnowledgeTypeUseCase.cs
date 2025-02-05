@@ -64,6 +64,7 @@ namespace Application.UseCases.Knowledges.KnowledgeTypes
                     var knowledge = await knowledgeRepository.GetById(knowledgeId);
                     if (knowledge == null)
                     {
+                        await _unitOfWork.RollBackChangesAsync();
                         return Result<KnowledgeTypeDto>.Fail(ErrorMessage.NoKnowledgeFoundWithGuid);
                     }
                     await knowledgeTypeKnowledgeRepository.Add(

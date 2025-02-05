@@ -1,0 +1,343 @@
+[
+  {
+    "audio": [
+      "face covering_697_06_12_2024.mp3",
+      "face covering_902_06_12_2024.mp3"
+    ],
+    "categories": [
+      "medical_equipment"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a piece of material that you wear over all or part of your face, especially in order to reduce the spread of disease",
+                "example": "The document includes advice for people to wear face coverings on public transport and in some shops."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfeɪs kʌvərɪŋ/"
+        ]
+      }
+    ],
+    "photo": "face covering_05122024.jpg",
+    "word": "face covering"
+  },
+  {
+    "audio": [
+      "core competency_494_06_12_2024.mp3",
+      "core competency_276_06_12_2024.mp3"
+    ],
+    "categories": [
+      "exams_and_assessment",
+      "running_a_business",
+      "describing_work"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the main skill that a person or an organization has that makes them/it different from others",
+                "example": "As an orchestra, that's our core competency—bringing people together to experience music."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a defined skill required to do a job or to achieve a qualification",
+                "example": "Communication with patients is considered a core competency of medical education."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌkɔː ˈkɒmpɪtənsi/",
+          "/ˌkɔːr ˈkɑːmpɪtənsi/"
+        ]
+      }
+    ],
+    "photo": "core competency_05122024.jpg",
+    "word": "core competency"
+  },
+  {
+    "audio": [
+      "lop ears_842_06_12_2024.mp3",
+      "lop ears_035_06_12_2024.mp3"
+    ],
+    "categories": [
+      "parts_of_animals"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "ears that hang down at the side of an animal’s head",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈlɒp ɪəz/",
+          "/ˈlɑːp ɪrz/"
+        ]
+      }
+    ],
+    "photo": "lop ears_05122024.jpg",
+    "word": "lop ears"
+  },
+  {
+    "audio": [
+      "detective work_377_06_12_2024.mp3",
+      "detective work_540_06_12_2024.mp3"
+    ],
+    "categories": [
+      "solving_crime"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the activity of trying to discover more information about something",
+                "example": "He did some detective work and figured out what had happened to his bike."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/dɪˈtektɪv wɜːk/",
+          "/dɪˈtektɪv wɜːrk/"
+        ]
+      }
+    ],
+    "photo": "detective work_05122024.jpg",
+    "word": "detective work"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "lazy"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to spend time relaxing and doing very little",
+                "example": "They lazed away the long summer days."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "laze away_05122024.jpg",
+    "word": "laze away"
+  },
+  {
+    "audio": [
+      "Christmas pudding_243_06_12_2024.mp3",
+      "Christmas pudding_424_06_12_2024.mp3"
+    ],
+    "categories": [
+      "sweets_and_desserts"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a hot  pudding   (= a sweet dish)  like a dark fruit cake, traditionally eaten in the UK at Christmas",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌkrɪsməs ˈpʊdɪŋ/"
+        ]
+      }
+    ],
+    "photo": "Christmas pudding_05122024.jpg",
+    "word": "Christmas pudding"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "writing_and_publishing"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to write something quickly",
+                "example": "I'll just jot down the address for you."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "jot down_05122024.jpg",
+    "word": "jot down"
+  },
+  {
+    "audio": [
+      "well disposed_085_06_12_2024.mp3",
+      "well disposed_928_06_12_2024.mp3"
+    ],
+    "categories": [
+      "friendly"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "having friendly feelings towards somebody or a positive attitude towards something",
+                "example": "It’s a country that is well disposed to the West."
+              }
+            ],
+            "part_of_speech": "adjective",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌwel dɪˈspəʊzd/"
+        ]
+      }
+    ],
+    "photo": "well disposed_05122024.jpg",
+    "word": "well disposed"
+  },
+  {
+    "audio": [
+      "running time_434_06_12_2024.mp3",
+      "running time_629_06_12_2024.mp3"
+    ],
+    "categories": [
+      "showing_films"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the amount of time that a film, a journey, etc. lasts",
+                "example": "The programme’s running time is 94 minutes."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈrʌnɪŋ taɪm/"
+        ]
+      }
+    ],
+    "photo": "running time_05122024.jpg",
+    "word": "running time"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "committing_crime"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to represent a group or an organization and try to hide its secret or illegal activities",
+                "example": "He fronted for them in several illegal property deals."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "front for_05122024.jpg",
+    "word": "front for"
+  }
+]

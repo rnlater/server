@@ -1,0 +1,222 @@
+[
+  {
+    "audio": [
+      "crew chief_049_06_12_2024.mp3",
+      "crew chief_457_06_12_2024.mp3"
+    ],
+    "categories": [
+      "basketball",
+      "other_sports"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the person who leads the team of officials",
+                "example": "The coach asked the crew chief to overrule the decision but he just shook his head."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the person who organizes the people working in the  pits   (= the place near the track where cars stop for fuel, new tyres, etc. during a race)  and who communicates with the driver",
+                "example": "With seven World Championship victories, he is the most successful crew chief in history."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkruː tʃiːf/"
+        ]
+      }
+    ],
+    "photo": "crew_chief_04122024.jpg",
+    "word": "crew chief"
+  },
+  {
+    "audio": [
+      "marmalade cat_161_06_12_2024.mp3",
+      "marmalade cat_912_06_12_2024.mp3"
+    ],
+    "categories": [
+      "pets"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a cat with orange fur with darker orange  stripes   (= narrow lines)",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈmɑːməleɪd kæt/",
+          "/ˈmɑːrməleɪd kæt/"
+        ]
+      }
+    ],
+    "photo": "marmalade_cat_04122024.jpg",
+    "word": "marmalade cat"
+  },
+  {
+    "audio": [
+      "starting blocks_200_06_12_2024.mp3",
+      "starting blocks_787_06_12_2024.mp3"
+    ],
+    "categories": [
+      "athletics"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the two blocks on the ground that runners push their feet against at the beginning of a race",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈstɑːtɪŋ blɒks/",
+          "/ˈstɑːrtɪŋ blɑːks/"
+        ]
+      }
+    ],
+    "photo": "starting_blocks_04122024.jpg",
+    "word": "starting blocks"
+  },
+  {
+    "audio": [
+      "preferred pronoun_835_06_12_2024.mp3",
+      "preferred pronoun_377_06_12_2024.mp3"
+    ],
+    "categories": [
+      "gender_and_sexuality"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a pronoun that a person prefers to be used when they are referred to, in order to indicate their  gender identity",
+                "example": "Ashley's preferred pronouns are ‘they’ and ‘them’."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/prɪˌfɜːrd ˈprəʊnaʊn/",
+          "/prɪˌfɜːd ˈprəʊnaʊn/"
+        ]
+      }
+    ],
+    "photo": "preferred_pronoun_04122024.jpg",
+    "word": "preferred pronoun"
+  },
+  {
+    "audio": [
+      "information technology_627_06_12_2024.mp3",
+      "information technology_053_06_12_2024.mp3"
+    ],
+    "categories": [
+      "subjects_and_courses"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the study or use of electronic equipment, especially computers, for storing, accessing, analysing and sending information",
+                "example": "Recent advances in information technology have led to important changes in the operation of offices."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɪnfəˌmeɪʃn tekˈnɒlədʒi/",
+          "/ˌɪnfərˌmeɪʃn tekˈnɑːlədʒi/"
+        ]
+      }
+    ],
+    "photo": "information_technology_04122024.jpg",
+    "word": "information technology"
+  },
+  {
+    "audio": [
+      "advocacy group_607_06_12_2024.mp3",
+      "advocacy group_071_06_12_2024.mp3"
+    ],
+    "categories": [
+      "helping_others"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a group of people who work together to achieve something, especially by putting pressure on the government, etc., usually representing people who are unable to speak for themselves",
+                "example": "an advocacy group for the rights of people with learning disabilities"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈædvəkəsi ɡruːp/"
+        ]
+      }
+    ],
+    "photo": "advocacy_group_04122024.jpg",
+    "word": "advocacy group"
+  }
+]

@@ -10,7 +10,6 @@ using Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Moq;
 using Shared.Constants;
-
 namespace UnitTests.Knowledges.Learnings
 {
     public class ReviewLearningUseCaseTest
@@ -18,6 +17,7 @@ namespace UnitTests.Knowledges.Learnings
         private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<IRepository<GameOption>> _gameOptionRepositoryMock;
         private readonly Mock<IRepository<Learning>> _learningRepositoryMock;
+        private readonly Mock<IRepository<User>> _userRepositoryMock;
         private readonly Mock<IRepository<LearningHistory>> _learningHistoryRepositoryMock;
         private readonly Mock<IHttpContextAccessor> _httpContextAccessorMock;
         private readonly IMapper _mapper;
@@ -28,6 +28,7 @@ namespace UnitTests.Knowledges.Learnings
             _unitOfWorkMock = new Mock<IUnitOfWork>();
             _gameOptionRepositoryMock = new Mock<IRepository<GameOption>>();
             _learningRepositoryMock = new Mock<IRepository<Learning>>();
+            _userRepositoryMock = new Mock<IRepository<User>>();
             _learningHistoryRepositoryMock = new Mock<IRepository<LearningHistory>>();
             _httpContextAccessorMock = new Mock<IHttpContextAccessor>();
             _mapper = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>()).CreateMapper();
@@ -35,6 +36,7 @@ namespace UnitTests.Knowledges.Learnings
             _unitOfWorkMock.Setup(u => u.Repository<GameOption>()).Returns(_gameOptionRepositoryMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<Learning>()).Returns(_learningRepositoryMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<LearningHistory>()).Returns(_learningHistoryRepositoryMock.Object);
+            _unitOfWorkMock.Setup(u => u.Repository<User>()).Returns(_userRepositoryMock.Object);
 
             _reviewLearningUseCase = new ReviewLearningUseCase(_unitOfWorkMock.Object, _mapper, _httpContextAccessorMock.Object);
         }
@@ -42,14 +44,13 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenUserNotFound()
         {
-            // Arrange
             var parameters = new List<ReviewLearningParams>
             {
                 new ReviewLearningParams
                 {
                     KnowledgeId = Guid.NewGuid(),
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    QuestionId = Guid.NewGuid(),
+                    Answer = "Answer",
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -57,10 +58,8 @@ namespace UnitTests.Knowledges.Learnings
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(ClaimTypes.NameIdentifier)).Returns((Claim?)null);
 
-            // Act
             var result = await _reviewLearningUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.UserNotFound, result.Error);
         }
@@ -68,28 +67,26 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenLearningNotFound()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var parameters = new List<ReviewLearningParams>
             {
                 new ReviewLearningParams
                 {
                     KnowledgeId = Guid.NewGuid(),
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    QuestionId = Guid.NewGuid(),
+                    Answer = "Answer",
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
             };
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
 
             _learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync((Learning?)null);
 
-            // Act
             var result = await _reviewLearningUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.LearningNotFound, result.Error);
         }
@@ -97,15 +94,14 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenKnowledgeNotReadyToReview()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
             var parameters = new List<ReviewLearningParams>
             {
                 new() {
                     KnowledgeId = knowledgeId,
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    QuestionId = Guid.NewGuid(),
+                    Answer = "Answer",
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -119,13 +115,12 @@ namespace UnitTests.Knowledges.Learnings
                 LearningHistories = new List<LearningHistory>()
             };
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
             _learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learning);
 
-            // Act
             var result = await _reviewLearningUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.KnowledgeNotReadyToReview, result.Error);
         }
@@ -133,7 +128,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenReviewBeforeLearning()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
             var parameters = new List<ReviewLearningParams>
@@ -141,8 +135,8 @@ namespace UnitTests.Knowledges.Learnings
                 new ReviewLearningParams
                 {
                     KnowledgeId = knowledgeId,
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    QuestionId = Guid.NewGuid(),
+                    Answer = "Answer",
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -155,13 +149,12 @@ namespace UnitTests.Knowledges.Learnings
                 LearningHistories = new List<LearningHistory>()
             };
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
             _learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learning);
 
-            // Act
             var result = await _reviewLearningUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.RequireLearningBeforeReview, result.Error);
         }
@@ -169,7 +162,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenInvalidData()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
             var parameters = new List<ReviewLearningParams>
@@ -177,8 +169,8 @@ namespace UnitTests.Knowledges.Learnings
                 new ReviewLearningParams
                 {
                     KnowledgeId = knowledgeId,
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    QuestionId = Guid.NewGuid(),
+                    Answer = "Invalid Answer",
                     Interpretation = "Invalid Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -195,33 +187,36 @@ namespace UnitTests.Knowledges.Learnings
                 }
             };
 
-            var correctGameOption = new GameOption
+            var question = new GameOption
             {
-                Id = parameters[0].CorrectGameOptionId,
                 Value = "",
                 GameKnowledgeSubscription = new GameKnowledgeSubscription
                 {
                     GameId = Guid.NewGuid(),
-                    Knowledge = knowledge
+                    KnowledgeId = Guid.NewGuid(),
+                    GameOptions = new List<GameOption>
+                    {
+                        new GameOption { Value = "Answer", IsCorrect = true, Type = GameOptionType.Answer }
+                    }
                 }
             };
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
 
             _learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(new Learning
             {
                 KnowledgeId = knowledgeId,
                 UserId = userId,
-                LearningHistories = new List<LearningHistory>() {
+                LearningHistories = new List<LearningHistory>
+                {
                     new LearningHistory { Id = Guid.NewGuid(), LearningId = Guid.NewGuid(), LearningLevel = LearningLevel.LevelOne }
                 }
             });
-            _gameOptionRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<GameOption>>())).ReturnsAsync(new List<GameOption> { correctGameOption, new GameOption { Value = "" } });
+            _gameOptionRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<GameOption>>())).ReturnsAsync(question);
 
-            // Act
             var result = await _reviewLearningUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.InvalidData, result.Error);
         }
@@ -229,7 +224,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenLearningIsReviewed()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
             var parameters = new List<ReviewLearningParams>
@@ -237,8 +231,8 @@ namespace UnitTests.Knowledges.Learnings
                 new ReviewLearningParams
                 {
                     KnowledgeId = knowledgeId,
-                    CorrectGameOptionId = Guid.NewGuid(),
-                    GameOptionAnswerId = Guid.NewGuid(),
+                    QuestionId = Guid.NewGuid(),
+                    Answer = "Answer",
                     Interpretation = "Interpretation",
                     WordMatchAnswer = "Answer"
                 }
@@ -246,7 +240,7 @@ namespace UnitTests.Knowledges.Learnings
 
             var correctGameOption = new GameOption
             {
-                Id = parameters[0].CorrectGameOptionId,
+                Id = parameters[0].QuestionId,
                 Value = "",
                 GameKnowledgeSubscription = new GameKnowledgeSubscription
                 {
@@ -256,10 +250,10 @@ namespace UnitTests.Knowledges.Learnings
                         Id = knowledgeId,
                         Title = "Knowledge 1",
                         Materials = new List<Material>
-                            {
-                                new Material { Id = Guid.NewGuid(), Content = "Interpretation", Type = MaterialType.Interpretation },
-                                new Material { Id = Guid.NewGuid(), Content = "", Type = MaterialType.TextMedium }
-                            }
+                        {
+                            new Material { Id = Guid.NewGuid(), Content = "Interpretation", Type = MaterialType.Interpretation },
+                            new Material { Id = Guid.NewGuid(), Content = "", Type = MaterialType.TextMedium }
+                        }
                     }
                 }
             };
@@ -268,22 +262,31 @@ namespace UnitTests.Knowledges.Learnings
             {
                 KnowledgeId = knowledgeId,
                 UserId = userId,
-                LearningHistories = new List<LearningHistory>() {
+                LearningHistories = new List<LearningHistory>
+                {
                     new LearningHistory { Id = Guid.NewGuid(), LearningId = Guid.NewGuid(), LearningLevel = LearningLevel.LevelOne }
                 }
             };
+            var question = new GameOption
+            {
+                Value = "",
+                GameKnowledgeSubscription = new GameKnowledgeSubscription
+                {
+                    GameId = Guid.NewGuid(),
+                    KnowledgeId = knowledgeId
+                }
+            };
 
-            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", userId.ToString()));
+            _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
 
             _learningRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learning);
-            _gameOptionRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<GameOption>>())).ReturnsAsync(new List<GameOption> { correctGameOption, new GameOption { Value = "" } });
+            _gameOptionRepositoryMock.Setup(r => r.Find(It.IsAny<BaseSpecification<GameOption>>())).ReturnsAsync(question);
 
             _learningHistoryRepositoryMock.Setup(r => r.Add(It.IsAny<LearningHistory>())).ReturnsAsync(new LearningHistory { Id = Guid.NewGuid(), LearningId = Guid.NewGuid(), LearningLevel = LearningLevel.LevelOne });
 
-            // Act
             var result = await _reviewLearningUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Single(result.Value);

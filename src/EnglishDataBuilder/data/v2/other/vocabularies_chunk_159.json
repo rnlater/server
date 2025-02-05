@@ -1,0 +1,209 @@
+[
+  {
+    "audio": [
+      "Christmas carol_559_06_12_2024.mp3",
+      "Christmas carol_362_06_12_2024.mp3"
+    ],
+    "categories": [
+      "pieces_of_music",
+      "religious_holidays_and_festivals"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a Christian religious song sung at Christmas",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌkrɪsməs ˈkærəl/"
+        ]
+      }
+    ],
+    "photo": "Christmas carol_05122024.jpg",
+    "word": "Christmas carol"
+  },
+  {
+    "audio": [
+      "wedding reception_808_06_12_2024.mp3",
+      "wedding reception_630_06_12_2024.mp3"
+    ],
+    "categories": [
+      "marriage"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a party that is held after a marriage ceremony",
+                "example": "The couple's wedding reception was a grand affair."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈwedɪŋ rɪsepʃn/"
+        ]
+      }
+    ],
+    "photo": "wedding reception_05122024.jpg",
+    "word": "wedding reception"
+  },
+  {
+    "audio": [
+      "chickpea flour_197_06_12_2024.mp3",
+      "chickpea flour_349_06_12_2024.mp3"
+    ],
+    "categories": [
+      "carbohydrates"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "flour made from  chickpeas",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈtʃɪkpiː flaʊə(r)/",
+          "/ˈtʃɪkpiː flaʊər/"
+        ]
+      }
+    ],
+    "photo": "chickpea flour_05122024.jpg",
+    "word": "chickpea flour"
+  },
+  {
+    "audio": [
+      "programmed learning_732_06_12_2024.mp3",
+      "programmed learning_949_06_12_2024.mp3"
+    ],
+    "categories": [
+      "teaching_and_learning"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a method of study in which a subject is divided into very small parts and the student must be successful in one part before they can go on to the next",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌprəʊɡræmd ˈlɜːrnɪŋ/",
+          "/ˌprəʊɡræmd ˈlɜːnɪŋ/"
+        ]
+      }
+    ],
+    "photo": "programmed learning_05122024.jpg",
+    "word": "programmed learning"
+  },
+  {
+    "audio": [
+      "Kumbh Mela_502_06_12_2024.mp3",
+      "Kumbh Mela_723_06_12_2024.mp3"
+    ],
+    "categories": [
+      "religious_holidays_and_festivals"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a Hindu  bathing  festival that takes place every twelve years and is held on the river banks of any of the holy cities of Allahabad, Haridwar, Nasik or Ujjain",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌkʊm ˈmeɪlə/"
+        ]
+      }
+    ],
+    "photo": "Kumbh Mela_05122024.jpg",
+    "word": "Kumbh Mela"
+  },
+  {
+    "audio": [
+      "patient advocate_457_06_12_2024.mp3",
+      "patient advocate_285_06_12_2024.mp3"
+    ],
+    "categories": [
+      "health_care"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who represents and campaigns for the interests of patients within a medical care system ",
+                "example": "Medical experts and patient advocates are both campaigning for adoption of the new drug."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌpeɪʃnt ˈædvəkət/"
+        ]
+      }
+    ],
+    "photo": "patient advocate_05122024.jpg",
+    "word": "patient advocate"
+  }
+]

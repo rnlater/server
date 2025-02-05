@@ -1,0 +1,184 @@
+[
+  {
+    "audio": [
+      "dryland farming_794_06_12_2024.mp3",
+      "dryland farming_137_06_12_2024.mp3"
+    ],
+    "categories": [
+      "growing_crops"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a method of farming in areas where there is very little rain, which involves growing crops that do not need much water",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈdraɪlənd fɑːmɪŋ/",
+          "/ˈdraɪlənd fɑːrmɪŋ/"
+        ]
+      }
+    ],
+    "photo": "dryland farming_05122024.jpg",
+    "word": "dryland farming"
+  },
+  {
+    "audio": [
+      "blue pages_273_06_12_2024.mp3",
+      "blue pages_923_06_12_2024.mp3"
+    ],
+    "categories": [
+      "phone_services"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in the US) the blue pages in a  phone directory  that give a list of government departments and their phone numbers",
+                "example": "Look in the blue pages, under US Department of State."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌbluː ˈpeɪdʒɪz/"
+        ]
+      }
+    ],
+    "photo": "blue pages_05122024.jpg",
+    "word": "blue pages"
+  },
+  {
+    "audio": [
+      "convection oven_871_06_12_2024.mp3",
+      "convection oven_077_06_12_2024.mp3"
+    ],
+    "categories": [
+      "kitchen_equipment"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an oven with a fan that moves hot air around to heat food in an even way",
+                "example": "Heat a convection oven to 225°F or a conventional oven to 250°F."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/kənˈvekʃn ʌvn/"
+        ]
+      }
+    ],
+    "photo": "convection oven_05122024.jpg",
+    "word": "convection oven"
+  },
+  {
+    "audio": [
+      "health check_715_06_12_2024.mp3",
+      "health check_369_06_12_2024.mp3"
+    ],
+    "categories": [
+      "medical_examinations"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a medical examination to assess the condition of a person’s body or mind",
+                "example": "A routine health check revealed that his blood pressure was high."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an assessment of the condition of something",
+                "example": "The bank offers business advice and financial health checks."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈhelθ tʃek/"
+        ]
+      }
+    ],
+    "photo": "health check_05122024.jpg",
+    "word": "health check"
+  },
+  {
+    "audio": [
+      "electroconvulsive therapy_903_06_12_2024.mp3",
+      "electroconvulsive therapy_506_06_12_2024.mp3"
+    ],
+    "categories": [
+      "mental_health_care"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a medical treatment for some serious mental illnesses in which electricity is passed through the patient's brain",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ɪˌlektrəʊkənˌvʌlsɪv ˈθerəpi/"
+        ]
+      }
+    ],
+    "photo": "electroconvulsive therapy_05122024.jpg",
+    "word": "electroconvulsive therapy"
+  }
+]

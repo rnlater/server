@@ -1,0 +1,376 @@
+[
+  {
+    "audio": [
+      "assistance dog_751_06_12_2024.mp3",
+      "assistance dog_484_06_12_2024.mp3"
+    ],
+    "categories": [
+      "living_with_disability",
+      "dogs"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a dog trained to help somebody who has a medical condition or  disability",
+                "example": "Dogs are not allowed inside the cafe, with the exception of assistance dogs."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/əˈsɪstəns dɒɡ/",
+          "/əˈsɪstəns dɔːɡ/"
+        ]
+      }
+    ],
+    "photo": "assistance dog_04122024.jpg",
+    "word": "assistance dog"
+  },
+  {
+    "audio": [
+      "political action committee_379_06_12_2024.mp3",
+      "political action committee_735_06_12_2024.mp3"
+    ],
+    "categories": [
+      "political_views_and_systems"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in the US) a group of people who collect money to support the candidates and policies that will help them achieve their political and social aims",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/pəˌlɪtɪkl ˈækʃn kəmɪti/"
+        ]
+      }
+    ],
+    "photo": "political action committee_04122024.jpg",
+    "word": "political action committee"
+  },
+  {
+    "audio": [
+      "American cheese_679_06_12_2024.mp3",
+      "American cheese_400_06_12_2024.mp3"
+    ],
+    "categories": [
+      "dairy_and_fats"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a kind of orange cheese that is usually sold in thin slices wrapped in plastic",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/əˌmerɪkən ˈtʃiːz/"
+        ]
+      }
+    ],
+    "photo": "American cheese_04122024.jpg",
+    "word": "American cheese"
+  },
+  {
+    "audio": [
+      "sick day_675_06_12_2024.mp3",
+      "sick day_063_06_12_2024.mp3"
+    ],
+    "categories": [
+      "pay_and_conditions_at_work"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a day on which an employee is away from work because of illness, but still receives pay ",
+                "example": "Benefits included paid vacations and sick days and the use of a company car."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈsɪk deɪ/"
+        ]
+      }
+    ],
+    "photo": "sick day_04122024.jpg",
+    "word": "sick day"
+  },
+  {
+    "audio": [
+      "bench test_239_06_12_2024.mp3",
+      "bench test_638_06_12_2024.mp3"
+    ],
+    "categories": [
+      "how_machines_work"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a test performed on a machine or part before it is sold",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈbentʃ test/"
+        ]
+      }
+    ],
+    "photo": "bench test_04122024.jpg",
+    "word": "bench test"
+  },
+  {
+    "audio": [
+      "Danish pastry_355_06_12_2024.mp3",
+      "Danish pastry_543_06_12_2024.mp3"
+    ],
+    "categories": [
+      "sweets_and_desserts"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a sweet cake made of light  pastry , often containing apple, nuts, etc. and/or covered with  icing",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdeɪnɪʃ ˈpeɪstri/"
+        ]
+      }
+    ],
+    "photo": "Danish pastry_04122024.jpg",
+    "word": "Danish pastry"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "political_views_and_systems"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to give a duty, responsibility, power, etc. to somebody who has less authority than you",
+                "example": "The central government devolved most tax-raising powers to the regional authorities."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": null,
+    "word": "devolve to"
+  },
+  {
+    "audio": [
+      "store card_190_06_12_2024.mp3",
+      "store card_792_06_12_2024.mp3"
+    ],
+    "categories": [
+      "paying_for_shopping"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a card that a particular shop provides for regular customers so that they can use it to buy goods that they will pay for later",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈstɔːr kɑːrd/",
+          "/ˈstɔː kɑːd/"
+        ]
+      }
+    ],
+    "photo": "store card_04122024.jpg",
+    "word": "store card"
+  },
+  {
+    "audio": [
+      "child support_343_06_12_2024.mp3",
+      "child support_595_06_12_2024.mp3"
+    ],
+    "categories": [
+      "finance"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "money that a parent must pay regularly to help support their child, when the child is no longer living with that parent",
+                "example": "After they divorced, he refused to pay child support."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈtʃaɪld səpɔːrt/",
+          "/ˈtʃaɪld səpɔːt/"
+        ]
+      }
+    ],
+    "photo": "child support_04122024.jpg",
+    "word": "child support"
+  },
+  {
+    "audio": [
+      "A level_313_06_12_2024.mp3",
+      "A level_527_06_12_2024.mp3"
+    ],
+    "categories": [
+      "exams_and_assessment"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a British exam taken in a particular subject, usually in the final year of school at the age of 18",
+                "example": "You need three A levels to get onto this university course."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈeɪ levl/"
+        ]
+      }
+    ],
+    "photo": "A level_04122024.jpg",
+    "word": "A level"
+  },
+  {
+    "audio": [
+      "common fraction_123_06_12_2024.mp3",
+      "common fraction_530_06_12_2024.mp3"
+    ],
+    "categories": [
+      "numbers"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a  fraction   (= a number less than one)  that is shown as numbers above and below a line",
+                "example": "¾ and ⅝ are common fractions."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌkɒmən ˈfrækʃn/",
+          "/ˌkɑːmən ˈfrækʃn/"
+        ]
+      }
+    ],
+    "photo": "common fraction_04122024.jpg",
+    "word": "common fraction"
+  }
+]

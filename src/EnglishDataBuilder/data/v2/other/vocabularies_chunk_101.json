@@ -1,0 +1,243 @@
+[
+  {
+    "audio": [
+      "surgical mask_658_06_12_2024.mp3",
+      "surgical mask_011_06_12_2024.mp3"
+    ],
+    "categories": [
+      "medical_equipment"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a piece of material that you wear over the lower part of your face, in order to reduce the spread of disease, intended for use in medical procedures such as operations",
+                "example": "Single-use surgical masks should be discarded after use."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsɜːdʒɪkl ˈmɑːsk/",
+          "/ˈsɜːrdʒɪkl mæsk/"
+        ]
+      }
+    ],
+    "photo": "surgical mask_04122024.jpg",
+    "word": "surgical mask"
+  },
+  {
+    "audio": [
+      "day return_937_06_12_2024.mp3",
+      "day return_198_06_12_2024.mp3"
+    ],
+    "categories": [
+      "train_and_bus_travel"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a ticket at a reduced price for a journey to a place and back again on the same day",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdeɪ rɪˈtɜːrn/",
+          "/ˌdeɪ rɪˈtɜːn/"
+        ]
+      }
+    ],
+    "photo": "day return_04122024.jpg",
+    "word": "day return"
+  },
+  {
+    "audio": [
+      "Achilles tendon_989_06_12_2024.mp3",
+      "Achilles tendon_303_06_12_2024.mp3"
+    ],
+    "categories": [
+      "inside_the_body"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the  tendon  that connects the muscles at the back of the lower part of the leg to the heel",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/əˌkɪliːz ˈtendən/"
+        ]
+      }
+    ],
+    "photo": "Achilles tendon_04122024.jpg",
+    "word": "Achilles tendon"
+  },
+  {
+    "audio": [
+      "council flat_064_06_12_2024.mp3",
+      "council flat_074_06_12_2024.mp3"
+    ],
+    "categories": [
+      "renting_a_home"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a flat rented from the local council",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkaʊnsl flæt/"
+        ]
+      }
+    ],
+    "photo": "council flat_04122024.jpg",
+    "word": "council flat"
+  },
+  {
+    "audio": [
+      "training shoe_976_06_12_2024.mp3",
+      "training shoe_562_06_12_2024.mp3"
+    ],
+    "categories": [
+      "footwear"
+    ],
+    "level": [
+      "A2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a shoe that you wear for sports or as informal clothing",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈtreɪnɪŋ ʃuː/"
+        ]
+      }
+    ],
+    "photo": "training shoe_04122024.jpg",
+    "word": "training shoe"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "having_a_disagreement"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to have an argument and separate",
+                "example": "They bust up after five years of marriage."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to make a relationship, meeting, etc. end in a way that is not gentle",
+                "example": "It was his jealousy that bust up his marriage."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "bust up_04122024.jpg",
+    "word": "bust up"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "ambition"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to work hard in order to finish or achieve something; to keep repeating something in order to get the result that you want",
+                "example": "She kept hammering away at that point all through the meeting."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "hammer away at_04122024.jpg",
+    "word": "hammer away at"
+  }
+]

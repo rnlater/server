@@ -1,0 +1,175 @@
+[
+  {
+    "audio": [
+      "ranked choice_959_06_12_2024.mp3",
+      "ranked choice_783_06_12_2024.mp3"
+    ],
+    "categories": [
+      "elections"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a system that allows people to choose candidates for an election in order of  preference",
+                "example": "Ranked choice voting  will be used in the mayoral election."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈræŋkt tʃɔɪs/"
+        ]
+      }
+    ],
+    "photo": "ranked choice_05122024.jpg",
+    "word": "ranked choice"
+  },
+  {
+    "audio": [
+      "heritage language_547_06_12_2024.mp3",
+      "heritage language_754_06_12_2024.mp3"
+    ],
+    "categories": [
+      "languages"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a language that a child learns at home from their parents that is not the main language of the country they are living in",
+                "example": "Within two or three generations most immigrants have lost or almost lost their heritage language."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈherɪtɪdʒ læŋɡwɪdʒ/"
+        ]
+      }
+    ],
+    "photo": "heritage language_05122024.jpg",
+    "word": "heritage language"
+  },
+  {
+    "audio": [
+      "technical sergeant_283_06_12_2024.mp3",
+      "technical sergeant_076_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_air_force"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "an officer of middle rank in the US  air force",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌteknɪkl ˈsɑːrdʒənt/",
+          "/ˌteknɪkl ˈsɑːdʒənt/"
+        ]
+      }
+    ],
+    "photo": "technical sergeant_05122024.jpg",
+    "word": "technical sergeant"
+  },
+  {
+    "audio": [
+      "question master_994_06_12_2024.mp3",
+      "question master_146_06_12_2024.mp3"
+    ],
+    "categories": [
+      "media_people"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who asks the questions in a  quiz , especially on television or the radio",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkwestʃən mɑːstə(r)/",
+          "/ˈkwestʃən mæstər/"
+        ]
+      }
+    ],
+    "photo": "question master_05122024.jpg",
+    "word": "question master"
+  },
+  {
+    "audio": [
+      "hair extension_484_06_12_2024.mp3",
+      "hair extension_693_06_12_2024.mp3"
+    ],
+    "categories": [
+      "styling_hair"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "pieces of artificial hair that are added to somebody's own hair to make it longer",
+                "example": "She was wearing new long blonde hair extensions."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈher ɪkstenʃn/",
+          "/ˈheər ɪkstenʃn/"
+        ]
+      }
+    ],
+    "photo": "hair extension_05122024.jpg",
+    "word": "hair extension"
+  }
+]

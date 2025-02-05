@@ -1,0 +1,204 @@
+[
+  {
+    "audio": [
+      "community hospital_342_06_12_2024.mp3",
+      "community hospital_555_06_12_2024.mp3"
+    ],
+    "categories": [
+      "hospitals"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a small hospital for the local community",
+                "example": "A woman with severe leg pain was admitted to the community hospital."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/kəˌmjuːnəti ˈhɑːspɪtl/",
+          "/kəˌmjuːnəti ˈhɒspɪtl/"
+        ]
+      }
+    ],
+    "photo": "community hospital_05122024.jpg",
+    "word": "community hospital"
+  },
+  {
+    "audio": [
+      "wedding anniversary_451_06_12_2024.mp3",
+      "wedding anniversary_635_06_12_2024.mp3"
+    ],
+    "categories": [
+      "marriage"
+    ],
+    "level": [
+      "B2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the celebration every year of the date when two people were married",
+                "example": "Today's our wedding anniversary."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈwedɪŋ ænɪvɜːsəri/",
+          "/ˈwedɪŋ ænɪvɜːrsəri/"
+        ]
+      }
+    ],
+    "photo": "wedding anniversary_05122024.jpg",
+    "word": "wedding anniversary"
+  },
+  {
+    "audio": [
+      "telephone banking_197_06_12_2024.mp3",
+      "telephone banking_987_06_12_2024.mp3"
+    ],
+    "categories": [
+      "phone_services"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "activities relating to your bank account that you do using the phone",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌtelɪfəʊn ˈbæŋkɪŋ/"
+        ]
+      }
+    ],
+    "photo": "telephone banking_05122024.jpg",
+    "word": "telephone banking"
+  },
+  {
+    "audio": [],
+    "categories": [
+      "making_calls"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "to make a phone call to somebody, especially within the same building",
+                "example": "Reception just rang through to say my visitor has arrived."
+              }
+            ],
+            "part_of_speech": "phrasal verb",
+            "synonyms": []
+          }
+        ],
+        "phonetics": []
+      }
+    ],
+    "photo": "ring through_05122024.jpg",
+    "word": "ring through"
+  },
+  {
+    "audio": [
+      "moving van_154_06_12_2024.mp3",
+      "moving van_493_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_vehicle"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a large van used for moving furniture and other goods from one home or business to another",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈmuːvɪŋ væn/"
+        ]
+      }
+    ],
+    "photo": "moving van_05122024.jpg",
+    "word": "moving van"
+  },
+  {
+    "audio": [
+      "civil partner_881_06_12_2024.mp3",
+      "civil partner_082_06_12_2024.mp3"
+    ],
+    "categories": [
+      "relatives"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the person that somebody has a  civil partnership  with  (= a legal relationship between two people of the same sex, with the same legal status as marriage)",
+                "example": "Civil partners are taxed in exactly the same way as married couples."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌsɪvl ˈpɑːtnə(r)/",
+          "/ˌsɪvl ˈpɑːrtnər/"
+        ]
+      }
+    ],
+    "photo": "civil partner_05122024.jpg",
+    "word": "civil partner"
+  }
+]

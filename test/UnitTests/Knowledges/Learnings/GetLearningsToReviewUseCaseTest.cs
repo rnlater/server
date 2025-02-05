@@ -17,6 +17,7 @@ namespace UnitTests.Knowledges.Learnings
     {
         private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<IRepository<Knowledge>> _knowledgeRepositoryMock;
+        private readonly Mock<IRepository<User>> _userRepositoryMock;
         private readonly Mock<IRepository<Learning>> _learningRepositoryMock;
         private readonly Mock<IRepository<GameKnowledgeSubscription>> _gameKnowledgeSubscriptionRepositoryMock;
         private readonly Mock<IHttpContextAccessor> _httpContextAccessorMock;
@@ -29,12 +30,14 @@ namespace UnitTests.Knowledges.Learnings
             _unitOfWorkMock = new Mock<IUnitOfWork>();
             _knowledgeRepositoryMock = new Mock<IRepository<Knowledge>>();
             _learningRepositoryMock = new Mock<IRepository<Learning>>();
+            _userRepositoryMock = new Mock<IRepository<User>>();
             _gameKnowledgeSubscriptionRepositoryMock = new Mock<IRepository<GameKnowledgeSubscription>>();
             _httpContextAccessorMock = new Mock<IHttpContextAccessor>();
             _mapper = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>()).CreateMapper();
 
             _unitOfWorkMock.Setup(u => u.Repository<Knowledge>()).Returns(_knowledgeRepositoryMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<Learning>()).Returns(_learningRepositoryMock.Object);
+            _unitOfWorkMock.Setup(u => u.Repository<User>()).Returns(_userRepositoryMock.Object);
             _unitOfWorkMock.Setup(u => u.Repository<GameKnowledgeSubscription>()).Returns(_gameKnowledgeSubscriptionRepositoryMock.Object);
 
             _GetLearningsToReviewUseCase = new GetLearningsToReviewUseCase(_unitOfWorkMock.Object, _mapper, _httpContextAccessorMock.Object);
@@ -43,7 +46,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenUserNotFound()
         {
-            // Arrange
             var parameters = new GetLearningsToReviewParams
             {
                 KnowledgeIds = [Guid.NewGuid()]
@@ -51,10 +53,8 @@ namespace UnitTests.Knowledges.Learnings
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(ClaimTypes.NameIdentifier)).Returns((Claim?)null);
 
-            // Act
             var result = await _GetLearningsToReviewUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.UserNotFound, result.Error);
         }
@@ -62,7 +62,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenSomeKnowledgesHaveNotBeenLearned()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var parameters = new GetLearningsToReviewParams
             {
@@ -71,18 +70,17 @@ namespace UnitTests.Knowledges.Learnings
 
             var learnings = new List<Learning>
             {
-                new Learning { UserId = userId, KnowledgeId = parameters.KnowledgeIds.First() },
-                new Learning { UserId = userId, KnowledgeId = Guid.NewGuid() }
+                new Learning { UserId = userId, KnowledgeId = parameters.KnowledgeIds.First(), Knowledge = new Knowledge { Id = Guid.NewGuid(), Title = "Knowledge 1", Visibility = KnowledgeVisibility.Public } },
+                new Learning { UserId = userId, KnowledgeId = Guid.NewGuid(), Knowledge = new Knowledge { Id = Guid.NewGuid(), Title = "Knowledge 1", Visibility = KnowledgeVisibility.Public } },
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
 
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learnings);
 
-            // Act
             var result = await _GetLearningsToReviewUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.SomeKnowledgesHaveNotBeenLearned, result.Error);
         }
@@ -90,7 +88,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenSomeKnowledgesAreNotReadyToReview()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var parameters = new GetLearningsToReviewParams
             {
@@ -99,17 +96,20 @@ namespace UnitTests.Knowledges.Learnings
 
             var learnings = new List<Learning>
             {
-                new Learning { UserId = userId, KnowledgeId = parameters.KnowledgeIds.First(), NextReviewDate = DateTime.Now.AddDays(1) },
+                new Learning {
+                    UserId = userId,
+                    KnowledgeId = parameters.KnowledgeIds.First(),
+                    NextReviewDate = DateTime.Now.AddDays(1),
+                    Knowledge = new Knowledge { Id = Guid.NewGuid(), Title = "Knowledge 1", Visibility = KnowledgeVisibility.Public }},
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
 
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learnings);
 
-            // Act
             var result = await _GetLearningsToReviewUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.SomeKnowledgesAreNotReadyToReview, result.Error);
         }
@@ -117,7 +117,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnFail_WhenKnowledgeRequireAGameToReview()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
             var parameters = new GetLearningsToReviewParams
@@ -131,30 +130,29 @@ namespace UnitTests.Knowledges.Learnings
                      UserId = userId,
                      KnowledgeId = knowledgeId,
                      Knowledge = new Knowledge
-                {
-                    Id = knowledgeId,
-                    Title = "Knowledge 1",
-                    GameKnowledgeSubscriptions =
-                    [],
-                    Materials =
-                    [
-                        new Material { Type = MaterialType.Interpretation, Content = "Interpretation 1" },
-                        new Material { Type = MaterialType.Interpretation, Content = "Interpretation 2" },
-                        new Material { Type = MaterialType.TextMedium, Content = "Medium Text 3" }
-                    ]
-                }
+                    {
+                        Id = knowledgeId,
+                        Title = "Knowledge 1",
+                        GameKnowledgeSubscriptions =
+                        [],
+                        Materials =
+                        [
+                            new Material { Type = MaterialType.Interpretation, Content = "Interpretation 1" },
+                            new Material { Type = MaterialType.Interpretation, Content = "Interpretation 2" },
+                            new Material { Type = MaterialType.TextMedium, Content = "Medium Text 3" }
+                        ]
+                    }
                 }
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = Guid.NewGuid(), Email = "", UserName = "" });
 
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learnings);
             _gameKnowledgeSubscriptionRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<GameKnowledgeSubscription>>())).ReturnsAsync([]);
 
-            // Act
             var result = await _GetLearningsToReviewUseCase.Execute(parameters);
 
-            // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.RequireAGameToReview, result.Error);
         }
@@ -162,7 +160,6 @@ namespace UnitTests.Knowledges.Learnings
         [Fact]
         public async Task Execute_ShouldReturnSuccess_WhenKnowledgesAreFound()
         {
-            // Arrange
             var userId = Guid.NewGuid();
             var knowledgeId = Guid.NewGuid();
             var parameters = new GetLearningsToReviewParams
@@ -217,21 +214,20 @@ namespace UnitTests.Knowledges.Learnings
             };
 
             _httpContextAccessorMock.Setup(h => h.HttpContext!.User.FindFirst(It.IsAny<string>())).Returns(new System.Security.Claims.Claim("sub", userId.ToString()));
+            _userRepositoryMock.Setup(r => r.GetById(userId)).ReturnsAsync(new User { Id = userId, Email = "Email", UserName = "UserName" });
 
             _learningRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<Learning>>())).ReturnsAsync(learnings);
             _gameKnowledgeSubscriptionRepositoryMock.Setup(r => r.FindMany(It.IsAny<BaseSpecification<GameKnowledgeSubscription>>())).ReturnsAsync(learnings.First().Knowledge!.GameKnowledgeSubscriptions);
 
-            // Act
             var result = await _GetLearningsToReviewUseCase.Execute(parameters);
 
-            // Assert
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
             Assert.Single(result.Value.First());
-            Assert.Equal(knowledgeId, result.Value.First().ToList().First().Value.LearningDto.Knowledge!.Id);
-            Assert.Equal("Knowledge 1", result.Value.First().ToList().First().Value.LearningDto.Knowledge!.Title);
-            Assert.Equal(3, result.Value.First().ToList().First().Value.LearningDto.Knowledge!.Materials.Count);
-            Assert.NotNull(result.Value.First().ToList().First().Value.LearningDto.Knowledge!.GameToReview);
+            Assert.Equal(knowledgeId, result.Value.First().ToList().First().Knowledge!.Id);
+            Assert.Equal("Knowledge 1", result.Value.First().ToList().First().Knowledge!.Title);
+            Assert.Equal(3, result.Value.First().ToList().First().Knowledge!.Materials.Count);
+            Assert.NotNull(result.Value.First().ToList().First().Knowledge!.GameToReview);
         }
     }
 }

@@ -1,0 +1,581 @@
+[
+  {
+    "audio": [
+      "gastric bypass_251_06_12_2024.mp3",
+      "gastric bypass_855_06_12_2024.mp3"
+    ],
+    "categories": [
+      "operations"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "surgery that reduces the size of somebody's stomach so that they will eat less food",
+                "example": "gastric bypass surgery"
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɡæstrɪk ˈbaɪpæs/",
+          "/ˌɡæstrɪk ˈbaɪpɑːs/"
+        ]
+      }
+    ],
+    "photo": "gastric_bypass_04122024.jpg",
+    "word": "gastric bypass"
+  },
+  {
+    "audio": [
+      "closed-circuit television_010_06_12_2024.mp3",
+      "closed-circuit television_728_06_12_2024.mp3"
+    ],
+    "categories": [
+      "solving_crime"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a television system that works within a limited area, for example a public building, especially to protect it from crime",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌkləʊzd ˌsɜːkɪt ˈtelɪvɪʒn/",
+          "/ˌkləʊzd ˌsɜːrkɪt ˈtelɪvɪʒn/"
+        ]
+      }
+    ],
+    "photo": "closed-circuit_television_04122024.jpg",
+    "word": "closed-circuit television"
+  },
+  {
+    "audio": [
+      "passing lane_653_06_12_2024.mp3",
+      "passing lane_946_06_12_2024.mp3"
+    ],
+    "categories": [
+      "types_of_road"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the part of a major road such as a  motorway  or  interstate  nearest the middle of the road, where vehicles drive fastest and can go past vehicles ahead",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈpɑːsɪŋ leɪn/",
+          "/ˈpæsɪŋ leɪn/"
+        ]
+      }
+    ],
+    "photo": "passing_lane_04122024.jpg",
+    "word": "passing lane"
+  },
+  {
+    "audio": [
+      "road tax_648_06_12_2024.mp3",
+      "road tax_233_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_car_industry"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "(in the UK) a tax that somebody who owns a motor vehicle must pay to drive on the roads",
+                "example": "Road users are protesting about increases in road tax."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈrəʊd tæks/"
+        ]
+      }
+    ],
+    "photo": "road_tax_04122024.jpg",
+    "word": "road tax"
+  },
+  {
+    "audio": [
+      "extreme sport_457_06_12_2024.mp3",
+      "extreme sport_853_06_12_2024.mp3"
+    ],
+    "categories": [
+      "extreme_sports"
+    ],
+    "level": [
+      "B1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a sport that is extremely exciting to do and often dangerous, for example  skydiving  and  bungee jumping",
+                "example": "She loves to travel and take part in extreme sports."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ɪkˌstriːm ˈspɔːrt/",
+          "/ɪkˌstriːm ˈspɔːt/"
+        ]
+      }
+    ],
+    "photo": "extreme_sport_06122024.jpg",
+    "word": "extreme sport"
+  },
+  {
+    "audio": [
+      "food security_084_06_12_2024.mp3",
+      "food security_171_06_12_2024.mp3"
+    ],
+    "categories": [
+      "poverty_and_famine"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the state of having reliable access to enough healthy food that you can afford",
+                "example": "The minister said that the proposed changes to the agriculture sector would ensure food security in the country."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌfuːd sɪˈkjʊrəti/",
+          "/ˌfuːd sɪˈkjʊərəti/"
+        ]
+      }
+    ],
+    "photo": "food_security_04122024.jpg",
+    "word": "food security"
+  },
+  {
+    "audio": [
+      "crane fly_784_06_12_2024.mp3",
+      "crane fly_188_06_12_2024.mp3"
+    ],
+    "categories": [
+      "insects"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a flying insect with very long legs",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈkreɪn flaɪ/"
+        ]
+      }
+    ],
+    "photo": "crane_fly_04122024.jpg",
+    "word": "crane fly"
+  },
+  {
+    "audio": [
+      "hobnail boot_849_06_12_2024.mp3",
+      "hobnail boot_217_06_12_2024.mp3"
+    ],
+    "categories": [
+      "footwear"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a boot whose  sole  is attached to the upper part with short heavy nails",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌhɒbneɪl ˈbuːt/",
+          "/ˌhɑːbneɪl ˈbuːt/"
+        ]
+      }
+    ],
+    "photo": "hobnail_boot_04122024.jpg",
+    "word": "hobnail boot"
+  },
+  {
+    "audio": [
+      "night sweat_352_06_12_2024.mp3",
+      "night sweat_565_06_12_2024.mp3"
+    ],
+    "categories": [
+      "being_ill"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a state when somebody produces a lot of  sweat  while they are sleeping during the night, sometimes as a symptom of disease",
+                "example": "Symptoms include a dry cough, fever and night sweats."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈnaɪt swet/"
+        ]
+      }
+    ],
+    "photo": "night_sweat_04122024.jpg",
+    "word": "night sweat"
+  },
+  {
+    "audio": [
+      "force play_539_06_12_2024.mp3",
+      "force play_093_06_12_2024.mp3"
+    ],
+    "categories": [
+      "baseball"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a situation in which a player is forced to run to the next base and is out because the  batter  is running towards the previous base. This situation can lead to a  force-out .",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˈfɔːs pleɪ/",
+          "/ˈfɔːrs pleɪ/"
+        ]
+      }
+    ],
+    "photo": "force_play_04122024.jpg",
+    "word": "force play"
+  },
+  {
+    "audio": [
+      "Eastern Standard Time_479_06_12_2024.mp3",
+      "Eastern Standard Time_056_06_12_2024.mp3"
+    ],
+    "categories": [
+      "time_zones"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the time used in the winter in the eastern US and Canada, which is five hours earlier than UTC",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌiːstən ˈstændəd taɪm/",
+          "/ˌiːstərn ˈstændərd taɪm/"
+        ]
+      }
+    ],
+    "photo": "Eastern_Standard_Time_04122024.jpg",
+    "word": "Eastern Standard Time"
+  },
+  {
+    "audio": [
+      "appeal court_698_06_12_2024.mp3",
+      "appeal court_289_06_12_2024.mp3"
+    ],
+    "categories": [
+      "justice"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a court that people can go to in order to try and change decisions that have been made by a lower court",
+                "example": "They took their case to the Appeal Court."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "the highest court in England and Wales (apart from the  Supreme Court ), which can change decisions made by a lower court",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          },
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "one of the courts in the US that can change decisions made by a lower court",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/əˈpiːl kɔːt/",
+          "/əˈpiːl kɔːrt/"
+        ]
+      }
+    ],
+    "photo": "appeal_court_04122024.jpg",
+    "word": "appeal court"
+  },
+  {
+    "audio": [
+      "Black Lives Matter_673_06_12_2024.mp3",
+      "Black Lives Matter_252_06_12_2024.mp3"
+    ],
+    "categories": [
+      "social_justice",
+      "race"
+    ],
+    "level": [
+      "C1"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a movement formed to campaign against  racism  and violence, especially police violence, against black people",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌblæk ˌlaɪvz ˈmætə(r)/",
+          "/ˌblæk ˌlaɪvz ˈmætər/"
+        ]
+      }
+    ],
+    "photo": "Black_Lives_Matter_04122024.jpg",
+    "word": "Black Lives Matter"
+  },
+  {
+    "audio": [
+      "PC Plod_598_06_12_2024.mp3",
+      "PC Plod_422_06_12_2024.mp3"
+    ],
+    "categories": [
+      "the_police"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a name used to refer in a humorous way to a junior police officer. ‘PC’ stands for ‘Police Constable’ and to ‘plod’ means to walk slowly, with heavy steps.",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌpiː siː ˈplɒd/",
+          "/ˌpiː siː ˈplɑːd/"
+        ]
+      }
+    ],
+    "photo": "PC_Plod_04122024.jpg",
+    "word": "PC Plod"
+  },
+  {
+    "audio": [
+      "Generation Xer_193_06_12_2024.mp3",
+      "Generation Xer_546_06_12_2024.mp3"
+    ],
+    "categories": [
+      "belonging_to_society"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a person who was born between the middle of the 1960s and the late 1970s, which makes them a member of  Generation X",
+                "example": "Generation Xers were hit hard during the 2007 economic downturn."
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌdʒenəreɪʃn ˈeksə(r)/",
+          "/ˌdʒenəreɪʃn ˈeksər/"
+        ]
+      }
+    ],
+    "photo": "Generation_Xer_04122024.jpg",
+    "word": "Generation Xer"
+  },
+  {
+    "audio": [
+      "gated community_643_06_12_2024.mp3",
+      "gated community_290_06_12_2024.mp3"
+    ],
+    "categories": [
+      "building_location"
+    ],
+    "level": [
+      "C2"
+    ],
+    "materials": [
+      {
+        "meanings": [
+          {
+            "antonyms": [],
+            "definitions": [
+              {
+                "definition": "a group of houses surrounded by a wall or fence, with gates at the entrance to control the movement of traffic and people into and out of the area",
+                "example": null
+              }
+            ],
+            "part_of_speech": "noun",
+            "synonyms": []
+          }
+        ],
+        "phonetics": [
+          "/ˌɡeɪtɪd kəˈmjuːnəti/"
+        ]
+      }
+    ],
+    "photo": "gated_community_04122024.jpg",
+    "word": "gated community"
+  }
+]

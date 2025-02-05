@@ -12,14 +12,15 @@ using Shared.Constants;
 
 namespace UnitTests.JWT
 {
-    public class RenewAccessTokenUseCaseTest
+    public class RenewTokenPairUseCaseTest
     {
         private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<IMapper> _mapperMock;
         private readonly Mock<IOptions<JwtSettings>> _jwtOptionsMock;
-        private readonly RenewAccessTokenUseCase _renewAccessTokenUseCase;
+        private readonly RenewTokenPairUseCase _renewTokenPairUseCase;
+        private readonly GenerateTokenPairUseCase _generateTokenPairUseCase;
 
-        public RenewAccessTokenUseCaseTest()
+        public RenewTokenPairUseCaseTest()
         {
             _unitOfWorkMock = new Mock<IUnitOfWork>();
             _mapperMock = new Mock<IMapper>();
@@ -31,7 +32,8 @@ namespace UnitTests.JWT
                 Audience = "test_audience",
                 ExpiryMinutes = 180
             });
-            _renewAccessTokenUseCase = new RenewAccessTokenUseCase(_unitOfWorkMock.Object, _mapperMock.Object, _jwtOptionsMock.Object);
+            _generateTokenPairUseCase = new GenerateTokenPairUseCase(_jwtOptionsMock.Object);
+            _renewTokenPairUseCase = new RenewTokenPairUseCase(_unitOfWorkMock.Object, _generateTokenPairUseCase);
         }
 
         [Fact]
@@ -65,11 +67,10 @@ namespace UnitTests.JWT
                 .Setup(m => m.Map<UserDto>(user))
                 .Returns(new UserDto { Id = user.Id, UserName = user.UserName, Email = user.Email, Role = user.Role.ToString() });
 
-            var result = await _renewAccessTokenUseCase.Execute(refreshToken);
+            var result = await _renewTokenPairUseCase.Execute(refreshToken);
 
             Assert.True(result.IsSuccess);
             Assert.NotNull(result.Value);
-            Assert.NotEmpty(result.Value);
         }
 
 
@@ -82,7 +83,7 @@ namespace UnitTests.JWT
                 .Setup(uow => uow.Repository<Authentication>().Find(It.IsAny<BaseSpecification<Authentication>>()))
                 .ReturnsAsync((Authentication?)null);
 
-            var result = await _renewAccessTokenUseCase.Execute(refreshToken);
+            var result = await _renewTokenPairUseCase.Execute(refreshToken);
 
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.UserNotFound.ToString(), result.Errors[0]);
@@ -108,7 +109,7 @@ namespace UnitTests.JWT
                 .Setup(uow => uow.Repository<Authentication>().Find(It.IsAny<BaseSpecification<Authentication>>()))
                 .ReturnsAsync(authentication);
 
-            var result = await _renewAccessTokenUseCase.Execute(refreshToken);
+            var result = await _renewTokenPairUseCase.Execute(refreshToken);
 
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.RefreshTokenIsExpired.ToString(), result.Errors[0]);
@@ -123,7 +124,7 @@ namespace UnitTests.JWT
                 .Setup(uow => uow.Repository<Authentication>().Find(It.IsAny<BaseSpecification<Authentication>>()))
                 .ThrowsAsync(new Exception());
 
-            var result = await _renewAccessTokenUseCase.Execute(refreshToken);
+            var result = await _renewTokenPairUseCase.Execute(refreshToken);
 
             Assert.False(result.IsSuccess);
             Assert.Equal(ErrorMessage.UnknownError.ToString(), result.Errors[0]);
