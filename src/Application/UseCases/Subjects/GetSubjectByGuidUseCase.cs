@@ -52,33 +52,27 @@ public class GetSubjectByGuidUseCase : IUseCase<SubjectDto, Guid>
                     .Include(s => s.SubjectKnowledges)
                     .ThenInclude(sk => sk.Knowledge!)));
                 if (subject == null)
-                {
                     return Result<SubjectDto>.Fail(ErrorMessage.NoSubjectFoundWithGuid);
-                }
 
                 if (!user!.IsAdmin)
-                {
                     subject.SubjectKnowledges = subject.SubjectKnowledges
                             .Where(sk => sk.Knowledge?.Visibility == KnowledgeVisibility.Public).ToList();
-                }
 
                 subjectDto = _mapper.Map<SubjectDto>(subject);
 
-                if (!user!.IsAdmin)
-                {
-                    subjectDto.SubjectKnowledges = subjectDto.SubjectKnowledges
-                            .Where(sk => sk.Knowledge?.Visibility == KnowledgeVisibility.Public.ToString());
-                    foreach (var item in subjectDto.SubjectKnowledges)
-                    {
-                        var userLearning = await _unitOfWork.Repository<Learning>().Find(
-                            new BaseSpecification<Learning>(ul => ul.UserId == userId && ul.KnowledgeId == item.Knowledge!.Id).AddInclude(query => query.Include(l => l.LearningHistories))
-                        );
-                        item.Knowledge!.CurrentUserLearning = userLearning == null ? null : _mapper.Map<LearningDto>(userLearning);
-                    }
-                    subjectDto.UserLearningCount = subjectDto.SubjectKnowledges.Count(sk => sk.Knowledge!.CurrentUserLearning != null);
-                }
-
                 await _cache.SetAsync($"{RedisCache.Keys.GetSubjectByGuid}_{id}", subjectDto);
+            }
+
+            if (!user!.IsAdmin)
+            {
+                foreach (var item in subjectDto.SubjectKnowledges)
+                {
+                    var userLearning = await _unitOfWork.Repository<Learning>().Find(
+                        new BaseSpecification<Learning>(ul => ul.UserId == userId && ul.KnowledgeId == item.Knowledge!.Id).AddInclude(query => query.Include(l => l.LearningHistories))
+                    );
+                    item.Knowledge!.CurrentUserLearning = userLearning == null ? null : _mapper.Map<LearningDto>(userLearning);
+                }
+                subjectDto.UserLearningCount = subjectDto.SubjectKnowledges.Count(sk => sk.Knowledge!.CurrentUserLearning != null);
             }
 
             return Result<SubjectDto>.Done(subjectDto);

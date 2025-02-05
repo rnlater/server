@@ -98,7 +98,7 @@ namespace Endpoint.Controllers.Knowledges
 
 
         [HttpPost(HttpRoute.CreateKnowledge)]
-        [Authorize(Roles = nameof(Role.Admin))]
+        [Authorize]
         public async Task<IActionResult> CreateKnowledge([FromForm] CreateKnowledgeRequest request)
         {
             var parameters = _mapper.Map<CreateKnowledgeParams>(request);

@@ -32,20 +32,20 @@ namespace Endpoint.Controllers.Knowledges
             _mapper = config.CreateMapper();
         }
 
+        [HttpPost(HttpRoute.GetKnowledgeTypes)]
+        [Authorize]
+        public async Task<IActionResult> GetKnowledgeTypes(GetKnowledgeTypesRequest request)
+        {
+            var Params = _mapper.Map<GetKnowledgeTypesParams>(request);
+            var result = await _knowledgeTypeService.GetKnowledgeTypes(Params);
+            return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
+        }
+
         [HttpGet(HttpRoute.GetKnowledgeTypeByGuid)]
         [Authorize(Roles = nameof(Role.Admin))]
         public async Task<IActionResult> GetKnowledgeTypeByGuid(Guid id)
         {
             var result = await _knowledgeTypeService.GetKnowledgeTypeByGuid(id);
-            return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
-        }
-
-        [HttpPost(HttpRoute.GetKnowledgeTypes)]
-        [Authorize(Roles = nameof(Role.Admin))]
-        public async Task<IActionResult> GetKnowledgeTypes(GetKnowledgeTypesRequest request)
-        {
-            var Params = _mapper.Map<GetKnowledgeTypesParams>(request);
-            var result = await _knowledgeTypeService.GetKnowledgeTypes(Params);
             return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
         }
 

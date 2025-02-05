@@ -54,7 +54,7 @@ namespace Application.UseCases.Knowledges.Learnings
 
                 var unlistedLearnings = learntKnowledgeIds.Count != 0 ? await learningRepository.FindMany(
                     new BaseSpecification<Learning>(l => l.UserId == userId && !learntKnowledgeIds.Contains(l.KnowledgeId))
-                    .AddInclude(query => query.Include(l => l.Knowledge!))
+                    .AddInclude(query => query.Include(l => l.Knowledge!)).AddOrderBy(l => l.NextReviewDate)
                 ) : [];
 
                 if (!unlistedLearnings.Any())

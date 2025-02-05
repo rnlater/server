@@ -55,9 +55,7 @@ public class GetTrackByGuidUseCase : IUseCase<TrackDto, Guid>
                     .ThenInclude(s => s.SubjectKnowledges)
                     .ThenInclude(sk => sk.Knowledge!)));
                 if (track == null)
-                {
                     return Result<TrackDto>.Fail(ErrorMessage.NoTrackFoundWithGuid);
-                }
 
                 if (!user!.IsAdmin)
                 {
@@ -74,16 +72,16 @@ public class GetTrackByGuidUseCase : IUseCase<TrackDto, Guid>
 
                 trackDto = _mapper.Map<TrackDto>(track);
 
-                if (!user!.IsAdmin)
-                {
-                    foreach (var item in trackDto.TrackSubjects)
-                    {
-                        item.Subject!.UserLearningCount = await learningRepository.Count(
-                            new BaseSpecification<Learning>(l => l.UserId == userId && item.Subject.SubjectKnowledges.Select(sk => sk.KnowledgeId).Contains(l.KnowledgeId)));
-                    }
-                }
-
                 await _cache.SetAsync($"{RedisCache.Keys.GetTrackByGuid}_{trackId}", trackDto);
+            }
+
+            if (!user!.IsAdmin)
+            {
+                foreach (var item in trackDto.TrackSubjects)
+                {
+                    item.Subject!.UserLearningCount = await learningRepository.Count(
+                        new BaseSpecification<Learning>(l => l.UserId == userId && item.Subject.SubjectKnowledges.Select(sk => sk.KnowledgeId).Contains(l.KnowledgeId)));
+                }
             }
 
             return Result<TrackDto>.Done(trackDto);

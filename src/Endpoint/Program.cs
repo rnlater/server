@@ -9,12 +9,17 @@ using Shared.Config;
 using Domain.Enums;
 using System.Text.Json.Serialization;
 using System.Text.Json;
+using Microsoft.AspNetCore.DataProtection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var config = builder.Configuration.SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-    .Build();
+var configBuilder = builder.Configuration.SetBasePath(Directory.GetCurrentDirectory())
+    .AddEnvironmentVariables();
+
+if (builder.Environment.IsDevelopment())
+    configBuilder.AddJsonFile("appsettings.json", reloadOnChange: true, optional: false);
+
+var config = configBuilder.Build();
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
@@ -86,8 +91,12 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddSingleton<ISharedDb, SharedDb>();
 builder.Services.AddSignalR();
 
-AppServiceCollectionExtensions.AddApplicationServices(builder.Services, config);
 AppServiceCollectionExtensions.AddInfrastructure(builder.Services, config);
+AppServiceCollectionExtensions.AddApplicationServices(builder.Services, config);
+
+builder.Services.AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo("/root/.aspnet/DataProtection-Keys"))
+    .SetApplicationName("MyApp");
 
 var app = builder.Build();
 
@@ -95,12 +104,12 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.UseCors("AllowAnyOrigin");
     app.UseDeveloperExceptionPage();
+    app.UseHttpsRedirection();
 }
 
-app.UseHttpsRedirection();
-app.UseCors("AllowSpecificOrigins");
+Console.WriteLine($"Cors Policy: {config.GetSection("CorsPolicy").Value}");
+app.UseCors(config.GetSection("CorsPolicy").Value ?? "AllowAnyOrigin");
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseStaticFiles();

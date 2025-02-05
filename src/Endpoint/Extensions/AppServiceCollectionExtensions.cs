@@ -25,6 +25,7 @@ using Application.Interfaces.Games.GameOptions;
 using Application.UseCases.Knowledges.LearningLists;
 using Application.UseCases.Knowledges.PublicationRequests;
 using Application.UseCases.Profile;
+using MySqlConnector;
 
 namespace Endpoint.Extensions;
 

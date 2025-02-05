@@ -32,6 +32,8 @@ packages/
 
 appsettings.json
 
-appsettings.Production.json
-
 Upload/
+
+https/
+
+wwwroot/
